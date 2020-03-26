@@ -1,0 +1,12 @@
+{
+  "short_name": "LP 2020-1",
+  "name": "Linguagem de Programação 2020-1",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "57x57"
+  }],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#3951b5",
+  "theme_color": "#3951b5"
+}
