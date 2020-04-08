@@ -90,7 +90,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
         if (numCorrect === 1) {
             resultsContainer.innerHTML = 'correto!'
         } else {
-            resultsContainer.innerHTML = 'errado'
+            resultsContainer.innerHTML = 'errado, tente de novo!'
         }
 
         // show number of correct answers out of total
