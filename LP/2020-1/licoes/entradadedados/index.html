@@ -47,7 +47,8 @@
             </p>
             <input type="text" id="username_input" placeholder="nome" size="12" style="font-size: 1.3em">
             <button id="submit-name" class="quiz-submit" onclick="setUsername();">OK</button>
-            <p id="resposta-name"></p>
+            <br><br>
+            <center><p id="resposta-name" style="font-size: 1.2em"></p></center>
             <style>
                 span.username-view {
                     background-color: #1a53a1;
@@ -62,16 +63,16 @@
                     username = document.getElementById('username_input').value;
                     message = '';
                     if (!username) {
-                        message = 'vamos lá, digite o seu nome';
+                        message = 'Vamos lá, digite o seu nome';
                         username = 'anônimo(a)';
                     }
                     else {
                         if (username === 'joão' || username === 'João' || username === 'joao' || username === 'Joao'
-                            || username === 'JOÃO' || username === 'JOAO') {
-                            message = 'ah, que belo nome, João!';
+                            || username === 'JOÃO' || username === 'JOAO' || username === 'João Pimentel') {
+                            message = 'Ah, que belo nome, João!';
                         }
                         else {
-                            message = 'puxa, ' + username + ', que nome feio!';
+                            message = 'Puxa, ' + username + ', que nome feio! ;P';
                         }
                         usernameViews = document.getElementsByClassName('username-view');
                         console.log(usernameViews);
@@ -80,6 +81,7 @@
                         });
                     }
                     document.getElementById('resposta-name').innerText = message;
+                    animateCSS('#resposta-name', 'flipInX');
                 }
             </script>
         </section>
@@ -109,7 +111,7 @@
         <section>
             <p>
                 O que aconteceu foi que você pegou um dado que estava na sua cabeça (o seu nome), e passou para este
-                programa através do teclado. A gente chama isso de ENTRADA DE DADOS: quando algum dado entra no programa, de alguma forma, sem
+                programa através do teclado. A gente chama isso de ENTRADA DE DADOS: é quando algum dado entra no programa, de alguma forma, sem
                 ser diretamente no código.
             </p>
         </section>
@@ -126,6 +128,7 @@
                 No Python nós conseguimos fazer a ENTRADA DE DADOS com
                 a função <code>input</code>, explicada no vídeo a seguir.
             </p>
+            <br><br><br>
             <p>
                 Ah, <span class="username-view">anônimo(a)</span>, eu estava brincando, viu? O seu nome é muito especial,
                 por que é o SEU nome.
@@ -143,16 +146,17 @@
         <section data-background="rgb(14,188,92)" class="is-dark">
             <p>
                 Note que, para poder utilizar a informação que o usuário digitou, precisamos armazená-la em uma <b>variável</b>.
-            </p>
+            Nós vamos aprender mais sobre as variáveis na próxima lição.</p>
         </section>
 
         <section data-background="rgb(14,188,92)" class="is-dark">
+            <h1>Como funciona?</h1>
             <p>
                 Quando executa o <code>input</code>, o programa PARA e fica esperando o usuário digitar a informação. Somente quando alguém apertar Enter é que o programa irá continuar a execução,
                 passando para a próxima linha de código.
             </p>
             <p>
-                Execute esse programa no repl.it e veja como só aparece uma pergunta de cada vez.
+                <a href="https://repl.it/repls/FlowerySuperChords" target="_blank">Execute esse programa no repl.it</a> e veja como só aparece uma pergunta de cada vez.
             </p>
             <pre><code data-trim data-noescape>x = input("Qual o seu nome? ")
 y = input("Qual o seu bairro? ")
@@ -160,11 +164,11 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
 </code></pre>
         </section>
 
-        <section style="height:100%">
-            <iframe height="100%" width="100%" src="https://repl.it/repls/FlowerySuperChords?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
-        </section>
+<!--        <section style="height:100%">-->
+<!--            <iframe height="100%" width="100%" src="https://repl.it/repls/FlowerySuperChords?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>-->
+<!--        </section>-->
 
-        <section data-background="rgb(14,188,92)" class="is-dark">
+        <section data-background="rgb(40,43,69)" class="is-dark">
             <h1>Você ainda lembra?</h1>
             <div id="quiz" class="quiz"></div>
             <button id="submit" class="quiz-submit">responder</button>
@@ -219,8 +223,8 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
 
         <section>
             <p>
-                Outra coisa importante de lembrar é que o resultado da função input <b>sempre</b> é uma String.
-                Se quisermos utilizar a informação do usuário como se fosse um número (ex: para fazer contas), precisamos converter a String em número utilizando as funções int() ou float().
+                Outra coisa importante de lembrar é que o resultado da função <code>input</code> <b>sempre</b> é uma string.
+                Se quisermos utilizar a informação do usuário como se fosse um número (ex: para fazer contas), precisamos converter a string em número utilizando as funções <code>int()</code> ou <code>float()</code>.
             </p>
         </section>
 
@@ -231,7 +235,7 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
             <img src="inputnumerico.png" class="stretch"/>
         </section>
 
-        <section>
+        <section data-transition="zoom-in slide-out">
             <img src="inputnumerico.png" class="stretch"/>
             <p>
                 Note que o primeiro exemplo diz que calcula o dobro mas dá o resultado errado, pois faltou converter o
@@ -240,7 +244,7 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
         </section>
 
         <section data-background="#c6c6c6">
-            <div class="slide-title">FIM (por enquanto...) </div>
+            <div class="slide-title">Por enquanto é só, <span class="username-view">anônimo(a)</span>. Um grande abraço \o/ </div>
         </section>
 
     </div>
@@ -281,7 +285,7 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
                 Reveal.next();
             }
         }
-        if (event.indexh === 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        if (event.indexh >= 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
             if (username === "anônimo(a)") {
                 Reveal.slide(1);
             }
