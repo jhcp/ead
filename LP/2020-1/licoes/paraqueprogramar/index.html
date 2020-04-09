@@ -46,24 +46,52 @@
                 Você consegue imaginar como seria a vida de um estudante sem calculadoras? Sem (aimeudeus)
                 o autocad?
             </p>
-            <img src="calculadora.png" class="stretch"/>
+            <img src="calculadora.png" class="stretch no-border"/>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
             <p>
-                A <b>programação</b> é mais uma das ferramentas que nós podemos utilizar, assim como utilizamos
-                calculadoras, réguas, etc.
+                A <b>programação</b> é mais uma das ferramentas que nós podemos utilizar, assim como já utilizamos
+                outras ferramentas como as calculadoras, réguas, etc. 📐🛠️
             </p>
         </section>
 
         <section>
-            assista a esse vídeo:
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/S9uPNppGsGo" frameborder="0"
+            <p>Ainda mais importante do que aprender a programar, é entender o raciocínio da coisa. O <b>
+                <a href="http://fundacaotelefonica.org.br/noticias/quatro-habilidades-que-o-pensamento-computacional-ajuda-a-desenvolver/"
+                   target="_blank">pensamento
+                    computacional</a></b> lhe ajudará a ter mais facilidade para resolver problemas de todo tipo. </p>
+            <p>Mas não é só isso! No vídeo a seguir o Guanabara irá lhe explicar outros motivos para aprender a
+                programar, com a ajuda de Bill Gates e de Steve Jobs.</p>
+        </section>
+
+        <section>
+            (29min)
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/S9uPNppGsGo" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </section>
 
-
+        <section data-background="#2196f3" class="is-dark">
+            <div id="quiz" class="quiz"></div>
+            <button id="submit" class="quiz-submit">responder</button>
+            <div id="results" class="quiz-results"></div>
+            <script>
+                var myQuestions1 = [
+                    {
+                        question: "Aprender a programar só é benéfico para quem quer trabalhar com programação",
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'falso'
+                        },
+                        correctAnswer: 'b'
+                    }];
+                var quizContainer = document.getElementById('quiz');
+                var resultsContainer = document.getElementById('results');
+                var submitButton = document.getElementById('submit');
+                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
 
         <section data-background="#c6c6c6">
             <div class="slide-title">FIM =)</div>
