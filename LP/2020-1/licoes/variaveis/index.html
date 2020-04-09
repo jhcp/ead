@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Variável - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>variável...</h1>
+            <h4>é uma coisa que pode variar</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Você já sabe muito sobre variáveis na matemática. O tal do <i>x</i>.
+            </p>
+            <p>Agora você vai ter que esquecer tudo aquilo, por quê variáveis na programação são BEM diferentes
+            das variáveis da matemática.</p>
+
+        </section>
+
+        <section>
+            <p>
+                Na programação, as variáveis servem para <b>guardar dados na memória</b> do computador.
+            </p>
+            <p>
+                Lembra quando pedi para você digitar seu nome naquela lição? Quando você apertou OK, o seu nome
+                foi gravado em uma variável - ou seja, foi armazenado na memória. Isso permitiu que o seu nome
+                aparecesse no decorrer da aula.
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Eu gosto de pensar em variáveis como caixinhas onde eu guardo os meus dados. Quando eu escrevo
+            <pre><code data-trim data-noescape>x = 5
+</code></pre>
+            </p>
+            <p>
+                estou mandando o computador guardar o número inteiro 5 na caixinha chamada x. Se depois eu faço
+            </p>
+            <pre><code data-trim data-noescape>print(x*2)
+</code></pre>
+            <p>o computador vai olhar a caixinha do x, ver que o número 5 está guardado lá, e calcular 5*2.</p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-trim data-noescape>x = 99
+print(x*2)
+</code></pre>
+            <div id="quiz1" class="quiz"></div>
+            <button id="submit1" class="quiz-submit">responder</button>
+            <div id="results1" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "?",
+                        answers: {
+                            a: '198',
+                            b: '0000',
+                            c: '9999',
+                            d: '199',
+                        },
+                        correctAnswer: 'a'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz1');
+                var resultsContainer = document.getElementById('results1');
+                var submitButton = document.getElementById('submit1');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <p>Nos vídeos a seguir o Guanabara explica direitinho essa tal da variável, além de reforçar
+                o que já aprendemos sobre tipos de dados e sobre entrada de dados. E ensina outras coisas bem bacanas também!</p>
+            <p>Serão vários vídeos, veja de pouquinho em pouquinho. Mas lembre-se de não ficar só assistindo, escreva e execute
+            o código no seu PC ou smartphone também. E nos vídeos de exercício, pause e tente responder antes de assistir
+            à resolução, blz? ;)</p>
+        </section>
+
+        <section style="height:100%">
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 100%; overflow: hidden; max-width: 100%; width:100%} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/hdDHg1p3YVc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #003 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/PB254Cfjlyk?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #004 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/tHYxjJxtJko?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- curso python #07 - operadores aritméticos -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/Vw6gLypRKmY?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #005 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/664e0G_S9nU?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #006 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/mqcNw_dhl8I?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #007 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/_QfISzy0IKs?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #008 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/KjcdG05EAZc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #009 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/qajq3SI0QQs?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #010 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/xM4AX3Lp2mo?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #011 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/mzSJpn9ldt4?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #012 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/4MAmKOT9FeU?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #013 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/cTkivN8XcJ0?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #014 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/9l_Gay8BuAw?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+        <section style="height:100%">
+            <!-- exercício #015 -->
+            <div class='embed-container'>
+                <iframe src='https://www.youtube.com/embed/I4NYUeetLAc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe></div>
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">FIM (aleluia!!!!)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
