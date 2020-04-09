@@ -55,7 +55,7 @@
                 funciona com base em eletricidade (ohhhhh!)
             </p>
             <p>
-                Um fio elétrico
+                Um fio elétrico 🔌
                 pode estar, a qualquer momento, em um desses dois estados: com eletricidade ou sem eletricidade
             </p>
         </section>
@@ -63,11 +63,10 @@
         <section>
             <div class="slide-title">efeitos da eletricidade (1/3)</div>
             <p>
-                Se mandarmos energia para um LED, podemos acende-lo e apaga-lo
+                Se mandarmos energia para um LED, podemos acende-lo e apaga-lo. Aperte nessa bateria:
             </p>
             <div class="center">
-                <img id="led" src="ledoff2.jpg"/> <br>
-                aperte na bateria
+                <img id="led" src="ledoff2.jpg" class="no-border"/>
             </div>
             <script>
                 var ledToggle = 0;
@@ -88,7 +87,7 @@
         <section>
             <div class="slide-title">efeitos da eletricidade (2/3)</div>
             <p>
-                Se combinarmos vários LEDs, podemos formar números. Tente:
+                Se combinarmos vários LEDs, podemos formar números. Tente formar o número 5:
             </p>
 
             <!-- from http://www.3quarks.com/en/SegmentDisplay/index.html -->
@@ -184,11 +183,9 @@
         <section>
             <div class="slide-title">efeitos da eletricidade (3/3)</div>
             <p>
-                Se passarmos energia a vários quadradinhos (pixels), podemos formar imagens:
+                Já se passarmos energia a vários quadradinhos (pixels), podemos formar imagens:
             </p>
-            <div class="center">
-                <img src="pixelart.png" width="75%" class="stretch" alt="temporary image"/>
-            </div>
+                <img src="olho.png" class="stretch" alt="desenho de um olho"/>
         </section>
 
         <section data-background="#ffdd57">
@@ -225,15 +222,15 @@
             </p>
             <p>
                 Para evitar essa zona, muita coisa é
-                <b>padronizada</b>
+                <b>padronizada</b>.
             </p>
         </section>
 
         <section>
             <div class="slide-title">ASCII</div>
             <p>
-                Um padrão bem famoso é o ASCII, um padrão de caracteres que diz que <b>1000001</b> é a letra <b>A</b>, <b>1001110</b> é o <b>N</b>, e
-                assim por diante
+                Um padrão bem famoso é o <a href="https://pt.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, um padrão de caracteres que diz que <b>1000001</b> é a letra <b>A</b>, <b>1001110</b> é o <b>N</b>, e
+                assim por diante.
             </p>
             <table>
                 <tr>
@@ -279,14 +276,15 @@
         <section>
             <div class="slide-title">UNICODE</div>
             <p>
-                O UNICODE é muito usado atualmente e engloba, além de letras e números de diferentes alfabetos, os
+                O <a href="https://pt.wikipedia.org/wiki/Unicode" target="_blank">UNICODE</a> é um padrão para codificação de textos muito usado atualmente. Além de letras e números de diferentes
+                alfabetos, ele também inclui os
                 emojis!
             </p>
             <p>
-                <b>11111011001000010</b> representa uma "face levemente sorridente"
+                <b>11111011001000010</b>, por exemplo, representa uma "face levemente sorridente".
             </p>
             <div class="center">
-                <img src="smiley.png" class="stretch" alt="temporary image"/>
+                <img src="smiley.png" class="stretch no-border" alt="temporary image"/>
             </div>
 
         </section>
@@ -294,9 +292,9 @@
         <section>
             <div class="slide-title">tipos diferentes</div>
             <p>Coisas de tipos diferentes têm padrões diferentes. Por exemplo, a mesma sequência de bits (<b>1101011</b>)
-                representa a letra k, o número decimal 107, e um tom de <span style="background-color:#6a1212;color:white;padding:0 5px;">vermelho</span></p>
+                pode representar a letra k, o número decimal 107, e um tom de <span style="background-color:#6a1212;color:white;padding:0 5px;">vermelho</span></p>
             <!--cor do modo 13 do qbasic (VGA) http://www.schoolfreeware.com/QBasic_Tutorial_27_-_Screens_-_QB64.html -->
-            <p>Neste curso nós vamos trabalhar com <b>4 tipos básicos</b>:</p>
+            <p>Neste curso nós vamos trabalhar com <b>4 tipos básicos</b> do Python:</p>
             <table>
                 <tr>
                     <td>int</td>
@@ -317,12 +315,12 @@
             </table>
         </section>
 
-        <section data-background="#415e55" class="is-dark">
-            <img src="../../images/exercicios/arnold.gif" class="stretch" alt="arnold se exercitando"/>
-            <div id="exercicios" class="slide-new-section">exercícios</div>
-        </section>
+<!--        <section data-background="#415e55" class="is-dark">-->
+<!--            <img src="../../images/exercicios/arnold.gif" class="stretch" alt="arnold se exercitando"/>-->
+<!--            <div id="exercicios" class="slide-new-section">exercícios</div>-->
+<!--        </section>-->
 
-        <section>
+        <section data-background="#2196f3" class="is-dark">
             <div id="quiz" class="quiz"></div>
             <button id="submit" class="quiz-submit">responder</button>
             <div id="results" class="quiz-results"></div>
@@ -342,7 +340,7 @@
                 generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
             </script>
         </section>
-        <section>
+        <section data-background="#263963" class="is-dark">
             <div id="quiz2" class="quiz"></div>
             <button id="submit2" class="quiz-submit">responder</button>
             <div id="results2" class="quiz-results"></div>
@@ -354,7 +352,7 @@
                             a: 'corda, inteiro, flutuante, bool',
                             b: 'números, imagens, sons, vídeos',
                             c: 'letras, números, cores',
-                            d: 'string, int, float, bool',
+                            d: 'string, int, float, boolean',
                             e: 'chars, numbers, colors'
                         },
                         correctAnswer: 'd'
@@ -369,7 +367,7 @@
 
         <section>
             aprenda mais:
-            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/MGIlJ5YhF7Q"
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/DzRyXKq7I10?start=22"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
         </section>
