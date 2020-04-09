@@ -441,3 +441,8 @@ a.button6:active{
       margin:0.4em auto;
      }
 }
+
+.reveal img.no-border {
+  border: 0;
+  box-shadow: none;
+}
