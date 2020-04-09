@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Variável 2 - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>variáveis 2</h1>
+            <h4>a missão</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Eu já expliquei que gosto de pensar em variáveis como caixinhas, né? Quando eu escrevo
+            <pre><code data-trim data-noescape>x = 'Ana'
+</code></pre>
+            </p>
+            <p>
+                estou mandando o computador guardar a string 'Ana' na caixinha chamada x. Se depois eu faço
+            </p>
+            <pre><code data-trim data-noescape>print('oi,', x)
+</code></pre>
+            <p>o computador vai olhar a caixinha do x, ver que a string 'Ana' está guardada lá, e mostrar a mensagem "oi, Ana" na tela.</p>
+        </section>
+
+        <section>
+            <p>
+                O sistema operacional separa pedaços da memória para cada programa utilizar. A gente pode pensar na memória
+                do nosso programa como sendo um grande depósito, onde cabem várias caixinhas (variáveis).</p>
+            <img src="caixas.png" class="stretch"/>
+        </section>
+
+        <section>
+            <p>
+                Vamos lá! Sempre que eu escrevo algo assim:</p>
+            <pre><code data-trim data-noescape>variavel = "bla bla bla bla"</code></pre>
+            <p>isso é uma <b>atribuição</b>. O computador pega o que estiver <i>à direita</i> do sinal de igual,
+            calcula o resultado, e guarda o resultado na variável, que deve estar do <i>lado esquerdo</i> do sinal de igual. Por isso que</p>
+            <pre><code data-trim data-noescape>x = 2 + 2</code></pre>
+            <p>funciona, enquanto</p>
+            <pre><code data-trim data-noescape>2 + 2 = x</code></pre>
+            <p>não funciona.</p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            <p>Em Python, comandos como</p>
+            <pre><code data-trim data-noescape>x = 99 + 1
+</code></pre>
+            <div id="quiz1" class="quiz"></div>
+            <button id="submit1" class="quiz-submit">responder</button>
+            <div id="results1" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "são uma...",
+                        answers: {
+                            a: 'atribuição',
+                            b: 'equação',
+                            c: 'igualdade',
+                            d: 'barbaridade!',
+                        },
+                        correctAnswer: 'a'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz1');
+                var resultsContainer = document.getElementById('results1');
+                var submitButton = document.getElementById('submit1');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <p>
+                Dê uma olhadinha nesse código:</p>
+            <pre><code data-trim data-noescape>x = 2
+x = 5
+print(x)
+            </code></pre>
+            <p>se a gente pensar como na matemática, dá tilt! Como é que pode, x ser 2 e, ao mesmo tempo, ser 5??!?</p>
+            <p>Sorte a nossa que aqui não é matemática, é <b>programação</b>! O que acontece? Acompanha a explicação...</p>
+        </section>
+
+        <section>
+            <pre><code data-trim data-noescape>x = 2
+x = 5
+print(x)
+            </code></pre>
+            <p>Primeiro o computador guarda o número 2 na variável x.
+                Em seguida, o computador guarda o número 5 na variável x. E o que acontece com o 2 que estava lá? Morreu. Já era! A partir de agora, o
+                que está guardado na caixinha do x é só o número 5.</p>
+            <p>Daí que quando o computador chegar na terceira linha - print(x) - o quê que estará guardado em x <i>naquele momento</i>?</p>
+        </section>
+
+        <section>
+            <p>O que é que aparecerá na tela?</p>
+            <pre><code data-trim data-noescape>x = 2
+x = 5
+print(x)
+            </code></pre>
+            <div id="quiz2" class="quiz"></div>
+            <button id="submit2" class="quiz-submit">responder</button>
+            <div id="results2" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "",
+                        answers: {
+                            a: '2',
+                            b: '5',
+                            c: '7',
+                            d: '25',
+                            e: 'dá erro, mano!'
+                        },
+                        correctAnswer: 'b'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz2');
+                var resultsContainer = document.getElementById('results2');
+                var submitButton = document.getElementById('submit2');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>O segredo aqui é se lembrar que, via de regra, a execução do código é <b>sequencial</b>: primeiro
+            uma linha, depois outra, e mais outra, até chegar no fim. Veja esse exemplo mais cabuloso: </p>
+            <pre><code data-trim data-noescape>x = 10
+x = x + x
+print(x)
+            </code></pre>
+            <div id="quiz3" class="quiz"></div>
+            <button id="submit3" class="quiz-submit">responder</button>
+            <div id="results3" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "",
+                        answers: {
+                            a: '10',
+                            b: '20',
+                            c: '∞',
+                            d: 'agora dá erro!',
+                        },
+                        correctAnswer: 'b'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz3');
+                var resultsContainer = document.getElementById('results3');
+                var submitButton = document.getElementById('submit3');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Confuso, né? Deixa eu explicar:</p>
+            <pre><code data-trim data-noescape>x = 10
+x = x + x
+print(x)
+            </code></pre>
+            <p>Primeiro o computador guarda o 10 na variável x.
+                Em seguida... lembra que toda atribução pega o resultado da <i>direita</i> e guarda na variável da <i>esquerda</i>?
+                Então, na 2ª linha o computador vai olhar o que está do lado direito: x + x. Como x até agora vale 10, vai ficar 10 + 10, o que dá 20.
+                Daí ele faz o quê? Hein? Hein? Pega o 20 e guarda em... x. Ou seja, x agora vale 20.
+                Então na 3ª linha ele vai mostrar o vintão, que é o valor atual de x.</p>
+        </section>
+
+        <section>
+            <h1>Nomes das variáveis</h1>
+            <p>As nossas variáveis não precisam ser apenas x e y, podemos dar o nome que quisermos a elas. Isso ajuda a
+                deixar o código mais fácil de entender. </p>
+            <p>Por exemplo, se eu quero guardar em uma variável a altura de uma
+                pessoa, eu posso chama-la de <code>alturaDaPessoa</code>. Veja, mesmo sem ninguém me explicar,
+                o nome da variável já me diz o que é que está guardado nela</p>
+            <p>
+               Mas também não pode ser qualquer nome, senão vira zona. Existem regrinhas.</p>
+        </section>
+
+        <section>
+            <h1>Regras para os nomes das variáveis</h1>
+            <ul>
+                <li>Nomes de variáveis precisam começar com uma letra ou com um sub-traço ( _ )</li>
+                <li>O restante do nome pode ter apenas letras, números, e sub-traços</li>
+                <li>Não pode ser um dos seguintes nomes:
+                    <i>False; None; True; and; as; assert; break; class; continue; def; del; elif; else; except; finally; for; from; global; if; import; in; is; lambda; nonlocal; not; or; pass; raise; return; try; while; with; yield.</i>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Regras para os nomes das variáveis</h1>
+            <p>Você não precisa decorar essas regras, mas é importante saber que elas existem. Assim, quando você
+            encontrar algum erro enquanto programa, poderá pensar "hmm, será que esse erro aconteceu por que não posso usar esse nome de variável?".
+                Aí você volta aqui e confere ;)
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <div id="quiz4" class="quiz"></div>
+            <button id="submit4" class="quiz-submit">responder</button>
+            <div id="results4" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "qual desses nomes de variáveis NÃO é válido?",
+                        answers: {
+                            a: 'nomeDoAluno',
+                            b: 'aluno1',
+                            c: 'nome_da_aluna',
+                            d: '1aluna',
+                        },
+                        correctAnswer: 'd'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz4');
+                var resultsContainer = document.getElementById('results4');
+                var submitButton = document.getElementById('submit4');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>O que é que aparecerá na tela? </p>
+            <pre><code data-trim data-noescape>x = 8
+y = x + 2
+x = 5
+print(y)
+            </code></pre>
+            <div id="quiz5" class="quiz"></div>
+            <button id="submit5" class="quiz-submit">responder</button>
+            <div id="results5" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "",
+                        answers: {
+                            a: '10',
+                            b: '5',
+                            c: '7',
+                            d: 'agora dá erro?',
+                        },
+                        correctAnswer: 'a'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz5');
+                var resultsContainer = document.getElementById('results5');
+                var submitButton = document.getElementById('submit5');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Imagem original das caixas, que foi utilizada como base para representar a memória com as variáveis: <a href="https://www.vectorstock.com/royalty-free-vector/boxes-on-wooded-pallet-flat-warehouse-vector-13851717"
+                                                                                                                       target="_blank">vladwel</a>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
