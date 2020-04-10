@@ -450,4 +450,9 @@ a.button6:active{
 .reveal img.no-border {
   border: 0;
   box-shadow: none;
+  background: none;
+}
+
+.reveal .slides > section {
+  padding: 0;
 }
