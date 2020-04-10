@@ -43,18 +43,18 @@
 
         <section data-background="#00d1b2" class="is-dark">
             <p>
-                Veja esse vídeo:
+                Veja esse vídeo (9min):
             </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/_U2dhaWlKnI" frameborder="0"
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/_U2dhaWlKnI" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
             <p>
-                E esse vídeo também:
+                E esse vídeo também (8min):
             </p>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/wXTQKRJ-YT0" frameborder="0"
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/wXTQKRJ-YT0" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </section>
@@ -64,12 +64,12 @@
                 Fez os exercícios dos vídeos? Volte lá, faça mesmo, não dá para aprender programação só
                 <b>assistindo</b> a vídeos não!
             </p>
-            <img src="../../images/memes/estoudeolho.jpg" class="stretch" />
+            <img id="meme" src="../../images/memes/estoudeolho.jpg" class="stretch no-border" />
         </section>
 
         <section>
             <div class="slide-title">operadores matemáticos</div>
-            <img src="operacoes_matematicas.png" class="stretch" />
+            <img id="operacoes" src="operacoes_matematicas.png" class="stretch" />
         </section>
 
         <section>
@@ -82,8 +82,133 @@
             </ol>
         </section>
 
+        <section data-background="#00d1b2" class="is-dark">
+            Qual o resultado de
+            <pre><code data-trim data-noescape>16**1/2
+</code></pre>
+            <div id="quiz4" class="quiz"></div>
+            <button id="submit4" class="quiz-submit">responder</button>
+            <div id="results4" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "?",
+                        answers: {
+                            a: '4',
+                            b: '8',
+                            c: '16',
+                        },
+                        correctAnswer: 'b'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz4');
+                var resultsContainer = document.getElementById('results4');
+                var submitButton = document.getElementById('submit4');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-trim data-noescape>10+8+2/10-5
+</code></pre>
+            <div id="quiz5" class="quiz"></div>
+            <button id="submit5" class="quiz-submit">responder</button>
+            <div id="results5" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "?",
+                        answers: {
+                            a: '4',
+                            b: '-3',
+                            c: '13.2',
+                        },
+                        correctAnswer: 'c'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz5');
+                var resultsContainer = document.getElementById('results5');
+                var submitButton = document.getElementById('submit5');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <img src="expressao.png" class="stretch no-border">
+            <div id="quiz6" class="quiz"></div>
+            <button id="submit6" class="quiz-submit">responder</button>
+            <div id="results6" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "Qual expressão em Python é equivalente a essa expressão matemática?",
+                        answers: {
+                            a: '(50*3-2)/(8+2**(2+1))',
+                            b: '50*3-2/8+2**2+1',
+                            c: '50*3-2/8+2**(2+1)',
+                            d: '(50*(3-2))/((8+2)**(2+1))'
+                        },
+                        correctAnswer: 'a'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz6');
+                var resultsContainer = document.getElementById('results6');
+                var submitButton = document.getElementById('submit6');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <img src="expressao2.png" class="stretch no-border">
+            <div id="quiz7" class="quiz"></div>
+            <button id="submit7" class="quiz-submit">responder</button>
+            <div id="results7" class="quiz-results"></div>
+            <script>
+                var myQuestions = [
+                    {
+                        question: "Qual expressão em Python é equivalente a essa expressão matemática?",
+                        answers: {
+                            a: '(-5+(50**2-99)**(1/2))/2',
+                            b: '-5+50**2-99**1/2/2',
+                            c: '(-5+(50**2-99)**1/2)/2',
+                            d: '(-5+(50**(2-99))**(1/2))/2'
+                        },
+                        correctAnswer: 'a'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz7');
+                var resultsContainer = document.getElementById('results7');
+                var submitButton = document.getElementById('submit7');
+                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section style="height: 100%;">
+            <div style="height: 100%; flex-direction: column-reverse; display: flex">
+                <br><br>
+                <p style="text-align: right;">Ei</p>
+            </div>
+        </section>
+
+        <section style="height: 100%;">
+            <div style="height: 100%; flex-direction: column-reverse; display: flex">
+                <br><br>
+                <p style="text-align: right;">Psiu</p>
+            </div>
+        </section>
+
+        <section style="height: 100%;">
+            <div style="height: 100%; flex-direction: column-reverse; display: flex">
+                <br><br>
+                <p style="text-align: right;">Esses exercícios interativos são bons mas não substituem
+                a lista de exercícios ;)</p>
+            </div>
+        </section>
+
         <section data-background="#c6c6c6">
-            <div class="slide-title">FIM =)</div>
+            <div class="slide-title">Créditos</div>
+            <p>Meme estou de olho em você: anônimo.
         </section>
 
     </div>
@@ -108,6 +233,13 @@
         controlsBackArrows: 'visible',
         hash: true,
         hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
         dependencies: [
             {
                 src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
@@ -119,6 +251,12 @@
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#meme', 'flipInX');
+        }
+        if (event.indexh == 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#operacoes', 'flipInX');
+        }
     });
 
     // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
