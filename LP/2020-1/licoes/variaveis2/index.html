@@ -78,27 +78,10 @@
             <p>Em Python, comandos como</p>
             <pre><code data-trim data-noescape>x = 99 + 1
 </code></pre>
-            <div id="quiz1" class="quiz"></div>
-            <button id="submit1" class="quiz-submit">responder</button>
-            <div id="results1" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "são uma...",
-                        answers: {
-                            a: 'atribuição',
-                            b: 'equação',
-                            c: 'igualdade',
-                            d: 'barbaridade!',
-                        },
-                        correctAnswer: 'a'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz1');
-                var resultsContainer = document.getElementById('results1');
-                var submitButton = document.getElementById('submit1');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <div id="quiz1" class="quiz-container"
+                 data-quiz-text="são uma..."
+                data-quiz-answers='{"a": "atribuição", "b": "equação", "c": "igualdade", "d": "barbaridade!"}'
+                data-quiz-correct="a"></div>
         </section>
 
         <section>
@@ -129,28 +112,16 @@ print(x)
 x = 5
 print(x)
             </code></pre>
-            <div id="quiz2" class="quiz"></div>
-            <button id="submit2" class="quiz-submit">responder</button>
-            <div id="results2" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "",
-                        answers: {
-                            a: '2',
-                            b: '5',
-                            c: '7',
-                            d: '25',
-                            e: 'dá erro, mano!'
-                        },
-                        correctAnswer: 'b'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz2');
-                var resultsContainer = document.getElementById('results2');
-                var submitButton = document.getElementById('submit2');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <div id="quiz2" class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "2",
+                 "b": "5",
+                 "c": "7",
+                 "d": "25",
+                 "e": "dá erro, mano!"
+                 }'
+                 data-quiz-correct="b"></div>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -160,27 +131,15 @@ print(x)
 x = x + x
 print(x)
             </code></pre>
-            <div id="quiz3" class="quiz"></div>
-            <button id="submit3" class="quiz-submit">responder</button>
-            <div id="results3" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "",
-                        answers: {
-                            a: '10',
-                            b: '20',
-                            c: '∞',
-                            d: 'agora dá erro!',
-                        },
-                        correctAnswer: 'b'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz3');
-                var resultsContainer = document.getElementById('results3');
-                var submitButton = document.getElementById('submit3');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <div id="quiz3" class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "10",
+                 "b": "20",
+                 "c": "∞",
+                 "d": "agora dá erro!"
+                 }'
+                 data-quiz-correct="b"></div>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -226,28 +185,16 @@ print(x)
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
-            <div id="quiz4" class="quiz"></div>
-            <button id="submit4" class="quiz-submit">responder</button>
-            <div id="results4" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "qual desses nomes de variáveis NÃO é válido?",
-                        answers: {
-                            a: 'nomeDoAluno',
-                            b: 'aluno1',
-                            c: 'nome_da_aluna',
-                            d: '1aluna',
-                            e: '___estudante',
-                        },
-                        correctAnswer: 'd'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz4');
-                var resultsContainer = document.getElementById('results4');
-                var submitButton = document.getElementById('submit4');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <div id="quiz4" class="quiz-container"
+                 data-quiz-text="qual desses nomes de variáveis NÃO é válido?"
+                 data-quiz-answers='{
+                 "a": "nomeDoAluno",
+                 "b": "aluno1",
+                 "c": "nome_da_aluna",
+                 "d": "1aluna",
+                 "e": "___estudante"
+                 }'
+                 data-quiz-correct="d"></div>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -257,27 +204,16 @@ y = x + 2
 x = 5
 print(y)
             </code></pre>
-            <div id="quiz5" class="quiz"></div>
-            <button id="submit5" class="quiz-submit">responder</button>
-            <div id="results5" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "",
-                        answers: {
-                            a: '10',
-                            b: '5',
-                            c: '7',
-                            d: 'agora dá erro?',
-                        },
-                        correctAnswer: 'a'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz5');
-                var resultsContainer = document.getElementById('results5');
-                var submitButton = document.getElementById('submit5');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+
+            <div id="quiz5" class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "10",
+                 "b": "5",
+                 "c": "7",
+                 "d": "agora dá erro?"
+                 }'
+                 data-quiz-correct="a"></div>
         </section>
 
         <section data-background="#c6c6c6">
