@@ -3,12 +3,11 @@
 $(document).ready(function () {
     $('.quiz-container').each(function (i, quiz) {
 
-        id = $(quiz).attr('id');
+        id = 'quiz' + i;
+        $(quiz).attr('id', id);
         text = $(quiz).data('quiz-text');
         answers = $(quiz).data('quiz-answers');
         correctAnswer = $(quiz).data('quiz-correct');
-        console.log(answers);
-        console.log(answers.a);
         quizObject = {
             id: id,
             text: text,
@@ -68,7 +67,6 @@ function generateQuiz2(quiz) {
         // gather answer containers from our quiz
         var answerContainers = quizContainer.querySelectorAll('.answers');
         answerContainers = answerContainers[0];
-        console.log(answerContainers);
 
         // keep track of user's answers
         var userAnswer = '';
@@ -114,7 +112,6 @@ function generateQuiz2(quiz) {
 
     // when user clicks submit, show results
     $('#submit-' + quiz.id).click(function () {
-        console.log('clicou');
         showResult(quiz, document.getElementById(quiz.id), document.getElementById('result-' + quiz.id), this);
     });
 
@@ -174,7 +171,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
 
         // gather answer containers from our quiz
         var answerContainers = quizContainer.querySelectorAll('.answers');
-        console.log(answerContainers);
 
         // keep track of user's answers
         var userAnswer = '';
