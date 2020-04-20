@@ -456,3 +456,23 @@ a.button6:active{
 .reveal .slides > section {
   padding: 0;
 }
+
+.todo {
+  background-color: red;
+}
+
+span.codigo {
+  background-color: #3f3f3f;
+  color: white;
+  font-family: monospace;
+  padding: 0.2em;
+}
+
+div.codigo {
+  background-color: #3f3f3f;
+  color: white;
+  font-family: monospace;
+  padding: 0.2em;
+  white-space: pre;
+  width: 100%;
+}
