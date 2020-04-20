@@ -1,0 +1,8 @@
+- tabs para dividir lições/recursos
+- ? accordeon para agrupar lições
+- fazer animação em img ser aplicada por padrão
+- fazer imagens não terem borda, por padrão
+- micro-interactions https://www.google.com/search?q=css+mobile+micro+interactions&rlz=1C1GCEA_enBR834BR834&oq=css+mobile+micro+interactions&aqs=chrome..69i57j33.5440j0j7&sourceid=chrome&ie=UTF-8 
+- ? [Zoom In Circle Effect For Radio Button](https://codemyui.com/zoom-in-circle-effect-for-radio-button/)
+- ? [Play Icon To Video Animation On Click](https://codemyui.com/play-icon-to-video-animation-on-click/)
+- ? [small animations](https://dribbble.com/shots/3560884-Heart-Splash)
