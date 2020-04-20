@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>comparações numéricas - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
+
+    <link rel="stylesheet" href="toggle.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>comparação numérica</h1>
+            <h4>não é inequação</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Em Python a gente consegue escrever código assim:
+            </p>
+            <div class="codigo">x > 5</div>
+            <p>A primeira coisa que precisamos entender é que isso não é, nem tem nada a ver, com inequações
+                matemáticas! Isso é apenas uma <b>comparação</b>; estamos comparando o valor atual de x com o
+                número 5, e queremos saber se o valor atual de x é maior do que 5 ou não.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            aperte na tela para atirar e destruir o alvo
+            <p>
+                <span class="todo">jogo de tiro</span>
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>mas não é só para jogos que as comparações servem. Veja:</p>
+            <ul>
+                <li>💯 Em um sistema de boletim, queremos saber se a nota é maior ou igual a 7 para dizer se a pessoa
+                    passou ou não</li>
+                <li>📧 Em um sistema de email queremos comparar a data de recebimento dos emails, para poder vê-los do mais
+                novo para o mais antigo</li>
+                <li>🔑 Para fazer login queremos comparar se a senha que a pessoa digitou é igual à senha que está salva</li>
+        </section>
+
+        <section>
+            <p>Na prática, as comparações são perguntas que a gente manda o computador responder.</p>
+            <p style="background-color: #c4e2c4; padding: 7px">5 > 2 quer dizer: "Computador, 5 é maior do que 2?"</p>
+            <p style="background-color: #efefaf; padding: 7px">10 < 1 quer dizer: "Computador, 10 é menor do que 1?"</p>
+            <p>E só existem duas respostas possíveis para essas perguntas: <b>sim</b> ou <b>não</b></p>
+        </section>
+
+        <section>
+            <p style="background-color: #c4e2c4; padding: 7px">5 > 2 quer dizer: "Computador, 5 é maior do que 2?"
+                <br>Resposta: <b>SIM</b>, é <b>verdade</b> que 5 é maior que 2!</b></p>
+            <p style="background-color: #efefaf; padding: 7px">10 < 1 quer dizer: "Computador, 10 é menor do que 1?"
+                <br>Resposta: <b>NÃO</b>, 10 não é menor do que 1. Isso é uma mentira! Calúnia! Blasfêmia! Isso é <b>falso!!</b></p>
+            <p>E é assim que o Python vai responder pra gente: <b>True</b> ou <b>False</b>. Verdadeiro ou Falso.</p>
+        </section>
+
+        <section>
+            <p><span class="codigo">print(5 > 2)</span><br>
+            resultado: <b>True</b></p>
+            <p><span class="codigo">print(9 < 3)</span><br>
+                resultado: <b>False</b></p>
+            <p><span class="codigo">print(1 < 4)</span><br>
+                resultado: <b>True</b></p>
+            <p><span class="codigo">print(10 > 10)</span><br>
+                resultado: <b>False</b></p>
+        </section>
+
+        <section>
+            <p>Além de perguntar se um número é maior que outro, podemos perguntar se é <b>maior ou igual</b>. Na
+            matemática, o símbolo é &ge;. No Python fica assim:  <span class="codigo">&gt;=</span>
+            (os símbolos do maior e do igual, juntinhos).</p>
+            <p>Para menor ou igual, seguimos o mesmo raciocínio. Em vez de &le;, fica
+                <span class="codigo">&lt;=</span>
+                (os símbolos do menor e do igual, juntinhos).</p>
+        </section>
+
+        <section>
+            <div class="slide-title">Exemplos com maior ou igual:</div>
+
+            <p><span class="codigo">print(10 >= 10)</span><br>
+                resultado: <b>True</b></p>
+
+            <p><span class="codigo">print(2 >= 5)</span><br>
+                resultado: <b>False</b></p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(5 > -20)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#c4e2c4">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 > 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section>
+            <p>É muito comum a gente pensar que <span class="codigo">print(10 > 10)</span> dá erro por que,
+            afinal de contas, é errado que 10 é maior que 10, né? Mas quando a comparação não é verdadeira
+                o Python não dá um erro, ele apenas diz que a comparação é falsa (<b>False</b>).</p>
+            <p>💡 Essa diferença entre erro e falsidade parece frescura, mas traz uma consequência concreta:
+            quando dá erro, o Python para de executar o programa; quando dá falso, o programa não para.</p>
+        </section>
+
+        <section  data-background="#ffc000">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 <= 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(55 &ge; 20)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <p>Além das comparações maior que, menor que, maior igual, e menor igual, também
+                podemos comparar se dois valores são <b>iguais</b> ou <b>diferentes</b>.</p>
+            <p>É assim que o quiz sabe se você acertou ou não a resposta. Se a opção que
+                você respondeu é <b>igual</b> à opção correta, então acertou. Se são <b>diferentes</b>,
+            então errou.</p>
+        </section>
+
+        <section>
+            <p>Na matemática, os símbolos de igualdade e diferença são = e ≠. Mas no Python é diferente, fica assim:</p>
+            <p><span class="codigo">==</span> (dois iguais juntinhos): comparação de igualdade</p>
+            <p><span class="codigo">!=</span> (exclamação igual, juntinhos): comparação de diferença</p>
+        </section>
+
+        <section>
+            <div class="slide-title">igualdade:</div>
+            <p><span class="codigo">print(10 == 5)</span><br>
+                10 é igual a 5? Resultado: não, <b>False</b></p>
+            <p><span class="codigo">print(88 == 88)</span><br>
+                88 é igual a 88? Resultado: sim, <b>True</b></p>
+
+            <br>
+
+            <div class="slide-title">diferença:</div>
+            <p><span class="codigo">print(10 != 5)</span><br>
+                10 é diferente de 5? Resultado: sim, <b>True</b></p>
+            <p><span class="codigo">print(88 == 88)</span><br>
+                88 é diferente de 88? Resultado: não, <b>False</b></p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(5 != 5)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section  data-background="#c4e2c4">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 == 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 == 5 + 5)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            😓 Ufa, muita informação, né? O vídeo a seguir não apenas dá algumas informações a mais,
+            mas com certeza irá te ajudar a entender melhor o que tentei explicar aqui.
+        </section>
+
+        <section>
+            <p>
+                (15min)
+            </p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/sgfmuFRZuWs" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section  data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="<b>True</b> e <b>False</b> são os possíveis valores do tipo..."
+                 data-quiz-answers='{"a": "boolean", "b": "string", "c": "int", "d": "float"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <div class="slide-title">símbolos de comparação</div>
+            <img src="comparacoes.png" class="stretch">
+            <p>É muito comum esquecermos dos símbolos da comparação de igualdade e de diferença, então
+            fica atenta(o) 😉</p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de...
+            <div class="codigo">x = 3
+print(x > 0)</div>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">FIM =)</div>
+        </section>
+
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('.switch-panel label:nth-child(1)', 'delay-1s wobble');
+        }
+        if (event.indexh == 11) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#exercicios', 'bounceInUp');
+        }
+        console.log(event.indexh);//mostra no console o número do slide atual
+    });
+</script>
+</body>
+</html>
