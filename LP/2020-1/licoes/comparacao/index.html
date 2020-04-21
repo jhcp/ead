@@ -54,58 +54,11 @@
             <p>A primeira coisa que precisamos entender é que isso não é, nem tem nada a ver, com inequações
                 matemáticas! Isso é apenas uma <b>comparação</b>; estamos comparando o valor atual de x com o
                 número 5, e queremos saber se o valor atual de x é maior do que 5 ou não.</p>
+            <p>Veja a seguir alguns exemplos de aplicação das comparações.</p>
         </section>
 
-        <section style="height: 100%;" data-background="white">
-            aperte na tela para atirar e destruir o alvo
-            <p>
-                <span class="todo">jogo de tiro</span>
-            </p>
-            <div style="height: 100%;">
-                <div id="playerObj" style="position: absolute; bottom: 139px;margin:0; padding:0;">
-                    <img src="p1_walk02.png" class="no-border"  style="margin:0; padding:0;">
-                </div>
-                <div style="position: absolute; bottom: 100px;;margin:0; padding:0;">
-                    <img src="dirtMid.png" class="no-border" style="margin:0; padding:0;">
-                </div>
-            </div>
-            <script>
-                var gameFunctionId = 0;
-                function runGame() {
-                    var player = {
-                        position: {
-                            left: 0,
-                            top: $('#playerObj').offset().top
-                        },
-                        speed: {
-                            x: 1,
-                            y: 0
-                        }
-                    };
-                    function draw() {
-                        if (player.position.left > 230) {
-                            player.speed.x = -1;
-                        }
-                        if (player.position.left < 0) {
-                            player.speed.x = 1;
-                        }
-                        player.position.left += player.speed.x;
-                        // $('#playerObj');
-                        // $('#playerObj').position().left = '200px';
-                        $('#playerObj').offset(player.position);
 
-                        console.log(player.position.left);
-                        // console.log(player.x);
-                    }
-                    gameFunctionId = setInterval(draw, 10);
-                    console.log();
-                }
 
-                function stopGame() {
-                    clearInterval(gameFunctionId);
-                }
-            </script>
-        </section>
 
         <section style="height: 100%;">
             <style>
@@ -369,8 +322,99 @@
 
         <section data-background="#00d1b2" class="is-dark">
             <p>Para fazer essa classificação etária o programa executou várias comparações: a idade é maior ou igual
-            a 65 anos? Maior ou igual a 18? Maior ou igual a 14? Etc.</p>
+                a 65 anos? Maior ou igual a 18? Maior ou igual a 14? Etc.</p>
         </section>
+
+
+        <section style="height: 100%;">
+            <p>toque na tela para pular e pegar a moeda</p>
+
+            <center>
+                <canvas id="myCanvas" width="300" height="300"></canvas>
+            </center>
+            <script>
+                var gameFunctionId = 0;
+
+                function runGame() {
+                    var canvas = document.getElementById("myCanvas");
+                    $(canvas).click(jump);
+                    // canvas.width = $("#myCanvas").parent().width();
+                    // canvas.height = $("#myCanvas").parent().height()/2;
+                    var ctx = canvas.getContext("2d");
+                    var tile1 = new Image();
+                    var playerSprite = new Image();
+
+                    var player = {
+                        x: 10,
+                        y: 200,
+                        speedX: 5,
+                        speedY: 0,
+                        currentSprite: 0,
+                    };
+                    var playerSpriteNames = {
+                        right: ['p1_walk02Medium.png', 'p1_walk05Medium.png'],
+                        left: ['p1_walk02Medium_left.png', 'p1_walk05Medium_left.png'],
+                    };
+
+                    function drawPlatform() {
+                        tile1.src = 'dirtMidMedium.png';
+                        ctx.drawImage(tile1, 10, 250);
+                    }
+
+                    function drawPlayer() {
+                        if (player.speedX > 0) {
+                            playerSprite.src = playerSpriteNames.right[player.currentSprite];
+                        }
+                        else {
+                            playerSprite.src = playerSpriteNames.left[player.currentSprite];
+                        }
+                        ctx.drawImage(playerSprite, player.x, player.y);
+                    }
+
+                    function draw() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        drawPlatform();
+                        drawPlayer();
+
+                        //move the player horizontally
+                        if (player.x > 250) {
+                            player.speedX = -5;
+                        }
+                        if (player.x < 11) {
+                            player.speedX = 5;
+                        }
+                        player.x += player.speedX;
+
+                        //animate the player sprite
+                        player.currentSprite = (player.currentSprite + 1) % 2;
+
+                        //move the player vertically
+                        if (player.speedY != 0) {
+                            player.speedY += 2;
+                            player.y += player.speedY;
+                        }
+                        if (player.y + player.speedY >= 200) {
+                            player.speedY = 0;
+                            player.y = 200;
+                        }
+
+                    }
+
+                    function jump() {
+                        console.log('jump!');
+                        player.speedY = -20.3;
+                    }
+
+                    gameFunctionId = setInterval(draw, 100);
+                }
+
+                function stopGame() {
+                    clearInterval(gameFunctionId);
+                }
+            </script>
+        </section>
+
+
 
         <section>
             <p>mas não é só para jogos que as comparações servem. Veja:</p>
@@ -608,10 +652,10 @@ print(x > 0)</div>
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
-        if (event.indexh === 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        if (event.indexh === 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
             runGame();
         }
-        if (event.indexh !== 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        if (event.indexh !== 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
             stopGame();
         }
     });
