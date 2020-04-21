@@ -458,12 +458,12 @@
 
                     function jump() {
                         if (player.jumpNumber < 3) {
-                            console.log('jump!');
                             player.speedY = -8.3;
                             player.jumpNumber++;
                         }
                     }
 
+                    $('#score-text').html(0);
                     gameRunning = true;
                     window.requestAnimationFrame(draw);
                     // gameFunctionId = setInterval(draw, 100);
