@@ -22,10 +22,13 @@
     <!-- Theme used for syntax highlighting of code -->
     <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
 
-    <link rel="stylesheet" href="toggle.css">
-
     <script src="../../lib/js/jquery.min.js"></script>
     <script src="../../js/materialdeapoio.js"></script>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
 </head>
 <body>
 <div class="reveal">
@@ -53,11 +56,294 @@
                 número 5, e queremos saber se o valor atual de x é maior do que 5 ou não.</p>
         </section>
 
-        <section data-background="#ffdd57">
+        <section style="height: 100%;" data-background="white">
             aperte na tela para atirar e destruir o alvo
             <p>
                 <span class="todo">jogo de tiro</span>
             </p>
+            <div style="height: 100%;">
+                <div id="playerObj" style="position: absolute; bottom: 139px;margin:0; padding:0;">
+                    <img src="p1_walk02.png" class="no-border"  style="margin:0; padding:0;">
+                </div>
+                <div style="position: absolute; bottom: 100px;;margin:0; padding:0;">
+                    <img src="dirtMid.png" class="no-border" style="margin:0; padding:0;">
+                </div>
+            </div>
+            <script>
+                var gameFunctionId = 0;
+                function runGame() {
+                    var player = {
+                        position: {
+                            left: 0,
+                            top: $('#playerObj').offset().top
+                        },
+                        speed: {
+                            x: 1,
+                            y: 0
+                        }
+                    };
+                    function draw() {
+                        if (player.position.left > 230) {
+                            player.speed.x = -1;
+                        }
+                        if (player.position.left < 0) {
+                            player.speed.x = 1;
+                        }
+                        player.position.left += player.speed.x;
+                        // $('#playerObj');
+                        // $('#playerObj').position().left = '200px';
+                        $('#playerObj').offset(player.position);
+
+                        console.log(player.position.left);
+                        // console.log(player.x);
+                    }
+                    gameFunctionId = setInterval(draw, 10);
+                    console.log();
+                }
+
+                function stopGame() {
+                    clearInterval(gameFunctionId);
+                }
+            </script>
+        </section>
+
+        <section style="height: 100%;">
+            <style>
+                div.Range {
+                    height: 200px;
+                    margin: 1em 0;
+                }
+
+                /**
+                 * Restyle the range slider
+                 */
+                .noUi-target {
+                    width: 6px;
+                }
+
+                .noUi-base {
+                    margin-left: 22px;
+                    background: #e4dfd3;
+                }
+
+                .noUi-pips-vertical {
+                    top: 0;
+                    left: calc(100% + 16px);
+                    height: 100%;
+                    padding: 0 10px;
+                }
+
+                .noUi-origin {
+                    background: #fe9996;
+                }
+
+                .noUi-handle {
+                    left: -2px;
+                    top: 0;
+                    height: 20px;
+                    width: 20px;
+                    border: none;
+                    border-radius: 50%;
+                    background: #fe9996;
+                    -webkit-transform: translateX(-100%) translateY(-50%);
+                    transform: translateX(-100%) translateY(-50%);
+                    box-shadow: none;
+                }
+                .noUi-handle::before {
+                    display: none;
+                }
+                .noUi-handle::after {
+                    position: absolute;
+                    top: 50%;
+                    right: 2px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 7px 0 7px 5px;
+                    border-color: transparent transparent transparent #fe9996;
+                    background: transparent;
+                    -webkit-transform: translateX(100%) translateY(-50%);
+                    transform: translateX(100%) translateY(-50%);
+                    content: "";
+                }
+
+                .noUi-value {
+                    display: none;
+                }
+
+                .noUi-marker,
+                .noUi-marker-large {
+                    width: 10px;
+                    height: 2px;
+                    margin-top: -1px;
+                    background: #e4dfd3;
+                    -webkit-transform-origin: left;
+                    transform-origin: left;
+                    -webkit-transition: 0.2s -webkit-transform ease;
+                    transition: 0.2s -webkit-transform ease;
+                    transition: 0.2s transform ease;
+                    transition: 0.2s transform ease, 0.2s -webkit-transform ease;
+                }
+
+                /**
+                 * Modifiers to highlight the markers
+                 */
+                .noUi-marker--is-inRange,
+                .noUi-marker--is-current {
+                    background: #fe9996;
+                }
+
+                .noUi-marker--is-current {
+                    -webkit-transform: scaleX(2);
+                    transform: scaleX(2);
+                }
+
+                /**
+                 * Resets and presentational style
+                 */
+                *,
+                *::before,
+                *::after {
+                    box-sizing: border-box;
+                }
+
+                html,
+                body {
+                    height: 100%;
+                }
+
+                body {
+                    display: -webkit-box;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                }
+
+                /**
+                 * Default style from noUiSlider, but removed all unused styles
+                 */
+                .noUi-base {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .noUi-target,
+                .noUi-target * {
+                    touch-action: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    box-sizing: border-box;
+                }
+
+                .noUi-target {
+                    position: relative;
+                    direction: ltr;
+                }
+
+                .noUi-origin {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .noUi-handle {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .noUi-state-tap .noUi-origin {
+                    -webkit-transition: left 0.3s, top 0.3s;
+                    transition: left 0.3s, top 0.3s;
+                }
+
+                .noUi-state-drag * {
+                    cursor: inherit !important;
+                }
+
+                .noUi-pips,
+                .noUi-marker {
+                    position: absolute;
+                }
+
+            </style>
+
+
+            <center>
+                <span id="classificacao">bebê</span>
+                <div class="Range" data-js="range-slider"></div>
+                <span>idade: <span id="range-label">0</span> anos</span>
+                </center>
+            <script>
+                "use strict";
+
+                /**
+                 * Inspired by Flat Sliders from Ana Tudor
+                 * https://www.smashingmagazine.com/2016/04/inspiring-ui-demos-logins-menus-toggles-and-more/#pure-css-flat-sliders
+                 * https://codepen.io/thebabydino/pen/RNEEZP
+                 */
+                var rangeSlider = document.querySelector('[data-js="range-slider"]');
+                var minRange = 0;
+                var maxRange = 100;
+                noUiSlider.create(rangeSlider, {
+                    range: {
+                        'min': [minRange],
+                        'max': [maxRange]
+                    },
+                    start: 0,
+                    orientation: 'vertical',
+                    direction: 'rtl',
+                    pips: {
+                        mode: 'range',
+                        density: 3
+                    }
+                });
+
+                function mapRange(value, low1, high1, low2, high2) {
+                    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+                }
+                /**
+                 * Set the state of the markers
+                 */
+
+
+                function setMarkers() {
+                    var pips = document.querySelectorAll('.noUi-marker');
+                    var currentValue = rangeSlider.noUiSlider.get();
+                    var mappedValue = Math.round(mapRange(currentValue, minRange, maxRange, 0, pips.length - 1));
+
+                    for (var i = 0; i < pips.length; i++) {
+                        pips[i].classList.remove('noUi-marker--is-current');
+                        pips[i].classList.remove('noUi-marker--is-inRange');
+                    }
+
+                    for (var _i = 0; _i < mappedValue; _i++) {
+                        ;
+
+                        pips[_i].classList.add('noUi-marker--is-inRange');
+                    }
+
+                    pips[mappedValue].classList.add('noUi-marker--is-current');
+                    var roundedValue = Math.floor(currentValue);
+                    if (roundedValue >= 18) {
+                        $('#classificacao').html('adulto(a)');
+                    }
+                    else {
+                        $('#classificacao').html('bebê');
+                    }
+                    $('#range-label').html(roundedValue);
+                }
+
+                rangeSlider.noUiSlider.on('slide', setMarkers);
+                setMarkers();
+            </script>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -292,13 +578,12 @@ print(x > 0)</div>
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
-        if (event.indexh == 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-            animateCSS('.switch-panel label:nth-child(1)', 'delay-1s wobble');
+        if (event.indexh === 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            runGame();
         }
-        if (event.indexh == 11) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-            animateCSS('#exercicios', 'bounceInUp');
+        if (event.indexh !== 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            stopGame();
         }
-        console.log(event.indexh);//mostra no console o número do slide atual
     });
 </script>
 </body>
