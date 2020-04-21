@@ -239,3 +239,7 @@ function animateCSS(element, animationName, callback) {
         if (typeof callback === 'function') callback();
     }
 }
+
+function randomInt(upperLimit) {
+    return Math.floor(Math.random() * (upperLimit + 1));
+}
