@@ -323,42 +323,66 @@
         <section data-background="#00d1b2" class="is-dark">
             <p>Para fazer essa classificação etária o programa executou várias comparações: a idade é maior ou igual
                 a 65 anos? Maior ou igual a 18? Maior ou igual a 14? Etc.</p>
+            <p>Esse foi um exemplo de uso das comparações em sistemas normais do dia a dia. Que tal ver um exemplo
+            de jogo?</p>
         </section>
 
 
         <section style="height: 100%;">
-            <p>toque na tela para pular e pegar a moeda</p>
+            <p>toque na plataforma para pular e pegar o diamante</p>
 
             <center>
-                <canvas id="myCanvas" width="300" height="300"></canvas>
+                <div style="font-family: monospace; color:#666"><span id="score-text">0</span> pontos</div>
+                <canvas id="myCanvas" width="300" height="400"></canvas>
             </center>
             <script>
-                var gameFunctionId = 0;
-
                 function runGame() {
                     var canvas = document.getElementById("myCanvas");
                     $(canvas).click(jump);
-                    // canvas.width = $("#myCanvas").parent().width();
-                    // canvas.height = $("#myCanvas").parent().height()/2;
                     var ctx = canvas.getContext("2d");
                     var tile1 = new Image();
                     var playerSprite = new Image();
+                    var itemSprite = new Image();
+
 
                     var player = {
                         x: 10,
                         y: 200,
-                        speedX: 5,
+                        speedXdefault: 2,
+                        speedYdefault: 0.3,
+                        speedX: 2,
+                        // speedX: 5,
                         speedY: 0,
                         currentSprite: 0,
+                        jumpNumber: 0,
+                        spriteFrameCounter: 0,
                     };
                     var playerSpriteNames = {
                         right: ['p1_walk02Medium.png', 'p1_walk05Medium.png'],
                         left: ['p1_walk02Medium_left.png', 'p1_walk05Medium_left.png'],
                     };
 
+                    /* x de  0 a 250
+                    *  y de 0 a 200 */
+                    var item = {
+                        x: 90,
+                        y: 100,
+                        isVisible: true,
+                    };
+
+                    var score = 0;
+                    var gameRunning = false;
+
                     function drawPlatform() {
                         tile1.src = 'dirtMidMedium.png';
                         ctx.drawImage(tile1, 10, 250);
+                    }
+
+                    function drawItem() {
+                        if (item.isVisible) {
+                            itemSprite.src = 'gemBlue.png';
+                            ctx.drawImage(itemSprite, item.x, item.y);
+                        }
                     }
 
                     function drawPlayer() {
@@ -375,41 +399,78 @@
                         ctx.clearRect(0, 0, canvas.width, canvas.height);
                         drawPlatform();
                         drawPlayer();
+                        drawItem();
+
 
                         //move the player horizontally
                         if (player.x > 250) {
-                            player.speedX = -5;
+                            player.speedX = -player.speedXdefault;
                         }
                         if (player.x < 11) {
-                            player.speedX = 5;
+                            player.speedX = player.speedXdefault;
                         }
                         player.x += player.speedX;
 
                         //animate the player sprite
-                        player.currentSprite = (player.currentSprite + 1) % 2;
+                        player.spriteFrameCounter++;
+                        if (player.spriteFrameCounter % 5 === 0) {
+                            player.currentSprite = (player.currentSprite + 1) % 2;
+                            player.spriteFrameCounter = 0;
+                        }
 
                         //move the player vertically
                         if (player.speedY != 0) {
-                            player.speedY += 2;
+                            player.speedY += player.speedYdefault;
                             player.y += player.speedY;
                         }
                         if (player.y + player.speedY >= 200) {
+                            //reached the ground
                             player.speedY = 0;
                             player.y = 200;
+                            player.jumpNumber = 0;
                         }
 
+                        if (checkCollisition()) {
+                            if (item.isVisible) {
+                                score += 10;
+                                $('#score-text').html(score);
+                            }
+                            item.isVisible = false;
+                            item.x = Math.floor(Math.random() * 251);
+                            item.y = Math.floor(Math.random() * 201);
+                            setTimeout(function () {
+                                item.isVisible = true;
+                            }, 300)
+                        }
+
+                        if (gameRunning) window.requestAnimationFrame(draw);
+                    }
+
+                    function checkCollisition() {
+                        var result = false;
+                        if (player.x + 30 > item.x && player.x < item.x + 35) {
+                            if (player.y < item.y + 20 && player.y + 47 > item.y) {
+                                result = true;
+                            }
+                        }
+                        return result;
                     }
 
                     function jump() {
-                        console.log('jump!');
-                        player.speedY = -20.3;
+                        if (player.jumpNumber < 3) {
+                            console.log('jump!');
+                            player.speedY = -8.3;
+                            player.jumpNumber++;
+                        }
                     }
 
-                    gameFunctionId = setInterval(draw, 100);
+                    gameRunning = true;
+                    window.requestAnimationFrame(draw);
+                    // gameFunctionId = setInterval(draw, 100);
                 }
 
                 function stopGame() {
-                    clearInterval(gameFunctionId);
+                    gameRunning = false;
                 }
             </script>
         </section>
@@ -616,6 +677,7 @@ print(x > 0)</div>
             <p>range slider vertical: <a href="https://codepen.io/qkevinto/pen/KzxMdj"
                                                       target="_blank">Kevin</a>
             </p>
+            <p>imagens utilizadas no jogo: <a href="https://opengameart.org/content/platformer-art-deluxe" target="_blank">Kenney.nl</a> </p>
         </section>
 
 
