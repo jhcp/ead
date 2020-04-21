@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>comparação textual - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>comparação textual</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Ok, vamos começar com um desafio: coloque essas palavras na ordem correta:
+            </p>
+            <p class="todo">fazer lista</p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>O Python faz comparações de textos (string) com base na ordem lexicográfica - isto é, a ordem
+            do dicionário. Isso é utilizado, por exemplo, para colocar os seus contatos em ordem na agenda do celular.</p>
+            <p>Os símbolos < e >, quando comparamos strings, querem dizer "a string vem antes ou depois no dicionário?".
+            Se vem antes é menor, se vem depois é maior.</p>
+        </section>
+
+        <section>
+            <p><span class="codigo">print('a' < 'f')</span><br>
+                resultado: <b>True</b>, o que quer dizer que 'a' vem antes de 'f'</p>
+            <p><span class="codigo">print('a' > 'f')</span><br>
+                resultado: <b>False</b>, o que quer dizer que 'a' <b>não</b> vem depois de 'f'</p>
+            <p><span class="codigo">print('s' > 'm')</span><br>
+                resultado: <b>True</b>, o que quer dizer que 's' vem depois de 'm'</p>
+            <p><span class="codigo">print('x' > 'z')</span><br>
+                resultado: <b>False</b>, o que quer dizer que 'x' <b>não</b> vem depois de 'z'</p>
+        </section>
+
+        <section data-background="#131418" class="is-dark">
+            <style>
+                .game-button {
+                    background-color: #25f7bb;
+                    color: black;
+                    font-family: monospace;
+                    font-size: 60px;
+                    background-color: #297;
+                    color: #fff;
+                    border: 0;
+                    border-radius: 4px;
+                    padding: 20px;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                    width: 80%;
+                    /*height: 100px;*/
+                }
+                .game-button.white {
+                    background-color: white;
+                    color: black;
+                }
+
+                .invisible {
+                    display: none;
+                }
+
+                .scene {
+                    /*width: 200px;*/
+                    /*height: 260px;*/
+                    perspective: 600px;
+                    color: black;
+
+                }
+
+                .card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transition: transform 1s;
+                    transform-style: preserve-3d;
+                }
+
+                div.card__face {
+                    position: absolute;
+                    /*height: 100%;*/
+                    width: 100%;
+                    backface-visibility: hidden;
+                    padding: 20px 0;
+                }
+
+                .card__face--front {
+                    background: #e2e2e2;
+                    border-radius: 15px;
+                }
+
+                .card__face--back {
+                    background: #1a53a1;
+                    color: white;
+                    transform: rotateY( 180deg );
+                    border-radius: 15px;
+                }
+
+                .card.is-flipped {
+                    transform: rotateY(180deg);
+                }
+
+
+            </style>
+
+            <span id="jogo1rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo1card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            quem é "maior"<br>
+                            <button id="jogo1botao0" class="game-button" onclick="responder(1,0)">"<span>a</span>"</button><br>
+                            ou<br>
+                            <button id="jogo1botao1" class="game-button" onclick="responder(1,1)">"<span>b</span>"</button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            "<span id="jogo1opcaomaior">b</span>" é <u>maior</u> do que "<span id="jogo1opcaomenor">a</span>"<br><br>
+                        <button id="jogo1ok" class="game-button white" onclick="proxima(1)">ok</button><br>
+                        <button id="jogo1reiniciar" class="game-button white invisible" onclick="proxima(1)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                var opcoes = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+                     's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+                var respostas = ['a', 'b'];
+                var rodada = 1;
+
+                function responder(jogo, resposta) {
+                    var botaoApertado = document.getElementById('jogo' + jogo + 'botao' + resposta);
+
+                    if (respostas[resposta] > respostas[1-resposta]) {
+                        // alert('certo!');
+                        // animateCSS(botaoApertado, 'rubberBand');
+                        $('#jogo' + jogo + 'opcaomaior').html(respostas[resposta]);
+                        $('#jogo' + jogo + 'opcaomenor').html(respostas[1-resposta]);
+                        if (rodada >= 5) {
+                            $('#jogo' + jogo + 'ok').toggleClass('invisible');
+                            $('#jogo' + jogo + 'reiniciar').toggleClass('invisible');
+                        }
+                        $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                    }
+                    else {
+                        // alert('errado!');
+                        animateCSS(botaoApertado, 'shake');
+                    }
+                }
+
+                function proxima(jogo) {
+                    if (rodada < 5) {
+                        rodada += 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada);
+
+                        var sorteio1 = randomInt(opcoes.length - 1);
+                        var sorteio2 = randomInt(opcoes.length - 1);
+                        while (sorteio2 === sorteio1) {
+                            console.log('havia sorteado igual')
+                            sorteio2 = randomInt(opcoes.length - 1);
+                        }
+                        respostas[0] = opcoes[sorteio1];
+                        respostas[1] = opcoes[sorteio2];
+                        $('#jogo' + jogo + 'botao0 span').html(respostas[0]);
+                        $('#jogo' + jogo + 'botao1 span').html(respostas[1]);
+
+                    }
+                    else {
+                        rodada = 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada);
+                        $('#jogo' + jogo + 'ok').toggleClass('invisible');
+                        $('#jogo' + jogo + 'reiniciar').toggleClass('invisible');
+                    }
+                    $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                }
+
+            </script>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Para saber se uma string é "maior" ou "menor" que outra o Python vai comparar as duas strings
+                caractere por caractere.</p>
+            <p>Ou seja, ele compara o primeiro caractere de uma string com o primeiro caractere da outra string.
+            Se um caractere for "menor" que o outro, então aquela string é "menor" também. Se forem iguais, o Python
+            passa para o próximo caractere: compara o segundo caractere de uma string com o segundo caractere
+                da outra string</p>
+        </section>
+
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>range slider vertical: <a href="https://codepen.io/qkevinto/pen/KzxMdj"
+                                                      target="_blank">Kevin</a>
+            </p>
+            <p>imagens utilizadas no jogo: <a href="https://opengameart.org/content/platformer-art-deluxe" target="_blank">Kenney.nl</a> </p>
+        </section>
+
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        // if (event.indexh === 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        //     runGame();
+        // }
+        // if (event.indexh !== 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        //     stopGame();
+        // }
+    });
+</script>
+</body>
+</html>
