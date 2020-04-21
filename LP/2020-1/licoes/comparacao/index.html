@@ -321,15 +321,16 @@
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
-            <p>Para fazer essa classificação etária o programa executou várias comparações: a idade é maior ou igual
+            <p>Para fazer essa classificação etária o programa executou várias comparações numéricas: a idade é maior ou igual
                 a 65 anos? Maior ou igual a 18? Maior ou igual a 14? Etc.</p>
+            <br>
             <p>Esse foi um exemplo de uso das comparações em sistemas normais do dia a dia. Que tal ver um exemplo
             de jogo?</p>
         </section>
 
 
         <section style="height: 100%;">
-            <p>toque na plataforma para pular e pegar o diamante</p>
+            <p>toque abaixo da plataforma para pular e pegar os diamantes</p>
 
             <center>
                 <div style="font-family: monospace; color:#666"><span id="score-text">0</span> pontos</div>
@@ -476,6 +477,33 @@
         </section>
 
 
+<!--        <section>-->
+<!--            <p>para o jogo funcionar são necessárias várias comparações</p>-->
+<!--            <p><img src="p1_walk02Medium.png" class="no-border">-->
+<!--            comparação da posição do boneco-->
+<!--                com os limites da plataforma, para ele não cair.</p>-->
+<!--            <p>comparação da quantidade de pulos com o limite de pulos</p>-->
+<!--            <p><img src="gemBlue.png" class="no-border">-->
+<!--            comparação da posição do boneco com a posição do diamante,-->
+<!--            para saber se o boneco o alcançou.</p>-->
+<!--        </section>-->
+
+        <section>
+            para o jogo funcionar são necessárias várias comparações:
+            <p>
+                <b>para saber quando o boneco dá a volta:</b>
+                a posição x do boneco é maior que o limite direito da plataforma
+                e menor que o limite esquerdo?
+            </p>
+            <p><b>para saber quando o boneco pode pular:</b>
+                a quantidade de pulos é menor do que 3?
+                a posição y do boneco é menor do que o limite superior da plataforma?
+            </p>
+            <p>
+                <b>para saber se o boneco pegou o item:</b> as posições x e y do boneco estão dentro dos limites da posição
+                do diamante?</p>
+            <img src="p1_walk02Medium.png" class="no-border"> <img src="gemBlue.png" class="no-border">
+        </section>
 
         <section>
             <p>mas não é só para jogos que as comparações servem. Veja:</p>
