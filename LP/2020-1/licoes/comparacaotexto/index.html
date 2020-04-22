@@ -24,11 +24,11 @@
 
     <script src="../../lib/js/jquery.min.js"></script>
     <script src="../../js/materialdeapoio.js"></script>
+    <script src="../../lib/js/Sortable.js"></script>
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
-
         <section>
             <h1>comparação textual</h1>
             <h4></h4>
@@ -42,10 +42,52 @@
         </section>
 
         <section>
+            <style>
+                div.list-group-item {
+                    background-color: #6ca0e8;
+                    padding: 20px;
+                    margin: 20px;
+                    color: black;
+                }
+                div.ghost-background-class {
+                    background-color: #1a53a1;
+                    color: white;
+                }
+            </style>
             <p>
-                Ok, vamos começar com um desafio: coloque essas palavras na ordem correta:
+                Ok, vamos começar com um desafio: coloque essas palavras na ordem correta
             </p>
-            <p class="todo">fazer lista</p>
+            <div id="example1" class="list-group col">
+                <div class="list-group-item" data-order="3">Melancia</div>
+                <div class="list-group-item" data-order="1">Banana</div>
+                <div class="list-group-item" data-order="2">Laranja</div>
+                <div class="list-group-item" data-order="0">Acerola</div>
+                <div id="result-order" class="invisible" style="padding-left: 20px;">Parabéns! Pode continuar =)</div>
+            </div>
+
+            <script>
+                new Sortable(example1, {
+                    animation: 150,
+                    ghostClass: 'ghost-background-class',
+                    onEnd: function () {
+                        var isCorrect = true;
+                        $('.list-group-item').each(function (i, o) {
+                            if ( i != $(o).data('order') ) {
+                                isCorrect = false;
+                            }
+                        });
+                        if (isCorrect) {
+                            $('#result-order').removeClass('invisible');
+                            animateCSS($('#example1'), 'tada');
+                            // animateCSS($('#result-order'), 'flipInY');
+                        }
+                        else {
+                            $('#result-order').addClass('invisible');
+                        }
+                        console.log(isCorrect);
+                    }
+                });
+            </script>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -88,8 +130,16 @@
                     background-color: white;
                     color: black;
                 }
+                .game-button.small {
+                    font-size: 30px;
+                }
 
                 .invisible {
+                    /*display: none;*/
+                    visibility:hidden;
+                }
+
+                .pretend-im-not-here {
                     display: none;
                 }
 
@@ -133,7 +183,6 @@
                     transform: rotateY(180deg);
                 }
 
-
             </style>
 
             <span id="jogo1rodada-text">1</span>/5
@@ -154,7 +203,7 @@
                             <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
                             "<span id="jogo1opcaomaior">b</span>" é <u>maior</u> do que "<span id="jogo1opcaomenor">a</span>"<br><br>
                         <button id="jogo1ok" class="game-button white" onclick="proxima(1)">ok</button><br>
-                        <button id="jogo1reiniciar" class="game-button white invisible" onclick="proxima(1)">jogar de novo</button><br>
+                        <button id="jogo1reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(1)">jogar de novo</button><br>
                         </center>
                     </div>
                 </div>
@@ -164,7 +213,8 @@
 
 
             <script>
-                var opcoes = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
+                var opcoes = [];
+                opcoes[1] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                      's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
                 var respostas = ['a', 'b'];
                 var rodada = 1;
@@ -178,8 +228,8 @@
                         $('#jogo' + jogo + 'opcaomaior').html(respostas[resposta]);
                         $('#jogo' + jogo + 'opcaomenor').html(respostas[1-resposta]);
                         if (rodada >= 5) {
-                            $('#jogo' + jogo + 'ok').toggleClass('invisible');
-                            $('#jogo' + jogo + 'reiniciar').toggleClass('invisible');
+                            $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                            $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
                         }
                         $('#jogo' + jogo + 'card').toggleClass('is-flipped');
                     }
@@ -194,14 +244,14 @@
                         rodada += 1;
                         $('#jogo' + jogo + 'rodada-text').html(rodada);
 
-                        var sorteio1 = randomInt(opcoes.length - 1);
-                        var sorteio2 = randomInt(opcoes.length - 1);
+                        var sorteio1 = randomInt(opcoes[jogo].length - 1);
+                        var sorteio2 = randomInt(opcoes[jogo].length - 1);
                         while (sorteio2 === sorteio1) {
                             console.log('havia sorteado igual')
-                            sorteio2 = randomInt(opcoes.length - 1);
+                            sorteio2 = randomInt(opcoes[jogo].length - 1);
                         }
-                        respostas[0] = opcoes[sorteio1];
-                        respostas[1] = opcoes[sorteio2];
+                        respostas[0] = opcoes[jogo][sorteio1];
+                        respostas[1] = opcoes[jogo][sorteio2];
                         $('#jogo' + jogo + 'botao0 span').html(respostas[0]);
                         $('#jogo' + jogo + 'botao1 span').html(respostas[1]);
 
@@ -209,8 +259,8 @@
                     else {
                         rodada = 1;
                         $('#jogo' + jogo + 'rodada-text').html(rodada);
-                        $('#jogo' + jogo + 'ok').toggleClass('invisible');
-                        $('#jogo' + jogo + 'reiniciar').toggleClass('invisible');
+                        $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                        $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
                     }
                     $('#jogo' + jogo + 'card').toggleClass('is-flipped');
                 }
@@ -228,14 +278,52 @@
         </section>
 
 
+        <section data-background="#131418" class="is-dark">
+
+            <span id="jogo2rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo2card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            quem é "maior"<br>
+                            <button id="jogo2botao0" class="game-button small" onclick="responder(2,0)">"<span>caseira</span>"</button><br>
+                            ou<br>
+                            <button id="jogo2botao1" class="game-button small" onclick="responder(2,1)">"<span>casual</span>"</button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            "<span id="jogo2opcaomaior">b</span>" é <u>maior</u> do que "<span id="jogo2opcaomenor">a</span>"<br><br>
+                            <button id="jogo2ok" class="game-button white" onclick="proxima(2)">ok</button><br>
+                            <button id="jogo2reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(2)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                opcoes[2] = ['engenharia', 'amor', 'estudo', 'dedicação', 'fé', 'força', 'empenho', 'ouro', 'deeef', 'defaa'];
+                var respostas = ['caseira', 'casual'];
+                var rodada = 1;
+
+
+            </script>
+        </section>
+
 
 
         <section data-background="#c6c6c6">
             <div class="slide-title">Créditos</div>
-            <p>range slider vertical: <a href="https://codepen.io/qkevinto/pen/KzxMdj"
-                                                      target="_blank">Kevin</a>
+            <p>animação Card flip: <a href="https://3dtransforms.desandro.com/card-flip"
+                                                      target="_blank">David DeSandro</a>
             </p>
-            <p>imagens utilizadas no jogo: <a href="https://opengameart.org/content/platformer-art-deluxe" target="_blank">Kenney.nl</a> </p>
+
         </section>
 
 
@@ -244,6 +332,7 @@
 
 <script src="../../lib/js/head.min.js"></script>
 <script src="../../lib/js/reveal.js"></script>
+
 <!--<script src="../../lib/js/mo.min.js"></script>-->
 <!--<script src="../../lib/js/mo-icons.js"></script>-->
 
