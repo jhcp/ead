@@ -214,20 +214,25 @@
 
             <script>
                 var opcoes = [];
+                var respostasIniciais = [];
+                var respostas = [];
+                var rodada = [];
+
                 opcoes[1] = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
                      's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-                var respostas = ['a', 'b'];
-                var rodada = 1;
+                respostasIniciais[1] = ['a', 'b'];
+                rodada[1] = 1;
 
                 function responder(jogo, resposta) {
                     var botaoApertado = document.getElementById('jogo' + jogo + 'botao' + resposta);
+                    respostas = respostasIniciais[jogo];
 
                     if (respostas[resposta] > respostas[1-resposta]) {
                         // alert('certo!');
                         // animateCSS(botaoApertado, 'rubberBand');
                         $('#jogo' + jogo + 'opcaomaior').html(respostas[resposta]);
                         $('#jogo' + jogo + 'opcaomenor').html(respostas[1-resposta]);
-                        if (rodada >= 5) {
+                        if (rodada[jogo] >= 5) {
                             $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
                             $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
                         }
@@ -240,41 +245,51 @@
                 }
 
                 function proxima(jogo) {
-                    if (rodada < 5) {
-                        rodada += 1;
-                        $('#jogo' + jogo + 'rodada-text').html(rodada);
-
-                        var sorteio1 = randomInt(opcoes[jogo].length - 1);
-                        var sorteio2 = randomInt(opcoes[jogo].length - 1);
-                        while (sorteio2 === sorteio1) {
-                            console.log('havia sorteado igual')
-                            sorteio2 = randomInt(opcoes[jogo].length - 1);
-                        }
-                        respostas[0] = opcoes[jogo][sorteio1];
-                        respostas[1] = opcoes[jogo][sorteio2];
-                        $('#jogo' + jogo + 'botao0 span').html(respostas[0]);
-                        $('#jogo' + jogo + 'botao1 span').html(respostas[1]);
-
+                    respostas = respostasIniciais[jogo];
+                    if (rodada[jogo] < 5) {
+                        rodada[jogo] += 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
                     }
                     else {
-                        rodada = 1;
-                        $('#jogo' + jogo + 'rodada-text').html(rodada);
+                        rodada[jogo] = 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
                         $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
                         $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
                     }
                     $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+
+                    var sorteio1 = randomInt(opcoes[jogo].length - 1);
+                    var sorteio2 = randomInt(opcoes[jogo].length - 1);
+                    while (sorteio2 === sorteio1) {
+                        console.log('havia sorteado igual')
+                        sorteio2 = randomInt(opcoes[jogo].length - 1);
+                    }
+                    respostas[0] = opcoes[jogo][sorteio1];
+                    respostas[1] = opcoes[jogo][sorteio2];
+                    $('#jogo' + jogo + 'botao0 span').html(respostas[0]);
+                    $('#jogo' + jogo + 'botao1 span').html(respostas[1]);
                 }
 
             </script>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
-            <p>Para saber se uma string é "maior" ou "menor" que outra o Python vai comparar as duas strings
-                caractere por caractere.</p>
-            <p>Ou seja, ele compara o primeiro caractere de uma string com o primeiro caractere da outra string.
-            Se um caractere for "menor" que o outro, então aquela string é "menor" também. Se forem iguais, o Python
-            passa para o próximo caractere: compara o segundo caractere de uma string com o segundo caractere
-                da outra string</p>
+            <p>Ok, acho que você já entendeu o que acontece quando as strings só têm 1 caractere. Mas o que acontece
+                quando as strings têm vários caracteres? Por exemplo: "areia" e "arenoso", quem é <i>menor</i>?
+                Quem é <i>maior</i>?</p>
+            <p>Na pressa, a gente pode pensar: "arenoso é uma palavra mais longa, então ela é maior".
+            Só que quando a gente compara strings, <i>menor</i> e <i>maior</i> querem dizer "vem antes ou
+                vem depois?", lembra?</p>
+            <p>Então... como é que funciona?</p>
+        </section>
+
+        <section>
+            <p>Funciona assim: o Python compara as duas strings caractere por caractere. Veja esses exemplos
+            do vídeo:</p>
+<!--            <p>Ou seja, ele compara o primeiro caractere de uma string com o primeiro caractere da outra string.-->
+<!--            Se um caractere for "menor" que o outro, então aquela string é "menor" também. Se forem iguais, o Python-->
+<!--            passa para o próximo caractere: compara o segundo caractere de uma string com o segundo caractere-->
+<!--                da outra string</p>-->
         </section>
 
 
@@ -286,10 +301,10 @@
                 <div id="jogo2card" class="card">
                     <div class="card__face card__face--front">
                         <center>
-                            quem é "maior"<br>
-                            <button id="jogo2botao0" class="game-button small" onclick="responder(2,0)">"<span>caseira</span>"</button><br>
+                            quem é <i>maior</i>,<br>
+                            <button id="jogo2botao0" class="game-button small" onclick="responder(2,0)">"<span>carla</span>"</button><br>
                             ou<br>
-                            <button id="jogo2botao1" class="game-button small" onclick="responder(2,1)">"<span>casual</span>"</button><br>
+                            <button id="jogo2botao1" class="game-button small" onclick="responder(2,1)">"<span>cartola</span>"</button><br>
                             <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
                         </center>
                     </div>
@@ -305,6 +320,17 @@
             </div>
 
 
+            <script>
+                // opcoes[2] = ['engenharia', 'amor', 'estudo', 'dedicação', 'fé', 'força', 'empenho', 'ouro', 'deeef', 'defaa'];
+                // opcoes[2] = ['engenharia', 'pizza', 'miojo', 'python', 'zero', 'dez', 'baralho', 'curso', '', 'defaa'];
+                opcoes[2] = ['caetano', 'roberto', 'nando', 'laura', 'gal', 'zizi', 'chico', 'elis', 'cazuza', 'maria',
+                    'milton', 'tim', 'sandy', 'marisa', 'luiz', 'djavan', 'ney', 'rita', 'renato', 'lulu',
+                    'cassia', 'tom', 'jorge', 'ana', 'nara', 'toquinho', 'carmen', 'nelson', 'wilson', 'clara',
+                    'maysa', 'baby', 'cageaf', 'cageogp', 'nubaaa', 'x'];
+                respostasIniciais[2] = ['carla', 'cartola'];
+                rodada[2] = 1;
+            </script>
+        </section>
 
 
             <script>
