@@ -55,7 +55,7 @@
                 }
             </style>
             <p>
-                Ok, vamos começar com um desafio: coloque essas palavras na ordem correta
+                Ok, vamos começar com um desafio: coloque essas palavras em ordem.
             </p>
             <div id="example1" class="list-group col">
                 <div class="list-group-item" data-order="3">Melancia</div>
@@ -66,6 +66,7 @@
             </div>
 
             <script>
+                var concluiuOrdenacao = false;
                 new Sortable(example1, {
                     animation: 150,
                     ghostClass: 'ghost-background-class',
@@ -77,35 +78,60 @@
                             }
                         });
                         if (isCorrect) {
+                            concluiuOrdenacao = true;
                             $('#result-order').removeClass('invisible');
                             animateCSS($('#example1'), 'tada');
-                            // animateCSS($('#result-order'), 'flipInY');
+                            animateCSS($('#result-order'), 'fadeIn');
                         }
                         else {
                             $('#result-order').addClass('invisible');
                         }
-                        console.log(isCorrect);
                     }
                 });
             </script>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
-            <p>O Python faz comparações de textos (string) com base na ordem lexicográfica - isto é, a ordem
-            do dicionário. Isso é utilizado, por exemplo, para colocar os seus contatos em ordem na agenda do celular.</p>
-            <p>Os símbolos < e >, quando comparamos strings, querem dizer "a string vem antes ou depois no dicionário?".
-            Se vem antes é menor, se vem depois é maior.</p>
+            <p>Olha aí, mesmo sem eu explicar nada você já entendeu a metade do assunto!
+            De forma simplificada, podemos dizer que a comparação de strings em Python é baseada
+            na ordem lexicográfica - isto é, a ordem alfabética, ou a ordem
+                do dicionário.</p>
+            <p>Esse tipo de comparação serve, por exemplo, para que os contatos na
+                agenda do seu celular fiquem na ordem correta. Outro exemplo: para filtrar
+            os produtos por marca em uma loja online.</p>
+
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Vamos comparar duas palavras: "aeroporto" e "boca". Mesmo sendo uma palavra mais longa, "aeroporto"
+                vem antes de "boca" no dicionário, né?</p>
+            <p>E se a gente comparar "g" e "p", quem vem antes? O "g", com certeza!</p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Lembra que na comparação de números utilizamos os símbolos <span class="codigo">&gt;</span>,
+                <span class="codigo">&gt;=</span>, <span class="codigo">&lt;</span> e
+                <span class="codigo">&lt;=</span>?</p>
+            <p>Esses mesmos símbolos são utilizados para compararmos textos (strings), mas com o significado
+            um pouquinho diferente. Se uma string é "menor" que a outra, quer dizer que ela vem antes no dicionário.</p>
+            <p>Já se uma string é "maior", quer dizer que ela vem depois.</p>
         </section>
 
         <section>
             <p><span class="codigo">print('a' < 'f')</span><br>
-                resultado: <b>True</b>, o que quer dizer que 'a' vem antes de 'f'</p>
+                resultado: <b>True</b>, o que quer dizer que 'a' vem antes de 'f'.</p>
             <p><span class="codigo">print('a' > 'f')</span><br>
-                resultado: <b>False</b>, o que quer dizer que 'a' <b>não</b> vem depois de 'f'</p>
+                resultado: <b>False</b>, o que quer dizer que 'a' <b>não</b> vem depois de 'f'.</p>
             <p><span class="codigo">print('s' > 'm')</span><br>
-                resultado: <b>True</b>, o que quer dizer que 's' vem depois de 'm'</p>
+                resultado: <b>True</b>, o que quer dizer que 's' vem depois de 'm'.</p>
             <p><span class="codigo">print('x' > 'z')</span><br>
-                resultado: <b>False</b>, o que quer dizer que 'x' <b>não</b> vem depois de 'z'</p>
+                resultado: <b>False</b>, o que quer dizer que 'x' <b>não</b> vem depois de 'z'.</p>
+        </section>
+
+        <section>
+            <p>Estranho, né?</p>
+            <p>Quando um assunto é estranho, é por que <b>ainda</b> não nos acostumamos
+            com ele. Para nos acostumar, vamos praticar! Lembre-se: o que vem depois é "maior".</p>
         </section>
 
         <section data-background="#131418" class="is-dark">
@@ -191,7 +217,7 @@
                 <div id="jogo1card" class="card">
                     <div class="card__face card__face--front">
                         <center>
-                            quem é "maior"<br>
+                            quem é <i>maior</i><br>
                             <button id="jogo1botao0" class="game-button" onclick="responder(1,0)">"<span>a</span>"</button><br>
                             ou<br>
                             <button id="jogo1botao1" class="game-button" onclick="responder(1,1)">"<span>b</span>"</button><br>
@@ -332,14 +358,32 @@
             </script>
         </section>
 
+        <section>
+            Se ligou, né? A comparação entre strings é feita comparando cada caractere
+            <center><img src="exemplo.png" class="stretch no-border"></center>
+        </section>
 
-            <script>
-                opcoes[2] = ['engenharia', 'amor', 'estudo', 'dedicação', 'fé', 'força', 'empenho', 'ouro', 'deeef', 'defaa'];
-                var respostas = ['caseira', 'casual'];
-                var rodada = 1;
+        <section>
+            Quando as strings têm números, o resultado é diferente do que a gente poderia imaginar:
+            <center><img src="exemplo-numero.png" class="stretch no-border"></center>
+        </section>
 
+        <section>
+            "Professor, e os acentos? E os outros caracteres, como $#%?!&* ???"
+            <p>O computador compara a ordem das strings com base na tabela de caracteres
+            que está sendo utilizada. A mais comum é a
+            <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters" target="_blank">
+                unicode
+            </a>. Lá você pode ver, por exemplo, que <span class="codigo">#</span>, <span class="codigo">!</span>
+                e <span class="codigo">$</span> vêm antes dos números, os números vêm antes
+                das letras, a <span class="codigo">?</span> vem depois dos números mas antes das letras, as letras maiúsculas vêm
+            antes das minúsculas, e as letras com acento vêm depois das letras sem acento.</p>
+            <p>Vale a pena decorar isso? Eu acredito que <b>não</b>.</p>
+        </section>
 
-            </script>
+        <section>
+            <p>Para terminar, fique com esse resumo dos símbolos para comparação de strings:</p>
+            <img src="comparacoes-texto.png" class="stretch">
         </section>
 
 
@@ -387,12 +431,11 @@
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
-        // if (event.indexh === 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-        //     runGame();
-        // }
-        // if (event.indexh !== 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-        //     stopGame();
-        // }
+        if (event.indexh >= 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            if (! concluiuOrdenacao) {
+                // Reveal.slide(1);
+            }
+        }
     });
 </script>
 </body>
