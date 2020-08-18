@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>condicional - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h1>olha a condição!</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+
+        <section>
+            <style>
+                .game-button {
+                    background-color: #25f7bb;
+                    color: black;
+                    font-family: monospace;
+                    font-size: 60px;
+                    background-color: #297;
+                    color: #fff;
+                    border: 0;
+                    border-radius: 4px;
+                    padding: 20px;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                    width: 80%;
+                    /*height: 100px;*/
+                }
+                .game-button.white {
+                    background-color: white;
+                    color: black;
+                }
+                .game-button.small {
+                    font-size: 30px;
+                    width: auto;
+                }
+
+                .invisible {
+                    /*display: none;*/
+                    visibility:hidden;
+                }
+
+                .pretend-im-not-here {
+                    display: none;
+                }
+
+                .scene {
+                    /*width: 200px;*/
+                    /*height: 260px;*/
+                    perspective: 600px;
+                    color: black;
+
+                }
+
+                .card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transition: transform 1s;
+                    transform-style: preserve-3d;
+                }
+
+                div.card__face {
+                    position: absolute;
+                    /*height: 100%;*/
+                    width: 100%;
+                    backface-visibility: hidden;
+                    padding: 20px 0;
+                }
+
+                .card__face--front {
+                    background: #e2e2e2;
+                    border-radius: 15px;
+                }
+
+                .card__face--back {
+                    background: #1a53a1;
+                    color: white;
+                    transform: rotateY( 180deg );
+                    border-radius: 15px;
+                }
+
+                .card.is-flipped {
+                    transform: rotateY(180deg);
+                }
+
+            </style>
+
+            Lembra daquela música
+            <a href="https://www.youtube.com/watch?v=m_1FNlwq-5s" target="_blank">"Se você está contente bata palma"</a>?
+            Então me diga: essa criatura aqui irá bater palmas?
+            <br><br>
+
+            <div class="scene">
+                <div id="jogo1card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            <center><img src="sad.svg" class="stretch no-border" style="width:70%"></center>
+                            <button id="jogo1botao0" class="game-button small" onclick="responderSingle(1,0,false)">sim</button>
+                            <button id="jogo1botao1" class="game-button small" onclick="responderSingle(1,1,true)">não</button><br>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            <p>Não vai, né? A música deixa bem claro: é para bater palmas <b>se estiver contente</b></p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                function responderSingle(jogo, resposta, acertou) {
+                    var botaoApertado = document.getElementById('jogo' + jogo + 'botao' + resposta);
+
+                    if (acertou) {
+                        $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                    }
+                    else {
+                        animateCSS(botaoApertado, 'shake');
+                    }
+                }
+            </script>
+        </section>
+
+        <section>
+           Só pode votar, no Brasil, quem tem pelo menos 16 anos. Então me diga: essa fofurinha
+            aí de baixo pode votar?
+
+            <br><br>
+
+            <div class="scene">
+                <div id="jogo2card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            <center><img src="baby.svg" class="stretch no-border" style="width:70%"></center>
+                            <button id="jogo2botao0" class="game-button small" onclick="responderSingle(2,0,false)">sim</button>
+                            <button id="jogo2botao1" class="game-button small" onclick="responderSingle(2,1,true)">não</button><br>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            <p>Um(a) bebê tem menos que 16 anos, e só pode votar quem tem pelo menos 16 anos.
+                                Ou seja, só pode votar <b>se a idade for maior ou igual a 16</b>.</p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Podemos dizer que ter 16 anos (ou mais) é uma <b>condição</b> para se votar. Veja outras
+            condições e regras da nossa vida:</p>
+            <ul>
+                <li>Para sacar dinheiro é preciso ter dinheiro na conta</li>
+                <li>Para se matricular na UFRPE é preciso ter CPF</li>
+                <li>xxxxxxxxxxx</li>
+            </ul>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Os programas que escrevemos também têm várias condições. Sabe quando você vai criar uma senha e o site
+            pede para colocar pelo menos 8 caracteres, letras maiúsculas, números, e coçar a orelha esquerda com a mão
+                direita? Pois é, isso é uma <b>condição</b>.
+            </p>
+        </section>
+
+        <section>
+            <p>Funciona assim: o Python compara as duas strings caractere por caractere. Veja exemplos
+            nesse vídeo (4min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/PJklv94-juY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+        <section data-background="#131418" class="is-dark">
+
+            <span id="jogo2rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo2card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            quem é <i>maior</i>,<br>
+                            <button id="jogo2botao0" class="game-button small" onclick="responder(2,0)">"<span>carla</span>"</button><br>
+                            ou<br>
+                            <button id="jogo2botao1" class="game-button small" onclick="responder(2,1)">"<span>cartola</span>"</button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            "<span id="jogo2opcaomaior">b</span>" é <u>maior</u> do que "<span id="jogo2opcaomenor">a</span>"<br><br>
+                            <button id="jogo2ok" class="game-button white" onclick="proxima(2)">ok</button><br>
+                            <button id="jogo2reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(2)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                // opcoes[2] = ['engenharia', 'amor', 'estudo', 'dedicação', 'fé', 'força', 'empenho', 'ouro', 'deeef', 'defaa'];
+                // opcoes[2] = ['engenharia', 'pizza', 'miojo', 'python', 'zero', 'dez', 'baralho', 'curso', '', 'defaa'];
+                opcoes[2] = ['caetano', 'roberto', 'nando', 'laura', 'gal', 'zizi', 'chico', 'elis', 'cazuza', 'maria',
+                    'milton', 'tim', 'sandy', 'marisa', 'luiz', 'djavan', 'ney', 'rita', 'renato', 'lulu',
+                    'cassia', 'tom', 'jorge', 'ana', 'nara', 'toquinho', 'carmen', 'nelson', 'wilson', 'clara',
+                    'maysa', 'baby', 'cageaf', 'cageogp', 'nubaaa', 'x'];
+                respostasIniciais[2] = ['carla', 'cartola'];
+                rodada[2] = 1;
+            </script>
+        </section>
+
+        <section>
+            Se ligou, né? A comparação entre strings é feita comparando cada caractere
+            <center><img src="exemplo.png" class="stretch no-border"></center>
+        </section>
+
+        <section>
+            Quando as strings têm números, o resultado é diferente do que a gente poderia imaginar:
+            <center><img src="exemplo-numero.png" class="stretch no-border"></center>
+        </section>
+
+        <section>
+            "Professor, e os acentos? E os outros caracteres, como $#%?!&* ???"
+            <p>O computador compara a ordem das strings com base na tabela de caracteres
+            que está sendo utilizada. A mais comum é a
+            <a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters" target="_blank">
+                unicode
+            </a>. Lá você pode ver, por exemplo, que <span class="codigo">#</span>, <span class="codigo">!</span>
+                e <span class="codigo">$</span> vêm antes dos números, os números vêm antes
+                das letras, a <span class="codigo">?</span> vem depois dos números mas antes das letras, as letras maiúsculas vêm
+            antes das minúsculas, e as letras com acento vêm depois das letras sem acento.</p>
+            <p>Vale a pena decorar isso? Eu acredito que <b>não</b>.</p>
+        </section>
+
+        <section>
+            <p>Para terminar, fique com esse resumo dos símbolos para comparação de strings:</p>
+            <img src="comparacoes-texto.png" class="stretch" style="border-radius: 10px;">
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>animação Card flip: <a href="https://3dtransforms.desandro.com/card-flip"
+                                                      target="_blank">David DeSandro</a>
+            </p>
+
+        </section>
+
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh >= 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            if (! concluiuOrdenacao) {
+                // Reveal.slide(1);
+            }
+        }
+    });
+</script>
+</body>
+</html>

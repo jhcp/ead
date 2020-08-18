@@ -2,6 +2,8 @@
 - ? accordeon para agrupar lições
 - fazer animação em img ser aplicada por padrão
 - fazer imagens não terem borda, por padrão
+- experimentar essa biblioteca de animação [motionia](https://dev.to/abhiprojectz/motionia-js-on-demand-lightweight-animation-library-54kj)
+- fazer alguma coisa com esse [carrossel 3d](https://3dtransforms.desandro.com/carousel). Talvez uma ementa?
 - micro-interactions https://www.google.com/search?q=css+mobile+micro+interactions&rlz=1C1GCEA_enBR834BR834&oq=css+mobile+micro+interactions&aqs=chrome..69i57j33.5440j0j7&sourceid=chrome&ie=UTF-8 
 - ? [Zoom In Circle Effect For Radio Button](https://codemyui.com/zoom-in-circle-effect-for-radio-button/)
 - ? [Play Icon To Video Animation On Click](https://codemyui.com/play-icon-to-video-animation-on-click/)

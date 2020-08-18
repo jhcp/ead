@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Comece a programar - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Programação - o que é, onde vive, o que come</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Sempre que for estudar pegue seu caderno e lápis/caneta, para fazer as suas
+                <a href="https://www.google.com/search?q=studygram" target="_blank">
+                    anotações</a>.
+            </p>
+            <br>
+            <img src="caderno.svg" class="no-border animated pulse infinite" >
+        </section>
+
+        <section>
+            <p>Vídeo 1 (4min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Io-OqGpm4Kw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <p>
+                A rigor, programar / codificar / implementar é escrever o código do programa. Mas para programar, é preciso pensar
+                em tudo isso que foi explicado no vídeo:
+            </p>
+            <ul>
+                <li>Entendimento do problema</li>
+                <li>Estrutura/arquitetura do programa</li>
+                <li>Algoritmos e a programação propriamente dita</li>
+                <li>Testes</li>
+            </ul>
+            <p>
+                A área da computação que estuda essas e outras etapas do desenvolvimento de sistemas de software é a
+                <a href="https://engsoftmoderna.info/" target="_blank" title="Livro Engenharia de Software Moderna">
+                    Engenharia de Software
+                </a>.
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">1) Entendimento do problema</div>
+            <p>
+                Às vezes os engenheiros se preocupam muito com a tecnologia e esquecem que não adianta
+                criar um produto tecnologicamente avançado se aquele produto não resolver um problema real. Por isso,
+                é muito importante começar o desenvolvimento buscando entender o que os nossos clientes e as pessoas
+                que vão usar o sistema (usuárias) precisam.
+            </p>
+            <p>
+                Essas necessidades e os desejos que serão atendidos pelo sistema são chamados de
+                <a href="https://medium.com/lfdev-blog/como-escrever-requisitos-de-software-de-forma-simples-e-garantir-o-m%C3%ADnimo-de-erros-no-sistema-app-74df2ee241cc" target="_blank">
+                    requisitos</a>.
+            </p>
+        </section>
+
+        <section>
+        <div class="slide-title">2) Arquitetura</div>
+            <p>
+                Da mesma forma que é importante fazer as plantas baixas de um prédio que será construído, é importante
+                também definir a estrutura (arquitetura) do programa que será desenvolvido. Já se for só fazer
+                um puxadinho (programa pequeno), não é preciso se preocupar com isso.
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">3) Algoritmos e programação (1/2)</div>
+            <p>
+                De acordo com <a href="https://www.google.com/search?q=james+R.+Parker+Python+%3A+An+Introduction+to+Programming" target="_blank">
+                James R. Parker</a>, um algoritmo é uma descrição passo-a-passo de uma forma de resolver um problema.
+                </p>
+            <p>
+                Um mesmo problema pode ser resolvido de diferentes formas - com diferentes algoritmos.
+                Você usa o algoritmo que aprendeu na escola para calcular multiplicações, mas sabia que existem
+                <a href="https://www.youtube.com/results?search_query=multiplica%C3%A7%C3%A3o+japonesa" target="_blank">
+                    outras formas de se multiplicar
+                </a>?
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">3) Algoritmos e programação (2/2)</div>
+            <p>
+                Uma vez que definimos o algoritmo -- isto é, o passo-a-passo para resolver o problema --
+                vamos escrever o algoritmo em alguma linguagem de programação.
+            </p>
+            <p>
+                Para programar, precisamos saber uma linguagem de programação. Mas <b>antes de escrever o código, precisamos
+                parar para pensar no algoritmo</b>. É mais ou menos assim: "eu quero que o computador faça isto,
+                depois isso, e depois aquilo. Agora vou escrever isso em Python".
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">4) Testes</div>
+            <p>
+                Antes mesmo de programar, já podemos pensar nos testes. Se eu quero fazer um programa que calcule a
+                média de dois números, eu posso pensar: "Se eu usar os números 5 e 10, o resultado tem que dar 7.5.
+                Se for 0 e 0, tem que dar 0. E se forem números negativos?"
+            </p>
+            <p>
+                Testes são tão importantes que as empresas contratam pessoas só para testar os seus programas.
+                Hoje em dia já é bastante comum <i>automatizar</i> os testes - em vez de um ser humano testar o programa,
+                escrevemos um outro programa que vai testar o nosso programa. Coisa de doido, né?
+            </p>
+        </section>
+
+        <section>
+            <br><br><br>
+            <p>
+                Bom, agora vamos sair da teoria e aprender como criar o nosso primeiro programa 😎
+            </p>
+        </section>
+
+        <section data-background="#21b4c4" class="is-dark">
+
+            <p>Vídeo 2 (5min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Bs1aav7T-hc" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#21b4c4" class="is-dark">
+            <p>
+                Nesta disciplina, iremos aprender a programar com a linguagem Python.
+                O computador não consegue entender o nosso código escrito em Python, mas o interpretador Python
+                consegue! </p>
+            <p>O interpretador é um programa que lê o código que escrevemos em Python,
+                e traduz para o nosso computador.
+            </p>
+        </section>
+
+        <section data-background="#21b4c4" class="is-dark">
+            <p>Ou seja, o interpretador é como se fosse uma intérprete que traduz códigos de uma linguagem para outra.</p>
+            <img id="interprete" src="interprete.jpg" class="stretch no-border"/>
+        </section>
+
+        <section data-background="#21b4c4" class="is-dark">
+            <div class="slide-title">repl.it</div>
+            <p>
+                É possível utilizar um interpretador pela Internet, como o repl.it. </p>
+            <p>Experimente:
+                abra o repl.it, digite o código print(5+5) e aperte em <b>run</b>. Irá aparecer na tela o resultado
+                da soma (10).
+            </p>
+            <br>
+            <center>
+                <a href="https://repl.it/languages/python3" target="_blank" class="button6">abrir o repl.it</a>
+            </center>
+        </section>
+
+        <section>
+            <p>
+                Os programadores profissionais instalam o interpretador Python nos seus computadores, além de
+                ferramentas para ajudar com o desenvolvimento. Mas para o nosso curso, isso não será
+                necessário.
+            </p>
+        </section>
+
+        <section data-background="#092f35" class="is-dark">
+            <p>
+                É mais fácil digitar os programas pelo computador, mas o repl.it funciona pelo smartphone também.
+                Ou seja, você poderá programar até mesmo
+                quando estiver no banheiro esperando para afundar o submarino; só tome cuidado para não
+                afundar o celular também!
+            </p>
+            <br>
+            <img src="submarine-light.svg" class="stretch no-border animated wobble infinite" style="animation-duration: 20s;">
+        </section>
+
+
+        <section>
+            <p>
+               Não tem para onde fugir! Da mesma forma que não dá para aprender a nadar sem nadar, nem para aprender
+                a tocar guitarra sem tocar, não dá para aprender programação sem programar. Então
+                abra o <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>
+                e experimente fazer algumas contas ;)
+            </p>
+            <img src="guitarra.gif" class="stretch no-border"/>
+
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Imagem de caderno: <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">
+                photo3idea_studio</a></p>
+            <p>Imagem da intérprete: <a href="https://ciklopea.com/hr-stories/from-student-to-translator-how-translation-internships-help-you-make-a-big-splash-in-the-language-industry/"
+                                                      target="_blank">autor(a) desconhecido(a)</a>
+            <p>Imagem do submarino: <a href="https://www.iconfinder.com/mathme"
+                                                      target="_blank">Matin Mahirli</a>
+            <p>Animação do guitarrista: <a href="https://giphy.com/stickers/Naeleck-guitar-oddity-naeleck-J67i8xn8RlI8tqKHw1"
+                                       target="_blank">Naeleck</a>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

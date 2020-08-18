@@ -11,7 +11,7 @@
         gtag('config', 'UA-161434600-1');
     </script>
 
-    <title>Para quê programar? - UACSA/UFRPE Linguagem de Programação</title>
+    <title>Jogo da Hora do Código - UACSA/UFRPE Linguagem de Programação</title>
     <meta name="author" content="Prof. João Pimentel">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
@@ -30,8 +30,8 @@
     <div class="slides">
 
         <section>
-            <h1>programar!?</h1>
-            <h4>por quê é bom saber programar?</h4>
+            <h1>Jogo da Hora do Código</h1>
+            <h4>atividade para entregar no SIGAA</h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
                 <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
@@ -42,56 +42,55 @@
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
-            <p>
-                Você consegue imaginar como seria a vida dos estudantes de engenharia sem calculadoras? Sem (aimeudeus)
-                o autocad?
-            </p>
-            <img src="calculadora.png" class="stretch no-border"/>
-        </section>
-
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                A <b>programação</b> é mais uma das ferramentas que nós podemos utilizar, assim como já utilizamos
-                outras ferramentas como as calculadoras, réguas, etc. 📐🛠️
-            </p>
-        </section>
-
-        <section>
-            <p>Ainda mais importante do que aprender a programar, é entender o raciocínio da coisa. O <b>
-                <a href="http://fundacaotelefonica.org.br/noticias/quatro-habilidades-que-o-pensamento-computacional-ajuda-a-desenvolver/"
-                   target="_blank">pensamento
-                    computacional</a></b> lhe ajudará a ter mais facilidade para resolver problemas de todo tipo. </p>
-            <p>Mas não é só isso! No vídeo a seguir o Guanabara irá lhe explicar outros motivos para aprender a
-                programar, com a ajuda de Bill Gates e de Steve Jobs.</p>
-        </section>
-
-        <section>
-            (29min)
-            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/S9uPNppGsGo" frameborder="0"
+            <p>Vídeo 1 (3min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/0dJSKTyVRZE" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </section>
 
-        <section data-background="#2196f3" class="is-dark">
-            <div id="quiz" class="quiz"></div>
-            <button id="submit" class="quiz-submit">responder</button>
-            <div id="results" class="quiz-results"></div>
-            <script>
-                var myQuestions1 = [
-                    {
-                        question: "Aprender a programar só é benéfico para quem quer trabalhar com programação",
-                        answers: {
-                            a: 'verdadeiro',
-                            b: 'falso'
-                        },
-                        correctAnswer: 'b'
-                    }];
-                var quizContainer = document.getElementById('quiz');
-                var resultsContainer = document.getElementById('results');
-                var submitButton = document.getElementById('submit');
-                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
-            </script>
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                O jogo que você irá jogar agora parece bem bobinho, mas à medida que as fases passam
+                vai ficando mais complicado.
+            </p>
+            <p>
+                Se o jogo estiver em inglês, você pode clicar nesse menu que está no canto inferior esquerdo
+                da tela e escolher a opção "Português (Brasil).
+            </p>
+            <img src="language.png" class="stretch"/>
         </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Nesse jogo você irá praticar os principais conceitos da programação: comandos em sequência, execução
+                condicional, e repetição. Assim, quando você for estudar isso em Python, achará bem mais fácil.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Quando você concluir as 20 fases, aparecerá um certificado e um campo para você inserir o seu nome.
+                Digite o seu nome completo, para que ele apareça no certificado.
+            </p>
+            <img src="certificado%20hora%20do%20codigo.png" class="stretch"/>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Salve o certificado e o envie para a Atividade 1 que está no SIGAA da disciplina (Semana 1).
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Agora vá lá e divirta-se <span style="font-family: Segoe UI Emoji; font-size: 3.5em">😉</span>
+            </p>
+            <br><br>
+            <a href="https://studio.code.org/hoc/1" class="button6" id="play-button">clique aqui para abrir o jogo</a>
+        </section>
+
+
+
 
         <section data-background="#c6c6c6">
             <div class="slide-title">FIM =)</div>
@@ -130,6 +129,9 @@
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
     });
 
     // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
