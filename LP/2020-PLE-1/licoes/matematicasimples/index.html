@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Expressões matemáticas no Python3 - UACSA/UFRPE Linguagem de Programação</title>
+    <meta content="Prof. João Pimentel" name="author">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes" name="viewport">
+    <link href="../../lib/css/reveal.css" rel="stylesheet">
+    <link href="../../css/chat.css" rel="stylesheet">
+    <link href="../../lib/css/animate.css" rel="stylesheet">
+    <link href="../../css/materialdeapoio.css" rel="stylesheet">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link href="../../lib/css/zenburn.css" rel="stylesheet">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Fazendo contas</h1>
+            <h4>que nem uma calculadora, só que melhor!</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section class="is-dark" data-background="#ca9eda">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Sempre que fizer um exercício, anote quais foram as questões ou letras que achou mais difícil,
+                para <a href="https://youtu.be/JhW2Cek7p6k?t=37" target="_blank">
+                refazê-las de vez em quando</a>.
+                Afinal, não adianta saber resolver hoje, e
+                <a href="https://www.youtube.com/results?search_query=curva+de+esquecimento"
+                   target="_blank">
+                daqui há um mês não saber mais
+                </a>
+            </p>
+            <center>
+                <div class="animated pulse infinite" style="font-family: Segoe UI Emoji; font-size: 5.5em">
+                    <a href="https://toggl.com/" target="_blank">
+                        🏋️‍♀️
+                    </a></div>
+            </center>
+        </section>
+
+
+        <section>
+            <div class="slide-title">Operações matemáticas</div>
+            <p>Dá pra fazer contas com o Python como se fosse uma calculadora, com esses símbolos: </p>
+            <ol>
+                <li>( ) Parênteses</li>
+                <li>** Exponenciação</li>
+                <li>* / Multiplicação e Divisão</li>
+                <li>+ - Adição e Subtração</li>
+            </ol>
+            <p>👆 Nas expressões, a conta é feita seguindo essa ordem. Primeiro resolvemos os parênteses, depois as
+                potências, depois multiplicação e divisão, e por último adição e subtração.</p>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20 pm</span>
+                        <span class="message">
+                            Professor, se é que nem uma calculadora, pq não usar logo uma calculadora?
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Imagine que você quer calcular a média de idade...
+                        da cidade inteira. Ou multiplicar duas matrizes 10 por 10. Vai fazer na mão?</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            😱 Deus me livre!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">kkk Vamos começar com essas contas, que você já sabe fazer,
+                            e nos acostumar a programar. Depois vamos aprender coisas que
+                            a calculadora não faz 😃</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="is-dark" data-background="#00d1b2">
+            <p>
+                Vídeo 1 (9min):
+            </p>
+            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="stretch" frameborder="0"
+                    height="315"
+                    src="https://www.youtube.com/embed/_U2dhaWlKnI" width="560">
+            </iframe>
+        </section>
+
+        <section class="is-dark" data-background="#00d1b2">
+            <p>
+                O Vídeo 1 tem dois exercícios, se lembre de fazê-los antes de continuar 👍
+            </p>
+            <br>
+            <ol>
+                <li>Primeiro responda no papel
+                </li>
+                <li>Depois escreva o código no
+                    <a href="https://repl.it/languages/python3" target="_blank">
+                        repl.it
+                    </a>
+                    e execute para conferir o resultado
+                </li>
+            </ol>
+            <br>
+            <p>
+                Uma facilidade de estudar programação é que podemos conferir o resultado com o computador,
+                enão não ficamos naquela dúvida cruel: "respondi, mas será que tá certo?"
+            </p>
+        </section>
+
+        <section class="is-dark" data-background="#00d1b2">
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+        Professor, por que fazer no papel antes de fazer no computador?
+      </span>
+
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- Without Name nor Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble follow">
+                    <div class="txt">
+                        <span class="timestamp">10:21</span>
+                        <span class="message follow">Não é melhor fazer logo no repl? </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+      <span class="name alt">João Pimentel
+      </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Ué, o computador já sabe Python,
+                            quem está aprendendo é você</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:31</span>
+                        <span class="message">
+                            kkkkkkkkkkkk
+                          </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- Without Name nor Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble follow">
+                    <div class="txt">
+                        <span class="timestamp">10:31</span>
+                        <span class="message follow">😅 </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#00d1b2">
+            <div class="quiz-container"
+                 data-quiz-text="5**3 representa..."
+                 data-quiz-answers='{"a": "5 vezes 3", "b": "5 ao quadrado", "c": "5 ao cubo", "d": "3 à quinta"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section data-background="#00d1b2">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>10+8+2/10-5
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "4", "b": "-3", "c": "13.2"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section data-background="#00d1b2">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>10+(8+2)/10-5
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "6", "b": "12", "c": "13.2"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#00d1b2">
+            Se ligou na diferença?
+            <pre><code data-noescape data-trim>10+8+2/10-5
+</code></pre>
+            Entre soma, divisão e subtração, faz primeiro a divisão: 2/10 dá 0.2.
+            Fica 10+8+0.2-5. Soma e subtração estão no mesmo nível de prioridade (deu empate), então resolvemos
+            da esquerda pra direita: 10+8 dá 18, 18+0.2 dá 18.2, e 18.2-5 dá 13.2.
+            <p>
+                Já <pre><code data-noescape data-trim>10+(8+2)/10-5
+</code></pre>
+            tem o parênteses, que resolvemos antes de tudo: (8+2) dá 10, fica 10+10/10-5.
+            Resolve a divisão, 10/10 dá 1, fica 10+1-5. Resolve o restante da esquerda pra direita: 10+1 dá 11,
+            fica 11-5, que dá 6.
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>
+                Vídeo 2 (8min):
+            </p>
+            <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="stretch" frameborder="0"
+                    height="315"
+                    src="https://www.youtube.com/embed/wXTQKRJ-YT0" width="560">
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>
+                Fez os exercícios dos vídeos? Volte lá, faça mesmo, não dá para aprender programação só
+                <b>assistindo</b> a vídeos não!
+            </p>
+            <center><img class="no-border" id="meme" src="../../images/memes/estoudeolho-yellow.jpg"/></center>
+            <ol>
+                <li>Primeiro responda no papel
+                </li>
+                <li>Depois escreva o código no
+                    <a href="https://repl.it/languages/python3" target="_blank">
+                        repl.it
+                    </a>
+                    e execute para conferir o resultado
+                </li>
+            </ol>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>16**1/2
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "4", "b": "8", "c": "16"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>16**(1/2)
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "4", "b": "8", "c": "16"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>2*10**3
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "2000", "b": "8000", "c": "60", "d": "10000000"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual o resultado de
+            <pre><code data-noescape data-trim>2+2**9**0
+</code></pre>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "4", "b": "3", "c": "1"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <img class="stretch no-border" src="expressao.png">
+
+            <div class="quiz-container"
+                 data-quiz-text="Qual expressão em Python é equivalente a essa expressão matemática?"
+                 data-quiz-answers='{"a": "(50*3-2)/(8+2**(2+1))", "b": "50*3-2/8+2**2+1", "c": "50*3-2/8+2**(2+1)", "d": "(50*(3-2))/((8+2)**(2+1))"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <img class="stretch no-border" src="expressao2.png">
+
+            <div class="quiz-container"
+                 data-quiz-text="Qual expressão em Python é equivalente a essa expressão matemática?"
+                 data-quiz-answers='{"a": "(-5+(50**2-99)**(1/2))/2", "b": "-5+50**2-99**1/2/2", "c": "(-5+(50**2-99)**1/2)/2", "d": "(-5+(50**(2-99))**(1/2))/2"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+<!--        -->
+<!--        <section style="height: 100%;">-->
+<!--            <div style="height: 100%; flex-direction: column-reverse; display: flex">-->
+<!--                <br><br>-->
+<!--                <p style="text-align: right;">Ei</p>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section style="height: 100%;">-->
+<!--            <div style="height: 100%; flex-direction: column-reverse; display: flex">-->
+<!--                <br><br>-->
+<!--                <p style="text-align: right;">Psiu</p>-->
+<!--            </div>-->
+<!--        </section>-->
+
+<!--        <section style="height: 100%;">-->
+<!--            <div style="height: 100%; flex-direction: column-reverse; display: flex">-->
+<!--                <br><br>-->
+<!--                <p style="text-align: right;">Esses exercícios interativos são bons mas não substituem-->
+<!--                    a lista de exercícios ;)</p>-->
+<!--            </div>-->
+<!--        </section>-->
+
+        <section>
+            <div class="slide-title">operadores matemáticos</div>
+            <img class="stretch" id="operacoes" src="operacoes_matematicas.png"/>
+        </section>
+
+        <section>
+            <div class="slide-title">ordem das operações</div>
+            <ol>
+                <li>() Parênteses</li>
+                <li>** Exponenciação</li>
+                <li>* / Multiplicação e Divisão</li>
+                <li>+ - Adição e Subtração</li>
+            </ol>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Meme estou de olho em você: anônimo.
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#meme', 'flipInX');
+        }
+        if (event.indexh == 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#operacoes', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
