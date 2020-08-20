@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Jogo da Hora do Código - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 2 - Questionário Online</h1>
+            <h4>atividade para fazer no SIGAA</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Oi, no SIGAA você irá encontrar um questionário online sobre as duas últimas lições - ou seja,
+                sobre expressões matemáticas no Python 3. É recomendado que você faça todos os exercícios
+                daqui do site antes de responder ao questionário.
+                Afinal, no exercício é que você irá aprender, e no questionário irá apenas verificar a aprendizagem.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                O questionário tem apenas 6 questões, todas objetivas.
+                <b>Depois que iniciar o questionário, você só terá 40 minutos para conclui-lo.</b>
+                Pode consultar o material, e também pode usar o repl.it durante o questionário, não tem problema.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Não tenha pressa para responder ao questionário - estude alguns dias, faça os exercícios e tire
+                suas dúvidas pelo WhatsApp antes
+                de partir para o questionário.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Após a conclusão do questionário, você poderá tirar as dúvidas sobre as suas respostas pelo
+                WhatsApp também.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Para acessar esse questionário, entre no SIGAA e clique em "Atividade 2 - Questionário Online", que
+                está na Semana 1.
+            </p>
+            <img src="atividade2.png" class="stretch">
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">FIM =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
