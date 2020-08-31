@@ -8,3 +8,6 @@
 - ? [Zoom In Circle Effect For Radio Button](https://codemyui.com/zoom-in-circle-effect-for-radio-button/)
 - ? [Play Icon To Video Animation On Click](https://codemyui.com/play-icon-to-video-animation-on-click/)
 - ? [small animations](https://dribbble.com/shots/3560884-Heart-Splash)
+- design do accordeon baseado em https://codepen.io/jcoulterdesign/pen/OMmZPd
+- adicionar botão de fullscreen https://github.com/Martinomagnifico/reveal.js-fsfx
+
