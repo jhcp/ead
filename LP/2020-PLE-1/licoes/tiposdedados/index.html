@@ -323,6 +323,7 @@
                         $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
                     }
                     else {
+                        opcoes2[0] = shuffleArray(opcoes2[0]);
                         rodada[jogo] = 1;
                         $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
                         $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
