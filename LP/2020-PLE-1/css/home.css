@@ -52,6 +52,11 @@ body {
     background-color: #4CAF50; /* Green */
 }
 
+.worksheetButton.past {
+    background-color: #f7e3e3; /* Green */
+    color:black;
+}
+
 
 
 
