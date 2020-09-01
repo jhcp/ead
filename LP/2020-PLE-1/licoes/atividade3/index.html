@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 3 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 3 - The Huxley</h1>
+            <h4>atividade valendo nota</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                A atividade 3 será feita com a ferramenta The Huxley, que você já usou para resolver a
+                <a href="../atividade2">Atividade 2.</a>
+            </p>
+            <p>
+                A atividade 3 tem quatro problemas que exercitam o cáculo de expressões matemáticas simples
+                a partir de entradas da usuária (ou seja, com base em valores que a usuária digitou).
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Recomendo olhar o enunciado do problema no The Huxley e responder primeiramente no
+                <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>, já
+                que no repl.it é mais fácil de testar o nosso programa. Em seguida, é só copiar para o The Huxley
+                e enviar a resposta.
+            </p>
+            <p>
+                Mas também pode ficar tranquilo(a), não tem problema se você enviar respostas incorretas no The Huxley
+                antes de acertar - só será contabilizado o último programa que você enviou.
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+        <section data-background="white">
+            <p>
+                Sugiro começar pelo problema AC2 - Ex. 4, sobre conversão de temperatura.
+            </p>
+            O que irá aparecer na tela (saída) quando o seu programa for executado deve ser <b>exatamente</b> o que
+            está especificado no enunciado:
+            <img src="entrada-saida-thehuxley.png" />
+            Ex: Quando o usuário digitar 100, a saída será 37.77777777777778. Só isso! Não pode ser
+            nem "Temperatura: 37.77777777777778", nem 37.78.
+        </section>
+
+        <section data-background="white">
+            <div class="slide-title">Texto adicional - exemplo</div>
+            <p>
+                Por exemplo, normalmente nós faríamos um programa que calcule o dobro de um número assim:
+            <div class="codigo">x = float(input('digite um número'))
+print('O dobro de', x, 'é', x*2)</div>
+            </p>
+            <p>
+                Mas para a ferramenta de correção automática, escreveremos assim, sem os textos:
+            <div class="codigo">x = float(input())
+print(x*2)</div>
+            </p>
+            <p>a não ser que o enunciado do problema peça para incluir algum texto.</p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">2 casas decimais</p>
+            <p>
+                Alguns problemas, como o "Aluguel de carro", podem pedir que você mostre o resultado só com duas casas decimais. Você certamente
+                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
+                sua vida:
+            </p>
+            <div class="codigo">resultado = 3**0.5
+print('{:.2f}'.format(resultado))</div>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">AC2 - Ex. 5</p>
+            <p>
+                O problema AC2 - Ex. 5 é o mais complicado desta Atividade 3, na minha opinião. A dica para respondê-lo
+                é usar <a href="../divisoes/" target="_blank">divisão inteira e módulo (resto)</a>.
+            </p>
+            <p>Não tente responder tudo de uma vez - primeiro descubra como calcular só os dias. Depois, pegue o
+                restante do tempo e tente calcular as horas. E por aí vai, até conseguir responder o enunciado
+                completo
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta a goiabada (ou o pão)!</p>
+            <center><span style="font-size: 4em">🔪🧀</span></center>
+            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
+            só quem perde é você mesmo(a).</p>
+
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Ainda não aprendeu a usar o The Huxley? Veja as informações sobre o cadastro e uso da ferramenta
+                na <a href="../atividade2">descrição da Atividade 2</a>.
+            </p>
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
