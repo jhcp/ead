@@ -338,6 +338,7 @@
                 <canvas id="myCanvas" width="300" height="400"></canvas>
             </center>
             <script>
+                var gameRunning = false;
                 function runGame() {
                     var canvas = document.getElementById("myCanvas");
                     $(canvas).click(jump);
@@ -373,7 +374,6 @@
                     };
 
                     var score = 0;
-                    var gameRunning = false;
 
                     function drawPlatform() {
                         tile1.src = 'dirtMidMedium.png';
@@ -465,6 +465,7 @@
                         }
                     }
 
+                    score = 0;
                     $('#score-text').html(0);
                     gameRunning = true;
                     window.requestAnimationFrame(draw);
