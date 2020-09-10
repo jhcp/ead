@@ -475,4 +475,5 @@ div.codigo {
   padding: 0.2em;
   white-space: pre;
   width: 100%;
+  overflow: scroll;
 }
