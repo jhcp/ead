@@ -50,6 +50,35 @@
     <![endif]-->
     <!--<h3>Conteúdo</h3>-->
 
+    <style>
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+        #overlayText{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.5em;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+        }
+    </style>
+
+    <div id="overlay" onclick="offOverlay()">
+        <div id="overlayText"></div>
+    </div>
+
     <button class="accordion">Dicas de estudo</button>
     <div class="panel">
         <i>De vez em quando assista/leia algum material desses, para melhorar na sua profissão (estudante)</i>
@@ -127,6 +156,7 @@
     <button class="accordion">Semana 6</button>
     <div class="panel">
         <a href="licoes/listas-modificar" class="button lessonButton">Como modificar listas</a>
+        <a href="https://quizizz.com/join?gc=50671760" class="button lessonButton">Exercício sobre listas (não vale nota) 🔗</a>
     </div>
 
 
@@ -143,6 +173,7 @@
 </div>
 
 <script>
+    // ACCORDION START
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -157,6 +188,53 @@
             }
         });
     }
+    // ACCORDION END
+
+    // POPUP START
+    document.addEventListener('DOMContentLoaded', (event) => {
+        onOverlay();
+    });
+
+    function onOverlay() {
+        const messages = [
+            'LEMBRETE: o WhatsApp não serve apenas para tirar dúvidas sobre as atividades; ele também serve para perguntar sobre o material aqui do site',
+            'O prazo das atividades pode ser visto no SIGAA',
+            'Você já viu as dicas de estudo aqui do site? Veja o link antes da Semana 1',
+            'É bom fazer as atividades com antecedência, senão quando for fazê-las você não terá mais tempo para tirar dúvidas',
+            '1h por dia é o suficiente se você estiver em dia. Se estiver atrasado(a), 2h a 3h por dia até recuperar',
+            'Não, você não é preguiçoso(a). Preguiça é apenas uma desculpa que as pessoas dão quando não querem fazer algo',
+            'Se o Huxley não aceita a resposta, é por que realmente tem algo errado no código. Ainda bem que temos o WhatsApp para tirar dúvidas...',
+            'Não adianta assistir os vídeos, é preciso praticar programando também',
+            'O canal do Guanabara é fantástico, mas não é suficiente para este curso. Além de assistir os vídeos de lá, veja o material aqui do site também',
+            'A UACSA oferece atendimento psicólogico gratuito. Se informe no instagram: @naps.uacsa.ufrpe',
+            'Me segue lá no instagram: @joaopython'
+        ];
+        const randomElement = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("overlayText").innerHTML = randomElement;
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function offOverlay() {
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    // $(document).ready(function() {
+    //     // if(localStorage.getItem('popState') != 'shown'){
+    //         $('#popup').delay(2000).fadeIn();
+    //         on();
+    //         // localStorage.setItem('popState','shown')
+    //     // }
+    //
+    //     $('#popup-close, #popup').click(function() // You are clicking the close button
+    //     {
+    //         $('#popup').fadeOut(); // Now the pop up is hidden.
+    //     });
+    // });
+
+
+
+
+    // POPUP END
 </script>
 </body>
 </html>
