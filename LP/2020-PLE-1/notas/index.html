@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notas</title>
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<title>Nota (Linguagem de Programação)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<div id="search-matricula" class="w3-content w3-margin-top" style="max-width:1400px;">
+    <div class="w3-row-padding">
+        <div class="w3-third">.</div>
+        <div class="w3-third">
+            <div class="w3-white w3-text-grey w3-card-4">
+                <div class="w3-display-container">
+                    <br>
+                    <p>Matrícula: <input id="matricula-input"></p>
+                    <p style="text-align: center;"><button onclick="mostrarNota();">visualizar nota</button></p>
+                    <div class="w3-light-grey w3-round-xlarge">
+                        <p>Para visualizar a sua nota, digite a sua matrícula no campo
+                        acima e clique no botão "visualizar nota". Você pode descobrir o seu número de matrícula no SIGAA.</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Container -->
+<div id="student-container" class="w3-content w3-margin-top" style="max-width:1400px; display:none;">
+
+    <!-- The Grid -->
+    <div class="w3-row-padding">
+
+        <!-- Left Column -->
+        <div class="w3-third">
+
+            <div class="w3-white w3-text-grey w3-card-4">
+                <div class="w3-display-container">
+                    <br><br><br>
+                    <div class="w3-display-bottomleft w3-container w3-text-black">
+                        <h2 id="matricula-lbl">matrícula</h2>
+                    </div>
+                </div>
+                <div class="w3-container">
+                    <div style="text-align: center; width: fit-content">
+                    <div style="font-size: 5em; line-height: 1">
+                        <span id="nota-total-alcancada-lbl1">a</span>/
+                        <span id="nota-total-ofertada-lbl1">b</span>
+                    </div>
+                    nota parcial
+                    </div>
+
+
+<!--                    <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>-->
+<!--                    <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>-->
+<!--                    <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>-->
+<!--                    <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>-->
+<!--                    <hr>-->
+
+                    <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Distribuição das notas</b></p>
+                    <p>Atividades</p>
+                    <div class="w3-light-grey w3-round-xlarge">
+                        <div id="pct-atividades-bar" class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+                    </div>
+                    <p>WhatsApp</p>
+                    <div class="w3-light-grey w3-round-xlarge">
+                        <div class="w3-light-grey w3-round-xlarge">
+                            <div id="pct-whatsapp-bar" class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+                        </div>
+<!--                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">-->
+<!--                            <div class="w3-center w3-text-white">80%</div>-->
+<!--                        </div>-->
+                    </div>
+<!--                    <p>Projeto</p>-->
+<!--                    <div class="w3-light-grey w3-round-xlarge">-->
+<!--                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>-->
+<!--                    </div>-->
+                    <br>
+                    <p>última atualização: 28/09/2020</p>
+
+                </div>
+            </div><br>
+
+            <!-- End Left Column -->
+        </div>
+
+        <!-- Right Column -->
+        <div class="w3-twothird">
+
+            <div class="w3-container w3-card w3-white w3-margin-bottom">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Detalhamento das notas</h2>
+                <p>Até agora já foram ofertados <span id="nota-total-ofertada-lbl2">b</span> pontos, dos quais você já conquistou <span id="nota-total-alcancada-lbl2">a</span>.</p>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>Atividades (5 pontos)</b></h5>
+                    <p>
+                        Teremos 10 atividades no total, mas somente as suas 8 maiores notas serão consideradas. Isso
+                        permite que você não seja prejudicado(a) caso passe por uma má fase durante o semestre.
+                        Sendo assim,
+                        cada atividade vale até 0.625 pontos, mas as duas piores notas serão descartadas.
+                    </p>
+                    <p>Cada atividade teve um prazo de pelo menos 10 dias.</p>
+                    <p><b>SUA NOTA:</b> dos <span id="nota-atividades-ofertada-lbl">c</span> pontos de atividade ofertados até agora, você alcançou <b><span id="nota-atividades-alcancada-lbl">d</span></b> pontos.</p>
+                    <table style="text-align: center;">
+                        <tr>
+                            <th>Atividade</th><th>Nota na atividade (0 a 10)</th><th>Nota ponderada (0 a 0.625)</th>
+                        </tr>
+                        <tr><td>Atividade 1</td><td id="nota-atividade-1">at1</td><td id="nota-atividade-1-ponderada">at1p</td></tr>
+                        <tr><td>Atividade 2</td><td id="nota-atividade-2">at2</td><td id="nota-atividade-2-ponderada">at2p</td></tr>
+                        <tr><td>Atividade 3</td><td id="nota-atividade-3">at3</td><td id="nota-atividade-3-ponderada">at3p</td></tr>
+                        <tr><td>Atividade 4</td><td id="nota-atividade-4">at4</td><td id="nota-atividade-4-ponderada">at4p</td></tr>
+                    </table>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>Participação no WhatsApp (2 pontos)</b></h5>
+                    <p>
+                        A participação no WhatsApp será dividida em 2 notas: 1 ponto para a primeira
+                        metade do curso e 1 ponto para a segunda metade do curso. Exemplos de participação:
+                        - Dúvidas sobre o assunto (material, lives, etc.);
+                        - Dúvidas sobre as atividades;
+                        - Responder às dúvidas dos colegas;
+                        - Compartilhar coisas que você já aprendeu, inclusive coisas que não fazem parte do nosso material;
+                        - Compartilhar recursos interessantes, como livros, sites e vídeos;
+                        - Compartilhar curiosidades sobre computação;
+                        - Comentar sobre filmes, séries, livros etc. que têm a ver com computação;
+                        - Discutir sobre o impacto da computação no nosso dia-a-dia;
+                        - Mandar avisos sobre a disciplina.
+                    </p>
+                    <p><b>SUA NOTA:</b> do <span id="nota-whatsapp-ofertada-lbl">e</span> ponto de WhatsApp ofertado até agora, você alcançou <b><span id="nota-whatsapp-alcancada-lbl">d</span></b> ponto.</p>
+                    <table style="text-align: center;">
+                        <tr>
+                            <th>Atividade</th><th>Nota na metade (0 a 10)</th><th>Nota ponderada (0 a 1)</th>
+                        </tr>
+                        <tr><td>1ª Metade</td><td id="nota-whatsapp-1">wa1</td><td id="nota-whatsapp-1-ponderada">wa1p</td></tr>
+                    </table>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>Projeto (3 pontos)</b></h5>
+                    <p>
+                        O nosso projeto tem 3 partes, cada uma valendo um ponto. Até agora nenhuma parte do projeto
+                        foi corrigida.
+                    </p><br>
+                </div>
+            </div>
+
+            <div class="w3-container w3-card w3-white">
+                <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Outras informações</h2>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>SIGAA</b></h5>
+                    <p>A disciplina tem uma única nota, que é o somatório da pontuação alcançada ao longo do semestre. Não haverá
+                        divisão entre 1ª V.A., 2ª V.A. e 3ª V.A.. A nota só será inserida no SIGAA ao final do semestre.</p>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>Erro na nota</b></h5>
+                    <p>Se você discorda de alguma nota atribuída a você, me procure imediatamente pelo WhatsApp.</p>
+                    <hr>
+                </div>
+                <div class="w3-container">
+                    <h5 class="w3-opacity"><b>Final</b></h5>
+                    <p>Haverá uma avaliação final para aqueles que tenham alcançado entre 3 e 7 pontos ao longo
+                    do semestre.</p><br>
+                </div>
+            </div>
+
+            <!-- End Right Column -->
+        </div>
+
+        <!-- End Grid -->
+    </div>
+
+    <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p><a href="https://jhcp.github.io/ead/LP/2020-PLE-1/">voltar para o site da disciplina</a></p>
+    <p>Baseado em template de <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+    let ofertadaAtividades = 2.5;
+    let ofertadaWhatsapp = 1;
+    let ofertadaProjeto = 0;
+
+    notas = [
+        {id: 200716534, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200714956, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200716322, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716517, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716958, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 20200006450, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717553, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 10},
+        {id: 200713378, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200713305, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200713379, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717587, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717566, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 0},
+        {id: 200706947, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 6},
+        {id: 200715313, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200714930, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 6},
+        {id: 200716070, at1: 10, at2: 10, at3: 10, at4: 5, wa1: 10},
+        {id: 200716068, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10},
+        {id: 200709576, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200710750, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200671792, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 8},
+        {id: 200698507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200713360, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200713300, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200717479, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717498, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717483, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200715978, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200709401, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200716402, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717511, at1: 10, at2: 10, at3: 10, at4: 5.25, wa1: 10},
+        {id: 20200009578, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716400, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716966, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200694712, at1: 0, at2: 10, at3: 10, at4: 10, wa1: 8},
+        {id: 200717541, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
+        {id: 200717502, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
+        {id: 200717576, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 8},
+        {id: 200717496, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717489, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200713297, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717494, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200717490, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 8},
+        {id: 200717488, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717487, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717947, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
+        {id: 200718184, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200718101, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10},
+        {id: 200716261, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 20200000170, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
+        {id: 200717506, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200715968, at1: 10, at2: 10, at3: 10, at4: 8.25, wa1: 10},
+        {id: 200713372, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200706951, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200718176, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
+        {id: 200717557, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 10},
+        {id: 200713439, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 7},
+        {id: 200717544, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717564, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 6},
+        {id: 200716266, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716983, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200717555, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200716526, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200713486, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 0},
+        {id: 200713497, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
+        {id: 200713507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0},
+        {id: 200716707, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 1},
+        {id: 200717578, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 0},
+        {id: 200716989, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
+        {id: 200707801, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 10},
+        {id: 200716703, at1: 10, at2: 10, at3: 7.5, at4: 0.25, wa1: 10},
+        {id: 200717532, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 7},
+        {id: 200716990, at1: 10, at2: 10, at3: 5.5, at4: 5, wa1: 7},
+        {id: 200716410, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
+        {id: 200716071, at1: 10, at2: 10, at3: 0, at4: 5, wa1: 8},
+        {id: 200716991, at1: 10, at2: 10, at3: 2.5, at4: 0, wa1: 5},
+        {id: 200716698, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
+        {id: 200713518, at1: 10, at2: 0, at3: 10, at4: 3.25, wa1: 8},
+    ];
+
+
+    function findStudent(student) {
+        return student.id == this;
+    }
+
+
+
+    function mostrarNota() {
+        let matricula = document.getElementById("matricula-input").value;
+        let currentStudent = notas.filter(findStudent, matricula);
+        if (currentStudent.length != 1) {
+            alert("Nota não encontrada. Verifique sua matrícula e tente novamente.")
+            return;
+        }
+
+        currentStudent = currentStudent[0];
+
+        /* change this block todo */
+        let notaAtividades = ((currentStudent.at1 + currentStudent.at2 + currentStudent.at3 + currentStudent.at4)/10)*0.625;
+        let notaWhatsapp = (currentStudent.wa1)/10;
+        let notaProjeto = (0)/10;
+        let notaTotal = (notaAtividades + notaWhatsapp + notaProjeto).toFixed(2);
+
+        let ofertadaTotal = ofertadaAtividades + ofertadaWhatsapp + ofertadaProjeto;
+
+        document.getElementById("matricula-lbl").innerHTML = currentStudent.id;
+        document.getElementById("nota-total-alcancada-lbl1").innerHTML = notaTotal;
+        document.getElementById("nota-total-alcancada-lbl2").innerHTML = notaTotal;
+        document.getElementById("nota-total-ofertada-lbl1").innerHTML = ofertadaTotal;
+        document.getElementById("nota-total-ofertada-lbl2").innerHTML = ofertadaTotal;
+
+        pctAtividades = notaAtividades/ofertadaAtividades;
+        document.getElementById("pct-atividades-bar").innerHTML = pctAtividades.toFixed(2)*100 + "%";
+        document.getElementById("pct-atividades-bar").style.width = pctAtividades.toFixed(2)*100 + "%";
+        pctWhatsapp = notaWhatsapp/ofertadaWhatsapp;
+        document.getElementById("pct-whatsapp-bar").innerHTML = pctWhatsapp.toFixed(2)*100 + "%";
+        document.getElementById("pct-whatsapp-bar").style.width = pctWhatsapp.toFixed(2)*100 + "%";
+
+
+
+        document.getElementById("nota-atividades-alcancada-lbl").innerHTML = notaAtividades.toFixed(2);
+        document.getElementById("nota-atividades-ofertada-lbl").innerHTML = ofertadaAtividades;
+        document.getElementById("nota-atividade-1").innerHTML = currentStudent.at1;
+        document.getElementById("nota-atividade-1-ponderada").innerHTML = ((currentStudent.at1/10)*0.625).toFixed(3);
+        document.getElementById("nota-atividade-2").innerHTML = currentStudent.at2;
+        document.getElementById("nota-atividade-2-ponderada").innerHTML = ((currentStudent.at2/10)*0.625).toFixed(3);
+        document.getElementById("nota-atividade-3").innerHTML = currentStudent.at3;
+        document.getElementById("nota-atividade-3-ponderada").innerHTML = ((currentStudent.at3/10)*0.625).toFixed(3);
+        document.getElementById("nota-atividade-4").innerHTML = currentStudent.at4;
+        document.getElementById("nota-atividade-4-ponderada").innerHTML = ((currentStudent.at4/10)*0.625).toFixed(3);
+
+        document.getElementById("nota-whatsapp-alcancada-lbl").innerHTML = notaWhatsapp;
+        document.getElementById("nota-whatsapp-ofertada-lbl").innerHTML = ofertadaWhatsapp;
+        document.getElementById("nota-whatsapp-1").innerHTML = currentStudent.wa1;
+        document.getElementById("nota-whatsapp-1-ponderada").innerHTML = (currentStudent.wa1/10)*1;
+
+
+        document.getElementById("student-container").style.display = 'block';
+        document.getElementById("search-matricula").style.display = 'none';
+    };
+
+
+</script>
+</body>
+</html>
+
+
+</body>
+</html>
