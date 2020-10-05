@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 7 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 7 - The Huxley</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            Construa seu programa aos poucos e vá testando com o repl.it, antes de enviar a sua resposta para o Huxley.
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, no REPL.IT funciona, mas no Huxley não funciona!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Ei, eu sei que é frustrante, mas pode ter certeza:
+                            se o Huxley está dizendo que a sua resposta não está certa é por
+                            que realmente tem algo errado com o seu código</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">Se não descobrir o erro, pergunta no grupo do WhatsApp que a gente ajuda 😉</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Aff
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <p>Recomendo que você comece pelo problema <b>"Almoço na Cantina"</b>, que é o
+                problema menos difícil desta Atividade.</p>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Almoço na Cantina</p>
+
+            <p>
+                Este problema não precisa de repetição (for ou while). O raciocínio dele é similar ao Exemplo 1 (quiz)
+                da lição "Exemplos com if" - em vez de somar a quantidade de acertos, será somado o valor dos pratos.
+            </p>
+            <p>Se lembre de criar seus próprios casos de teste, conforme explicado na Live 6.</p>
+            <p>
+                Sobre o problema das maiúsculas ou minúsculas: você pode resolver isso usando a função upper() e fazendo
+                a comparação com os textos em maiúsculas (ex: 'LASANHA', 'SUCO', ...)
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Carros de João e Maria (1/2)</p>
+            <p>
+                <b>É como se</b> o programa já começasse perguntando: você deseja digitar os dados de mais um carro
+                (s/n)?
+                Quando a resposta for s ou S o programa vai perguntar pelo ano e depois pela velocidade do carro.
+                Aí vai repetir a pergunta (s/n), e repetir enquanto a resposta for s ou S.
+            </p>
+            <p>Como sempre, existem várias formas de resolver esse problema. Uma delas é criar duas listas vazias:
+            uma para guardar os anos dos carros, e outra para guardar as velocidades dos carros. Depois se
+            acrescenta os dados às listas, e por último se faz os cálculos apropriados com base nas listas.</p>
+            <b>continua ==></b>
+        </section>
+
+        <section>
+            <p class="slide-title">Carros de João e Maria (2/2)</p>
+            <p>CORREÇÃO: o enunciado fala sobre a quantidade de carros, mas na verdade a saída deve ser:</p>
+            <ul>
+                <li>Maior velocidade (2 casas decimais)</li>
+                <li>Maior ano</li>
+                <li>Velocidade média (2 casas decimais)</li>
+            </ul>
+            <p>COMPLEMENTO: o enunciado não explica isso, mas quando nenhum carro for digitado a saída deverá ser
+            o texto 'zero'.</p>
+            <p>DIFICULDADE: não estranhe se você gastar 3 horas ou mais para resolver este problema.</p>
+        </section>
+
+        <section>
+            Lembre-se: resolver metade da atividade já é bem melhor do que não resolver nada.
+        </section>
+
+        <section>
+            <p>Quando o Huxley diz que a resposta está errada quer dizer que, em alguns casos, o resultado do seu código
+                não bateu com o gabarito.
+                Se lembre de olhar a parte de baixo da tela para saber
+                quais casos de teste estão errados e aperte nos
+                <span style="background-color: #cc7b5e; color:white;border-radius: 50%; padding: 0 8px; font-weight: bold">X</span>
+                para ver se tem alguma dica disponível.</p>
+            <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
+        </section>
+
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
