@@ -24,13 +24,14 @@
         <div class="w3-third">.</div>
         <div class="w3-third">
             <div class="w3-white w3-text-grey w3-card-4">
-                <div class="w3-display-container">
+                <div class="w3-display-container" style="padding: 15px">
                     <br>
                     <p>Matrícula: <input id="matricula-input"></p>
                     <p style="text-align: center;"><button onclick="mostrarNota();">visualizar nota</button></p>
                     <div class="w3-light-grey w3-round-xlarge">
                         <p>Para visualizar a sua nota, digite a sua matrícula no campo
-                        acima e clique no botão "visualizar nota". Você pode descobrir o seu número de matrícula no SIGAA.</p>
+                        acima e clique no botão "visualizar nota". Você pode descobrir o seu número de matrícula no SIGAA.
+                        Se tiver algum problema com a sua nota fale comigo imediatamente pelo whatsapp.</p>
                     </div>
                     <br>
                 </div>
@@ -90,7 +91,7 @@
 <!--                        <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>-->
 <!--                    </div>-->
                     <br>
-                    <p>última atualização: 28/09/2020</p>
+                    <p>última atualização: 07/10/2020</p>
 
                 </div>
             </div><br>
@@ -122,6 +123,7 @@
                         <tr><td>Atividade 2</td><td id="nota-atividade-2">at2</td><td id="nota-atividade-2-ponderada">at2p</td></tr>
                         <tr><td>Atividade 3</td><td id="nota-atividade-3">at3</td><td id="nota-atividade-3-ponderada">at3p</td></tr>
                         <tr><td>Atividade 4</td><td id="nota-atividade-4">at4</td><td id="nota-atividade-4-ponderada">at4p</td></tr>
+                        <tr><td>Atividade 4</td><td id="nota-atividade-5">at5</td><td id="nota-atividade-5-ponderada">at5p</td></tr>
                     </table>
                     <hr>
                 </div>
@@ -138,7 +140,9 @@
                         - Compartilhar curiosidades sobre computação;
                         - Comentar sobre filmes, séries, livros etc. que têm a ver com computação;
                         - Discutir sobre o impacto da computação no nosso dia-a-dia;
-                        - Mandar avisos sobre a disciplina.
+                        - Mandar avisos sobre a disciplina;
+                        - Sugestões para melhorar o material do curso;
+                        - Sugestões de novas atividades e dinâmicas para fazermos nas lives.
                     </p>
                     <p><b>SUA NOTA:</b> do <span id="nota-whatsapp-ofertada-lbl">e</span> ponto de WhatsApp ofertado até agora, você alcançou <b><span id="nota-whatsapp-alcancada-lbl">d</span></b> ponto.</p>
                     <table style="text-align: center;">
@@ -193,88 +197,233 @@
 </footer>
 
 <script>
-    let ofertadaAtividades = 2.5;
+    let ofertadaAtividades = 0.625*5;
     let ofertadaWhatsapp = 1;
     let ofertadaProjeto = 0;
 
     notas = [
-        {id: 200716534, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200714956, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200716322, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716517, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716958, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 20200006450, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717553, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 10},
-        {id: 200713378, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200713305, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200713379, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717587, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717566, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 0},
-        {id: 200706947, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 6},
-        {id: 200715313, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200714930, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 6},
-        {id: 200716070, at1: 10, at2: 10, at3: 10, at4: 5, wa1: 10},
-        {id: 200716068, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10},
-        {id: 200709576, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200710750, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200671792, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 8},
-        {id: 200698507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200713360, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200713300, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200717479, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717498, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717483, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200715978, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200709401, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200716402, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717511, at1: 10, at2: 10, at3: 10, at4: 5.25, wa1: 10},
-        {id: 20200009578, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716400, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716966, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200694712, at1: 0, at2: 10, at3: 10, at4: 10, wa1: 8},
-        {id: 200717541, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
-        {id: 200717502, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
-        {id: 200717576, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 8},
-        {id: 200717496, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717489, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200713297, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717494, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200717490, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 8},
-        {id: 200717488, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717487, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717947, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
-        {id: 200718184, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200718101, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10},
-        {id: 200716261, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 20200000170, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10},
-        {id: 200717506, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200715968, at1: 10, at2: 10, at3: 10, at4: 8.25, wa1: 10},
-        {id: 200713372, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200706951, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200718176, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
-        {id: 200717557, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 10},
-        {id: 200713439, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 7},
-        {id: 200717544, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717564, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 6},
-        {id: 200716266, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716983, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200717555, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200716526, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200713486, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 0},
-        {id: 200713497, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8},
-        {id: 200713507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0},
-        {id: 200716707, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 1},
-        {id: 200717578, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 0},
-        {id: 200716989, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10},
-        {id: 200707801, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 10},
-        {id: 200716703, at1: 10, at2: 10, at3: 7.5, at4: 0.25, wa1: 10},
-        {id: 200717532, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 7},
-        {id: 200716990, at1: 10, at2: 10, at3: 5.5, at4: 5, wa1: 7},
-        {id: 200716410, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7},
-        {id: 200716071, at1: 10, at2: 10, at3: 0, at4: 5, wa1: 8},
-        {id: 200716991, at1: 10, at2: 10, at3: 2.5, at4: 0, wa1: 5},
-        {id: 200716698, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0},
-        {id: 200713518, at1: 10, at2: 0, at3: 10, at4: 3.25, wa1: 8},
+        /* terça */
+        {id: 200716534, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200714956, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200716322, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716517, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716958, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 20200006450, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717553, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 10, at5: 0},
+        {id: 200713378, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200713305, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200713379, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717587, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717566, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200706947, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 6, at5: 10},
+        {id: 200715313, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200714930, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 6, at5: 0},
+        {id: 200716070, at1: 10, at2: 10, at3: 10, at4: 5, wa1: 10, at5: 5},
+        {id: 200716068, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200709576, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200710750, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200671792, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 8, at5: 0},
+        {id: 200698507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713360, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713300, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200717479, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717498, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717483, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200715978, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200709401, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200716402, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717511, at1: 10, at2: 10, at3: 10, at4: 5.25, wa1: 10, at5: 5.25},
+        {id: 20200009578, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716400, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716966, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200694712, at1: 0, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717541, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717502, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717576, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 8, at5: 0},
+        {id: 200717496, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717489, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713297, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717494, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717490, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 8, at5: 0},
+        {id: 200717488, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717487, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717947, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200718184, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200718101, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716261, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 20200000170, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200717506, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200715968, at1: 10, at2: 10, at3: 10, at4: 8.25, wa1: 10, at5: 8.25},
+        {id: 200713372, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200706951, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200718176, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200717557, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 10, at5: 0},
+        {id: 200713439, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 7, at5: 0},
+        {id: 200717544, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717564, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 6, at5: 10},
+        {id: 200716266, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716983, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717555, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716526, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713486, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 0, at5: 7.5},
+        {id: 200713497, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200713507, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0, at5: 10},
+        {id: 200716707, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 1, at5: 0},
+        {id: 200717578, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 0, at5: 0},
+        {id: 200716989, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200707801, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 10, at5: 0},
+        {id: 200716703, at1: 10, at2: 10, at3: 7.5, at4: 0.25, wa1: 10, at5: 0.25},
+        {id: 200717532, at1: 10, at2: 0, at3: 7.5, at4: 0, wa1: 7, at5: 0},
+        {id: 200716990, at1: 10, at2: 10, at3: 5.5, at4: 5, wa1: 7, at5: 5},
+        {id: 200716410, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200716071, at1: 10, at2: 10, at3: 0, at4: 5, wa1: 8, at5: 5},
+        {id: 200716698, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200716991, at1: 10, at2: 10, at3: 2.5, at4: 0, wa1: 5, at5: 0},
+        {id: 200713518, at1: 10, at2: 0, at3: 10, at4: 3.25, wa1: 8, at5: 3.25},
+        {id: 200713377, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+
+        /* quarta */
+        {id: 200698398, at1: 10, at2: 10, at3: 8, at4: 7.5, wa1: 10, at5: 7.5},
+        {id: 200698383, at1: 0, at2: 10, at3: 10, at4: 7, wa1: 10, at5: 10},
+        {id: 200716522, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 7, at5: 10},
+        {id: 200717477, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716676, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717538, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716527, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727066, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716687, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716682, at1: 10, at2: 10, at3: 10, at4: 5, wa1: 10, at5: 7.5},
+        {id: 200716323, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 20200010550, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717565, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713322, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717547, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200709549, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200716038, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727123, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 10, at5: 0},
+        {id: 200714308, at1: 10, at2: 10, at3: 3, at4: 0, wa1: 10, at5: 0},
+        {id: 200727137, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716960, at1: 10, at2: 10, at3: 10, at4: 5.75, wa1: 10, at5: 7.5},
+        {id: 200727122, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717546, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716975, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727111, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 10, at5: 0},
+        {id: 200716971, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 7.5},
+        {id: 200717526, at1: 10, at2: 3.33333333333333, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717539, at1: 10, at2: 10, at3: 7.25, at4: 0, wa1: 3, at5: 10},
+        {id: 200727102, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717533, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717561, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 20200006558, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717574, at1: 10, at2: 10, at3: 2.5, at4: 0, wa1: 2, at5: 0},
+        {id: 200727155, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717571, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 5, at5: 10},
+        {id: 200717570, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716979, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717572, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 2.5},
+        {id: 200717562, at1: 10, at2: 10, at3: 2.5, at4: 10, wa1: 10, at5: 10},
+        {id: 200716700, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200671822, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 7, at5: 5},
+        {id: 200727030, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 7, at5: 0},
+        {id: 200727023, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200716525, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200717556, at1: 10, at2: 10, at3: 7.5, at4: 0, wa1: 7, at5: 10},
+        {id: 200717507, at1: 10, at2: 0, at3: 5, at4: 10, wa1: 1, at5: 10},
+        {id: 200726977, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716967, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717516, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717596, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717586, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 5, at5: 10},
+        {id: 200716041, at1: 10, at2: 10, at3: 2.5, at4: 0, wa1: 0, at5: 0},
+        {id: 200713406, at1: 10, at2: 10, at3: 10, at4: 9.5, wa1: 2, at5: 10},
+        {id: 200717970, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716708, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200727206, at1: 10, at2: 10, at3: 10, at4: 2.5, wa1: 10, at5: 10},
+        {id: 200709581, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200717577, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 5},
+        {id: 200713573, at1: 10, at2: 10, at3: 7.5, at4: 10, wa1: 10, at5: 10},
+        {id: 200727040, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 5, at5: 0},
+        {id: 200717582, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 9, at5: 10},
+        {id: 200727226, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200698388, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727072, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717585, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727218, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200717549, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+
+
+        /* sexta */
+        {id: 200694664, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 10},
+        {id: 200716954, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713304, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 20200001650, at1: 0, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716952, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717480, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713508, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717579, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200709552, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727147, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200709629, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 10},
+        {id: 200717513, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200694673, at1: 10, at2: 10, at3: 10, at4: 8, wa1: 10, at5: 10},
+        {id: 200713340, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200713349, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200709445, at1: 10, at2: 10, at3: 10, at4: 9.5, wa1: 10, at5: 10},
+        {id: 200716972, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713338, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727171, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727074, at1: 10, at2: 6.66666666666667, at3: 0, at4: 0, wa1: 3, at5: 0},
+        {id: 200717560, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 3, at5: 10},
+        {id: 20200006511, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716202, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713470, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 20200005292, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716408, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200715979, at1: 10, at2: 0, at3: 0, at4: 7.5, wa1: 3, at5: 10},
+        {id: 200727145, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 3, at5: 10},
+        {id: 200726996, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 7.5},
+        {id: 200716981, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 20200001515, at1: 10, at2: 10, at3: 10, at4: 2.5, wa1: 8, at5: 0},
+        {id: 200717568, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200716265, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200716069, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713510, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717573, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200726990, at1: 10, at2: 3.33333333333333, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200726999, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716516, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717486, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200706802, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 20200008051, at1: 10, at2: 0, at3: 0, at4: 5, wa1: 0, at5: 10},
+        {id: 200698275, at1: 10, at2: 10, at3: 0, at4: 10, wa1: 7, at5: 10},
+        {id: 200716695, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717542, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717534, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 8, at5: 10},
+        {id: 20200006478, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0, at5: 10},
+        {id: 200706912, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727103, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727115, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727144, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717529, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 10, at5: 0},
+        {id: 200718001, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 4, at5: 2.5},
+        {id: 200706840, at1: 10, at2: 6.66666666666667, at3: 0, at4: 0, wa1: 10, at5: 7.5},
+        {id: 200717504, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200727065, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200717508, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200713357, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200713358, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10},
+        {id: 200709440, at1: 0, at2: 0, at3: 7.5, at4: 0, wa1: 10, at5: 0},
+        {id: 200709407, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 5, at5: 0},
+        {id: 200694867, at1: 10, at2: 0, at3: 2.5, at4: 0, wa1: 8, at5: 10},
+        {id: 200717589, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200716994, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10},
+        {id: 200717592, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 8, at5: 10},
+        {id: 200713367, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200709518, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727182, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200727135, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200706952, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
+        {id: 200726991, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0},
     ];
 
 
@@ -288,14 +437,15 @@
         let matricula = document.getElementById("matricula-input").value;
         let currentStudent = notas.filter(findStudent, matricula);
         if (currentStudent.length != 1) {
-            alert("Nota não encontrada. Verifique sua matrícula e tente novamente.")
+            alert("Nota não encontrada. Verifique seu número de matrícula e tente novamente.")
             return;
         }
 
         currentStudent = currentStudent[0];
 
         /* change this block todo */
-        let notaAtividades = ((currentStudent.at1 + currentStudent.at2 + currentStudent.at3 + currentStudent.at4)/10)*0.625;
+        let notaAtividades = ((currentStudent.at1 + currentStudent.at2 + currentStudent.at3 + currentStudent.at4
+            + currentStudent.at5)/10)*0.625;
         let notaWhatsapp = (currentStudent.wa1)/10;
         let notaProjeto = (0)/10;
         let notaTotal = (notaAtividades + notaWhatsapp + notaProjeto).toFixed(2);
@@ -327,6 +477,8 @@
         document.getElementById("nota-atividade-3-ponderada").innerHTML = ((currentStudent.at3/10)*0.625).toFixed(3);
         document.getElementById("nota-atividade-4").innerHTML = currentStudent.at4;
         document.getElementById("nota-atividade-4-ponderada").innerHTML = ((currentStudent.at4/10)*0.625).toFixed(3);
+        document.getElementById("nota-atividade-5").innerHTML = currentStudent.at5;
+        document.getElementById("nota-atividade-5-ponderada").innerHTML = ((currentStudent.at5/10)*0.625).toFixed(3);
 
         document.getElementById("nota-whatsapp-alcancada-lbl").innerHTML = notaWhatsapp;
         document.getElementById("nota-whatsapp-ofertada-lbl").innerHTML = ofertadaWhatsapp;
