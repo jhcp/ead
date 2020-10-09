@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Listas parte 4 - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Listas e o Cálice de Fogo</h1>
+            <h4>🍷 🔥</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+
+        <section>
+            <p>Só para você não ficar voando: nesse vídeo o Guanabara faz a formatação de string com f'' em vez de ''.format()</p>
+            <p><span class="codigo">f'R${5+2}'</span> é equivalente a <span class="codigo">'R${}'.format(5+2)</span> </p>
+            <p>Mas você pode continuar usando o .format normalmente, só estude a outra forma de formatação se quiser =)</p>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (39min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/YV_JQmZNFsk" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <p>Uma lista vazia é uma lista sem elementos. Para criar uma lista vazia, temos duas opções principais:</p>
+            <span class="codigo"> dados = [] </span><br>
+            ou<br>
+            <span class="codigo"> dados = list() </span>
+        </section>
+
+        <section>
+            <p>No exemplo do vídeo o Guanabara cria uma lista auxiliar (dado) para guardar o nome e a idade da pessoa,
+            antes de inserir esses dados na lista galera. Uma alternativa seria usar duas variáveis.</p>
+
+            ORIGINAL:
+            <div class="codigo">for c in range(0, 3):
+    dado.append(str(input('Nome: ')))
+    dado.append(int(input('Idade: ')))
+    galera.append(dado[:])
+    dado.clear()</div>
+            <br>
+
+            ALTERNATIVA:
+            <div class="codigo">for c in range(0, 3):
+    nome = input('Nome: ')
+    idade = int(input('Idade: '))
+    galera.append([nome, idade])</div>
+        </section>
+
+        <section>
+            Na próxima lição vamos ver exemplos com matrizes. Mas antes, dê uma conferida
+            <a href="matrizes.pdf">nesta explicação resumida sobre matrizes em Python</a>.
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
