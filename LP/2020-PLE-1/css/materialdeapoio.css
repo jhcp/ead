@@ -473,7 +473,7 @@ span.codigo {
   background-color: #3f3f3f;
   color: white;
   font-family: monospace;
-  padding: 0.2em;
+  padding: 0.2em 0.5em;
 }
 
 div.codigo {
