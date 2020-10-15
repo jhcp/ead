@@ -223,8 +223,8 @@ print('OK, senha correta')</div>
         </section>
 
         <section data-background="#EE33EE" style="background-color: #EE33EE" class="is-dark">
-            <p>Tudo o que podemos fazer com <span class="codigo">for</span> podemos fazer com
-                <span class="codigo">while</span> também.</p>
+            Tudo o que podemos fazer com <span class="codigo">for</span> podemos fazer com
+                <span class="codigo">while</span> também.
             <p><b>Exemplo 1 (range):</b></p>
             <div class="codigo">#valores de exemplo
 x = 5
@@ -232,9 +232,11 @@ y = 20
 z = 2
 
 print('com for:')
-  for c in range(x, y, z):
-print(c)
+for c in range(x, y, z):
+  print(c)
 
+#assumindo que o intervalo é crescente
+#se for decrescente, será preciso inverter a comparação (>)
 print('com while:')
 c = x
 while c < y:
