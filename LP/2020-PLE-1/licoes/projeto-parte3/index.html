@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Parte 3 do projeto - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<!-- todo passar esta lição para a semana 3 -->
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Parte 3 do projeto</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <p class="slide-title">Equipe</p>
+            <p>O projeto pode ser feito individualmente, em dupla, ou em trio.</p>
+            <p class="slide-title">Entrega</p>
+            <p>Apenas um(a) representante da equipe irá entregar o arquivo do projeto, pelo SIGAA. O nome do arquivo
+            deve ser o nome completo da pessoa que entraga-lo.</p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <p class="slide-title">Pode mudar a equipe?</p>
+            <p>Sim, pode mudar a equipe - se alguém tiver se encostado, se alguém abandonou a disciplina, se
+            não é possível mais conciliar a agenda de vocês, ou por qualquer outro motivo.</p>
+
+            <p>O detalhe é que, mudando a equipe, você <b>deve mudar os dados também</b>. Por exemplo, se a sua parte 1
+            é sobre jogos, você pode manter o mesmo código mas substituir os jogos para não correr o risco de ficar
+            igual.</p>
+        </section>
+
+        <section data-background="hsl(204, 86%, 53%)" class="is-dark">
+            <p class="slide-title">Como salvar o arquivo</p>
+            <p>Quando terminar de fazer o código no repl.it, abra o bloco de notas, copie o código para ele, e salve
+                com o  NOME_COMPLETO_DA_PESSOA_QUE_VAI_ENTREGAR.py, escolhendo o Tipo "Todos os arquivos", conforme
+                imagem abaixo. É esse arquivo que
+                será entregue pelo SIGAA.</p>
+            <img src="salvar_notepad_nome.png" class="stretch">
+        </section>
+
+        <section data-background="hsl(217, 71%, 53%)" class="is-dark">
+            <p class="slide-title">Como tirar dúvidas?</p>
+            <p>Faça as perguntas pelo grupo do WhatsApp mas <b>não envie o seu código (não envie)</b>, para evitar o
+                risco de alguém copia-lo e acabar lhe prejudicando.</p>
+        </section>
+
+        <section>
+            <p>Demonstração do projeto no vídeo a seguir ----&gt;</p>
+        </section>
+
+
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (16min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/_XMCOVnkXZM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Especificação do projeto</div>
+            <p><a href="especificação%20parte%203.pdf">Clique aqui para acessar o documento que descreve
+            os requisitos do projeto.</a>
+            </p>
+            <p>OBS: esse documento tem 2 páginas.</p>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">divirta-se! =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
