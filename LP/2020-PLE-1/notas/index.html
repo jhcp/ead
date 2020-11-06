@@ -260,7 +260,7 @@
         {id: 200715313, at1: 10, at2: 10, at3: 10, at4: 7.5, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 2, at9: 10, at10: 0, wa2: 10, proj3: 9},
         {id: 200717947, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 2, at9: 10, at10: 0, wa2: 7, proj3: 8},
         {id: 200671792, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 8, at5: 7.5, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 2, at9: 10, at10: 10, wa2: 8, proj3: 9},
-        {id: 200716071, at1: 10, at2: 10, at3: 0, at4: 5, wa1: 8, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9, at9: 10, at10: 10, wa2: 8, proj3: -1},
+        {id: 200716071, at1: 10, at2: 10, at3: 0, at4: 5, wa1: 8, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9, at9: 10, at10: 10, wa2: 8, proj3: 10},
         {id: 200716990, at1: 10, at2: 10, at3: 5.5, at4: 5, wa1: 7, at5: 2.5, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9.5, at9: 10, at10: 10, wa2: 7, proj3: 10},
         {id: 200713379, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, at9: 10, at10: 10, wa2: 10, proj3: 10},
         {id: 200714930, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 6, at5: 0, at6: 0, proj1: -1, at7: 0, at8: 0, proj2: -1, at9: 0, at10: 0, wa2: 6, proj3: -1},
@@ -471,7 +471,16 @@
     }
 
 
-
+    function calcularNotas() {
+        notas.forEach(function (currentStudent) {
+            if (currentStudent.proj1 == -1) currentStudent.proj1 = 0;
+            if (currentStudent.proj2 == -1) currentStudent.proj2 = 0;
+            if (currentStudent.proj3 == -1) currentStudent.proj3 = 0;
+            let notasAtividades = [currentStudent.at1, currentStudent.at2, currentStudent.at3, currentStudent.at4,
+                currentStudent.at5, currentStudent.at6, currentStudent.at7, currentStudent.at8, currentStudent.at9, currentStudent.at10 ];
+            let min1 = Math.min.apply(null, notasAtividades);
+        })
+    }
     function mostrarNota() {
         let matricula = document.getElementById("matricula-input").value;
         let currentStudent = notas.filter(findStudent, matricula);
