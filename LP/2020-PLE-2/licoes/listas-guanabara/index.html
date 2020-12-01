@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Listas parte 3 - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Listas revolutions</h1>
+            <h4>lista, lista, lista, lista, lista </h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Para criar uma lista utilizamos..."
+                 data-quiz-answers='{"a": "( ) parênteses", "b": "[ ] colchetes", "c": "{ } chaves"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = [10, 50, 4]
+print(x[1])
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "10", "b": "[10]", "c": "50", "d": "[50]" }'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <p>O comando <b>in</b> pode ser usado para descobrir se um certo elemento faz parte de uma lista</p>
+            EXEMPLO:
+            <div class="codigo">x = [2, 4, 2, 4, '5']
+print(4 in x)
+print(10 in x)
+print(5 in x)
+print('5' in x)</div>
+            <p>☝️o primeiro print dá True, por que 4 está em x. Já o segundo print dá False, por que a lista em
+                x não contém o número 10. O terceiro print também dá falso, por que o <b>número</b> 5 não faz
+            parte da lista. Já o último print dá True.</p>
+
+        </section>
+
+        <section>
+            <p>Vídeo 1 (40min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/N1hTsbW50eM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#6a1212">
+            <div class="quiz-container"
+                 data-quiz-text="A função append serve para..."
+                 data-quiz-answers='{"a": "acresentar um elemento no final uma lista", "b": "remover o apêndice", "c": "executar a depender (append) de uma condição"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="A função insert serve para..."
+                 data-quiz-answers='{"a": "acresentar um elemento em qualquer lugar de uma lista", "b": "inserir mais uma condição", "c": "acresentar um elemento no final uma lista"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#229977">
+            <div class="quiz-container"
+                 data-quiz-text="Qual dessas funções ou comandos não serve para remover um elemento de uma lista?"
+                 data-quiz-answers='{"a": "delete", "b": "del", "c": "pop", "d": "remove"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            Qual a saída desse código?
+            <div class="codigo">a = [2, 5, 10, 2, 8]
+a.pop(3)
+print(a)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[2, 5, 10, 8]", "b": "[2, 5, 10, 2, 8]", "c": "[2, 5, 2, 8]", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">a = [2, 5, 10, 2, 8]
+a.pop(10)
+print(a)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[2, 5, 10, 8]", "b": "[2, 5, 10, 2, 8]", "c": "[2, 5, 2, 8]", "d": "erro"}'
+                 data-quiz-correct="d"></div>
+        </section>
+
+        <section data-background="#229977">
+            Qual a saída desse código?
+            <div class="codigo">a = [2, 5, 10, 2, 8]
+a.remove(10)
+print(a)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[2, 5, 10, 8]", "b": "[2, 5, 10, 2, 8]", "c": "[2, 5, 2, 8]", "d": "erro"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            Qual a saída desse código?
+            <div class="codigo">a = [2, 5, 10, 2, 8]
+a.remove(3)
+print(a)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[2, 5, 10, 8]", "b": "[2, 5, 10, 2, 8]", "c": "[2, 5, 2, 8]", "d": "erro"}'
+                 data-quiz-correct="d"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = list(range(10, 20, 3))
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[10, 13, 16, 19]", "b": "[10, 13, 16, 19, 22]", "c": "[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#229977">
+            Qual a saída desse código?
+            <div class="codigo">x = list(range(10, 20, 3))
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[10, 13, 16, 19]", "b": "[10, 13, 16, 19, 22]", "c": "[10, 11, 12, 13, 14, 15, 16, 17, 18, 19]", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            <div class="quiz-container"
+                 data-quiz-text="A função sort serve para..."
+                 data-quiz-answers='{"a": "sortear um elemento da lista", "b": "ordenar os elementos da lista"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+print(len(x))
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "5", "b": "3", "c": "4", "d": "erro", "e": "6"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#229977">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x[1] = 20
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, 20, &#39;oi&#39;, &#39;10&#39;, True]", "b": "[20, 5, &#39;oi&#39;, &#39;10&#39;, True]", "c": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x[20] = 1
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, 20, &#39;oi&#39;, &#39;10&#39;, True]", "b": "[20, 5, &#39;oi&#39;, &#39;10&#39;, True]", "c": "erro"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x[1] = x[2]
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, &#39;oi&#39;, &#39;oi&#39;, &#39;10&#39;, True]", "b": "[&#39;oi&#39;, 5, &#39;oi&#39;, &#39;10&#39;, True]", "c": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#229977">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x.append(3)
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, 5, &#39;oi&#39;, &#39;10&#39;, True, 3]", "b": "[1, 5, &#39;oi&#39;, 3, &#39;10&#39;, True]", "c": "erro", "d": "[3, 1, 5, &#39;oi&#39;, &#39;10&#39;, True]"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x.insert(2, 3)
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, 5, 3, &#39;oi&#39;, &#39;10&#39;, True]", "b": "[1, 5, &#39;oi&#39;, 2, &#39;10&#39;, True]", "c": "erro", "d": "[1, 5, &#39;oi&#39;, &#39;10&#39;, True, 3]"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x.pop()
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, 5, &#39;oi&#39;, &#39;10&#39;]", "b": "[5, &#39;oi&#39;, &#39;10&#39;, True]", "c": "erro" }'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#229977">
+            Qual a saída desse código?
+            <div class="codigo">x = [1, 5, 'oi', '10', True]
+x.pop(1)
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[1, &#39;oi&#39;, &#39;10&#39;, True]", "b": "[5, &#39;oi&#39;, &#39;10&#39;, True]", "c": "erro" }'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6a1212">
+            Qual a saída desse código?
+            <div class="codigo">x = [2, 4, 2, 4]
+x.remove(2)
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[4, 2, 4]", "b": "[2, 4, 2, 4]", "c": "erro", "d": "[4, 4]" }'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = [2, 4, 2, 4]
+x.remove(2)
+x.remove(2)
+x.remove(2)
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[4, 2, 4]", "b": "[2, 4, 2, 4]", "c": "erro", "d": "[4, 4]" }'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <p>Só para você não ficar voando: nesse vídeo o Guanabara faz a formatação de string com f'' em vez de ''.format()</p>
+            <p><span class="codigo">f'R${5+2}'</span> é equivalente a <span class="codigo">'R${}'.format(5+2)</span> </p>
+            <p>Mas você pode continuar usando o .format normalmente, só estude a outra forma de formatação se quiser =)</p>
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

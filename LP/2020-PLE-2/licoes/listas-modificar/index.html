@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Como modificar listas - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <!-- todo passar esta lição para a semana 5 -->
+            <h1>Como modificar listas</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Refaça exercícios antigos, para não esquecer como resolvê-los.
+            </p>
+
+            <br>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Para criar uma lista utilizamos..."
+                 data-quiz-answers='{"a": "( ) parênteses", "b": "[ ] colchetes", "c": "{ } chaves"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section>
+            <p>
+                Veja o vídeo a seguir, que explica como criar, usar e modificar listas no Python.
+            </p>
+            <br>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (13min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/thnSR7lz2LY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <p>Para revisar como se faz para criar uma lista, e também para aprender a usar as funções sum, len e sort,
+                volte para a primeira lição da Semana 5.</p>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Para que serve a função append?"
+                 data-quiz-answers='{"a": "adicionar elementos à lista", "b": "criar um apêndice",
+                 "c": "remover elementos da lista", "d": "ordenar a lista"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            Qual o resultado de
+            <div class="codigo">x = [5, 10, 15, 20, 25]
+print(x[1])</div>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "10", "b": "5",
+                 "c": "[5, 10, 15, 20, 25]"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Precisamos lembrar que os índices (posições) da lista são contados a partir do ZERO. Então
+            na lista <span class="codigo">[5, 10, 15, 20, 25]</span>, que tem 5 elementos: </p>
+            <ul>
+                <li>O 5 está na posição ZERO</li>
+                <li>O 10 está na posição UM</li>
+                <li>O 15 está na posição DOIS</li>
+                <li>O 20 está na posição TRÊS</li>
+                <li>O 25 está na posição QUATRO</li>
+            </ul>
+            <p>Sendo assim, <div class="codigo">x = [5, 10, 15, 20, 25]
+print(x[1])</div>
+            vai imprimir na tela o elemento que está na posição 1 da lista - ou seja, o número 10</p>
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [10, 0, 2]
+print(x[0])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "10", "b": "1", "c": "0", "d": "2"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = ['a', 'x', 5, '2', 'maria']
+print(x[4])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "maria", "b": "2", "c": "5", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x=['paul','lennon','george','ringo']
+print(x[1])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "lennon", "b": "paul", "c": "george", "d": "ringo", "e": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x=['paul','lennon','george','ringo']
+print(x[4])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "lennon", "b": "paul", "c": "george", "d": "ringo", "e": "erro"}'
+                 data-quiz-correct="e"></div>
+        </section>
+
+        <section data-background="#dca3a3" style="background-color: #dca3a3">
+            <p>Precisamos lembrar que os índices (posições) da lista são contados a partir do ZERO. Então
+                na lista <span class="codigo">['paul','lennon','george','ringo']</span> , que tem 4 elementos: </p>
+            <ul>
+                <li>na posição ZERO tem 'paul'</li>
+                <li>na posição UM tem 'lennon'</li>
+                <li>na posição DOIS tem 'george'</li>
+                <li>na posição TRÊS tem 'ringo'</li>
+                <li>na posição QUATRO tem... <b>nada</b></li>
+            </ul>
+            <p>Por isso que <div class="codigo">x=['paul','lennon','george','ringo']
+print(x[4])</div>
+            dá erro; pedimos o elemento na posição 4 da lista, mas não existe elemento
+            nessa posição.</p>
+        </section>
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 10, 4, 2]
+print(x[1])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "6", "b": "15", "c": "2", "d": "erro"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 10, 4, 7]
+print(x[1] + x[3])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "6", "b": "15", "c": "17", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 10, 4, 7]
+print(x[1 + 3])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "7", "b": "4", "c": "2", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Olha como <div class="codigo">x = [5, 2, 10, 4, 7]
+print(x[1] + x[3])</div>
+            é diferente de
+            <div class="codigo">x = [5, 2, 10, 4, 7]
+print(x[1 + 3])</div>
+            </p>
+            <p>No primeiro, estamos somando x[1] com x[3], ou seja, 2 + 4, que dá 6.</p>
+            <p>No segundo estamos pegando o elemento na posição 1 + 3; ou seja, o elemento
+            na posição 4, que é o número 7.</p>
+            <p>Se ligou? Bora fazer outro exemplo parecido.</p>
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 10, 4, 2]
+print(x[2*3 - 2])</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "2", "b": "4", "c": "10", "d": "5"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Estranho, né? A gente já viu que, quando vamos usar um elemento de uma lista, colocamos a posição
+                do elemento entre colchetes. Então <span class="codigo">x[4]</span> é o elemento na posição 4 da lista x.</p>
+            <p>Blz, mas e <span class="codigo">x[2*3 - 2]</span> ?</p>
+            <p></p>Ué, o que está entre colchetes é a posição do elemento,
+            então nesse código vamos pegar o elemento na posição <span class="codigo">2*3 - 2</span> da lista x.
+            E <span class="codigo">2*3 - 2</span> dá 4.
+            Então o resultado será o elemento na posição <b>4</b> da lista x.</p>
+            <div class="codigo">x = [5, 2, 10, 4, 2]
+print(x[2*3 - 2])</div>
+            Resultado: 2, que é o elemento na posição <b>4</b> da lista x.
+        </section>
+
+        <section data-background="#ffdd57">
+            COMO ADICIONAR ELEMENTOS
+            <p>Imagine uma lista de alunos da turma. Quando alguém se matricula na turma, precisamos inserir
+            a pessoa na lista.</p>
+        </section>
+
+        <section>
+            <p>Existem
+                <a href="https://raccoon.ninja/pt/dev-pt/diferencas-entre-as-funcoes-extend-append-e-insert-da-lista-python/"
+                   target="_blank">várias formas de se acrescentar elementos a uma lista</a>. Vamos aprender a inserir
+            com a função append.</p>
+            <p>A função append vai acrescentar um elemento no fim da lista, seguindo esse formato:</p>
+            <div class="codigo">lista.append(elemento)</div>
+            <p>Exemplos:
+            </p>
+            <div class="codigo">x = [10, 5, 7]
+x.append(4)</div>
+
+            <div class="codigo">x = ['a', 'g', 'f', 'z', 'k']
+x.append('d')</div>
+
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [5, 2]
+x.append(-2)
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 2]", "b": "[5]", "c": "5", "d": "[5, 2, -2]"}'
+                 data-quiz-correct="d"></div>
+        </section>
+
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = [5, 2]
+x.append(0)
+x.append(3)
+x.append('oi')
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 2, 0, 3, &#39;oi&#39;]", "b": "[5, 2]", "c": "[5, 2, 0, 3]", "d": "erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            COMO REMOVER ELEMENTOS
+            <p>Imagine uma lista de filmes para assistir. Quando assistimos o filme, vamos removê-lo da lista.</p>
+            <p>Existem várias formas de remover elementos de uma lista. Vamos ver duas delas: com o pop() e com o remove()</p>
+        </section>
+
+        <section>
+            <p>A função "pop" apaga um elemento da lista, seguindo esse modelo:</p>
+            <div class="codigo">lista.pop(posicao)</div>
+            <p>, onde <u>posicao</u> é a posição do elemento que queremos remover. Veja:</p>
+            <div class="codigo">x = [10, 5, 7]
+x.pop(0)</div>
+            remove o 10.
+            <br>
+            <br>
+
+            <div class="codigo">x = ['a', 'g', 'f', 'z', 'k']
+x.pop(3)</div>
+            apaga o 'z'.
+
+        </section>
+
+        <section>
+            <p>A função "remove" apaga um elemento da lista, seguindo esse modelo:</p>
+            <div class="codigo">lista.remove(elemento)</div>
+            <p>, onde <u>elemento</u> é de fato o elemento que queremos remover. Veja:</p>
+            <div class="codigo">x = [10, 5, 7]
+x.remove(10)</div>
+            remove o 10.
+            <br>
+            <br>
+
+            <div class="codigo">x = ['a', 'g', 'f', 'z', 'k']
+x.remove('z')</div>
+            apaga o 'z'.
+
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 3, 0]
+x.pop(0)
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 2, 3, 0]", "b": "[2, 3, 0]", "c": "[5, 2, 3]"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 3, 0]
+x.remove(0)
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 2, 3, 0]", "b": "[2, 3, 0]", "c": "[5, 2, 3]"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            Qual o resultado?
+            <div class="codigo">x = [5, 2, 3, 0]
+x.pop(0)
+x.pop(0)
+x.pop(0)
+x.pop(0)
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 2, 3, 0]", "b": "[]", "c": "0"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+
+        <section data-background="#6ca0e8">
+            Qual o resultado?
+            <div class="codigo">x = [5, 0, 2, 3, 0]
+x.remove(0)
+print(x)</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "[5, 0, 2, 3, 0]", "b": "[5, 0, 2, 3]", "c": "[5, 2, 3, 0]", "d": "[5, 2, 3]"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

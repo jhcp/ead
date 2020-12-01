@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Exemplos de repetição com while - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<!-- todo passar esta lição para a semana 3 -->
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Exemplos de repetição com while</h1>
+            <h4>enquanto isso...</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Se atente à indentação. Se o código estiver escrito todo certinho, mas a indentação estiver errada,
+                o programa não irá funcionar corretamente 😔
+            </p>
+            <br>
+        </section>
+
+        <section>
+                <p>A ideia é que você
+            tente fazer o programa a partir do enunciado, e depois confira a resolução. Afinal, o Guanabara já sabe
+                programar, quem está aprendendo é você 😉. Tentar aprender programação só assistindo os vídeos,
+                sem tentar fazer os programas, é o mesmo que querer aprender artes marciais só assistindo vídeos,
+                    sem lutar.</p>
+            <p>Não conseguiu fazer? Sem problema! Assista o vídeo, entenda a explicação, tire dúvidas no whatsapp,
+                programe junto com o vídeo, e execute
+            o código no seu computador.</p>
+        </section>
+
+        <section>
+            <p>Mas olha, é importante assistir aos vídeos mesmo que você tenha conseguido resolver o problema,
+            já que além da resolução do problema em si os vídeos também têm outras dicas e informações importantes.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Sexo!</p>
+            Faça um programa que leia o sexo de uma pessoa, mas só aceite os valores 'M' ou 'F'.
+            <p>Caso esteja errado, peça a digitação novamente até ter um valor correto.</p>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Sexo!</p>
+            <p>Vídeo 1 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/JGztEBLGj5E" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Sexo!</p>
+            <p>No vídeo o Guanabara usa a seguinte condição: <span class="codigo">sexo not in 'MmFf'</span>.
+                Mas como ele usa a função <span class="codigo">upper</span> no input, as letras já estarão em maiúsculas,
+                então a condição poderia ser simplificada um pouco: <span class="codigo">sexo not in 'MF'</span>.</p>
+            <p>
+                Também dá pra fazer a condição com o <b>or</b>: <span class="codigo">not (sexo == 'M' or sexo == 'F')</span>
+            </p>
+            <p>Se quiser pode usar o <b>and</b>: <span class="codigo">(sexo != 'M') and (sexo != 'F')</span>.</p>
+            <p>Ou seja, existem várias formas diferentes de se chegar no mesmo resultado =)</p>
+            <p>Mais uma forma: <span class="codigo">sexo not in ['M', 'F']</span></p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Jogo da Adivinhação</p>
+            <p>Crie um jogo de adivinhação, onde o computador vai sortear um número entre 0 e 10. </p>
+            <p>O(a) jogador(a) vai tentar adivinhar até acertar, e a cada tentativa o jogo vai dizer se o número
+            sorteado é maior ou menor do que o número digitado.</p>
+            <p>No final, o jogo vai mostrar quantos palpites foram necessários para vencer.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Jogo da Adivinhação</p>
+            <p>Vídeo 2 (11min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/-QkOIHJ1Chw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Menu de Opções</p>
+            <p>Crie um programa que leia dois valores e permita que a pessoa escolha o que fazer com esses números,
+                com um menu assim:</p>
+            <ul>
+                <li>[1] somar</li>
+                <li>[2] multiplicar</li>
+                <li>[3] maior</li>
+                <li>[4] novos números</li>
+                <li>[5] sair do programa</li>
+            </ul>
+            <p>Seu programa deverá realizar a operação solicitada em cada caso.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Menu de Opções</p>
+            <p>Vídeo 3 (15min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/OBJL5vPj4-E" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ecebe9">
+            <br><br>
+            <p>ei, esse vídeo 3 vai te ajudar com a parte 2 do projeto. Se liga!</p>
+            <center><img src="chamar_atencao.jpg" class="no-border"></center>
+
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Vários valores</p>
+            <p>Crie um programa que leia vários números inteiros pelo teclado.</p>
+            <p>O programa só vai parar quando a pessoa digitar o valor 999, que é a condição de parada.</p>
+            <p>No final, mostre duas coisas, sem considerar o 999:</p>
+            <ul>
+                <li>quantos números foram digitados</li>
+                <li>qual foi a soma entre eles</li>
+            </ul>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Vários valores</p>
+            <p>Vídeo 8 (12min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/mYlbttiLHM0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Maior e menor</p>
+            <p>Crie um programa que leia vários números inteiros pelo teclado.</p>
+            <p>O programa deve perguntar à pessoa se ela quer ou não continuar a digitar os valores.</p>
+            <p>No final da execução, mostre a média entre todos os valores e qual foi o maior e o menor valor lido.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Maior e menor</p>
+            <p>Vídeo 9 (12min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/QNPuPlPM--0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 6 - Fatorial!</p>
+            <p>Usando o comando <b>while</b>, faça um programa que leia um número qualquer e calcule o seu fatorial.</p>
+            <p>BÔNUS: mostre na tela a multiplicação feita para calcular o fatorial. Exemplo: 5! = 5x4x3x2x1 = 120</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 6 - Fatorial!</p>
+            <p>Vídeo 4 (12min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/9dlBZlkvvxY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 7 - Progressão Aritmética v2.0</p>
+            <p>Desenvolva um programa que leia o primeiro termo e a razão de uma PA (progressão aritmética).</p>
+            <p>Usando o comando <b>while</b>, mostre os 10 primeiros termos dessa progressão.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 7 - Progressão Aritmética v2.0</p>
+            <p>Vídeo 5 (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/vu5ehetQGe8" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - Progressão aritmética v3.0</p>
+            <p>Vamos dar um UP no nosso programa de progressão aritmética!</p>
+            <p>Depois de mostrar os 10 primeiros termos da progressão, o programa pergunta para a pessoa se ela quer
+                mostrar mais alguns termos (quantos).</p>
+            <p>O programa encerra quando a pessoa dizer que quer mostrar 0 termos.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - Progressão aritmética v3.0</p>
+            <p>Vídeo 6 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/BWAWq7n6PCk" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - Progressão aritmética v3.0</p>
+            <p>Em vez de usar um while dentro do while, como o Guanabara fez, também dá pra resolver
+            esse exemplo com um for dentro do while. Veja o
+                <a href="https://repl.it/@jhcp/pa-guanabara-for-while" target="_blank">exemplo no repl.</a></p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 9 - Fibonacci</p>
+            <p>A Sequência de Fibonacci é uma sequência que começa por 0 e 1, na qual cada termo subsequente
+                corresponde à soma dos dois anteriores:
+                0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584</p>
+            <p>0 mais 1 dá 1. 1 mais 1 dá 2. 1 mais 2 dá 3. 2 mais 3 dá 5. 3 mais 5 dá 8. 5 mais 8 dá 13. E por aí vai...</p>
+            <p>Escreva um programa que leia um número inteiro qualquer <b>n</b> e mostra na tela os
+            <b>n</b> primeiros elementos de uma Sequência de Fibonacci.</p>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 9 - Fibonacci</p>
+            <p>Vídeo 7 (11min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/w7yn1_Mfu0E" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 9 - Fibonacci</p>
+            <p>Já cobrei este exercício em Prova Final, hein? 👀</p>
+        </section>
+
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">créditos</div>
+            <p>
+                Meme "Só pra chamar sua atenção" disponível no GERARMEMES
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

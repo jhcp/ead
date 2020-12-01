@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Exemplos de execução condicional - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<!-- todo passar esta lição para a semana 3 -->
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>é bom ver exemplos com if</h1>
+            <h4>senão...</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Comece o dia estudando! Mais tarde você já estará cansada(o) e será
+                difícil se concentrar
+            </p>
+            <br>
+            <div class="no-border animated pulse" style="font-size: 4em;text-align: center">🌄</div>
+        </section>
+
+        <section data-background="orange" class="is-dark">
+            <p>Vamos ver 8 exemplos de programas usando o comando if?</p>
+            <p>A gente pode muito bem entender o funcionamento do if, mas para aprender a usar o if na prática
+                mesmo é preciso ver os exemplos. Assim, quando você for resolver algum problema, vai pensar:</p>
+            <br>
+            <div class="thought">ah, isso
+                daqui eu posso resolver que nem aquele exemplo lá!</div>
+        </section>
+
+        <section>
+                <p>A ideia é que você
+            tente fazer o programa a partir do enunciado, e depois confira a resolução.</p>
+            <p>É importante assistir aos vídeos mesmo que você tenha conseguido resolver o problema,
+            já que além da resolução você encontrará outras dicas e informações importantes.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - quiz!</p>
+            Escreva um quiz com 3 perguntas. O programa mostra a pergunta pra pessoa, a pessoa responde, e o programa
+            diz se a pessoa acertou ou não.
+            <p><b>BÔNUS:</b> faça o programa mostrar na tela, quando o quiz acabar, quantas perguntas
+            a pessoa acertou.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 2</p>
+            Crie uma calculadora de física 😱
+            <p>Escolha 4 fórmulas da física e crie um programa que permita uma pessoa calcular o resultado
+                com as fórmulas.</p>
+            <p>Por exemplo, se a fórmula for F = m.a, o programa vai perguntar se a pessoar quer calcular <b>F</b>,
+                <b>m</b> ou <b>a</b>.
+                Daí a pessoa vai dizer também o valor das outras variáveis. Por exemplo, para calcular <b>m</b>, a pessoa terá que
+                dizer os valores de <b>F</b> e <b>a</b>, senão o programa não vai ter como calcular.
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (20min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/2K-KvEjxUOw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução dos exemplos 1 e 2
+        </section>
+
+        <section data-background="#ffdd57">
+            <div style="font-size: 5em">⬅</div>
+            Além de resolver os exemplos 1 e 2, o vídeo 1 também ensina o comando else (if...else), então
+            assiste lá!
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Link para o código do exemplo 1 (quiz) no repl.it: <a href="https://repl.it/@jhcp/quiz3" target="_blank">
+                https://repl.it/@jhcp/quiz3
+            </a>.</p>
+
+            <p>Link para o código do exemplo 2 (calculadora de física) no repl.it: <a href="https://repl.it/@jhcp/Calculadora-de-fisica" target="_blank">
+            https://repl.it/@jhcp/Calculadora-de-fisica
+            </a>.</p>
+
+        </section>
+
+        <section>
+            <p>Que tal a gente ver alguns exemplos com o Guanabara agora?</p>
+            <p>Mas se você ainda estiver voando nesse negócio de <b>if</b>, dá uma olhada na
+                <a href="https://www.youtube.com/watch?v=K10u3XIf1-Q" target="_blank">explicação dele</a>
+                também.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 3 - radar eletrônico</p>
+            <p>Escreva um programa que leia a velocidade de um carro.</p>
+            <p>Se ele ultrapassar 80Km/h, mostre uma mensagem dizendo que ele foi multado.</p>
+            <p>A multa vai custar R$7 por cada Km/h acima do limite.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 2 (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/hgJ_ETNGSj8" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 3
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - par ou ímpar?</p>
+            <p>Crie um programa que leia um número inteiro e mostre na tela se ele é par ou ímpar.</p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 3 (6min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/4vFCzKuHOn4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 4
+        </section>
+
+        <section data-background="red">
+            <br><br>
+            <div style="font-size: 3em; text-align: center">👀</div>
+            <p>você pode ver quantos exemplos quiser, mas só vai aprender mesmo quando quebrar
+                a cabeça tentando fazer os exemplos por conta própria, antes de olhar a resolução.</p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 5 - Aumentos múltiplos</p>
+            <p> Escreva um programa que pergunte o salário de um funcionário e calcule o valor do seu aumento. </p>
+            <p> Para salários superiores a R$1250.00, calcule um aumento de 10%.</p>
+            <p> Para os inferiores ou iguais, o aumento é de 15%.</p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 4  (8min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Sfadj_AzKHw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 5
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 6 - custo da viagem</p>
+            <p>Desenvolva um programa que pergunte a distância de uma viagem em Km.</p>
+            <p>Calcule o preço da passagem, cobrando 50 centavos por Km para viagens de até 200Km e
+                45 centavos para viagens mais longas.</p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 5  (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/PGqHyzWoagc" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 6. Não recomendo utilizar o operador ternário que ele explica na segunda parte do vídeo.
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 7 - ano bissexto</p>
+            <p> Faça um programa que leia um ano qualquer e diga se ele é bissexto. </p>
+            <ul>
+                <li>São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...</li>
+                <li>São bissextos todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400, p.ex: 1996, 2000, 2004,
+                    2008, 2012, 2016... O ano 1900, por exemplo, não é bissexto, pois ele é múltiplo de 100 mas não de 400.</li>
+                <li>Não são bissextos todos os demais anos.</li>
+            </ul>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 6  (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/cyGY_83m4Xw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 7
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - triângulo!</p>
+            <p> Desenvolva um programa que leia o comprimento de três segmentos de reta e diga se eles podem
+            ou não formar um triângulo.</p>
+            <p>Para que seja possível formar um triângulo, é necessário que cada segmento seja menor do que a
+                soma dos outros dois segmentos.
+            </p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 7  (11min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/NZiNphKkxhg" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 8
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

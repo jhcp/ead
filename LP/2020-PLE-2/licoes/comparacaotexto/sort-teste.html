@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../lib/js/Sortable.js"></script>
+</head>
+<body>
+<section>
+    <style>
+        div.list-group-item {
+            background-color: #6ca0e8;
+            padding: 20px;
+            margin: 20px;
+            color: black;
+        }
+        div.ghost-background-class {
+            background-color: #1a53a1;
+            color: white;
+        }
+    </style>
+    <p>
+        Ok, vamos começar com um desafio: coloque essas palavras em ordem.
+    </p>
+    <div id="example1" class="list-group col">
+        <div class="list-group-item" data-order="3">Melancia</div>
+        <div class="list-group-item" data-order="1">Banana</div>
+        <div class="list-group-item" data-order="2">Laranja</div>
+        <div class="list-group-item" data-order="0">Acerola</div>
+    </div>
+    <div id="result-order" class="invisible" style="padding-left: 20px;">Parabéns! Pode continuar =)</div>
+
+    <script>
+        var concluiuOrdenacao = false;
+        var el = document.getElementById('example1');
+        new Sortable(el, {
+            animation: 150,
+            direction: 'vertical',
+            draggable: ".list-group-item",
+            ghostClass: 'ghost-background-class',
+            onEnd: function () {
+                var isCorrect = true;
+                $('.list-group-item').each(function (i, o) {
+                    if ( i != $(o).data('order') ) {
+                        isCorrect = false;
+                    }
+                });
+                if (isCorrect) {
+                    concluiuOrdenacao = true;
+                    $('#result-order').removeClass('invisible');
+                    animateCSS($('#example1'), 'tada');
+                    animateCSS($('#result-order'), 'fadeIn');
+                }
+                else {
+                    $('#result-order').addClass('invisible');
+                }
+            },
+            sort: true,
+        });
+    </script>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Funções - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Funções</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+
+        <section>
+            <p>Opa, quantas linhas tem o seu projeto? 100? 200? Pois é, quando os projetos vão crescendo, com centenas,
+            milhares, milhões de linhas de código, precisamos encontrar formas de organizar e estruturar o código.
+            Isso é feito, por exemplo, com funções, classes, arquivos, módulos e pacotes. Aqui no curso,
+            iremos estudar apenas as funções.</p>
+        </section>
+
+        <section>
+            <p>As funções na programação não são exatamente a mesma coisa que as funções da matemática. E você
+        já usou várias funções, sabia? Print, input, len, max, min e sum são algumas das funções que você
+                já cansou de usar =)</p>
+            <p>Já if, for, while e in são exemplos de comandos do Python - não são funções.</p>
+        </section>
+
+        <section>
+            <p>Agora nós vamos aprender a criar (definir) as nossas próprias funções, com a ajuda do grande Guanabara!</p>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (52min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/ezfr9d7wd_k" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Para <span style='font-weight:bold'>def</span>inir uma função, usamos o comando..."
+                 data-quiz-answers='{"a": "def", "b": "function", "c": "elif", "d": "while"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Esse é o esqueleto da criação de uma função:</p>
+            <div class="codigo">def nome_da_funcao(parametros):
+    corpo da funcao</div>
+            <p>Depois do def a gente escreve o nome da função. Depois do nome, parênteses. Dentro dos parênteses, os
+            parâmetros, que podem ser 0, 1 ou vários. Por último, o dois-pontos, sinalizando o início de um bloco.</p>
+            <p>Dentro do bloco, vamos ter o corpo da função, ou seja, o código que será executado quando chamarmos a função.</p>
+        </section>
+
+        <section>
+            <p>Quando usamos a função, dizemos que a estamos chamando, ou invocando. Sabe quando você <b>chama</b> seu
+            pai para fazer algo por você? "Pai, traz uma água pra mim, por favor". Pronto, é tipo isso.</p>
+            <p>No exemplo abaixo, estamos <b>chamando</b>, <b>invocando</b>, <b>usando</b> ou <b>executando</b>
+                a função print:</p>
+            <div class="codigo">x = 5 + 5
+print(x)</div>
+        </section>
+
+        <section>
+            <p class="slide-title">Nomes</p>
+            <p>Os nomes das funções são importantes para a gente entender o código mais facilmente. É muito comum
+            começar o nome da função com um verbo que indica o que a função de fato faz. Aquele primeiro exemplo
+                que Guanabara mostrou no vídeo poderia se chamar <span class="codigo">escrever_linha</span>,
+                ou então <span class="codigo">printar_linha</span>, em vez
+            de simplesmente <span class="codigo">lin</span>. </p>
+            <p>Imagine se a função <b>max</b> fosse chamada só de <b>ma</b>. Ia ser mais difícil lembrar o que ela
+            faz, concorda?</p>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

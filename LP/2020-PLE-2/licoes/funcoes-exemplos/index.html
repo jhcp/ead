@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Exemplos de funções - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<!-- todo passar esta lição para a semana 3 -->
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Exemplos de funções</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Se atente à indentação. Se o código estiver escrito todo certinho, mas a indentação estiver errada,
+                o programa não irá funcionar corretamente 😔
+            </p>
+            <br>
+        </section>
+
+        <section>
+                <p>Apesar de ser possível fazer esses exemplos a seguir sem funções, iremos fazer com funções
+                para podermos praticar. Mas pode ter certeza que as funções são importantes, sem elas ficaria inviável
+                   fazer programas um pouco mais longos (a partir de centenas de linhas) e complexos.</p>
+        </section>
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Função que calcula área</p>
+            <p>Faça um programa que tenha uma função chamada <span class="codigo">calcular_area()</span>, que receba
+                as dimensões de um terreno retangular (largura e comprimento) e mostre a área do terreno.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Função que calcula área</p>
+            <p>Vídeo 1 (8min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/oV1s53YGtvE" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Um print especial</p>
+            <p>Faça um programa que tenha uma função chamada escrever(), que receba um texto qualquer como parâmetro
+            e mostre uma mensagem com linhas decorativos de tamanho proporcional ao texto.</p>
+            Exemplo:
+            <div class="codigo">escrever('Olá, Mundo!')</div>
+            Resultado:
+            <div class="codigo">~~~~~~~~~~~~~
+ Olá, Mundo!
+~~~~~~~~~~~~~</div>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Um print especial</p>
+            <p>Vídeo 2 (8min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Q6basnSo7r0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Função de Contador</p>
+            <p>Faça uma função chamada contador(), que receba três parâmetros: início, fim e
+                passo.</p>
+            <p>Seu programa tem que usar a função contador() para realizar três contagens com a função criada:</p>
+            <ul>
+                <li>de 1 até 10, de 1 em 1</li>
+                <li>de 10 até 0, de 2 em 2</li>
+                <li>uma contagem personalizada, com base nos parâmetros</li>
+            </ul>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Função de Contador</p>
+            <p>Vídeo 3 (17min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/DCBlt_z2UOE" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Função que descobre o maior</p>
+            <p>Faça um programa que tenha uma função chamada maior(), que receba vários parâmetros com valores inteiros.
+            </p>
+            <p>Sua função tem que analisar todos os valores e dizer qual deles é o maior.</p>
+            <p>OBS: não vale usar a função max() 😉</p>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Função que descobre o maior</p>
+            <p>Vídeo 4 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/vp9UX7wr92o" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Funções para sortear e somar</p>
+            <p>Faça um programa que tenha uma lista chamada numeros e duas funções chamadas sorteiar() e somar_pares().</p>
+            <p>A primeira função vai sortear 5 números e colocá-los dentro da lista.</p>
+            <p>A segunda função vai mostrar a soma entre todos os valores pares sorteados pela função anterior.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Funções para sortear e somar</p>
+            <p>Vídeo 5 (12min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/MEs-41JcuhM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

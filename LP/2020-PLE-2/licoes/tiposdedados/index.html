@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Tipos de dados - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>tipos de dados</h1>
+            <h4>50 tons de 0‭101 0101 0101‬</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+        </section>
+
+        <section>
+            <img src="dados.jpg" class="stretch no-border"/>
+            <center>
+            <p>
+                "Nem todo dado é do mesmo tipo"<br>
+                - João Pimentel
+            </p>
+            </center>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                O que são <i>dados</i>? Um dado é um valor de uma variável.
+            </p>
+            <p>Por exemplo, se a variável é NOME, então Ana, Pedro
+                e Maria são alguns dos possíveis dados.
+            </p>
+            <p>Se a variável é IDADE, então 17, 18, 85 e 0 são alguns dos seus possíveis dados.
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Em um software nós precisamos guardar vários dados.
+            </p>
+            <p>
+                Pense no Instagram, por exemplo. Ele precisa saber seu nome de usuário, sua senha, seus contatos, seus
+                posts, suas stories, seus directs, etc. Cada post, por sua vez, tem vários dados: imagem(ns), texto, data
+                de publicação, os usuários que curtiram aquele post, os comentários, etc.
+            </p>
+            <img src="instagram.png" class="stretch no-border center"/>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Falando em instagram, você já está me seguindo lá, né? @joaopython
+            </p>
+            <div class="center">
+                <a href="https://www.instagram.com/joaopython/" target="_blank">
+                <img src="nametag.jpg" class=""/>
+                </a>
+            </div>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Voltando ao assunto: nem todo dado é do mesmo tipo. Alguns são textos, outros são números, outros são imagens, etc.</p>
+            <p>Neste curso nós vamos trabalhar com <b>4 tipos básicos</b>:</p>
+            <table>
+                <tr>
+                    <td>int</td>
+                    <td>números inteiros</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>números quebrados</td>
+                </tr>
+                <tr>
+                    <td>string</td>
+                    <td>texto</td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>True ou False</td>
+                </tr>
+            </table>
+        </section>
+
+        <section style="height:100%">
+            <p>Vídeo 1 (6min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/AMpNzgGld-0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="rgb(40,43,69)" class="is-dark">
+            <div id="quiz" class="quiz"></div>
+            <button id="submit" class="quiz-submit">responder</button>
+            <div id="results" class="quiz-results"></div>
+            <script>
+                var myQuestions1 = [
+                    {
+                        question: '5.25 é um dado do tipo...',
+                        answers: {
+                            a: 'float',
+                            b: 'int',
+                            c: 'string',
+                            d: 'boolean',
+                        },
+                        correctAnswer: 'a'
+                    }];
+                var quizContainer = document.getElementById('quiz');
+                var submitButton = document.getElementById('submit');
+                var resultsContainer = document.getElementById('results');
+                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="rgb(14,188,92)" class="is-dark">
+            Qual o resultado de
+            <pre><code data-trim data-noescape>print("3+3")
+</code></pre>
+            <div id="quiz2" class="quiz"></div>
+            <button id="submit2" class="quiz-submit">responder</button>
+            <div id="results2" class="quiz-results"></div>
+            <script>
+                var myQuestions2 = [
+                    {
+                        question: '?',
+                        answers: {
+                            a: '6',
+                            b: '3+3',
+                            c: 'erro',
+                        },
+                        correctAnswer: 'b'
+                    }];
+                var quizContainer = document.getElementById('quiz2');
+                var submitButton = document.getElementById('submit2');
+                var resultsContainer = document.getElementById('results2');
+                generateQuiz(myQuestions2, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#131418" class="is-dark">
+            <style>
+                .game-button {
+                    background-color: #25f7bb;
+                    color: black;
+                    font-family: monospace;
+                    font-size: 60px;
+                    background-color: #297;
+                    color: #fff;
+                    border: 0;
+                    border-radius: 4px;
+                    padding: 20px;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                    width: 80%;
+                    /*height: 100px;*/
+                }
+                .game-button.white {
+                    background-color: white;
+                    color: black;
+                }
+                .game-button.small {
+                    font-size: 30px;
+                }
+
+                .invisible {
+                    /*display: none;*/
+                    visibility:hidden;
+                }
+
+                .pretend-im-not-here {
+                    display: none;
+                }
+
+                .scene {
+                    /*width: 200px;*/
+                    /*height: 260px;*/
+                    perspective: 600px;
+                    color: black;
+
+                }
+
+                .card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transition: transform 1s;
+                    transform-style: preserve-3d;
+                }
+
+                div.card__face {
+                    position: absolute;
+                    /*height: 100%;*/
+                    width: 100%;
+                    backface-visibility: hidden;
+                    padding: 20px 0;
+                }
+
+                .card__face--front {
+                    background: #e2e2e2;
+                    border-radius: 15px;
+                }
+
+                .card__face--back {
+                    background: #1a53a1;
+                    color: white;
+                    transform: rotateY( 180deg );
+                    border-radius: 15px;
+                }
+
+                .card.is-flipped {
+                    transform: rotateY(180deg);
+                }
+
+            </style>
+
+            <span id="jogo0rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo0card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            <span id="jogo0pergunta">...</span><br>
+                            <button id="jogo0botao0" class="game-button" onclick="responder(0,0)"><span>a</span></button><br>
+                            ou<br>
+                            <button id="jogo0botao1" class="game-button" onclick="responder(0,1)"><span>b</span></button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            <span id="jogo0resposta">...</span><br><br>
+                            <button id="jogo0ok" class="game-button white" onclick="proxima(0)">ok</button><br>
+                            <button id="jogo0reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(0)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                var opcoes2 = [];
+                var rodada = [];
+                var perguntaAtual = [];
+                rodada[0] = 1;
+
+                //a primeira opção de resposta é a resposta correta
+                opcoes2[0] = shuffleArray([
+                    {pergunta: '5 é do tipo...', alternativas: ['int', 'float']},
+                    {pergunta: '5.0 é do tipo...', alternativas: ['float', 'int']},
+                    {pergunta: '"5" é do tipo...', alternativas: ['string', 'int']},
+                    {pergunta: 'True é do tipo...', alternativas: ['bool', 'string']},
+                    {pergunta: '"True" é do tipo...', alternativas: ['string', 'bool']},
+                    {pergunta: '3.14 é do tipo...', alternativas: ['float', 'bool']},
+                    {pergunta: '2*2 é do tipo...', alternativas: ['int', 'string']},
+                    {pergunta: '4/2 é do tipo...', alternativas: ['float', 'bool']},
+                    {pergunta: '5/2 é do tipo...', alternativas: ['float', 'int']},
+                    {pergunta: '4>5 é do tipo...', alternativas: ['bool', 'float']},
+                    {pergunta: '4>0 é do tipo...', alternativas: ['bool', 'int']},
+                    {pergunta: '"4>0" é do tipo...', alternativas: ['string', 'bool']},
+                    {pergunta: '"2+2" é do tipo...', alternativas: ['string', 'int']},
+                ]);
+
+
+                //start up
+                $(document).ready(function () {
+                    perguntaAtual = opcoes2[0][rodada[0]];
+                    $('#jogo0pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo0botao0 span').html(perguntaAtual.alternativas[0]);
+                    $('#jogo0botao1 span').html(perguntaAtual.alternativas[1]);
+                });
+
+                function responder(jogo, resposta) {
+                    if ($('#jogo' + jogo + 'botao' + resposta + ' span').html() === perguntaAtual.alternativas[0]) {
+                        //se acertou
+
+                        $('#jogo' + jogo + 'resposta').html(perguntaAtual.pergunta + ' ' + perguntaAtual.alternativas[0]);
+                        if (rodada[jogo] >= 5) {
+                            $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                            $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                        }
+                        $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                    }
+                    else {
+                        //se errou
+                        animateCSS($('#jogo' + jogo + 'botao' + resposta), 'shake');
+                    }
+                }
+
+                function proxima(jogo) {
+                    // respostas = respostasIniciais[jogo];
+                    if (rodada[jogo] < 5) {
+                        rodada[jogo] += 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                    }
+                    else {
+                        opcoes2[0] = shuffleArray(opcoes2[0]);
+                        rodada[jogo] = 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                        $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                        $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                    }
+                    $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+
+                    perguntaAtual = opcoes2[jogo][rodada[jogo]];
+                    var sorteioResposta = randomInt(perguntaAtual.alternativas.length - 1);
+
+                    $('#jogo' + jogo + 'pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo' + jogo + 'botao0 span').html(perguntaAtual.alternativas[sorteioResposta]);
+                    $('#jogo' + jogo + 'botao1 span').html(perguntaAtual.alternativas[1-sorteioResposta]);
+                }
+
+            </script>
+        </section>
+
+        <section style="height:100%">
+            <p>Vídeo 2 (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/9o4ru7gSO3I" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="rgb(14,188,92)" class="is-dark">
+            <div id="quiz3" class="quiz"></div>
+            <button id="submit3" class="quiz-submit">responder</button>
+            <div id="results3" class="quiz-results"></div>
+            <script>
+                var myQuestions3 = [
+                    {
+                        question: 'Tanto faz escrever os nomes das funções com letras minúsculas ou maiúsculas.',
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'false',
+                        },
+                        correctAnswer: 'b'
+                    }];
+                var quizContainer = document.getElementById('quiz3');
+                var submitButton = document.getElementById('submit3');
+                var resultsContainer = document.getElementById('results3');
+                generateQuiz(myQuestions3, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            Qual o resultado de
+            <pre><code data-trim data-noescape>print("5"*4)
+</code></pre>
+            <div id="quiz4" class="quiz"></div>
+            <button id="submit4" class="quiz-submit">responder</button>
+            <div id="results4" class="quiz-results"></div>
+            <script>
+                var myQuestions4 = [
+                    {
+                        question: '?',
+                        answers: {
+                            a: '5555',
+                            b: '4444',
+                            c: '20',
+                            c: 'erro',
+                        },
+                        correctAnswer: 'a'
+                    }];
+                var quizContainer = document.getElementById('quiz4');
+                var submitButton = document.getElementById('submit4');
+                var resultsContainer = document.getElementById('results4');
+                generateQuiz(myQuestions4, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <p>Fez todos os exercícios que estão no final do vídeo? Muito bem, clique no botão abaixo para pegar sua recompensa!</p>
+            <style>
+
+                html, body {
+                    height: 100%;
+                    width: 100%;
+                    padding: 0;
+                    margin: 0;
+                    overflow: hidden;
+                }
+
+                * {
+                    box-sizing: border-box;
+                    position: relative;
+                }
+
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /*background: #14192C;*/
+                }
+
+                .treat-button {
+                    /*font-family: 'Fascinate Inline', cursive;*/
+                    font-size: 4vmin;
+                    appearance: none;
+                    background: linear-gradient(to bottom, #F46001, #E14802);
+                    border: none;
+                    color: #FFF;
+                    border-radius: 2em;
+                    padding: .6em 1.5em;
+                    overflow: hidden;
+                    user-select: none;
+                    cursor: pointer;
+                    z-index: 1;
+                    box-shadow: 0 0 1em rgba(white, .2);
+                    transition: transform .1s cubic-bezier(.5, 0, .5, 1),
+                    box-shadow .2s;
+
+                &:hover {
+                     box-shadow: 0 0 2em rgba(white, .3);
+                 }
+
+                outline: none;
+
+                &:active {
+                     transform: scale(0.8) translateY(10%);
+                     transition-timing-function: cubic-bezier(.5, 0, .5, 1);
+                 }
+                }
+
+                .treat {
+                    --scale-x: 0;
+                    --scale-y: 0;
+                    pointer-events: none;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: calc(50% - .5rem);
+                    border-radius: 50%;
+                    width: 1em;
+                    height: 1em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 5vmin;
+                    transform:
+                            translate(
+                                    calc( var(--x) * 1px ),
+                                    calc( var(--y) * 1px )
+                            )
+                            translate(-50%, -50%);
+                    pointer-events: none;
+                    animation:
+                            treat-enter .1s ease-in backwards,
+                            treat-exit 300ms linear
+                            calc( (var(--lifetime, 3000) * 1ms) - 300ms)
+                            forwards;
+
+                @keyframes treat-enter {
+                    from {
+                        opacity: 0;
+                    }
+                }
+                @keyframes treat-exit {
+                    to {
+                        opacity: 0;
+                    }
+                }
+
+                .inner {
+                    animation: inner-rotate .6s linear infinite;
+                    transform: rotate(
+                            calc(-1turn * var(--direction) )
+                    );
+                @keyframes inner-rotate {
+                    to {
+                        transform: none;
+                    }
+                }
+                }
+                }
+            </style>
+            <br><br><br><br>
+            <center>
+            <div class="treat-wrapper">
+                <button class="treat-button">recompensa</button>
+            </div>
+            </center>
+            <script>
+                console.clear();
+
+                let width = window.innerWidth;
+                let height = window.innerHeight;
+                const body = document.body;
+
+                const elButton = document.querySelector(".treat-button");
+                const elWrapper = document.querySelector(".treat-wrapper");
+
+                function getRandomArbitrary(min, max) {
+                    return Math.random() * (max - min) + min;
+                }
+
+                function getRandomInt(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
+                const treatmojis = ["🍬", "🍫", "🍭", "🍡", "🍩", "🍪", "🍒"];
+                const treats = [];
+                const radius = 15;
+
+                const Cd = 0.47; // Dimensionless
+                const rho = 1.22; // kg / m^3
+                const A = Math.PI * radius * radius / 10000; // m^2
+                const ag = 9.81; // m / s^2
+                const frameRate = 1 / 60;
+
+                function createTreat() /* create a treat */{
+                    const vx = getRandomArbitrary(-10, 10); // x velocity
+                    const vy = getRandomArbitrary(-10, 1); // y velocity
+
+                    const el = document.createElement("div");
+                    el.className = "treat";
+
+                    const inner = document.createElement("span");
+                    inner.className = "inner";
+                    inner.innerText = treatmojis[getRandomInt(0, treatmojis.length - 1)];
+                    el.appendChild(inner);
+
+                    elWrapper.appendChild(el);
+
+                    const rect = el.getBoundingClientRect();
+
+                    const lifetime = getRandomArbitrary(2000, 3000);
+
+                    el.style.setProperty("--lifetime", lifetime);
+
+                    const treat = {
+                        el,
+                        absolutePosition: { x: rect.left, y: rect.top },
+                        position: { x: rect.left, y: rect.top },
+                        velocity: { x: vx, y: vy },
+                        mass: 0.1, //kg
+                        radius: el.offsetWidth, // 1px = 1cm
+                        restitution: -.7,
+
+                        lifetime,
+                        direction: vx > 0 ? 1 : -1,
+
+                        animating: true,
+
+                        remove() {
+                            this.animating = false;
+                            this.el.parentNode.removeChild(this.el);
+                        },
+
+                        animate() {
+                            const treat = this;
+                            let Fx =
+                                -0.5 *
+                                Cd *
+                                A *
+                                rho *
+                                treat.velocity.x *
+                                treat.velocity.x *
+                                treat.velocity.x /
+                                Math.abs(treat.velocity.x);
+                            let Fy =
+                                -0.5 *
+                                Cd *
+                                A *
+                                rho *
+                                treat.velocity.y *
+                                treat.velocity.y *
+                                treat.velocity.y /
+                                Math.abs(treat.velocity.y);
+
+                            Fx = isNaN(Fx) ? 0 : Fx;
+                            Fy = isNaN(Fy) ? 0 : Fy;
+
+                            // Calculate acceleration ( F = ma )
+                            var ax = Fx / treat.mass;
+                            var ay = ag + Fy / treat.mass;
+                            // Integrate to get velocity
+                            treat.velocity.x += ax * frameRate;
+                            treat.velocity.y += ay * frameRate;
+
+                            // Integrate to get position
+                            treat.position.x += treat.velocity.x * frameRate * 100;
+                            treat.position.y += treat.velocity.y * frameRate * 100;
+
+                            treat.checkBounds();
+                            treat.update();
+                        },
+
+                        checkBounds() {
+
+                            if (treat.position.y > height - treat.radius) {
+                                treat.velocity.y *= treat.restitution;
+                                treat.position.y = height - treat.radius;
+                            }
+                            if (treat.position.x > width - treat.radius) {
+                                treat.velocity.x *= treat.restitution;
+                                treat.position.x = width - treat.radius;
+                                treat.direction = -1;
+                            }
+                            if (treat.position.x < treat.radius) {
+                                treat.velocity.x *= treat.restitution;
+                                treat.position.x = treat.radius;
+                                treat.direction = 1;
+                            }
+
+                        },
+
+                        update() {
+                            const relX = this.position.x - this.absolutePosition.x;
+                            const relY = this.position.y - this.absolutePosition.y;
+
+                            this.el.style.setProperty("--x", relX);
+                            this.el.style.setProperty("--y", relY);
+                            this.el.style.setProperty("--direction", this.direction);
+                        } };
+
+
+                    setTimeout(() => {
+                        treat.remove();
+                    }, lifetime);
+
+                    return treat;
+                }
+
+
+                function animationLoop() {
+                    var i = treats.length;
+                    while (i--) {
+                        treats[i].animate();
+
+                        if (!treats[i].animating) {
+                            treats.splice(i, 1);
+                        }
+                    }
+
+                    requestAnimationFrame(animationLoop);
+                }
+
+                animationLoop();
+
+                function addTreats() {
+                    //cancelAnimationFrame(frame);
+                    if (treats.length > 40) {
+                        return;
+                    }
+                    for (let i = 0; i < 10; i++) {
+                        treats.push(createTreat());
+                    }
+                }
+
+                elButton.addEventListener("click", addTreats);
+                // elButton.click();
+
+                window.addEventListener("resize", () => {
+                    width = window.innerWidth;
+                    height = window.innerHeight;
+                });
+            </script>
+        </section>
+
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Animação dos docinhos: <a href="https://youtu.be/8HJU-rQerQ8"
+                                                      target="_blank">the @keyframers!</a>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
