@@ -34,8 +34,6 @@
 <div class="reveal">
     <div class="slides">
 
-        <!-- todo divisão por zero dá erro -->
-        <!-- todo módulo por zero dá erro -->
         <!-- erro comum: multiplicação implícita -->
         <!-- erro comum: esquecer o parênteses do print -->
 
@@ -369,6 +367,19 @@
                  data-quiz-text="Qual expressão em Python é equivalente a essa expressão matemática?"
                  data-quiz-answers='{"a": "(-5+(50**2-99)**(1/2))/2", "b": "-5+50**2-99**1/2/2", "c": "(-5+(50**2-99)**1/2)/2", "d": "(-5+(50**(2-99))**(1/2))/2"}'
                  data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">ZeroDivisionError</div>
+            <p>
+                Você sabe que, na matemática, não podemos fazer divisão por zero, não é? É a mesma coisa na
+                programação, se tentarmos calcular uma divisão por zero o resultado é esse erro: ZeroDivisionError.
+            </p>
+            <p>
+                <b>Exemplo - </b> execute esse código no repl e veja o resultado:
+
+                <div class="codigo">print(5/0)</div>
+            </p>
         </section>
 
 <!--        -->
