@@ -25,9 +25,6 @@
     <script src="../../lib/js/jquery.min.js"></script>
     <script src="../../js/materialdeapoio.js"></script>
 </head>
-<!-- todo erro comum: esquecer o 2 pontos depois da condição -->
-<!-- todo erro comum: escrever = em vez de == -->
-<!-- todo erro comum: errar a indentação -->
 
 <body>
 <div class="reveal">
@@ -93,7 +90,7 @@ print('b'
         </section>
 
 
-        <section data-background="#f1c3cd">
+        <section>
             <p>Vídeo 2 (2min):</p>
             <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/m2Ux2PnJe6E?hl=pt&cc_lang_pref=pt&cc_load_policy=1" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -102,11 +99,64 @@ print('b'
         </section>
 
 
-        <section data-background="#f1c3cd">
+        <section>
             <div class="quiz-container"
                  data-quiz-text="Até o Bill Gates acha que execução condicional é importante"
                  data-quiz-answers='{"a": "Verdadeiro", "b": "Falso"}'
                  data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum 1: dois pontos</div>
+            <p>Um erro bastante comum é esquecer de colocar os dois pontos (:) no fim da linha que tem o if.</p>
+            Errado:
+            <div class="codigo">x = 3
+if x != 2
+    print('não é 2')</div>
+
+            <br>Certo:
+            <div class="codigo">x = 3
+if x != 2:
+    print('não é 2')</div>
+            <p>Então se liga, lembra do <b>:</b></p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum 2: indentação</div>
+            <p>A indentação é aquele espaçamento à esquerda do código. Se a gente errar
+                a indentação, o nosso código não funcionará corretamente.</p>
+            Errado, espaçamento antes do if:
+            <div class="codigo">x = 2
+    if x == 2:
+    print('é 2')</div>
+
+            Errado, sem espaçamento na linha abaixo do if:
+            <div class="codigo">x = 2
+if x == 2:
+print('é 2')</div>
+
+            Certo:
+            <div class="codigo">x = 2
+if x == 2:
+    print('é 2')</div>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum 3: igualdade</div>
+            <p>Outro erro que vejo o tempo todo é usarmos um igual só na hora de fazer uma comparação de igualdade.
+                Essa comparação é feita com dois sinais de iguais, juntinhos, assim: ==</p>
+            Errado:
+            <div class="codigo">x = 2
+if x = 2:
+    print('é 2')</div>
+
+            <br>Certo:
+            <div class="codigo">x = 2
+if x == 2:
+    print('é 2')</div>
+
+            <p>Calma que na próxima lição iremos estudar melhor essas comparações 😉</p>
         </section>
 
         <section data-background="#c6c6c6">
