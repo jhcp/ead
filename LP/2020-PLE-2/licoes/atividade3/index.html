@@ -48,8 +48,8 @@
                 <a href="../atividade2">Atividade 2.</a>
             </p>
             <p>
-                A atividade 3 tem quatro problemas que exercitam o cáculo de expressões matemáticas simples
-                a partir de entradas da usuária (ou seja, com base em valores que a usuária digitou).
+                Esta atividade 3 tem cinco problemas que exercitam o cáculo de expressões matemáticas simples
+                a partir de entradas (inputs) dos usuários - ou seja, com base em valores desconhecidos.
             </p>
         </section>
 
@@ -74,60 +74,19 @@
         </section>
 
         <section data-background="white">
+            Se liga que, na maioria dos problemas do The Huxley, não é permitido escrever textos
+            adicionais nas funções print ou input. Por exemplo, normalmente a resposta da "Área do retângulo"
+            seria assim:
+            <div class="codigo">a = int(input('qual o primeiro lado? '))
+b = int(input('qual o segundo lado? '))
+print('a área é', a*b)</div>
             <p>
-                Sugiro começar pelo problema AC2 - Ex. 4, sobre conversão de temperatura.
+                Mas no Huxley a resposta será sem o texto...
+            <div class="codigo">a = int(input())
+b = int(input())
+print(a*b)</div>
             </p>
-            O que irá aparecer na tela (saída) quando o seu programa for executado deve ser <b>exatamente</b> o que
-            está especificado no enunciado:
-            <img src="entrada-saida-thehuxley.png" />
-            Ex: Quando o usuário digitar 100, a saída será 37.77777777777778. Só isso! Não pode ser
-            nem "Temperatura: 37.77777777777778", nem 37.78.
-        </section>
-
-        <section data-background="white">
-            <div class="slide-title">Texto adicional - exemplo</div>
-            <p>
-                Por exemplo, normalmente nós faríamos um programa que calcule o dobro de um número assim:
-            <div class="codigo">x = float(input('digite um número'))
-print('O dobro de', x, 'é', x*2)</div>
-            </p>
-            <p>
-                Mas para a ferramenta de correção automática, escreveremos assim, sem os textos:
-            <div class="codigo">x = float(input())
-print(x*2)</div>
-            </p>
-            <p>a não ser que o enunciado do problema peça para incluir algum texto.</p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">2 casas decimais</p>
-            <p>
-                Alguns problemas, como o "Aluguel de carro", podem pedir que você mostre o resultado só com duas casas decimais. Você certamente
-                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
-                sua vida:
-            </p>
-            <div class="codigo">resultado = 3**0.5
-print('{:.2f}'.format(resultado))</div>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">AC2 - Ex. 5</p>
-            <p>
-                O problema AC2 - Ex. 5 é o mais complicado desta Atividade 3, na minha opinião. A dica para respondê-lo
-                é usar <a href="../divisoes/" target="_blank">divisão inteira e módulo (resto)</a>.
-            </p>
-            <p>Não tente responder tudo de uma vez - primeiro descubra como calcular só os dias. Depois, pegue o
-                restante do tempo e tente calcular as horas. E por aí vai, até conseguir responder o enunciado
-                completo
-            </p>
-        </section>
-
-        <section data-background="white">
-            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta a goiabada (ou o pão)!</p>
-            <center><span style="font-size: 4em">🔪🧀</span></center>
-            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
-            só quem perde é você mesmo(a).</p>
-
+            <p>... a não ser que o enunciado do problema peça para incluir algum texto.</p>
         </section>
 
         <section>
@@ -186,12 +145,12 @@ print('{:.2f}'.format(resultado))</div>
 
         <section>
             <p>Assim que você envia a resposta aparece o resultado
-            de cada caso de teste do problema, na parte de baixo da tela. Os círculos vermelhos com X representam
+                de cada caso de teste do problema, <b>na parte de baixo da tela</b>. Os círculos vermelhos com X representam
                 os erros, como na imagem abaixo. </p>
             <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
-            <p>Se clicar no círculo vermelho você poderá
-                ver qual a entrada do caso de teste, qual o resultado esperado (gabarito), e
-                qual o resultado que o seu programa deu. Isso lhe ajudará a corrigir o código.</p>
+            <p>No exemplo desta imagem, o código que a pessoa fez deu certo em 28 dos 30 testes realizados. Apenas 2
+                testes, que estão vermelhos, deram errado. Ou seja,
+                se a questão valesse 10 pontos, a pessoa ficaria com 9.3.</p>
         </section>
 
 
@@ -202,6 +161,82 @@ print('{:.2f}'.format(resultado))</div>
             </p>
         </section>
 
+        <section data-background="white">
+            <p>
+                A seguir, veja dicas para cada problema desta atividade 👉
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Área do retângulo</p>
+            <p>
+                Já resolvi esse problema na nossa segunda live. Se você perdeu, pode assistir a gravação que
+                está no SIGAA.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" id="Doacao">
+            <p class="slide-title">Doação</p>
+
+            <p>
+                Juro a você: esse problema é bem mais simples do que parece. Juro! Ele é resolvido com umas
+                continhas matemáticas simples, dentro do que foi estudado na Semana 1.
+            </p>
+            <p>
+                De qualquer forma, sei que esta questão é assustadora, então fica a sugestão de resolver
+                ela por último.
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">AC2 - Ex. 2</p>
+            <p>
+                A dica para esta questão é seguir exatamente a mesma ordem que está no enunciado. Se printar a subtração
+                antes da soma, por exemplo, o resultado não estará correto.
+            </p>
+            <p>Ah, outra dica é lembrar de não inserir textos no print nem no input.</p>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Bingo</p>
+            <p>
+                Não é preciso fazer contas neste problema, basta printar a mensagem com o número que for fornecido na
+                entrada.
+            </p>
+            <p>OBS: a entrada pode ser qualquer número, e não apenas 3157. Esse número é apenas um exemplo. Portanto,
+            esse código não atende ao enunciado:</p>
+            <div class="codigo">print('O numero sorteado foi: 3157')</div>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Cálculo do IMC</p>
+            <p>
+                A fórmula do IMC é a massa dividida pelo quadrado da altura.
+            </p>
+            <p>Passe pro próximo slide para ver como fazer o arrendondamento corretamente 👉</p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">2 casas decimais</p>
+            <p>
+                Alguns problemas, como o "Cálculo do IMC", podem pedir que você mostre o resultado só com duas
+                casas decimais. Você certamente
+                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
+                sua vida:
+            </p>
+            <div class="codigo">resultado = 3**0.5
+print('{:.2f}'.format(resultado))</div>
+        </section>
+
+
+        <section data-background="white">
+            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta o pão!</p>
+            <center><span style="font-size: 4em">🔪🧀</span></center>
+            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
+            só quem perde é você mesmo(a). Em vez de copiar, tire suas dúvidas no nosso grupo de WhatsApp - além
+            de seus colegas, o monitor e eu estamos lá para ajudar 💪 </p>
+
+        </section>
 
         <section data-background="#c6c6c6">
             <div class="slide-title">fim =)</div>
