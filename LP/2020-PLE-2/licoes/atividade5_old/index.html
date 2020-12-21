@@ -10,7 +10,7 @@
         gtag('config', 'UA-161434600-1');
     </script>
 
-    <title>Atividade 4 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <title>Atividade 5 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
     <meta name="author" content="Prof. João Pimentel">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
@@ -30,8 +30,8 @@
     <div class="slides">
 
         <section>
-            <h1>Atividade 4 - The Huxley</h1>
-            <h4>atividade da Semana 3</h4>
+            <h1>Atividade 5 - The Huxley</h1>
+            <h4>atividade da semana 5</h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
                 <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
@@ -41,27 +41,57 @@
             </p>
         </section>
 
+        <section data-background="hsl(217, 71%, 53%" class="is-dark">
+            <p>Depois de ler o enunciado dos problemas no
+                <a href="http://thehuxley.com/" target="_blank" style="color:white;text-decoration: underline">The Huxley</a>,
+                veja a seguir as dicas específicas para cada problema da atividade --> </p>
+        </section>
 
         <section data-background="#00d1b2">
+            <p class="slide-title">Área de 2 círculos</p>
+
             <p>
-                A atividade 4 tem quatro problemas que exercitam o uso do comando <b>if</b> para dar
-                resultados diferentes de acordo com alguma condição.
+                ATENÇÃO: este problema tem um erro no enunciado, as mensagens "Primeiro circulo" e "Segundo circulo"
+                precisam ser escritas <b>sem acento</b>.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Bissexto</p>
+            <ul>
+                <li>São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...</li>
+                <li>São bissextos todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400, p.ex: 1996, 2000, 2004,
+                    2008, 2012, 2016... O ano 1900, por exemplo, não é bissexto, pois ele é múltiplo de 100 mas não de 400.</li>
+                <li>Não são bissextos todos os demais anos.</li>
+            </ul>
+            <p>
+                Hmm, será que o nosso material tem algum exemplo "parecido"?
             </p>
         </section>
 
         <section data-background="#00d1b2">
+            <p class="slide-title">Bombons</p>
             <p>
-                Recomendo olhar o enunciado do problema no The Huxley e responder primeiramente no
-                <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>, já
-                que no repl.it é mais fácil de testar o nosso programa. Em seguida, é só copiar para o The Huxley
-                e enviar a resposta.
+                Não é necessário usar o if neste problema.
             </p>
-            <p>
-                Mas também pode ficar tranquilo(a), não tem problema se você enviar respostas incorretas no The Huxley
-                antes de acertar - só será contabilizado o último programa que você enviou.
-            </p>
-            <p><b>Antes de abrir o Huxley, confira as dicas a seguir!</b></p>
+            <p>Fique atento que o resultado precisa incluir o texto <b>exatamente</b> como está escrito no enunciado, com V
+            maiúsculo. Exemplo: Valor: R$17.00</p>
+            <p>Se o seu programa imprimir só 17.00, ou valor: R$17.00, ou Valor: R$ 17.00, ou Valor: R$17, por exemplo,
+                a resposta não será aceita.</p>
         </section>
+
+        <section>
+            <p class="slide-title">Somatório de lista</p>
+            <p>
+                Este problema já tem a parte inicial programada, que cria uma lista com os valores digitados pelos
+                usuários. A lista está armazenada na variável <b>numeros</b>.
+            </p>
+            <p>O seu trabalho, aqui é completar o código calculando a média dos números da lista, que deve ser impressa
+            na tela com 2 casas decimais.</p>
+            <p>Para calcular a média, você pode usar as funções ensinadas na Semana 5.</p>
+        </section>
+
+
 
         <section data-background="white">
             <p>
@@ -70,20 +100,11 @@
             <img src="python3thehuxley.png" />
         </section>
 
-        <section data-background="red">
-            <div style="font-size: 4em; text-align: center" class="animated shake infinite">😩</div>
-            <p>Deu errado? Antes de se desesperar, veja como fazer para conferir o resultado do seu programa
-            com o gabarito, no próximo slide.</p>
-        </section>
-
         <section>
-            <p>Assim que você envia a resposta aparece o resultado
-                de cada caso de teste do problema, na parte de baixo da tela. Os círculos vermelhos com X representam
-                os erros, como na imagem abaixo. </p>
             <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
-            <p>Se clicar no círculo vermelho você poderá
-                ver qual a entrada do caso de teste, qual o resultado esperado (gabarito), e
-                qual o resultado que o seu programa deu. Isso lhe ajudará a corrigir o código.</p>
+            <p>Quando só alguns dos seus casos de teste estão errados, quer dizer que seu programa não está dando
+                <b>sempre</b> o resultado correto. Por exemplo, no problema de formas geométricas, alguns alunos erraram
+            a conta do perímetro do retângulo - para todas as outras formas, o resultado estava correto.</p>
         </section>
 
         <section data-background="white">
@@ -92,105 +113,24 @@
                 Se lembre que o que irá aparecer na tela tem que ser exatamente igual à saída esperada,
                 sem nada a mais nem a menos. Por exemplo, normalmente nós faríamos um programa que calcule o
                 dobro de um número assim:
+            </p>
             <div class="codigo">x = float(input('digite um número'))
 print('O dobro de', x, 'é', x*2)</div>
-            </p>
-            <p>
                 Mas para a ferramenta de correção automática, precisaremos escrever assim, sem os textos:
             <div class="codigo">x = float(input())
 print(x*2)</div>
-            </p>
-            <p>a não ser que o enunciado do problema peça para incluir algum texto.</p>
+            a não ser que o enunciado do problema peça para incluir algum texto.
         </section>
-
-        <section data-background="hsl(217, 71%, 53%" class="is-dark">
-            <p>Depois de ler o enunciado dos problemas no
-                <a href="http://thehuxley.com/" target="_blank" style="color:white;text-decoration: underline">The Huxley</a>,
-                veja a seguir as dicas específicas para cada problema da atividade. Sugiro começar pelo problema "Dia da semana" --> </p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Dia da semana</p>
-            <p>
-                Sugiro começar por este problema, já que é o que achei menos difícil.
-            </p>
-            <p>Se liga que os dias da semana devem ser escritos sem acento, sem cedilha, e sem o "-feira".
-                Exemplo: terca</p>
-        </section>
-
-        <section data-background="red">
-            Se lembre de ver exatamente o que está dando erro no seu código clicando nos círculos vermelhos
-            com X que aparecem abaixo do seu código quando você envia a resposta.
-            <a href="erros-no-huxley.png"><img src="erros-no-huxley.png" /></a>
-            <b>Resposta esperada</b> é o gabarito<br>
-            <b>Resposta obtida</b> é o resultado do seu código
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Acidez de uma solução</p>
-            <p>
-                São 3 casos possíveis: Ácida, Básica ou Neutra. O enunciado explica quando a solução é ácida e quando
-                ela é básica, mas você precisa descobrir qual a condição para que ela seja neutra.
-            </p>
-            <p>Note que o resultado deve ser escrito sem acento, e com a primeira letra maiúscula. Exemplo: Basica</p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Alugando um veículo</p>
-            <p>
-                Pra cada dia de aluguel a pessoa ganha uma cota de 100Km, e cada Km <b>excedente</b> custa R$ 12.
-                Exemplo: se a pessoa alugou o carro por dois dias e andou 202Km, precisará pagar R$24 pelos 2Km a mais,
-                além do valor das diárias.
-            </p>
-            <p>Este problema é bem parecido com o exemplo de "radar eletrônico" que é explicado na
-                <a href="https://jhcp.github.io/ead/LP/2020-PLE-2/licoes/if-exemplos">lição 1 da semana 4</a>.
-            </p>
-            <p>Está lembrado como faz para deixar o resultado com exatamente duas casas decimais? Veja no próximo slide.
-            </p>
-        </section>
-
-
 
         <section data-background="white">
             <p class="slide-title">2 casas decimais</p>
             <p>
-                Alguns problemas, como o "Alugando um veículo", podem pedir que você mostre o resultado só
-                com duas casas decimais. Você certamente
+                Alguns problemas podem pedir que você mostre o resultado com exatamente duas casas decimais. Você certamente
                 já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
                 sua vida:
             </p>
             <div class="codigo">resultado = 3**0.5
 print('{:.2f}'.format(resultado))</div>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Formas geométricas</p>
-            <p>
-                Este programa vai ficar um pouco maior do que os outros, então não se espante se o seu código
-                tiver 15 linhas ou mais.
-            </p>
-            <p>
-                Uma forma de saber quando a pessoa digitou um comando que não é nem Q nem R nem C é assim:
-            </p>
-            <div class="codigo" style="overflow: scroll">if forma != 'Q' and forma != 'R' and forma != 'C':
-  print('Nenhuma figura selecionada')</div>
-            <p>onde <b>forma</b> é o nome da varíavel que guardou o input.</p>
-        </section>
-
-        <section data-background="red">
-            Se lembre de ver exatamente o que está dando erro no seu código clicando nos círculos vermelhos
-                com X que aparecem abaixo do seu código quando você envia a resposta.
-            <a href="erros-no-huxley.png"><img src="erros-no-huxley.png" /></a>
-            <b>Resposta esperada</b> é o gabarito<br>
-            <b>Resposta obtida</b> é o resultado do seu código
-        </section>
-
-        <section data-background="white">
-            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta a goiabada (ou o pão)!</p>
-            <center><span style="font-size: 4em">🔪🧀</span></center>
-            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
-            só quem perde é você mesmo(a).</p>
-
         </section>
 
         <section>
@@ -245,16 +185,6 @@ print('{:.2f}'.format(resultado))</div>
                 </div>
             </div>
 
-        </section>
-
-
-
-
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                Ainda não aprendeu a usar o The Huxley? Veja as informações sobre o cadastro e uso da ferramenta
-                na <a href="../atividade2">descrição da Atividade 2</a>.
-            </p>
         </section>
 
 
