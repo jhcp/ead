@@ -265,3 +265,18 @@ function shuffleArray(array) {
 
     return array;
 }
+
+
+function adaptToDyslexia() {
+    // Change background color
+    sections = document.getElementsByClassName('slide-background-content');
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.backgroundColor = 'rgb(207,154,170)';
+    }
+
+    // Change text color
+    sections = document.getElementsByTagName('section');
+    for (i = 0; i < sections.length; i++) {
+        sections[i].style.color = 'black';
+    }
+}

@@ -39,7 +39,9 @@
             <p> Produzido pelo
                 <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
             </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
         </section>
+
 
         <section data-background="#00d1b2" class="is-dark">
             <p>
@@ -56,10 +58,10 @@
             <center><span style="font-size: 4em">🔑</span></center>
         </section>
 
-        <section data-background="white">
+        <section data-background="rgb(207,154,170)">
 
-            <center class="animated headShake infinite"><span style="font-size: 4em">⚠️</span></center>
-            <p>
+<!--            <center class="animated headShake infinite"><span style="font-size: 4em">⚠️</span></center>-->
+            <p style="color:black;">
                 O cadastro na ferramenta precisa ser feito com o <u>seu nome completo</u>, senão você ficará
                 sem nota.
             </p>
@@ -213,9 +215,6 @@ print(x*2)</div>
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
-        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-            animateCSS('#play-button', 'delay-1s infinite tada');
-        }
     });
 
     // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
