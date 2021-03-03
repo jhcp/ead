@@ -170,7 +170,7 @@
                         </tr>
                         <tr><td>Parte 1</td><td id="nota-projeto-1">p1</td><td id="nota-projeto-1-ponderada">p1p</td><td id="nota-projeto-1-observacao">p1o</td></tr>
                         <tr><td>Parte 2</td><td id="nota-projeto-2">p2</td><td id="nota-projeto-2-ponderada">p2p</td><td id="nota-projeto-2-observacao">p2o</td></tr>
-<!--                        <tr><td>Parte 3</td><td id="nota-projeto-3">p3</td><td id="nota-projeto-3-ponderada">p3p</td><td id="nota-projeto-3-observacao">p3o</td></tr>-->
+                        <tr><td>Parte 3</td><td id="nota-projeto-3">p3</td><td id="nota-projeto-3-ponderada">p3p</td><td id="nota-projeto-3-observacao">p3o</td></tr>
                     </table>
                     <hr>
                 </div>
@@ -223,69 +223,68 @@
 <script>
     let ofertadaAtividades = 1*6;
     let ofertadaWhatsapp = 1;
-    let ofertadaProjeto = 2;
+    let ofertadaProjeto = 3;
 
     notas = [
-        {id: 0, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200713521, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717583, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200716959, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200717507, at1: 10, at2: 10, at3: 4, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200003618, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200714937, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 1, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200716681, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 0},
-        {id: 20200004070, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717545, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 2, at5: 8.6, at6: 2.85714285714286, proj1: 9, at7: 0, at8: 0, proj2: 0},
-        {id: 200717484, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 10},
-        {id: 200716398, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200717526, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 2, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200003171, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200709409, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 9, at7: 10, at8: 7.5, proj2: 0},
-        {id: 200694815, at1: 0, at2: 3.33333333333333, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717532, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 1, at5: 9.6, at6: 8.57142857142857, proj1: 9, at7: 5, at8: 0, proj2: 0},
-        {id: 20200003850, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9},
-        {id: 20200010550, at1: 0, at2: 0, at3: 0, at4: 8, wa1: 10, at5: 4, at6: 8.57142857142857, proj1: 10, at7: 5, at8: 7.5, proj2: 0},
-        {id: 20200003912, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200716039, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200716986, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200709572, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717585, at1: 10, at2: 10, at3: 0, at4: 10, wa1: 2, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200004375, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200002755, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200000590, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200008730, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 9, at7: 0, at8: 10, proj2: 10},
-        {id: 200717574, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200001613, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200717481, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200717588, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 7.2, at6: 10, proj1: 10, at7: 1.5, at8: 10, proj2: 10},
-        {id: 20200004437, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200716679, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200001570, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 8.57142857142857, proj1: 9, at7: 10, at8: 7.5, proj2: 10},
-        {id: 20200001417, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200713357, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200716962, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 5, at8: 8.75, proj2: 10},
-        {id: 200717494, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717549, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 1, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200706840, at1: 10, at2: 10, at3: 10, at4: 8, wa1: 10, at5: 8, at6: 10, proj1: 10, at7: 10, at8: 7.5, proj2: 10},
-        {id: 20200006137, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 9.6, at6: 10, proj1: 10, at7: 5, at8: 10, proj2: 10},
-        {id: 200717530, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 8.5, proj2: 10},
-        {id: 200717476, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200000213, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 5, at5: 10, at6: 5.71428571428571, proj1: 0, at7: 0, at8: 0, proj2: 10},
-        {id: 200706855, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 9, proj2: 10},
-        {id: 200717528, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 10, at7: 10, at8: 0, proj2: 0},
-        {id: 20200001678, at1: 10, at2: 10, at3: 10, at4: 3, wa1: 5, at5: 0, at6: 0, proj1: 10, at7: 6, at8: 0, proj2: 0},
-        {id: 200716067, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200004473, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 200717505, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200717524, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 5, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10},
-        {id: 20200003117, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9},
-        {id: 200714956, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 200706968, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200004938, at1: 10, at2: 10, at3: 8, at4: 10, wa1: 10, at5: 8, at6: 10, proj1: 10, at7: 0, at8: 7.5, proj2: 10},
-        {id: 200706972, at1: 10, at2: 0, at3: 9.8, at4: 8, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 10},
-        {id: 200709549, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 0, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 0},
-        {id: 200716412, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0},
-        {id: 20200002512, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 0},
+        {id: 200713521, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717583, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 0, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200716959, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 200717507, at1: 10, at2: 10, at3: 4, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 20200003618, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200714937, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 1, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200716681, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 0, proj3: 10},
+        {id: 20200004070, at1: 10, at2: 0, at3: 0, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717545, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 2, at5: 8.6, at6: 2.85714285714286, proj1: 9, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717484, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 10, proj3: 0},
+        {id: 200716398, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200717526, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 2, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200003171, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200709409, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 9, at7: 10, at8: 7.5, proj2: 0, proj3: 0},
+        {id: 200694815, at1: 0, at2: 3.33333333333333, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717532, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 1, at5: 9.6, at6: 8.57142857142857, proj1: 9, at7: 5, at8: 0, proj2: 0, proj3: 8},
+        {id: 20200003850, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9, proj3: 0},
+        {id: 20200010550, at1: 0, at2: 0, at3: 0, at4: 8, wa1: 10, at5: 4, at6: 8.57142857142857, proj1: 10, at7: 5, at8: 7.5, proj2: 0, proj3: 10},
+        {id: 20200003912, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200716039, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200716986, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200709572, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717585, at1: 10, at2: 10, at3: 0, at4: 10, wa1: 2, at5: 10, at6: 10, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200004375, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 20200002755, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 20200000590, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 20200008730, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 9, at7: 0, at8: 10, proj2: 10, proj3: 10},
+        {id: 200717574, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200001613, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200717481, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 200717588, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 7.2, at6: 10, proj1: 10, at7: 1.5, at8: 10, proj2: 10, proj3: 0},
+        {id: 20200004437, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200716679, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 20200001570, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 8.57142857142857, proj1: 9, at7: 10, at8: 7.5, proj2: 10, proj3: 0},
+        {id: 20200001417, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200713357, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200716962, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 5, at8: 8.75, proj2: 10, proj3: 10},
+        {id: 200717494, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717549, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 1, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200706840, at1: 10, at2: 10, at3: 10, at4: 8, wa1: 10, at5: 8, at6: 10, proj1: 10, at7: 10, at8: 7.5, proj2: 10, proj3: 0},
+        {id: 20200006137, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 9.6, at6: 10, proj1: 10, at7: 5, at8: 10, proj2: 10, proj3: 10},
+        {id: 200717530, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 8.5, proj2: 10, proj3: 10},
+        {id: 200717476, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 0},
+        {id: 20200000213, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 5, at5: 10, at6: 5.71428571428571, proj1: 0, at7: 0, at8: 0, proj2: 10, proj3: 10},
+        {id: 200706855, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 9, proj2: 10, proj3: 0},
+        {id: 200717528, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 10, at7: 10, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200001678, at1: 10, at2: 10, at3: 10, at4: 3, wa1: 5, at5: 0, at6: 0, proj1: 10, at7: 6, at8: 0, proj2: 0, proj3: 0},
+        {id: 200716067, at1: 10, at2: 10, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200004473, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 200717505, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 2, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200717524, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 5, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 10, proj3: 10},
+        {id: 20200003117, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 10, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 9, proj3: 10},
+        {id: 200714956, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 200706968, at1: 0, at2: 0, at3: 0, at4: 0, wa1: 0, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200004938, at1: 10, at2: 10, at3: 8, at4: 10, wa1: 10, at5: 8, at6: 10, proj1: 10, at7: 0, at8: 7.5, proj2: 10, proj3: 10},
+        {id: 200706972, at1: 10, at2: 0, at3: 9.8, at4: 8, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 10, proj3: 0},
+        {id: 200709549, at1: 10, at2: 0, at3: 10, at4: 10, wa1: 0, at5: 10, at6: 10, proj1: 10, at7: 0, at8: 10, proj2: 0, proj3: 0},
+        {id: 200716412, at1: 10, at2: 10, at3: 10, at4: 0, wa1: 5, at5: 0, at6: 0, proj1: 0, at7: 0, at8: 0, proj2: 0, proj3: 0},
+        {id: 20200002512, at1: 10, at2: 10, at3: 10, at4: 10, wa1: 7, at5: 10, at6: 10, proj1: 10, at7: 10, at8: 10, proj2: 0, proj3: 0},
 
     ];
 
@@ -359,7 +358,7 @@
 
         let notaAtividades = ((somaNotasAtividades)/10)*1;
         let notaWhatsapp = (currentStudent.wa1)/10;
-        let notaProjeto = (currentStudent.proj1 + currentStudent.proj2)/10;
+        let notaProjeto = (currentStudent.proj1 + currentStudent.proj2 + currentStudent.proj3)/10;
         let notaTotal = (+notaAtividades.toFixed(2) + +notaWhatsapp.toFixed(2) + +notaProjeto.toFixed(2)).toFixed(2);  // based on A Kunin's answer at https://stackoverflow.com/questions/11832914/round-to-at-most-2-decimal-places-only-if-necessary
 
         let ofertadaTotal = ofertadaAtividades + ofertadaWhatsapp + ofertadaProjeto;
@@ -431,14 +430,14 @@
         else {
             document.getElementById("nota-projeto-2-observacao").innerHTML = 'não entregue';
         }
-        // document.getElementById("nota-projeto-3").innerHTML = currentStudent.proj3;
-        // document.getElementById("nota-projeto-3-ponderada").innerHTML = (currentStudent.proj3/10)*1;
-        // if (currentStudent.proj3entregue) {
-        //     document.getElementById("nota-projeto-3-observacao").innerHTML = '';
-        // }
-        // else {
-        //     document.getElementById("nota-projeto-3-observacao").innerHTML = 'não entregue';
-        // }
+        document.getElementById("nota-projeto-3").innerHTML = currentStudent.proj3;
+        document.getElementById("nota-projeto-3-ponderada").innerHTML = (currentStudent.proj3/10)*1;
+        if (currentStudent.proj3entregue) {
+            document.getElementById("nota-projeto-3-observacao").innerHTML = '';
+        }
+        else {
+            document.getElementById("nota-projeto-3-observacao").innerHTML = 'não entregue';
+        }
 
 
         document.getElementById("student-container").style.display = 'block';
