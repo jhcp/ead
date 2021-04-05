@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <link rel="stylesheet" href="../../lib/css/reveal.css">
     <link rel="stylesheet" href="../../lib/css/animate.css">
-    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../../lib/css/zenburn.css">
@@ -29,16 +29,19 @@
 <div class="reveal">
     <div class="slides">
 
+        <!-- ordem das divisões // e % na lista de prioridades -->
+
         <section>
             <h1>divisões</h1>
             <h4>exatas e <s>humanas</s> inteiras</h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
-                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
             </p>
             <p> Produzido pelo
                 <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
             </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -69,7 +72,7 @@
         </section>
 
         <section>
-            Vamos dividir 52 por 3 =) Podemos começar com o 5, pois ele já é maior do que 3.
+            Vamos dividir 52 por 3 🤔 Podemos começar com o 5, pois ele já é maior do que 3.
             <img src="52por3a.png" class="stretch no-border">
             5 por 3 dá 1 e sobra 2.
             <img src="52por3c.png" class="stretch no-border">
@@ -145,7 +148,7 @@
         </section>
 
         <section>
-            <p>Não sei se você reparou, mas o resultado da divisão inteira tem dois componentes: o quociente e o resto.</p>
+            <p>Não sei se você reparou, mas o resultado da divisão inteira tem DOIS componentes: o quociente e o resto.</p>
             <img src="10por3full.png" class="stretch no-border">
                 <p>Sendo assim, na hora de fazer as contas com Python nós vamos precisar de DOIS símbolos diferentes, um para cada componente. </p>
         </section>
@@ -266,7 +269,7 @@
 
         <section data-background="rgb(40,43,69)" class="is-dark">
             <center><img src="pirulito.svg" class="stretch no-border"></center>
-            <p>Janaína comprou 20 pirulitos para uma festa com 5 amigos. Ela quer saber quantos vão sobrar,
+            <p>Janaína comprou 20 pirulitos para uma festa com 6 amigos. Ela quer saber quantos vão sobrar,
                 depois que dividi-los
                 igualmente entre todos  🤤</p>
             <div class="quiz-container"
@@ -297,7 +300,7 @@
                  data-quiz-answers='{
                  "a": "A é par",
                  "b": "A é múltiplo de B",
-                 "c": "A é divisor de B"
+                 "c": "A é divisor de 2"
                  }'
                  data-quiz-correct="b"></div>
         </section>
@@ -327,7 +330,71 @@
                  data-quiz-correct="a"></div>
         </section>
 
-        <section data-background="#c6c6c6">
+        <section data-background="#2196f3" class="is-dark">
+            <p>Se ligou? o módulo (%) também serve para descobrir se um
+            número é multiplo ou divisor de outro - é só olhar se o resto
+            dá zero.</p>
+            <p>Consequentemente, dá para descobrir também se um número é par
+            ou ímpar, olhando o resto da divisão dele por 2.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>🍎 Qual expressão melhor representa essa situação:
+                <i>"eu tinha 10 maçãs, comi 3, e ganhei mais 5"</i>
+                ?</p>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "10-3+5",
+                 "b": "10*3*5",
+                 "c": "10/3%5"
+                 }'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <i>"40 alunos de programação esperavam pelo elevador na UACSA, que tem capacidade
+                máxima de 12 pessoas. Se em cada viagem os alunos lotarem o elevador, quantos
+                alunos estarão na última viagem?"</i>
+            <p>☝️ Qual expressão dá a resposta para essa pergunta?</p>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "40%12",
+                 "b": "40/12",
+                 "c": "40//12"
+                 }'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="black" data-background-video="thematrix.mp4" data-background-video-loop="true">
+            <br><br>
+            <i>A duração de Matrix é 136 minutos, o que equivale a 2 horas e... quantos minutos?</i>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{
+                 "a": "136*60",
+                 "b": "136//60",
+                 "c": "136%60"
+                 }'
+                 data-quiz-correct="c"></div>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">ZeroDivisionError</div>
+            <p>
+                Como não é possível dividir um número por zero, também não é possível calcular <b>o resto</b> da divisão
+                de um número por zero. Então o código
+            </p>
+
+            <div class="codigo">print(5%0)</div>
+
+            <p>resulta no erro <b>ZeroDivisionError</b>.</p>
+
+        </section>
+
+        <section data-background="black" class="is-dark">
             <div class="slide-title">Créditos</div>
             <p>Foto do meio carro:
                 <a href="https://www.kansascity.com/news/state/kansas/article209716849.html" target="_blank">
@@ -345,6 +412,10 @@
             <p>Imagem de cadeado:
                 <a href="https://www.iconfinder.com/iconsets/circle-icons-1" target="_blank">
                     Nick Roach</a>
+            </p>
+            <p>Animação de Matrix:
+                <a href="https://giphy.com/gifs/code-matrix-wallpaper-A06UFEx8jxEwU" target="_blank">
+                    autoria desconhecida</a>
             </p>
         </section>
 

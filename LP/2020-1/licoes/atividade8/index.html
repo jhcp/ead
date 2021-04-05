@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 8 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 8 - The Huxley</h1>
+            <h4>Revisão</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>A "boa notícia" é que esta atividade 8 não inclui o assunto da semana 8 😅 </p>
+            <p>Ah, como sempre, construa seu programa aos poucos e vá testando com o repl.it, antes de enviar a sua
+                resposta para o Huxley. Assim fica mais fácil encontrar os erros à medida que eles aparecerem 😎</p>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, no REPL.IT funciona, mas no Huxley não funciona!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Ei, eu sei que é frustrante, mas pode ter certeza:
+                            se o Huxley está dizendo que a sua resposta não está certa é por
+                            que realmente tem algo errado com o seu código</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">Se não descobrir o erro, pergunta no grupo do WhatsApp que a gente ajuda 😉</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Aff
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            Lembre-se: resolver metade da atividade já é bem melhor do que não resolver nada.
+        </section>
+
+        <section>
+            <p>Você quer as dicas para qual problema?</p>
+            <ul>
+                <li><a href="#Divisibilidade"> [AC3.2] - Divisibilidade </a></li>
+                <li><a href="#Alfândega"> [AC3.4] Alfândega </a></li>
+                <li><a href="#inss"> Calculando a contribuição do INSS </a></li>
+                <li><a href="#Doacao"> Doação </a></li>
+                <li><a href="#Entregando"> Entregando correspondências </a></li>
+                <li><a href="#gerais"> Dicas gerais </a></li>
+            </ul>
+        </section>
+
+        <section data-background="#00d1b2" id="Divisibilidade">
+            <p class="slide-title">Divisibilidade</p>
+
+            <p>
+                Este problema não precisa de repetição (for ou while). O que a gente precisa é descobrir se
+                o número digitado atende a <b>todas</b> essas condições:
+            </p>
+            <ul>
+                <li>é divisível por 4</li>
+                <li>é divisível por 7</li>
+                <li>e não é divisível por 5</li>
+            </ul>
+            <p>
+                SAÍDA: a saída é "sim" ou "nao" (sem acento!)
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" id="Alfândega">
+            <p class="slide-title">Alfândega</p>
+
+            <p>
+                Este problema não precisa de repetição (for ou while).
+            </p>
+            <p>
+                DICA: para calcular porcentagem em Python a gente <b>não usa o %</b>.
+            </p>
+            <p>
+                SAÍDA: note que não é preciso arredondar o resultado
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" id="inss">
+            <p class="slide-title">Calculando a contribuição do INSS</p>
+
+            <p>
+                Este problema não precisa de repetição (for ou while).
+            </p>
+            <p>
+                Se liga que o teto do salário é 5839.45. Qualquer salário maior que esse (oh Glória!) vai pagar
+                o mesmo valor: 11% de 5839.45.
+            </p>
+            <p>
+                SAÍDA: é preciso arredondar o resultado para duas casas decimais
+            </p>
+            <p>
+                DICA: para calcular porcentagem em Python a gente <b>não usa o %</b>.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" id="Doacao">
+            <p class="slide-title">Doação</p>
+
+            <p>
+                Juro a você: esse problema é bem mais simples do que parece. Juro!
+            </p>
+            <p>
+                Não precisa usar for, while, listas, nem if. É "só" fazer umas continhas.
+            </p>
+            <p>
+                DICA: assunto da semana 1.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" id="Entregando">
+            <p class="slide-title">Entregando correspondências (1/2)</p>
+
+            <p>
+                Sabe quando você passa horas ganhando XP para passar de um chefe?
+                Se você encarar como uma obrigação pra se livrar rapidamente,
+                é um tormento.
+                Se encarar como um desafio, quando conseguir vai ficar feliz
+                quanto fica quando vence no Fortnite, Fall Guys ou Tetris 99.
+            </p>
+            <p>
+                ENTRADA: a entrada sempre vai ter 7 números inteiros.
+            </p>
+
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Entregando correspondências (2/2)</p>
+
+            <p>
+                SAÍDA:<br>
+                A primeira resposta é: dos 7 dias, em quanto deles o carteiro bateu a meta?<br>
+                A segunda resposta é: qual a média do número de cartas entregues pelo carteiro?
+            </p>
+            <p>
+                DICA: somatório (acumulador).
+            </p>
+        </section>
+
+        <section id="gerais">
+            <p>Quando o Huxley diz que a resposta está errada quer dizer que, em alguns casos, o resultado do seu código
+                não bateu com o gabarito.
+                Se lembre de olhar a parte de baixo da tela para saber
+                quais casos de teste estão errados e aperte nos
+                <span style="background-color: #cc7b5e; color:white;border-radius: 50%; padding: 0 8px; font-weight: bold">X</span>
+                para ver se tem alguma dica disponível.</p>
+            <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
+        </section>
+
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

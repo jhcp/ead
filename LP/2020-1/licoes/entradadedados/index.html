@@ -16,8 +16,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link href="../../css/chat.css" rel="stylesheet">
     <link rel="stylesheet" href="../../lib/css/animate.css">
-    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../../lib/css/zenburn.css">
@@ -26,6 +27,8 @@
     <script src="../../js/materialdeapoio.js"></script>
 </head>
 <body>
+
+<!-- todo erro comum: escrever input com m (imput) -->
 <div class="reveal">
     <div class="slides">
 
@@ -34,11 +37,12 @@
             <h4>Entrada de dados</h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
-                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
             </p>
             <p> Produzido pelo
                 <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
             </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
@@ -86,12 +90,6 @@
             </script>
         </section>
 
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                Volte 1 casa, digite o seu nome e aperte ok.
-            </p>
-        </section>
-
         <section>
             <p>
                 Veja bem, <span class="username-view">anônimo(a)</span>. Eu, que programei esse site, não sei o seu nome,
@@ -112,7 +110,7 @@
             <p>
                 O que aconteceu foi que você pegou um dado que estava na sua cabeça (o seu nome), e passou para este
                 programa através do teclado. A gente chama isso de ENTRADA DE DADOS: é quando algum dado entra no programa, de alguma forma, sem
-                ser diretamente no código.
+                ser escrito diretamente no código.
             </p>
         </section>
 
@@ -137,10 +135,17 @@
 
 
         <section style="height:100%">
-            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 100%; overflow: hidden; max-width: 100%; width:100%} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/ECFj-bWzU8I?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
+            <p>Vídeo 1 (17min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/ECFj-bWzU8I" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="red" class="is-dark">
+            <div class="slide-title">Erro comum</div>
+            <p>
+                É muito comum a gente errar e escrever imput, com M de Maria, mas ATENÇÃO, input se escreve
+            com N de navio.</p>
         </section>
 
         <section data-background="rgb(14,188,92)" class="is-dark">
@@ -223,7 +228,7 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
 
         <section>
             <p>
-                Outra coisa importante de lembrar é que o resultado da função <code>input</code> <b>sempre</b> é uma string.
+                Outra coisa importante de saber é que o resultado da função <code>input</code> <b>sempre</b> é uma string.
                 Se quisermos utilizar a informação do usuário como se fosse um número (ex: para fazer contas), precisamos converter a string em número utilizando as funções <code>int()</code> ou <code>float()</code>.
             </p>
         </section>
@@ -241,6 +246,85 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
                 Note que o primeiro exemplo diz que calcula o dobro mas dá o resultado errado, pois faltou converter o
                 resultado do input em um número (int ou float) antes de fazer a conta.
             </p>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, por favor, quando é que eu vou usar int(input(...)) ou float(input(...))?
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Use o int quando a resposta <b>só puder
+                            ser</b> um número inteiro, como "quantos bolos você quer comprar?"</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name nor Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="timestamp">10:24</span>
+                        <span class="message follow">Se a resposta puder ser um número quebrado, use
+                        float: "qual o peso do bolo?"</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Without Name nor Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="timestamp">10:25</span>
+                        <span class="message follow">na dúvida use o float</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Obrigado!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:52</span>
+                        <p class="message">😃</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
         </section>
 
         <section data-background="#c6c6c6">
@@ -280,12 +364,7 @@ print("Ah, então o bairro onde", x, "mora se chama", y)
 
     //reações para quando se entrar em algum slide específico
     Reveal.addEventListener('slidechanged', function (event) {
-        if (event.indexh === 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-            if (username !== "anônimo(a)") {
-                Reveal.next();
-            }
-        }
-        if (event.indexh >= 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+        if (event.indexh >= 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
             if (username === "anônimo(a)") {
                 Reveal.slide(1);
             }

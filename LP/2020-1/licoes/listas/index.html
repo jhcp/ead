@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Listas - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Listas</h1>
+            <h4>['introdução', 'como usar']</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Já reparou que alguns dias depois daquele intensivão na véspera da prova já esquecemos quase tudo?
+            </p>
+            <p>
+                Os <a href="https://scholar.google.com.br/scholar?q=cramming+study" target="_blank">
+                estudos científicos</a> comprovam: estudar um pouco a cada dia é mais efetivo para o aprendizado
+                de longo prazo do que estudar muito de uma vez só e depois passar vários dias sem estudar.
+            </p>
+
+            <br>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="No começo do curso aprendemos 4 tipos de dados do Python. Você lembra quais são eles?"
+                 data-quiz-answers='{"a": "corda, inteiro, flutuante, bool", "b": "números, imagens, sons, vídeos",
+                 "c": "letras, números, cores", "d": "string, int, float, boolean", "e": "chars, numbers, colors"}'
+                 data-quiz-correct="d"></div>
+        </section>
+
+        <section>
+            <p>
+                Agora nós vamos aprender mais um tipo de dados do Python: <b>lista</b>.
+                Podemos pensar na lista como sendo um <b>conjunto ordenado</b>.
+                Veja a explicação no vídeo a seguir.
+            </p>
+            <br>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (8min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/1bXYcHC0OqY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <a href="https://repl.it/@jhcp/list-notas" target="_blank">veja o código do vídeo no repl.it</a>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Quando temos muitos dados (ex: muitas notas), é mais rápido..."
+                 data-quiz-answers='{"a": "criar uma variável para cada dado", "b": "criar uma lista"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Com as listas é possível acrescentar dados novos ao programa sem precisar alterar o código"
+                 data-quiz-answers='{"a": "verdadeiro", "b": "falso"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <div class="quiz-container"
+                 data-quiz-text="Para criar uma lista utilizamos..."
+                 data-quiz-answers='{"a": "( ) parênteses", "b": "[ ] colchetes", "c": "{ } chaves"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Criamos as lista com colchetes. Dentro da lista (isto é, dentro
+            dos colchetes), as "coisas" são separadas por vírgulas. Essas "coisas" são chamadas
+            de <b>elementos</b> ou <b>itens</b> da lista. Os elementos da lista podem ser de qualquer tipo. Exemplos:</p>
+            <ul>
+                <li>Uma lista com zero elementos: <br> <span class="codigo">[]</span></li>
+                <li>Uma lista com três números: <br> <span class="codigo">[5, 10, 2]</span></li>
+                <li>Uma lista com três nomes de carro: <br> <span class="codigo">['palio', 'gol', 'celta']</span></li>
+                <li>Uma lista com três elementos de tipos diferentes: <br> <span class="codigo">['ka', 1.8, True]</span></li>
+                <li>Uma lista com três listas: <br> <span class="codigo">[[5, 1], [2, 0], []]</span></li>
+            </ul>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">type</p>
+            <p>Lembra que podemos verificar o tipo de um dado utilizando a função <b>type()</b>?
+            Com isso podemos confirmar que 5 e [5] não são a mesma coisa</p>
+            <ul>
+                <li><span class="codigo">print(type(5))</span> <br> Resultado: &lt;class 'int'&gt;</li>
+                <li><span class="codigo">print(type([5]))</span> <br> Resultado: &lt;class 'list'&gt;</li>
+            </ul>
+            <p>5 é um simples int, já [5] é uma lista.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">len</p>
+            <p>Para saber quantos elementos fazem parte de uma lista - ou seja, o "tamanho" da lista, podemos usar
+            a função <b>len()</b>. len vem do inglês, <i>length</i>. Exemplos:</p>
+            <ul>
+                <li><span class="codigo">print(len([5, 5]))</span> <br> Resultado: 2</li>
+                <li><span class="codigo">print(len(['1, 2, 3, 4']))</span> <br> Resultado: 1</li>
+                <li><span class="codigo">print(len([1, 2, 3, 4]))</span> <br> Resultado: 4</li>
+                <li><span class="codigo">print(len([]))</span> <br> Resultado: 0</li>
+            </ul>
+            <p>Uma lista com zero elementos é uma lista vazia</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">len('string')</p>
+            <p>Você se lembra? A função <b>len()</b> também pode ser usada para calcular a quantidade de caracteres
+            de uma string - ou seja, o tamanho da string:</p>
+            <ul>
+                <li><span class="codigo">print(len('a'))</span> <br> Resultado: 1</li>
+                <li><span class="codigo">print(len('abc'))</span> <br> Resultado: 3</li>
+                <li><span class="codigo">print(len(' a b c '))</span> <br> Resultado: 7 (os espaços também contam)</li>
+                <li><span class="codigo">print(len(''))</span> <br> Resultado: 0</li>
+            </ul>
+            <p>Uma string com zero caracteres é uma string vazia</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, pra quê usar a função len? É só olhar o código e
+                            contar quantos elementos tem.
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">As listas são dinâmicas, podemos acrescentar e remover elementos dela
+                        durante a execução.</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">quando isso acontece o(a) programador(a) não tem como adivinhar
+                        quantos elementos ficarão na lista</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            não sei se entendi...
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:42</span>
+                        <p class="message">Dá uma olhada no próximo slide</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">len</div>
+            <p>
+                Vamos fazer uma lista de feira? Digite o que você precisa comprar:
+            </p>
+            <input type="text" id="value1_input" placeholder="arroz" size="12" style="font-size: 1.3em">
+            <br>
+            <button id="submit-name" class="quiz-submit" onclick="add();">adicionar</button>
+            <div id="result_feira"></div>
+            <p id="resultado_feira_container" style="font-size: 1.2em;">Quantidade de itens na lista:
+                <span id="resultado_feira_value" style="font-weight: bold;"></span></p>
+            <script>
+
+                var feira = []
+                function add() {
+
+                    var value1 = document.getElementById('value1_input').value;
+                    feira.push(value1)
+                    var message = 'Lista: ';
+                    feira.forEach(function (item) {
+                        message += item + '; '
+                    })
+
+                    document.getElementById('result_feira').innerText = message;
+                    document.getElementById('resultado_feira_value').innerText = feira.length;
+                    animateCSS('#resultado_feira_container', 'rubberBand');
+                }
+            </script>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">len</div>
+            <p>
+                Entendeu? Muitas vezes não temos como saber de antemão quantos elementos a lista terá,
+                já que as listas são dinâmicas: podemos acrescentar e remover elementos delas durante a execução.
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">sum</p>
+            <p>Para fazer o somatório dos elementos de uma lista podemos usar
+                a função <b>sum()</b>, que vem do inglês, <i>soma</i>. Exemplos:</p>
+            <ul>
+                <li><span class="codigo">print(sum([5, 5]))</span> <br> Resultado: 10</li>
+                <li><span class="codigo">print(sum([1, 2, 3, 4]))</span> <br> Resultado: 10</li>
+                <li><span class="codigo">print(sum([]))</span> <br> Resultado: 0</li>
+                <li><span class="codigo">print(sum(['oi', 'tchau']))</span> <br> Resultado: TypeError (só é possível
+                fazer o somatório de números)</li>
+                <li><span class="codigo">print(sum([[5], [2]]))</span> <br> Resultado: TypeError (só é possível
+                    fazer o somatório de números)</li>
+            </ul>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">ordem</p>
+            <p>A ordem é importante nas listas. Por exemplo, as listas [1, 2] e [2, 1] são diferentes,
+                apesar de conterem os mesmos elementos, já que os elementos estão em ordens diferentes.</p>
+
+            <p>Ao contrário de conjuntos da matemática, os elementos repetidos também fazem a diferença. Por
+            exemplo, [2, 2] é diferente de [2], já que uma tem dois 2 e a outra tem só um 2.</p>
+            <ul>
+                <li><span class="codigo">print([1, 2] == [2, 1])</span> <br> Resultado: False</li>
+                <li><span class="codigo">print([2, 2] == [2])</span> <br> Resultado: False</li>
+            </ul>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Desafio</p>
+            <p>1) Crie uma lista com algum dado dos membros da sua família (ex: peso, idade, altura, salário).</p>
+
+            <p>2) Calcule a média desses dados usando as funções sum() e len().</p>
+        </section>
+
+        <section>
+            Ainda iremos aprender muito mais sobre listas, mas por enquanto é só. Até a próxima lição!
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

@@ -11,387 +11,106 @@
         gtag('config', 'UA-161434600-1');
     </script>
 
-    <title>bits - UACSA/UFRPE Linguagem de Programação</title>
+    <title>Funções - UACSA/UFRPE Linguagem de Programação</title>
     <meta name="author" content="Prof. João Pimentel">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <link rel="stylesheet" href="../../lib/css/reveal.css">
     <link rel="stylesheet" href="../../lib/css/animate.css">
-    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../../lib/css/zenburn.css">
 
     <script src="../../lib/js/jquery.min.js"></script>
     <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
 
         <section>
-            <h1>funções</h1>
-            <h4>sem funções não funciona =/</h4>
+            <h1>Funções</h1>
+            <h4></h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
-                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
             </p>
             <p> Produzido pelo
                 <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
             </p>
-        </section>
-
-        <section>
-            <div id="quiz" class="quiz"></div>
-            <button id="submit" class="quiz-submit">responder</button>
-            <div id="results" class="quiz-results"></div>
-            <script>
-                var myQuestions1 = [
-                    {
-                        question: 'Quanto dá f(9)?',
-                        answers: {
-                            a: '1',
-                            b: '9',
-                            c: '0',
-                            d: '∞',
-                            e: 'hein!?',
-                        },
-                        correctAnswer: 'e'
-                    }];
-                var quizContainer = document.getElementById('quiz');
-                var resultsContainer = document.getElementById('results');
-                var submitButton = document.getElementById('submit');
-                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
-            </script>
-        </section>
-
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                não dá para calcular o resultado de uma função sem saber qual é a definição da função, não é mesmo?
-            </p>
-        </section>
-
-        <section>
-            <div id="quiz2" class="quiz"></div>
-            <button id="submit2" class="quiz-submit">responder</button>
-            <div id="results2" class="quiz-results"></div>
-            <script>
-                var myQuestions2 = [
-                    {
-                        question: 'Quanto dá f(x) = 4x + 1?',
-                        answers: {
-                            a: '1',
-                            b: '5',
-                            c: '0',
-                            d: '∞',
-                            e: 'hein!?',
-                        },
-                        correctAnswer: 'e'
-                    }];
-                var quizContainer = document.getElementById('quiz2');
-                var resultsContainer = document.getElementById('results2');
-                var submitButton = document.getElementById('submit2');
-                generateQuiz(myQuestions2, quizContainer, resultsContainer, submitButton);
-            </script>
-        </section>
-
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                se eu souber somente a <em>definição</em> de uma função também não conseguirei calcular o resultado,
-                pois não sei o valor da variável para substituir!
-            </p>
-        </section>
-
-        <section data-background-size="cover" data-background-image="../../images/memes/confused.png">
-            <img src="" class="stretch" />
-        </section>
-        <!--<section data-background="black" class="is-dark">-->
-            <!--<img src="../../images/memes/confused.png" class="stretch" />-->
-        <!--</section>-->
-
-        <section data-background="#00d1b2" data-transition="none" class="is-dark">
-            <div class="slide-title">na matemática é assim...</div>
-            <p>
-                Não adianta saber só a definição da função:
-            </p>
-            <p>
-                <div style="text-align: center;font-style: italic;">f(x) = 2x + 5</div>
-            </p>
-        </section>
-
-        <section data-background="#00d1b2" data-transition="none" class="is-dark">
-            <div class="slide-title">na matemática é assim...</div>
-            <p>
-                Não adianta saber só a definição da função:
-            </p>
-            <p>
-                <div style="text-align: center;font-style: italic;">f(x) = 2x + 5</div>
-            </p>
-
-            <p>nem somente o valor da varíavel:</p>
-            <p>
-                <div style="text-align: center;font-style: italic;">f(3)</div>
-            </p>
-        </section>
-
-        <section data-background="#00d1b2" data-transition="none" class="is-dark">
-            <div class="slide-title">na matemática é assim...</div>
-            <p>
-                Não adianta saber só a definição da função:
-            </p>
-            <p>
-            <div style="text-align: center;font-style: italic;">f(x) = 2x + 5</div>
-            </p>
-
-            <p>nem somente o valor da varíavel:</p>
-            <p>
-            <div style="text-align: center;font-style: italic;">f(3)</div>
-            </p>
-
-            <p>
-                é preciso saber <b>as duas coisas</b>
-            </p>
-
-        </section>
-
-        <section>
-            <div class="slide-title">... e no Python também!</div>
-            é preciso saber tanto a <b>definição</b> da função quanto o <b>valor dos parâmetros</b>!
-
-            <img src="../../images/memes/duascoisas.png" class="stretch"/>
-        </section>
-
-        <section data-transition="none">
-            exemplo:<br>
-<pre><code data-trim data-noescape>#definição da função:
-def minhaFuncao(x):
-  return 2*x + 5
-
-#chamada da função:
-minhaFuncao(10)
-</code></pre>
-        </section>
-
-        <section data-transition="none">
-            exemplo:<br>
-            <pre><code data-trim data-noescape>#definição da função:
-def minhaFuncao(x):
-  return 2*x + 5
-
-#chamada da função:
-minhaFuncao(10)
-</code></pre>
-            <p>Neste exemplo a função cujo nome é <span class="code">minhaFuncao</span> será executada apenas uma vez, com <span class="code">x</span> valendo 10:
-                <br>
-                1: <span class="code">2*x + 5</span><br>
-                2: <span class="code">2*10 + 5</span><br>
-                3: <span class="code">20 + 5</span><br>
-                4: <span class="code">25</span><br>
-            </p>
-        </section>
-
-        <section data-transition="none">
-            <pre><code data-trim data-noescape>#definição da função:
-def minhaFuncao(x):
-  return 2*x + 5
-
-#chamada da função:
-minhaFuncao(10)
-</code></pre>
-            <br>
-            <div id="quiz3" class="quiz"></div>
-            <button id="submit3" class="quiz-submit">responder</button>
-            <div id="results3" class="quiz-results"></div>
-            <script>
-                var myQuestions3 = [
-                    {
-                        question: 'O resultado dessa função (25) irá aparecer na tela?',
-                        answers: {
-                            a: 'sim',
-                            b: 'não',
-                        },
-                        correctAnswer: 'b'
-                    }];
-                var quizContainer = document.getElementById('quiz3');
-                var resultsContainer = document.getElementById('results3');
-                var submitButton = document.getElementById('submit3');
-                generateQuiz(myQuestions3, quizContainer, resultsContainer, submitButton);
-            </script>
-        </section>
-
-        <section data-transition="none">
-            <pre><code data-trim data-noescape>#definição da função:
-def minhaFuncao(x):
-  return 2*x + 5
-
-#chamada da função:
-minhaFuncao(10)
-</code></pre>
-            <p>O resultado de uma função nada mais é do que um valor. Neste caso, é um valor numérico.</p>
-            <p>Assim como qualquer outro valor, ele não irá aparecer na tela a não ser que você use a função
-                <span class="code">print</span></p>
-            <pre><code data-trim data-noescape>print(minhaFuncao(10))
-</code></pre>
-        </section>
-
-        <section  data-background="#ffdd57">
-            <p>Opa, quer dizer que <span class="code">print</span> também é uma função?!?</p>
-            <p>Sim! O Python já tem váaaaarias funções pré-definidas. A definição delas existe,
-            mas elas já vêm junto quando instalamos o Python. Por isso podemos usar
-                <span class="code">print(),</span>
-                <span class="code">len(),</span>
-                <span class="code">input(), </span>
-                <span class="code">int(), </span>
-                <span class="code">float()</span>, etc. sem muito stress.
-            </p>
-            <p>Ainda bem, né?</p>
-        </section>
-
-        <section  data-background="#ffdd57">
-            <p>Uma função é um bloco de comandos que pode ser reutilizado depois em um programa. Elas são identificadas
-                por nomes, que seguem as mesmas regras dos nomes de variáveis</p>
-        </section>
-        <section  data-background="#ffdd57">
-            <p>Uma das coisas legais de funções é que eu posso definir a função uma vez só
-            e depois usa-la dezenas, centenas, milhares, milhõoooes de vezes! Basta usar
-            o nome dela e dizer o valor do(s) parâmetro(s)</p>
-            <!--exemplo:<br>-->
-            <pre><code data-trim data-noescape>#definição da função:
-def f(x):
-  return x**2-1
-
-#chamada da função:
-print(f(2))#dá 3
-print(f(3))#dá 8
-print(f(0))#dá -1
-print(f(-1))#dá 0
-print(f(10))#dá 99
-
-</code></pre>
-        </section>
-
-        <section data-background="">
-            anatomia de uma função:
-
-            <pre><code data-trim data-noescape>def nome(parametros):
-  corpo da função
-  return resultado
-</code></pre>
-
-            <br>exemplo:
-
-            <pre><code data-trim data-noescape>def raizQuadrada(x):
-  return x**(1/2)
-</code></pre>
-            &nbsp;&nbsp;<b>nome:</b> raizQuadrada<br>
-            &nbsp;&nbsp;<b>parâmetro:</b> x<br>
-            &nbsp;&nbsp;<b>resultado:</b> x**(1/2)
-        </section>
-
-        <section data-background="#415e55" class="is-dark">
-            <img src="../../images/exercicios/arnold.gif" class="stretch" alt="arnold se exercitando"/>
-            <div id="exercicios" class="slide-new-section">exercícios</div>
-        </section>
-
-        <section>
-            Qual o resultado de
-            <pre><code data-trim data-noescape>#definição da função:
-def f(x):
-  return 3*x+2
-
-#chamada da função:
-print(f(2))
-</code></pre>
-            <div id="quiz4" class="quiz"></div>
-            <button id="submit4" class="quiz-submit">responder</button>
-            <div id="results4" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "?",
-                        answers: {
-                            a: '8',
-                            b: '2',
-                            c: '6',
-                            d: '10',
-                        },
-                        correctAnswer: 'a'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz4');
-                var resultsContainer = document.getElementById('results4');
-                var submitButton = document.getElementById('submit4');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
         </section>
 
 
         <section>
-            Qual o resultado de
-            <pre><code data-trim data-noescape>#definição da função:
-def f(x):
-  return 3*x+2
-
-#chamada da função:
-print(f(2)+f(0))
-</code></pre>
-            <div id="quiz5" class="quiz"></div>
-            <button id="submit5" class="quiz-submit">responder</button>
-            <div id="results5" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "?",
-                        answers: {
-                            a: '8',
-                            b: '2',
-                            c: '6',
-                            d: '10',
-                        },
-                        correctAnswer: 'd'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz5');
-                var resultsContainer = document.getElementById('results5');
-                var submitButton = document.getElementById('submit5');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+            <p>Opa, quantas linhas tem o seu projeto 1? 100? 200? Pois é, quando os projetos vão crescendo, com centenas,
+            milhares, milhões de linhas de código, precisamos encontrar formas de organizar e estruturar o código.
+            Isso é feito, por exemplo, com funções, classes, arquivos, módulos e pacotes. Aqui no curso,
+            iremos estudar apenas as funções.</p>
         </section>
 
         <section>
-            Qual o resultado de
-            <pre><code data-trim data-noescape>#definição da função:
-def f(x):
-  return 3*x+2
+            <p>As funções na programação não são exatamente a mesma coisa que as funções da matemática. E você
+        já usou várias funções, sabia? Print, input, len, max, min e sum são algumas das funções que você
+                já cansou de usar =)</p>
+            <p>Já if, for, while e in são exemplos de comandos do Python - não são funções.</p>
+        </section>
 
-#chamada da função:
-print(f(f(1)))
-</code></pre>
-            <div id="quiz6" class="quiz"></div>
-            <button id="submit6" class="quiz-submit">responder</button>
-            <div id="results6" class="quiz-results"></div>
-            <script>
-                var myQuestions = [
-                    {
-                        question: "?",
-                        answers: {
-                            a: '17',
-                            b: '3',
-                            c: '5',
-                            d: '15',
-                        },
-                        correctAnswer: 'a'
-                    }
-                ];
-                var quizContainer = document.getElementById('quiz6');
-                var resultsContainer = document.getElementById('results6');
-                var submitButton = document.getElementById('submit6');
-                generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-            </script>
+        <section>
+            <p>Agora nós vamos aprender a criar (definir) as nossas próprias funções, com a ajuda do grande Guanabara!</p>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (52min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/ezfr9d7wd_k" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Para <span style='font-weight:bold'>def</span>inir uma função, usamos o comando..."
+                 data-quiz-answers='{"a": "def", "b": "function", "c": "elif", "d": "while"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Esse é o esqueleto da criação de uma função:</p>
+            <div class="codigo">def nome_da_funcao(parametros):
+    corpo da funcao</div>
+            <p>Depois do def a gente escreve o nome da função. Depois do nome, parênteses. Dentro dos parênteses, os
+            parâmetros, que podem ser 0, 1 ou vários. Por último, o dois-pontos, sinalizando o início de um bloco.</p>
+            <p>Dentro do bloco, vamos ter o corpo da função, ou seja, o código que será executado quando chamarmos a função.</p>
+        </section>
+
+        <section>
+            <p>Quando usamos a função, dizemos que a estamos chamando, ou invocando. Sabe quando você <b>chama</b> seu
+            pai para fazer algo por você? "Pai, traz uma água pra mim, por favor". Pronto, é tipo isso.</p>
+            <p>No exemplo abaixo, estamos <b>chamando</b>, <b>invocando</b>, <b>usando</b> ou <b>executando</b>
+                a função print:</p>
+            <div class="codigo">x = 5 + 5
+print(x)</div>
+        </section>
+
+        <section>
+            <p class="slide-title">Nomes</p>
+            <p>Os nomes das funções são importantes para a gente entender o código mais facilmente. É muito comum
+            começar o nome da função com um verbo que indica o que a função de fato faz. Aquele primeiro exemplo
+                que Guanabara mostrou no vídeo poderia se chamar <span class="codigo">escrever_linha</span>,
+                ou então <span class="codigo">printar_linha</span>, em vez
+            de simplesmente <span class="codigo">lin</span>. </p>
+            <p>Imagine se a função <b>max</b> fosse chamada só de <b>ma</b>. Ia ser mais difícil lembrar o que ela
+            faz, concorda?</p>
         </section>
 
         <section data-background="#c6c6c6">
-            <div class="slide-title">FIM =)</div>
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
         </section>
 
     </div>
@@ -426,12 +145,10 @@ print(f(f(1)))
     });
 
     //reações para quando se entrar em algum slide específico
-    Reveal.addEventListener('slidechanged', function (event) {
-        if (event.indexh == 18) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
-            animateCSS('#exercicios', 'bounceInUp');
-        }
-        console.log(event.indexh);//mostra no console o número do slide atual
-    });
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
 
     // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
 </script>

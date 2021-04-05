@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
     <link rel="stylesheet" href="../../lib/css/reveal.css">
     <link rel="stylesheet" href="../../lib/css/animate.css">
-    <link rel="stylesheet" href="../../css/materialdeapoio.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="../../lib/css/zenburn.css">
@@ -26,6 +26,9 @@
     <script src="../../js/materialdeapoio.js"></script>
 </head>
 <body>
+
+<!-- todo dividir esta lição em mais lições -->
+
 <div class="reveal">
     <div class="slides">
 
@@ -34,18 +37,19 @@
             <h4>é uma coisa que pode variar</h4>
             <br>
             <p>Material de apoio para a disciplina Linguagem de Programação da
-                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a> - 2020.1
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
             </p>
             <p> Produzido pelo
                 <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
             </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
         </section>
 
         <section data-background="#00d1b2" class="is-dark">
             <p>
                 Você já sabe muito sobre variáveis na matemática. O tal do <i>x</i>.
             </p>
-            <p>Agora você vai ter que esquecer tudo aquilo, por quê variáveis na programação são BEM diferentes
+            <p>Agora você vai ter que esquecer tudo aquilo, por que variáveis na programação são BEM diferentes
             das variáveis da matemática.</p>
 
         </section>
@@ -104,121 +108,39 @@ print(x*2)
         </section>
 
         <section>
-            <p>Nos vídeos a seguir o Guanabara explica direitinho essa tal da variável, além de reforçar
+            <p>Nos vídeos a seguir o Guanabara do canal Curso em Vídeo explica direitinho essa tal da variável, além de reforçar
                 o que já aprendemos sobre tipos de dados e sobre entrada de dados. E ensina outras coisas bem bacanas também!</p>
-            <p>Serão vários vídeos, veja de pouquinho em pouquinho. Mas lembre-se de não ficar só assistindo, escreva e execute
+            <p>Serão 3 vídeos, então veja de pouquinho em pouquinho para não se cansar. Mas lembre-se de não ficar só assistindo, escreva e execute
             o código no seu PC ou smartphone também. E nos vídeos de exercício, pause e tente responder antes de assistir
             à resolução, blz? ;)</p>
         </section>
 
         <section style="height:100%">
-            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 100%; overflow: hidden; max-width: 100%; width:100%} .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/hdDHg1p3YVc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
+            <p>Vídeo 1 (30min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/hdDHg1p3YVc" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
         </section>
 
         <section style="height:100%">
-            <!-- exercício #003 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/PB254Cfjlyk?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
+            <p>Vídeo 2 (6min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/PB254Cfjlyk" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <i>somar 2 números digitados pela usuária</i>
         </section>
 
         <section style="height:100%">
-            <!-- exercício #004 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/tHYxjJxtJko?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- curso python #07 - operadores aritméticos -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/Vw6gLypRKmY?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #005 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/664e0G_S9nU?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #006 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/mqcNw_dhl8I?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #007 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/_QfISzy0IKs?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #008 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/KjcdG05EAZc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #009 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/qajq3SI0QQs?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #010 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/xM4AX3Lp2mo?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #011 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/mzSJpn9ldt4?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #012 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/4MAmKOT9FeU?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #013 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/cTkivN8XcJ0?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #014 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/9l_Gay8BuAw?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
-        </section>
-
-        <section style="height:100%">
-            <!-- exercício #015 -->
-            <div class='embed-container'>
-                <iframe src='https://www.youtube.com/embed/I4NYUeetLAc?showinfo=0' frameborder='0' allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe></div>
+            <p>Vídeo 3 (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/tHYxjJxtJko" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            <i>métodos de string</i>
         </section>
 
 
         <section data-background="#c6c6c6">
-            <div class="slide-title">FIM (aleluia!!!!)</div>
+            <div class="slide-title">FIM =)</div>
         </section>
 
     </div>
