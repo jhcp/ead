@@ -290,6 +290,28 @@
             </ul>
         </section>
 
+        <section>
+            <p class="slide-title">in</p>
+            <p>É possível saber se um elemento faz parte ou não de uma lista, com o comando <b>in</b>.</p>
+            <div class="codigo">x = [5, 10, 15, 20, 25]
+print(10 in x)
+print(22 in x)</div>
+            <p>O primeiro print desse código vai dar True, já que 10 faz parte da lista. Já o segundo print vai dar
+                False, já que 22 não é um elemento da lista.</p>
+        </section>
+
+        <section>
+            <p class="slide-title">index</p>
+            <p>Se um elemento faz parte da lista, dá para descobrir qual a posição dele na lista com a função
+                <b>index</b>.</p>
+            <div class="codigo">x = [5, 10, 15, 20, 25]
+print(x.index(5))
+print(x.index(20))</div>
+            <p>O primeiro print desse código vai dar zero, que é a posição do número 5 na lista. Já o segundo print
+                dá três, que é a posição (índice) do número 20 nessa lista.</p>
+            <p>Atenção: se tentar descobrir o índice de um elemento que não faz parte da lista ocorrerá um erro.</p>
+        </section>
+
         <section data-background="#00d1b2">
             <p class="slide-title">Desafio</p>
             <p>1) Crie uma lista com algum dado dos membros da sua família (ex: peso, idade, altura, salário).</p>
