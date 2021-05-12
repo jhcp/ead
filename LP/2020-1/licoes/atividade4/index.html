@@ -30,28 +30,104 @@
     <div class="slides">
 
         <section>
-            <h1>Atividade 4 - The Huxley</h1>
-            <h4>atividade valendo nota</h4>
-            <br>
-            <p>Material de apoio para a disciplina Linguagem de Programação da
-                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
-            </p>
-            <p> Produzido pelo
-                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
-            </p>
-            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+            <p class="slide-title">Atividade 4</p>
+            Se alguma dica dessas lhe ajudar a resolver alguma questão da Atividade 4, por favor mande uma
+            mensagem no nosso grupo de WhatsApp.
+            <p>A ordem dos problemas, do mais fácil para o mais difícil, na minha opinião, é:</p>
+            <ol>
+                <li>Canal de TV</li>
+                <li>Aumento dos Trabalhadores</li>
+                <li>Bônus de Viagem</li>
+                <li>Campeonato</li>
+                <li>Bissexto</li>
+                <li>Adotar, um ato de amor</li>
+            </ol>
+            <p>Agora passa pra direita para ver as dicas de cada questão 😎</p>
         </section>
 
-        <section data-background="#00d1b2" class="is-dark">
+        <section>
+            <p class="slide-title">Adotar, um ato de amor</p>
             <p>
-                Recomendo olhar o enunciado do problema no The Huxley e responder primeiramente no
-                <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>, já
-                que no repl.it é mais fácil de testar o nosso programa. Em seguida, é só copiar para o The Huxley
-                e enviar a resposta.
+                A dica para esta questão é: assista a resolução na aula.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Aumento dos Trabalhadores</p>
+            <p>
+                Esse problema só tem 1 exemplo, então é importante que você crie seus próprios exemplos
+                para testar direitinho. Além do
+                salário acima de R$500, teste também com salário entre R$300 e R$500, além de um outro teste com salário
+                menor que R$300, de forma a cobrir todos os casos possíveis.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Bissexto</p>
+            <ul>
+                <li>São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...</li>
+                <li>São bissextos todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400, p.ex: 1996, 2000, 2004,
+                    2008, 2012, 2016... O ano 1900, por exemplo, não é bissexto, pois ele é múltiplo de 100 mas não de 400.</li>
+                <li>Não são bissextos todos os demais anos.</li>
+            </ul>
+            <p>
+                Hmm, será que o nosso material tem algum exemplo "parecido"? Volte para a Semana 3
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Bônus de Viagem</p>
+            <p>
+                A dica para esta questão é: leia m-u-i-t-o b-e-m o enunciado. Se ler rapidamente e pensar
+                que já sacou vai acabar fazendo a conta errada.
             </p>
             <p>
-                Mas também pode ficar tranquilo(a), não tem problema se você enviar respostas incorretas no The Huxley
-                antes de acertar - só será contabilizado o último programa que você enviou.
+                Quando testar o programa, se certifique que só está sendo exibido um país na tela; se estiverem
+                aparecendo dois ou três paises tem alguma coisa errada - estude a Semana 4.
+            </p>
+            <p>
+                Mais uma dica: se lembre de testar com outros valores também, em vez de testar só com o exemplo
+                do enunciado.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Campeonato</p>
+            <p>
+                Essa questão é um pouco diferente por que os valores de entrada estão em uma única linha. A gente
+                precisa ler a linha inteira e dividi-la nos espaços. Calma, nada tema, é assim:
+            </p>
+            <div class="codigo">entrada = input().split()
+Cv = int(entrada[0])
+Ce = int(entrada[1])
+Cs = int(entrada[2])
+Fv = int(entrada[3])
+Fe = int(entrada[4])
+Fs = int(entrada[5])</div>
+            <p>
+                Então copia esse código daí de cima e escreve o restante do código. E se lembre de responder por
+                partes; tentar resolver tudo de uma vez só é o caminho mais direto para o erro.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Canal de TV</p>
+            <p>
+                Pelos exemplos dá para notar que o input tem um texto, fica assim:
+            </p>
+            <div class="codigo">input('Digite um numero de um canal de tv:\n')</div>
+            <p>
+                Viu o \n aí em cima, né? Esquece dele não.
+            </p>
+            <p>
+                Os nomes dos canais precisam ficar todos em maiúsculas: SBT, BAND, REDETV!, RECORD, GLOBO. Já o
+                "Canal Invalido" não é todos em maiúsculas e não tem acento.
+            </p>
+        </section>
+
+        <section data-background="black" class="is-dark">
+            <p>
+                Essas foram as dicas de cada questão - veja a seguir dicas gerais do The Huxley
             </p>
         </section>
 
@@ -78,59 +154,6 @@ print(a*b)</div>
             <p>... a não ser que o enunciado do problema peça para incluir algum texto.</p>
         </section>
 
-        <section>
-            <!-- With Name and Arrow - LEFT -->
-            <div class="msg">
-                <div class="bubble">
-                    <div class="txt">
-                        <span class="name">Estudante</span>
-                        <span class="timestamp">10:20</span>
-                        <span class="message">
-                            Professor, se eu enviar um código errado irei perder ponto?
-                        </span>
-                    </div>
-                    <div class="bubble-arrow"></div>
-                </div>
-            </div>
-
-            <!-- With Name and Arrow - RIGHT -->
-            <div class="msg">
-                <div class="bubble alt">
-                    <div class="txt">
-                        <span class="name alt">João Pimentel
-                        </span>
-                        <span class="timestamp">10:22</span>
-                        <p class="message">Nãaaao, essa é a vantagem de usar uma ferramenta de correção automática:
-                            você irá saber imediatamente que tem algum problema no código, e poderá corrigir.</p>
-                    </div>
-                    <div class="bubble-arrow alt"></div>
-                </div>
-            </div>
-
-            <!-- Without Name and Arrow - RIGHT -->
-            <div class="msg">
-                <div class="bubble alt">
-                    <div class="txt">
-                        <p class="message">Pode enviar errado quantas vezes quiser, o que vale é a última versão</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- With Name and Arrow - LEFT -->
-            <div class="msg">
-                <div class="bubble">
-                    <div class="txt">
-                        <span class="name">Estudante</span>
-                        <span class="timestamp">10:30</span>
-                        <span class="message">
-                            Show, valeu!
-                        </span>
-                    </div>
-                    <div class="bubble-arrow"></div>
-                </div>
-            </div>
-
-        </section>
 
         <section>
             <p>Assim que você envia a resposta aparece o resultado
@@ -143,69 +166,6 @@ print(a*b)</div>
         </section>
 
 
-        <section data-background="#00d1b2" class="is-dark">
-            <p>
-                Ainda não aprendeu a usar o The Huxley? Veja as informações sobre o cadastro e uso da ferramenta
-                na <a href="../atividade2">descrição da Atividade 2</a>.
-            </p>
-        </section>
-
-        <section data-background="white">
-            <p>
-                A seguir, veja dicas para cada problema desta atividade 👉
-            </p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Capacidade Estacionamento</p>
-            <p>
-                Para que o resultado realmente fique com duas casas decimais, use o .format, como
-                nesse exemplo:
-            </p>
-            <div class="codigo">resultado = 3**0.5
-print('{:.2f}'.format(resultado))</div>
-
-        </section>
-
-        <section data-background="#00d1b2" id="Doacao">
-            <p class="slide-title">Comprimento de um arco e área do setor.</p>
-
-            <p>
-                Acho que você se lembra das fórmulas de perímetro e área de um círculo, né? 2πr e πr², respectivamente.
-                Dá para calcular a medida do arco e a área do setor aplicando uma regra de 3 a essas fórmulas. Ex:
-                2πr está para 360º assim como x está para α. Daí é só isolar o x e pá.
-            </p>
-            <p>
-                Mas se não conseguir, tudo bem, é só pesquisar no Google que você encontrará as fórmulas.
-            </p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Carteira Habilitacao</p>
-            <p>
-                A pessoa pode tirar carteira quando tiver pelo menos 18 anos de idade.
-            </p>
-            <p>Muita calma na hora de escrever os prints, pois o texto precisa ser exatamente como está explicado
-            em "Formato de saída". Por exemplo, se você escrever "Você já pode tirar..." em vez de "Voce ja pode
-            tirar..." o resultado não estará correto.</p>
-        </section>
-
-        <section data-background="#00d1b2">
-            <p class="slide-title">Consumo</p>
-            <p>
-                Se ligue que nesta questão é preciso arredondar com TRÊS (3) casas decimais, em vez de duas.
-            </p>
-            <p>Note também que não basta printar o número, é preciso printar também a unidade, separada do número
-            por um único espaço.</p>
-        </section>
-
-        <section data-background="white">
-            <p class="slide-title">Contagem em string</p>
-            <p>
-                Use as funções aprendidas na lição "Tipo isso e tipo aquilo". Mas olha só, o programa
-                deve levar em tanto tanto a letra a minúscula quanto também maiúscula.
-            </p>
-        </section>
 
         <section data-background="#c6c6c6">
             <div class="slide-title">fim =)</div>
