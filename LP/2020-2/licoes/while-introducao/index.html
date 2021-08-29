@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Repetição com while - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Repita enquanto...</h1>
+            <h4>while</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>Opa, já aprendemos repetição com o comando <span class="codigo">for</span>, que usamos pra repetir um
+            pedaço do código um certo número de vezes (for in range), ou quando queremos usar repetição
+                em uma lista (explicado na Live).</p>
+            <p>Não sei se você reparou, mas o <span class="codigo">for</span> é bem parecido com o bloco "repita N vezes"
+            do joguinho</p>
+            <img src="jogo-repita.png" class="stretch">
+        </section>
+
+        <section>
+            <p>Mas às vezes não sabemos quantas vezes queremos repetir. Simplesmente queremos que o computador
+            repita até atingir um certo objetivo.</p>
+        </section>
+        <section>
+            <p>Lembra do joguinho? Pois é, além daquele "repita N vezes" o jogo também tem o bloco
+                "repetir até", que é parecido com o comando <span class="codigo">while</span> que iremos estudar agora.</p>
+            <img src="jogo-while.png" class="stretch">
+            <p>Quantas vezes o boneco vai avançar? Não importa! O que importa é que ele vai
+            avançar até chegar no porquinho.</p>
+        </section>
+
+        <section>
+            <p>Pense no Bart. Se eu quero que ele repita a frase 10 vezes, posso usar o comando
+                <span class="codigo">for</span>. Já se
+                eu quero que ele repita <b>enquanto</b> não tiver chegado no fim do quadro, uso o comando
+                <span class="codigo">while</span>.</p>
+            <img src="bart_quadro_programar.png" class="stretch">
+            <div class="codigo">while not acabou_o_quadro:
+    print('programar eh o bicho')</div>
+        </section>
+
+        <section data-background="black" class="is-dark">
+            <p>É assim que funciona um jogo, por exemplo. O jogo vai repetir enquanto a pessoa não terminou a fase
+                <b>E</b> a pessoa não morreu.</p>
+            <img src="you-died.jpeg" class="stretch">
+        </section>
+
+
+        <section>
+            <p>Resumo: em alguns casos de repetição usamos o <span class="codigo">for</span>,
+                e em outros casos usamos o <span class="codigo">while</span>.
+                Por isso que precisamos estudar os dois.</p>
+
+            <p>Então vamos lá praquela aula maneira com o Guanabara? Deus lhe pague, Guanabara 🙌 ! O
+            que seria de nós sem você?!</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (38min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/LH6OIn2lBaI" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Um loop, ou laço, representa a ideia de..."
+                 data-quiz-answers='{"a": "indentação", "b": "condição", "c": "repetição"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="O while significa."
+                 data-quiz-answers='{"a": "repita enquanto", "b": "repita até", "c": "repita, bela pepita", "d": "repita N vezes"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um if dentro do bloco de um while?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um while dentro do bloco de um for?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um outro while dentro do bloco de um while?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Tem coisa que eu posso fazer tanto com for quanto com while?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+
+        <section data-background="#ffdd57">
+            Quantas vezes a quarta linha será executada?
+            <div class="codigo">print('** SISTEMA SECRETO **')
+resposta = ''
+while resposta != 'gq910':
+  resposta = input('senha: ')
+print('OK, senha correta')
+</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "0", "b": "2", "c": "10", "d": "depende"}'
+                 data-quiz-correct="d"></div>
+        </section>
+
+        <section>
+        <div class="codigo">print('** SISTEMA SECRETO **')
+resposta = ''
+while resposta != 'gq910':
+  resposta = input('senha: ')
+print('OK, senha correta')
+        </div>
+        <p>Pois é, não temos como saber quantas vezes a linha 4 será executada, por que depende da resposta
+        da pessoa, no input. Se a pessoa acertar a senha de primeira, a linha será executada só uma vez mesmo.
+        Se a pessoa errar a senha 100 mil vezes, a linha será executada 100 mil vezes.</p>
+
+        </section>
+
+        <section>
+            <div class="codigo">print('** SISTEMA SECRETO **')
+resposta = ''
+while resposta != 'gq910':
+  resposta = input('senha: ')
+print('OK, senha correta')
+            </div>
+            <p>Depois que a gente manja dos paranauê, as linhas 3 e 4 até que fazem sentido: "enquanto a resposta for diferente
+                de 'gq910', pergunte a(o) usuário(a) pela senha".</p>
+
+        </section>
+
+        <section>
+            Quando o código fica um pouco maior e mais complicado, é comum criar uma nova variável para "controlar" a
+            repetição. É a chamada <i>flag</i> 🎌 , que a gente usa para "sinalizar" se o programa deve repetir ou
+            não. Nesse exemplo, a <i>flag</i> é a variável <b>pode_entrar</b>.
+
+            <div class="codigo">print('** SISTEMA SECRETO **')
+pode_entrar = False
+
+while not pode_entrar:
+  nome = input('nome: ')
+  senha = input('senha: ')
+
+  if (nome == 'johnny') and (senha == 'gq910'):
+    pode_entrar = True
+  else:
+    print('!!! senha errada !!!')
+    print()
+
+print('OK, senha correta')</div>
+
+        </section>
+
+        <section>
+            <div class="codigo">pode_entrar = False
+while not pode_entrar:
+  nome = input('nome: ')
+  senha = input('senha: ')
+  if (nome == 'johnny') and (senha == 'gq910'):
+    pode_entrar = True
+  else:
+    print('!!! senha errada !!!')
+print('OK, senha correta')</div>
+            Vamos ler esse código? Crie a <i>flag</i>
+            pode_entrar, com o valor False, já que a pessoa ainda não acertou a senha. Enquanto não pode entrar, faça isso:
+            <ul>
+                <li>Pergunte nome e senha</li>
+                <li>Se a pessoa acertou o nome e a senha, agora ela pode entrar. Caso contrário (else), diga
+                    que a senha está errada
+                </li>
+            </ul>
+            <p>Ou seja: enquanto a pessoa não tiver acertadao, pergunte o nome e a senha.</p>
+
+        </section>
+
+        <section data-background="#EE33EE" style="background-color: #EE33EE" class="is-dark">
+            Tudo o que podemos fazer com <span class="codigo">for</span> podemos fazer com
+                <span class="codigo">while</span> também.
+            <p><b>Exemplo 1 (range):</b></p>
+            <div class="codigo">#valores de exemplo
+x = 5
+y = 20
+z = 2
+
+print('com for:')
+for c in range(x, y, z):
+  print(c)
+
+#assumindo que o intervalo é crescente
+#se for decrescente, será preciso inverter a comparação (>)
+print('com while:')
+c = x
+while c < y:
+  print(c)
+  c = c + z</div>
+            <center><a href="https://repl.it/@jhcp/for-range-com-while" target="_blank">abra esse exemplo no repl.it</a></center>
+        </section>
+
+        <section>
+            <p>Tudo o que podemos fazer com <span class="codigo">for</span> podemos fazer com
+                <span class="codigo">while</span> também.</p>
+            <p><b>Exemplo 2 (listas):</b></p>
+            <div class="codigo">#lista de exemplo
+x = [10, 20, -5, 2]
+
+print('com for:')
+for elemento in x:
+  print(elemento)
+
+print('com while:')
+c = 0
+while c < len(x):
+  print(x[c])
+  c = c + 1</div>
+            <center><a href="https://repl.it/@jhcp/for-lista-com-while" target="_blank">abra esse exemplo no repl.it</a></center>
+        </section>
+
+        <section>
+            <p>O código com <span class="codigo">for</span> acaba ficando mais simples do que o código com
+                <span class="codigo">while</span>, por isso que é importante aprendermos o
+                <span class="codigo">for</span>. </p>
+            <p>Mas quando a nossa repetição <b>não</b> tem a ver com uma sequência,
+                como uma sequência de números (range) ou uma sequência de elementos de uma lista, usamos o
+                <span class="codigo">while</span>.
+                           Por isso que é importante aprendermos ele também.</p>
+        </section>
+
+        <section>
+            <p>Na próxima lição veremos vários exemplos de código com o <b>while</b>, beleza?</p>
+            <div style="font-size: 3em">👋</div>
+        </section>
+
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Bart é uma personagem da Twentieth Century Fox Film Corporation.
+            </p>
+            <p>YOU DIED - imagem do jogo Dark Souls, publicado pela Namco Bandai Games. Imagem do blog
+            <a href="https://www.musicmagpie.co.uk/blog/2014/08/29/the-10-most-frustrating-videogames-of-the-past-10-years/dark-souls-game-over/"
+            target="_blank">musicMagpie</a>. </p>
+            <p>Imagens do jogo Hora do Código - imagens feitas por João Pimentel com base em telas do
+                <a href="https://studio.code.org/hoc/1" target="_blank">jogo</a>. </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

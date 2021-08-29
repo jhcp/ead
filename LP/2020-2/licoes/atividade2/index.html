@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 2 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 2 - The Huxley</h1>
+            <h4>atividade valendo nota</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                No decorrer do curso usaremos a ferramenta The Huxley para a entrega das atividades.
+                Portanto, é necessário que você faça o cadastro na ferramenta <b>com o seu nome completo</b>
+                seguindo as instruções a seguir.
+            </p>
+        </section>
+
+        <section data-background="rgb(207,154,170)">
+
+                        <center class="animated headShake infinite"><span style="font-size: 4em">⚠️</span></center>
+            <p style="color:black;">
+                O cadastro na ferramenta precisa ser feito com o <u>seu nome completo</u>, senão você ficará
+                sem nota.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Veja o tutorial de como se cadastrar na ferramenta e encontrar as atividades 👇
+            </p>
+            <center>
+                <a href="tutorial-the-huxley.pdf"><img src="pdf.svg" class="no-border"/><br>
+                    tutorial</a>
+            </center>
+        </section>
+
+        <section data-background="white">
+            <p>
+                O código (chave) da sua turma está disponível na Turma Virtual da disciplina (SIGAA).
+            </p>
+            <center><span style="font-size: 4em">🔑</span></center>
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum #1</div>
+            <p>
+                Alguns alunos tentam encontrar a turma no The Huxley pela barra de busca, mas na verdade
+                é preciso clicar no ícone de chaveiro, conforme explicado no <a href="tutorial-the-huxley.pdf">
+                tutorial</a>.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum #2</div>
+            <p>
+                Alguns alunos esquecem de escolher a opção Python 3 na hora de escrever o código. Para
+                que a ferramenta execute o seu programa corretamente é preciso escolher Python 3, conforme
+                explicado no <a href="tutorial-the-huxley.pdf">
+                tutorial</a>.
+            </p>
+        </section>
+
+
+
+
+
+
+
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Agora que você já se cadastrou na ferramenta e encontrou a sua turma, vamos ver o
+                que será feito na atividade em si!</p>
+            <p>Esta atividade 2 tem cinco problemas que exercitam o cáculo de expressões matemáticas simples
+                a partir de entradas (inputs) dos usuários - ou seja, com base em valores desconhecidos.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Recomendo olhar o enunciado do problema no The Huxley e responder primeiramente no
+                <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>, já
+                que no repl.it é mais fácil de testar o nosso programa. Em seguida, é só copiar para o The Huxley
+                e enviar a resposta.
+            </p>
+            <p>
+                Mas também pode ficar tranquilo(a), não tem problema se você enviar respostas incorretas no The Huxley
+                antes de acertar - só será contabilizado o último programa que você enviou.
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+        <section data-background="white">
+            Se liga que, na maioria dos problemas do The Huxley, não é permitido escrever textos
+            adicionais nas funções print ou input. Por exemplo, normalmente a resposta da "Área do retângulo"
+            seria assim:
+            <div class="codigo">a = int(input('qual o primeiro lado? '))
+b = int(input('qual o segundo lado? '))
+print('a área é', a*b)</div>
+            <p>
+                Mas no Huxley a resposta será sem o texto...
+            <div class="codigo">a = int(input())
+b = int(input())
+print(a*b)</div>
+            </p>
+            <p>... a não ser que o enunciado do problema peça para incluir algum texto.</p>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, se eu enviar um código errado irei perder ponto?
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Nãaaao, essa é a vantagem de usar uma ferramenta de correção automática:
+                            você irá saber imediatamente que tem algum problema no código, e poderá corrigir.</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">Pode enviar errado quantas vezes quiser, o que vale é a última versão</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Show, valeu!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <p>Assim que você envia a resposta aparece o resultado
+                de cada caso de teste do problema, <b>na parte de baixo da tela</b>. Os círculos vermelhos com X representam
+                os erros, como na imagem abaixo. </p>
+            <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
+            <p>No exemplo desta imagem, o código que a pessoa fez deu certo em 28 dos 30 testes realizados. Apenas 2
+                testes, que estão vermelhos, deram errado. Ou seja,
+                se a questão valesse 10 pontos, a pessoa ficaria com 9.3.</p>
+        </section>
+
+
+        <section data-background="white">
+            <p>
+                A seguir, veja dicas para cada problema desta atividade 👉
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Área do retângulo</p>
+            <p>
+                O enunciado não deixa claro, mas essa questão só trabalha com números inteiros. Então, em vez
+                de float(input()), é melhor usar int(input()).
+            </p>
+        </section>
+
+
+        <section data-background="white">
+            <p class="slide-title">AC2 - Ex. 2</p>
+            <p>
+                A dica para esta questão é seguir exatamente a mesma ordem que está no enunciado. Se printar a subtração
+                antes da soma, por exemplo, o resultado não estará correto.
+            </p>
+            <p>Ah, outra dica é lembrar de não inserir textos no print nem no input.</p>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Bingo</p>
+            <p>
+                Não é preciso fazer contas neste problema, basta printar a mensagem com o número que for fornecido na
+                entrada.
+            </p>
+            <p>OBS: a entrada pode ser qualquer número, e não apenas 3157. Esse número é apenas um exemplo. Portanto,
+            o código abaixo não atende ao enunciado:</p>
+            <div class="codigo">print('O numero sorteado foi: 3157')</div>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Cálculo do IMC</p>
+            <p>
+                A fórmula do IMC é a massa dividida pelo quadrado da altura.
+            </p>
+            <p>"Professor, eu fiz certo, mas a ferramenta tá dizendo que está errado!". Provavelmente
+            você não está fazendo o arredondamento da forma que precisa ser feito.</p>
+            <p>Passe pro próximo slide para ver como fazer o arrendondamento corretamente 👉</p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">2 casas decimais</p>
+            <p>
+                Alguns problemas, como o "Cálculo do IMC", podem pedir que você mostre o resultado só com duas
+                casas decimais. Você certamente
+                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
+                sua vida:
+            </p>
+            <div class="codigo">resultado = 3**0.5
+print('{:.2f}'.format(resultado))</div>
+        </section>
+
+
+        <section data-background="white">
+            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta o pão!</p>
+            <center><span style="font-size: 4em">🔪🧀</span></center>
+            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
+            só quem perde é você mesmo(a). Em vez de copiar, tire suas dúvidas no nosso grupo de WhatsApp - além
+            de seus colegas, o monitor e eu estamos lá para ajudar 💪 </p>
+
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
