@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 2 - URI - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade Individual 2 - URI</h1>
+            <h4>atividade valendo nota</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                No decorrer do curso usaremos a ferramenta URI Online Judge para a entrega das atividades.
+                Portanto, é necessário que você faça o cadastro na ferramenta <b>com o seu nome completo</b>
+                seguindo as instruções a seguir.
+            </p>
+        </section>
+
+        <section data-background="rgb(207,154,170)">
+
+                        <center class="animated headShake infinite"><span style="font-size: 4em">⚠️</span></center>
+            <p style="color:black;">
+                O cadastro na ferramenta precisa ser feito com o <u>seu nome completo</u>, senão você ficará
+                sem nota.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                No vídeo a seguir eu explico como se cadastrar na ferramenta e encontrar as atividades da disciplina
+            </p>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (5min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/hz8XE_zXBWM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="white">
+            <p>
+                O código (chave) da sua turma está disponível na Turma Virtual da disciplina (SIGAA).
+            </p>
+            <center><span style="font-size: 4em">🔑</span></center>
+        </section>
+
+
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Agora que você já se cadastrou na ferramenta e encontrou a sua turma, vamos ver o
+                que será feito na atividade em si!</p>
+            <p>Esta Atividade Individual 2 tem quatro problemas que exercitam o cáculo de expressões matemáticas
+                simples
+                a partir de entradas (inputs) dos usuários - ou seja, com base em valores desconhecidos.
+            </p>
+            <p>No vídeo a seguir mostro a resolução de uma questão, além das dicas para as outras
+            questões desta atividade.</p>
+        </section>
+
+        <section>
+            <p>Vídeo 2 (32min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/PEGaLrjUfI0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, se eu enviar um código errado irei perder ponto?
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Nãaaao, essa é a vantagem de usar uma ferramenta de correção automática:
+                            você irá saber imediatamente que tem algum problema no código, e poderá corrigir.</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">Pode enviar errado quantas vezes quiser, o que vale é a última versão</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Show, valeu!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section data-background="white">
+            <p class="slide-title">3 casas decimais</p>
+            <p>
+                Alguns problemas, como o "Gasto de Combustível", podem pedir que você mostre o resultado
+                com uma quantidade específica de casas decimais. Você certamente
+                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
+                sua vida, de como mostrar o resultado com exatamente 3 casas decimais:
+            </p>
+            <div class="codigo">resultado = 3**0.5
+print('{:.3f}'.format(resultado))</div>
+        </section>
+
+
+        <section data-background="white">
+            <p>Observe que já estou lhe dando a faca e o queijo, agora só falta o pão!</p>
+            <center><span style="font-size: 4em">🔪🧀</span></center>
+            <p>Meu objetivo é dar as condições para que você aprenda. Se você optar pelo "atalho" de copiar as respostas,
+            só quem perde é você mesmo(a). Em vez de copiar, tire suas dúvidas no nosso grupo de WhatsApp - além
+            de seus colegas, eu estou lá para ajudar 💪 </p>
+
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
