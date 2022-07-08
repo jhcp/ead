@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Programação sequencial, saída e erros comuns - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Continue programando 👍</h1>
+            <h4>múltiplas linhas, saída e erros comuns</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Ps9q_BEgih0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Quando mandamos executar um programa, o computador executa todas as de linhas de código
+            ao mesmo tempo"
+                 data-quiz-answers='{"a": "Verdadeiro", "b": "Falso"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">Execução sequencial</div>
+            <p>
+                O computador é tão rápido que, quando a gente executa o programa, parece que o resultado sai
+                de uma vez só, tudo ao mesmo tempo.
+            </p>
+            <p>
+                Mas na verdade o computador executa uma linha de cada vez (linha por linha, de cima pra baixo).
+                É a chamada execução sequencial.
+            </p>
+            <p>Leia a <a href="Trecho%20do%20livro%20Python%20para%20Todos%20-%20seção%201-9.pdf" target="_blank">
+                seção 1.9 de Python para Todos</a> para conhecer os outros tipos
+            de execução.</p>
+        </section>
+
+        <section>
+        <div class="slide-title">Saída (1/6)</div>
+            <p>
+                A gente pode pensar no nosso programa como sendo uma máquina, onde vão entrar dados
+                que sairão da máquina novamente depois de serem processados. Como essa máquina da imagem, onde <b>entram</b>
+                os lápis inteiros e <b>saem</b> os lápis afiados.
+            </p>
+            <img src="sharpener.webp" class="stretch no-border"/>
+        </section>
+
+        <section>
+            <div class="slide-title">Saída (2/6)</div>
+            <p>
+                Outro boa metáfora para entrada/saída é a galinha:
+            </p>
+            <img src="chicken%20in%20out.png" class="stretch no-border"/>
+
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <div class="slide-title">Saída (3/6)</div>
+            <p>
+                Digite dois números inteiros e aperte OK que o nosso programa irá calcular a média deles.
+            </p>
+            <input type="text" id="value1_input" placeholder="valor 1" size="12" style="font-size: 1.3em">
+            <br>
+            <input type="text" id="value2_input" placeholder="valor 2" size="12" style="font-size: 1.3em">
+            <br>
+            <button id="submit-name" class="quiz-submit" onclick="average();">OK</button>
+            <b><div id="result_average" style="font-size: 1.2em"></div></b>
+            <p id="explication_average"></p>
+            <script>
+
+                function average() {
+
+                    var value1 = document.getElementById('value1_input').value;
+                    var value2 = document.getElementById('value2_input').value;
+                    message = '';
+
+                    if (! (/^(\-|\+)?[0-9]+$/.test(value1) && /^(\-|\+)?[0-9]+$/.test(value2)) ) {
+                        message = 'Vamos lá, digite dois números inteiros';
+                    }
+                    else {
+                        value1 = parseFloat(value1);
+                        value2 = parseFloat(value2);
+                        if (isNaN(value1) || isNaN(value2)) {
+                            message = 'Vamos lá, digite dois números inteiros';
+                        }
+                        else {
+                            message = 'Média: ' + (value1 + value2) / 2;
+                            document.getElementById('explication_average').innerText = 'Os números que você digitou e o clique no botão foram as entradas do programa. Esses dados foram processados, e a saída foi esta mensagem com o valor da média.';
+                        }
+                    }
+                    document.getElementById('result_average').innerText = message;
+                    animateCSS('#result_average', 'flipInX');
+                }
+            </script>
+        </section>
+
+        <section>
+            <div class="slide-title">Saída (4/6)</div>
+            <p>
+                A forma mais básica de saída em um software é mostrar um texto na tela. Outros exemplos são:
+                mostrar imagem, tocar som, salvar arquivo, enviar mensagem pela Internet, e imprimir em impressora.
+            </p>
+            <p>
+                Para exibir um texto na tela em Python utilizamos a função <code>print</code>, como exemplificado
+                no vídeo.
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">Saída (5/6)</div>
+                <div class="quiz-container"
+                     data-quiz-text="Qual a escrita correta da função que mostra uma mensagem na tela?"
+                     data-quiz-answers='{"a": "show", "b": "print", "c": "Print", "d": "printi", "e": "PRINT"}'
+                     data-quiz-correct="b"></div>
+        </section>
+
+        <section>
+            <div class="slide-title">Saída (6/6)</div>
+            <p>
+                As telas touchscreen encontradas em smartphones e monitores
+                são um exemplo de dispositivo de entrada E DE saída.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erros</div>
+            <p>
+                O Python é bastante exigente, qualquer detalhe errado faz o programa parar de executar -
+                por exemplo: escrever Print em vez de print. Mas não é maldade, quando o Python dá um
+                erro é por que ele não conseguiu entender o que você queria dizer. O bichinho é limitado, coitado.
+            </p>
+            <p>
+                Com o tempo, as mensagens de erros se tornarão as nossas amigas, pois nos ajudarão a identificar e
+                corrigir os <a href="https://www.mdig.com.br/index.php?itemid=928" target="_blank">
+                bugs</a> (defeitos) do nosso software.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">NameError</div>
+            <p>
+                O NameError aparece quando tentamos utilizar uma "palavra" que o Python não sabe o que é. É o caso do
+                Print com P maiúsculo, por exemplo.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">IndentationError</div>
+            <p>
+                A indentação é o espaçamento no início das linhas.
+            </p>
+            <p style="margin-left: 20px">
+                Este parágrafo, por exemplo, está mais para a direita
+            do que o parágrafo de cima
+            </p>
+            <p>
+                A indentação é muito importante para ajudar na leitura de código e, consequentemente, diminuir os bugs.
+                É tão importante que no Python resolveram nos <b>obrigar</b> a fazer a indentação: se colocarmos a
+                indentação onde não pode, ou se não colocarmos onde devemos colocar, aparece o IndentationError.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">SyntaxError</div>
+            <p>
+                Toda linguagem tem a suas regras, a sua sintaxe. Se não tivessem, não conseguiríamos nos comunicar bem.
+                Ex: "vou circo" é uma frase incorreta, o certo é "vou ao circo". Ou melhor ainda: "não vou ao circo,
+                para evitar aglomerações"!
+            </p>
+            <p>
+                O Python também tem as suas regras, que vamos aprender durante o curso. Quando ferimos a regra, ocorre
+                o erro de sintaxe (SyntaxError).
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erros de lógica</div>
+            <p>
+                Além desses erros, que são erros de escrita, o nosso código também pode ter erros de lógica.
+                Exemplo: eu quero fazer um programa que calcule a média de 2 números, mas em vez de
+                somar os números eu mando o Python multiplicar. Vai dar bronca!
+            </p>
+            <p>
+                O Python não consegue evitar esse tipo de erro, pois ele não tem como adivinhar o que passa
+                pela nossa linda cabecinha. Por isso é sempre importante executar o nosso programa
+                várias vezes e verificar se ele funciona corretamente - são os <b>testes</b>.
+            </p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="quiz-container"
+                 data-quiz-text="Todo parênteses que abre tem que... ?"
+                 data-quiz-answers='{"a": "fechar", "b": "apagar", "c": "abraçar", "d": "deletar", "e": "descer"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <div class="slide-title">FIM</div>
+            <br><br>
+            <img src="../../images/memes/dog_celebrate.webp" class="stretch no-border"/>
+            <p>Parabéns, mais uma lição concluída! Comemore! 🎉</p>
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Animação do afiador de lápis: Discovery Channel
+            </p>
+            <p>Desenho da galinha: imagem
+                <a href="http://itsrichardsblog.blogspot.com/2015/08/asynchronous-io-in-programming-and.html" target="_blank">
+                    desse blog</a>
+            </p>
+            <p>Gif de comemoração: <a href="https://giphy.com/gifs/tonton-tontonfriends-tontongif-ZBPzPhOF9N6tVh82yr"
+                                 target="_blank">Tonton Friends</a>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

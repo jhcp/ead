@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 6 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 6 - The Huxley</h1>
+            <h4></h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+                Esta atividade contém duas questões para exercitarmos os comandos de repetição (for e while).
+            </p>
+        </section>
+
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Entregando correspondências</p>
+            <p>
+                ENTRADA: a entrada sempre vai ter 7 números inteiros - um para cada dia da semana.
+            </p>
+            <p>
+                SAÍDA:<br>
+                A saída vai ter dois números.<br>
+                O primeiro número é: dos 7 dias, em quanto deles o carteiro bateu a meta?<br>
+                O segundo número é: qual a média do número de cartas entregues pelo carteiro?
+            </p>
+            <p>
+                DICA: somatório (acumulador).
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Acidez de várias soluções</p>
+            <p>
+                Se liga que quando a entrada for -1, não será impresso mais nada na tela.
+            </p>
+            <p>
+                SAÍDA:<br>
+                as palavras ACIDA, BASICA e/ou NEUTRA devem ser escritas em maiúsculas e sem acentos.
+            </p>
+        </section>
+
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

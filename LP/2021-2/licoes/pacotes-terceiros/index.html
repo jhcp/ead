@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Pacotes de fora do Python - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Pacotes de fora do Python</h1>
+            <h4>📦</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>Além dos pacotes que fazem parte do Python, existem outras centenas de milhares de pacotes
+                que podemos usar.</p>
+            <p>Esses pacotes foram desenvolvidos por outras pessoas. Qualquer um(a) de nós pode criar seu(sua)
+                próprio pacote.</p>
+        </section>
+
+        <section>
+            <p>O repl.it suporta vários desses pacotes, mas não todos.</p>
+            <p>Quando <a href="https://www.youtube.com/watch?v=VuKvR1J2LQE"
+                         target="_blank">
+                instalamos o Python no nosso computador
+            </a> precisamos instalar também os pacotes que quisermos usar,
+                já que os pacotes desta lição não vêm junto com o Python.</p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">pygame (1/2)</div>
+            <p>O pacote pygame serve para criar jogos com Python. Não, não dá para fazer o próximo Call of Duty com
+                isso, mas dá para brincar bastante. Este pacote dá suporte a animações, sons, temporizadores, eventos
+                de teclado e de mouse, entre outros.
+            </p>
+            <p>Veja o código desses exemplos (NÃO FUNCIONA NO CELULAR):</p>
+            <a href="https://repl.it/@jhcp/pacote-pygame-gravidade" target="_blank" class="button6">bola com gravidade (animação)</a>
+            <a href="https://repl.it/@Rileygamer21/Snake-Pygame" target="_blank" class="button6">jogo da cobrinha</a>
+            <a href="https://repl.it/@HarveyH/Connect-4-PyGame-Edition" target="_blank" class="button6">jogo ligue-4 (com mouse)</a>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">pygame (2/2)</div>
+            <p>Quando executamos uma animação ou jogo no repl.it fica bem lento. Para testar de verdade, seria
+                preciso <a href="https://www.youtube.com/watch?v=VuKvR1J2LQE"
+                           target="_blank">
+                    instalar o Python no seu computador
+                </a>.
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">numpy</div>
+            <p>Opa, alguma engenheira por aqui? Engenheiro? Então você irá precisar deste pacote, que traz várias
+                funções para trabalhar com <b>números</b>. Num...py, entendeu? Especialmente para operações com
+                matrizes e álgebra linear em geral.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-numpy-matrizes" target="_blank" class="button6">exemplos de numpy</a>
+            <p>Maiores informações sobre o numpy no
+                <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"
+                   target="_blank">capítulo 2 deste livro</a> (gratuito).
+            </p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">pandas</div>
+            <p>Este pacote é o queridinho de quem trabalha com ciências dos dados ou data analytics, por permitir
+                que analizemos os dados como se fossem tabelas dinâmicas e bem organizadas.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-pandas" target="_blank" class="button6">exemplos de pandas</a>
+            <p>Maiores informações sobre o pandas
+                <a href="https://medium.com/data-hackers/uma-introdu%C3%A7%C3%A3o-simples-ao-pandas-1e15eea37fa1"
+                   target="_blank">neste tutorial</a> ou no
+                <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"
+                   target="_blank">capítulo 3 deste livro</a> (gratuito).
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">matplotlib (1/2)</div>
+            <p>O pacote matplotlib serve para criar gráficos matemáticos, e é inspirado pelo matlab, por isso
+                que ela é uma opção interessante para estudantes de engenharia.
+            </p>
+            <p>Veja alguns exemplos desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-pyplot-barra" target="_blank" class="button6">gráfico de barra</a>
+            <a href="https://repl.it/@jhcp/pacote-pyplot-linha" target="_blank" class="button6">gráfico de linha</a>
+            <a href="https://repl.it/@jhcp/pacote-pyplot-pizza" target="_blank" class="button6">gráfico de pizza</a>
+            <a href="https://repl.it/@jhcp/pacote-pyplot-pontos" target="_blank" class="button6">gráfico de pontos</a>
+            <a href="https://repl.it/@jhcp/pacote-pyplot-funcao" target="_blank" class="button6">gráfico com função</a>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">matplotlib (2/2)</div>
+            <p>Maiores informações sobre como usar o matplotlib e como personalizar os seus gráficos estão disponíveis
+                <a href="https://jakevdp.github.io/PythonDataScienceHandbook/"
+                   target="_blank">capítulo 4 deste livro</a> (gratuito).
+            </p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">scipy</div>
+            <p>scipy é o grande companheiro do numpy, permitindo fazer derivação e integração de diversos tipos, otimização,
+                interpoção, transformadas de Fourier, processamento de sinais, álgebra linear e estatística.
+            </p>
+            <a href="https://docs.scipy.org/doc/scipy/reference/tutorial/index.html"
+               target="_blank" class="button6">documentação oficial do scipy</a>
+            <p>Você pode ver exemplos de uso do scipy no
+                <a href="https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1012368/1/Doc131.pdf"
+                   target="_blank">capítulo 6 deste livro</a> (gratuito, em português).
+            </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">django</div>
+            <p>O Django serve para fazer páginas web dinâmicas. É esse pacote que o instagram usa para
+                desenvolver os seus serviços, por exemplo.
+            </p>
+            <p>A <a href="https://docs.djangoproject.com/pt-br/3.1/intro/tutorial01/" target="_blank">
+                documentação oficial do Django</a> tem um tutorial bem didático ensinando
+            a usa-lo.
+                <a href="https://www.codementor.io/@garethdwyer/creating-and-hosting-a-basic-web-application-with-django-with-repl-it-lohsyub20"
+                   target="_blank">Este outro tutorial</a> não é tão bom mas é legal por que mostra como
+            usar o Django dentro do repl.it</p>
+            <p>OBS: para trabalhar bem com sistemas web é bom estudar também um pouco de html, css e javascript.</p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">outros pacotes</div>
+            <p>Quando você tiver mais experiência, conheça também esses outros pacotes:</p>
+            <ul>
+                <li><a href="https://docs.pytest.org/en/stable/" target="_blank">Pytest</a> - para automação dos testes, importantíssimo para diminuir
+                    o número de bugs nos nossos programas.
+                </li>
+                <li><a href="https://docs.opencv.org/master/d6/d00/tutorial_py_root.html" target="_blank">OpenCV</a> - para processamento de imagens e vídeos, o que inclui:
+                    reconhecimento facial, reconhecimento de objetos e leitura de QR code.
+                <a href="https://blog.cedrotech.com/opencv-uma-breve-introducao-visao-computacional-com-python/" target="_blank">
+                    TUTORIAL
+                </a>.</li>
+                <li><a href="https://www.tensorflow.org/learn?hl=pt-br" target="_blank">TensorFlow</a> - pacote da Google para mexer com inteligência
+                    artificial do tipo aprendizagem de máquina (machine learning).</li>
+                <li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">Beautiful Soup</a>
+                    - para "pegar" dados da Internet.
+                    <a href="https://medium.com/data-hackers/tutorial-para-iniciantes-web-scraping-em-python-bb71778ed40c"
+                       target="_blank">TUTORIAL</a>.</li>
+
+            </ul>
+        </section>
+
+        <section>
+            <p>Nesta lição vimos apenas alguns dos pacotes que podemos instalar para usar com o Python.
+                A grande maioria deles está disponível no
+                <a href="https://pypi.org/" target="_blank">repositório oficial</a>.
+
+            <p>Mas como são muitos, é impossível conhecer todos. O segredo é, quando for fazer alguma coisa nova,
+        pensar: "hmmm, será que existe algum pacote Python que já faça isso que eu preciso?". Com a experiência
+        você ficará melhor em procurar e encontrar pacotes que irão lhe ajudar.</p>
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">créditos</div>
+            <p>Jogo da cobrinha: Rileygamer21 no repl.it</p>
+            <p>Jogo Ligue 4 (Connect 4): HarveyH no repl.it</p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
