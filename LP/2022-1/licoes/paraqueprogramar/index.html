@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Para quê programar? - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <!-- todo  latex; estatística; álgebra -->
+        <section>
+            <h1>programar!?</h1>
+            <h4>por quê é bom saber programar?</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Você consegue imaginar como seria a vida dos estudantes de engenharia sem calculadoras? Sem (aimeudeus)
+                o autocad?
+            </p>
+            <img src="calculadora.png" class="stretch no-border"/>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                A <b>programação</b> é mais uma das ferramentas que nós podemos utilizar, assim como já utilizamos
+                outras ferramentas como as calculadoras, réguas, etc. 📐🛠️
+            </p>
+        </section>
+
+        <section>
+            <p>Ainda mais importante do que aprender a programar, é entender o raciocínio da coisa. O <b>
+                <a href="http://fundacaotelefonica.org.br/noticias/quatro-habilidades-que-o-pensamento-computacional-ajuda-a-desenvolver/"
+                   target="_blank">pensamento
+                    computacional</a></b> lhe ajudará a ter mais facilidade para resolver problemas de todo tipo. </p>
+            <p>Mas não é só isso! No vídeo a seguir o Guanabara irá lhe explicar outros motivos para aprender a
+                programar, com a ajuda de Bill Gates e de Steve Jobs.</p>
+        </section>
+
+        <section>
+            (29min)
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/S9uPNppGsGo" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#2196f3" class="is-dark">
+            <div id="quiz" class="quiz"></div>
+            <button id="submit" class="quiz-submit">responder</button>
+            <div id="results" class="quiz-results"></div>
+            <script>
+                var myQuestions1 = [
+                    {
+                        question: "Aprender a programar só é benéfico para quem quer trabalhar com programação",
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'falso'
+                        },
+                        correctAnswer: 'b'
+                    }];
+                var quizContainer = document.getElementById('quiz');
+                var resultsContainer = document.getElementById('results');
+                var submitButton = document.getElementById('submit');
+                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <div class="slide-title">FIM</div>
+            <br><br>
+            <img src="../../images/memes/dog_heart.webp" class="stretch no-border"/>
+            <p>É isso, você já estudou todo o material da semana! Agora é partir pro abraço.</p>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <p>Gif de comemoração com coração: <a href="https://giphy.com/stickers/tonton-tontonfriends-tontongif-f9HVG8n3R4PanFkhFK"
+                                      target="_blank">Tonton Friends</a></p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

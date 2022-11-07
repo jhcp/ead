@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Repetição com for - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Repete, repete, repete, repete...</h1>
+            <h4>for</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <img src="bart_quadro_programar.png" class="stretch">
+            <p>O grande poder da computação vem da capacidade de repetir um conjunto de operações uma grande quantidade
+                de vezes, sem reclamar "ai, isso aqui é muito chato..."</p>
+        </section>
+
+        <section>
+            <p>É assim que funciona um filtro do instagram, por exemplo; o computador vai fazer uma certa operação em
+            cada pixel de cada quadro do vídeo. Cada quadro (frame) de uma story tem de 444500 a 2073600 pixels.
+            É muito pixel. É muita repetição.</p>
+        </section>
+
+        <section>
+            <p>O Python tem dois comandos de repetição: o for e o while. Também é possível fazer repetição com funções,
+                mas isso fica para depois. Vamos começar pelo <b>for</b>.</p>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (36min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/cL4YDtFnCt4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Um loop, ou laço, representa a ideia de..."
+                 data-quiz-answers='{"a": "indentação", "b": "condição", "c": "repetição"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <img src="sonic_loop.gif">
+            <p>A palavra <b>laço</b> é meio estranha mas é uma tradução do inglês: <b>loop</b>. Sabe os loops de
+                de montanha-russa? Pois é, você vai no loop
+                e meio que volta para o mesmo lugar. No que volta para o mesmo lugar do código, ocorre
+                a <b>repetição</b>.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um if dentro do bloco de um for?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um for dentro do bloco de um if?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="É possível colocar um outro for dentro do bloco de um for?"
+                 data-quiz-answers='{"a": "sim", "b": "não"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="range(1, 10) representa um intervalo..."
+                 data-quiz-answers='{"a": "de 1 a 9", "b": "de 1 a 10", "c": "de 1 a 11"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <p>Se pensarmos na
+                <a href="https://blog.professorferretto.com.br/intervalos-reais/" target="_blank">
+                    notação matemática</a>, o
+                <span class="codigo">range(a, b)</span> representa o intervalo fechado em <b>a</b>
+            e aberto em <b>b</b>: [a, b[. Ou seja: de <b>a</b> a <b>b</b>, incluíndo o <b>a</b>, mas sem incluir o <b>b</b>.
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            Quantas vezes a letra b será impressa na tela?
+            <div class="codigo">for c in range (1, 10):
+   print('a')
+print('b')
+</div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "1", "b": "10", "c": "9"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#ffdd57">
+            Quantas vezes a letra b será impressa na tela?
+            <div class="codigo">for c in range (1, 10):
+    print('a')
+    print('b')
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "1", "b": "10", "c": "9"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <p>A forma geral do range é essa:</p>
+            <div class="codigo">range(a, b, c)</div>
+            <p>onde:</p>
+
+            <ul>
+                <li><b>a</b> é o valor inicial</li>
+                <li><b>b</b> é o valor posterior ao final</li>
+                <li><b>c</b> é o valor do aumento</li>
+            </ul>
+            <p>
+                Exemplo:</p>
+            <p>
+            <span class="codigo">range(5, 30, 3)</span>
+            começa no 5, acaba antes do 30, e aumenta de 3 em 3. Ou seja: 5, 8, 11, 14, 17, 20, 23, 26 e 29.
+            </p>
+
+        </section>
+
+        <section>
+            <p>Se a gente usar o range só com dois valores (a e b), o aumento será de 1 em 1. Então:</p>
+            <div class="codigo">range(5, 20)</div>
+            <p>é a mesma coisa que</p>
+            <div class="codigo">range(5, 20, 1)</div>
+            <p>
+                Esse exemplo começa do 5, acaba antes do 20, e aumenta de 1 em 1. Ou seja: 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18 e 19.
+        </section>
+
+        <section>
+            <p>Já se a gente usar o range com um valor só, o intervalo começa do zero e o aumento será de 1 em 1. Então:</p>
+            <div class="codigo">range(10)</div>
+            é só uma forma resumida de escrever
+            <div class="codigo">range(0, 10, 1)</div>
+            <p>
+                Esse exemplo começa do 0, acaba antes do 10, e aumenta de 1 em 1. Ou seja: 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9.
+        </section>
+
+        <section>
+            Na prática, a gente sempre esquece como é o funcionamento exato do range, por isso é importante sempre
+            testar o seu programa 😬
+        </section>
+
+        <section>
+            <p class="slide-title">+=</p>
+            <p>
+                No vídeo, o Guanabara usa o comando +=, que é só uma forma abreviada de fazer um acréscimo.
+            </p>
+            <div class="codigo">x = 5
+x += 10
+print(x)</div>
+            é a mesma coisa que
+            <div class="codigo">x = 5
+x = x + 10
+print(x)</div>
+            , que dá 15
+        </section>
+
+        <section data-background="#ffdd57">
+            Qual a saída desse código?
+            <div class="codigo">x = 2
+x = x + 3
+x += 10
+print(x)
+            </div>
+            <div class="quiz-container"
+                 data-quiz-text=""
+                 data-quiz-answers='{"a": "15", "b": "10", "c": "12", "d": "5"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+
+
+        <section data-background="#98eae0">
+            <p>
+                Ei, é normal essa ideia de repetição dar um nó na cabeça de quem está aprendendo programação, por que
+                é bem diferente do que estamos acostumados a fazer no nosso dia-a-dia. Que tal descansar com esse
+                <a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=pt-BR" target="_blank">
+                    jogo do Google
+                </a> em que você usa os comandos de repetição para controlar um coelhinho?
+            </p>
+            <a href="https://www.google.com/logos/2017/logo17/logo17.html?hl=pt-BR" target="_blank">
+                <img src="jogo_coelho.png" class="no-border">
+            </a>
+        </section>
+
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Bart é uma personagem da Twentieth Century Fox Film Corporation.
+            </p>
+            <p>Sonic, Tails e Knuckles são personagens da SEGA.</p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

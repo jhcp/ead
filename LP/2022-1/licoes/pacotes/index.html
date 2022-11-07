@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Pacotes do Python - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Pacotes do Python</h1>
+            <h4>📦</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>Além dos comandos básicos, como if, for, while, etc., o Python tem várias funções que você já sabe usar,
+                como as funções print, input, len, max, min, sum, e outras.</p>
+            <p>Além dessas funções bem gerais, o Python tem outras funções mais específicas. Para que tudo
+            fique bem arrumado e fácil de encontrar, essas funções são separadas em <b>pacotes</b>. Existe um
+            pacote para funções matemáticas, outro pacote sobre datas e horas, outro para fazer janelas com botões,
+            e muito mais.</p>
+        </section>
+
+        <section>
+            <p>Antes de tudo, precisamos dizer ao Python que vamos usar o pacote, escrevendo o comando <b>
+                import</b> seguido do nome do pacote.</p>
+            <p>Normalmente colocamos os imports de todos os pacotes que iremos usar já no começo do nosso
+            código, para que fiquem fáceis de achar.</p>
+        </section>
+
+        <section>
+            <p>Vamos conhecer alguns desses principais pacotes? Nesta lição vamos ver só pacotes que já vêm instalados
+            com o Python, mas em outra lição iremos estudar outros pacotes ainda mais interessantes!</p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">random</div>
+            <p>O pacote random serve para fazer sorteios, como por exemplo para sortear um número, ou
+                para sortear um elemento de uma lista.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-random" target="_blank" class="button6">exemplos de random</a>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">datetime</div>
+            <p>O pacote datetime serve para trabalharmos com... data e hora. Por exemplo, podemos descobrir
+                qual é a data e a hora atuais, além de comparar datas e horas diferentes.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-datetime" target="_blank" class="button6">exemplos de datetime</a>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">math</div>
+            <p>O pacote math nos dá algumas constantes como PI e <i>e</i>, para que possamos fazer as contas com mais precisão.
+                Além disso, esse pacote também tem várias funções envolvendo números reais, como funções logarítmicas
+                e trigonométricas.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-math" target="_blank" class="button6">exemplos de math</a>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">statistics</div>
+            <p>O pacote statistics, adivinha, traz funções estatísticas, como média, mediana e moda.
+            </p>
+            <p>Veja o código com exemplos explicados desse pacote:</p>
+            <a href="https://repl.it/@jhcp/pacote-statistics" target="_blank" class="button6">exemplos de statistics</a>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">textwrap</div>
+            <p>O repl.it facilita a nossa vida: quando mandamos printar um texto muito grande, ele automaticamente
+            quebra o texto e continua a frase embaixo, permitindo que a gente leia a frase inteira sem precisar rolar
+                a tela para os lados.</p>
+            <p>Quando executamos o código fora do repl.it, por exemplo, quando instalamos o Python no nosso computador,
+            isso não acontece. Mas ainda é possível obter o mesmo efeito, usando o pacote textwrap:</p>
+            <a href="https://repl.it/@jhcp/pacote-textwrap" target="_blank" class="button6">exemplos de textwrap</a>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">turtle</div>
+            <p>Ufa, quanta coisa séria, né? Que tal a gente fazer uma coisa mais leve? Vamos desenhar um pouco
+                com o pacote turtle.
+            </p>
+            <a href="https://repl.it/@jhcp/pacote-turtle-quadrado" target="_blank" class="button6">desenhar um quadrado colorido</a>
+            <a href="https://repl.it/@jhcp/pacote-turtle-flor" target="_blank" class="button6">desenhar uma flor</a>
+            <p>Para mais informações, veja esse
+            <a href="https://www.youtube.com/watch?v=ZC4kDBPL_Ms" target="_blank">tutorial</a>. </p>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">tkinter</div>
+            <p>E que tal fazer programas com uma GUI - interface gráfica do usuário? Isso mesmo, programas com
+                janela, botões, imagens, e essas coisas todas a que estamos acostumados.
+            </p>
+            <p>O Python tem vários pacotes com essa finalidade, como PySimpleGUI e PyQt5. A vantagem do pacote tkinter
+            é que ele já vem instalado com o Python, não é preciso instalar por fora.</p>
+            <a href="https://repl.it/@jhcp/pacote-tkinter" target="_blank" class="button6">Exemplo com tkinter</a>
+            <p>OBS: infelizmente o tkinter é um pouco ruim de usar pelo repl.it. O ideal seria
+                você
+                <a href="https://www.youtube.com/watch?v=VuKvR1J2LQE&list=PLpwygc0AuGOXJ18fPwPNIeXvzKid_AUkm&index=3"
+                   target="_blank">
+                    instalar o Python no seu computador
+                </a>.</p>
+        </section>
+
+        <section data-background="hsl(141, 71%, 48%)" class="is-dark">
+            <div class="slide-title">outros pacotes</div>
+            <p>Também pode valer a pena conhecer esses pacotes que já vêm instalados com o Python,
+            são:</p>
+            <ul>
+                <li><a href="https://docs.python.org/3/library/os.html" target="_blank">os</a> - permite descobrir
+                qual o sistema operacional que está sendo usado, descobrir qual a pasta em que o programa está rodando,
+                    renomear arquivos, etc.
+                </li>
+                <li><a href="https://docs.python.org/3/library/sqlite3.html" target="_blank">sqlite3</a> - é um banco
+                de dados que você pode usar para salvar os dados do seu programa no armazanemanto permanente.
+                Por exemplo, o nosso projeto poderia ser adaptado para usar esse banco de dados, em vez de listas. Assim,
+                quando o programa fosse fechado, não perderíamos os dados que foram inseridos durante a execução.</li>
+            </ul>
+        </section>
+
+        <section>
+            <p>Para saber mais sobre as diferentes formas de importar um pacote, veja este
+            <a href="https://brasil.pyladies.com/2020/09/28/importando-modulos-no-python/" target="_blank">
+                belo post
+            </a> no blog do PyLadies Brasil.</p>
+            <p>A propósito, se você é mulher, que tal conhecer o grupo PyLadies Recife?</p>
+            <a target="_blank" href="https://www.instagram.com/pyladiesrecife/">
+        instagram
+            </a> -
+
+            <a target="_blank" href="https://twitter.com/pyladies_recife">
+        twitter
+            </a> -
+
+            <a target="_blank" href="https://www.facebook.com/pyladiesrecife">
+        facebook
+            </a> -
+
+
+            <a target="_blank" href="https://www.linkedin.com/company/pyladiesrecife/">
+        linkedin
+            </a> -
+
+
+
+            <a target="_blank" href="https://www.youtube.com/channel/UCNvD7aTKi9Fuyz74wL3Kn9w">
+        youtube
+            </a>
+            <center><img src="pyladies_recife.png" class="no-border"></center>
+
+        </section>
+
+        <section>
+            <p>Nesta lição vimos apenas alguns dos pacotes que já vêm instalados com o Python. Se quiser conhecer
+                todos eles, veja <a href="https://docs.python.org/3/library/index.html" target="_blank">
+                    esse link
+                </a>.
+            </p>Em outra lição iremos estudar
+                outros pacotes que não vêm junto com o Python - precisamos instalá-los separadamente, mas vale à pena
+            por que eles trazem muito mais recursos
+            para os nossos programas: servem para fazer jogos, gráficos matemáticos, reconhecimento de imagem, e
+            muito mais!</p>
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">créditos</div>
+            <p>Logomarca do Pyladies Recife - <a href="http://brasil.pyladies.com/locations/">Pyladies Brasil</a>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
