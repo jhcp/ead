@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Exemplos de repetição com for - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Exemplos de repetição com for</h1>
+            <h4>for for for for for for for for</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Crie variações dos exemplos, isso vai lhe ajudar a entender melhor os comandos utilizados.
+                Por exemplo, fez uma contagem regressiva de 10 a 0? Agora tente fazer de de 50 a 10 e de 10 a -10.
+            </p>
+            <br>
+        </section>
+
+        <section data-background="orange" class="is-dark">
+            <p>Vamos ver 10 exemplos de programas usando o comando for?</p>
+            <p>A gente pode muito bem entender o funcionamento do for, mas para aprender a usar o for na prática
+                mesmo é preciso ver os exemplos. Assim, quando você for resolver algum problema, vai pensar:</p>
+            <br>
+            <div class="thought">ah, isso
+                daqui eu posso resolver que nem aquele exemplo lá!</div>
+        </section>
+
+        <section>
+                <p>A ideia é que você
+            tente fazer o programa a partir do enunciado, e depois confira a resolução. Afinal, o Guanabara já sabe
+                programar, quem está aprendendo é você 😉. Tentar aprender programação só assistindo os vídeos,
+                sem tentar fazer os programas, é o mesmo que querer aprender a tocar violão assistindo vídeos, sem tocar.</p>
+            <p>Não conseguiu fazer? Sem problema! Assista o vídeo, programe junto com o vídeo, e execute
+            o código no seu computador. Depois faça algumas modificações no código e teste para
+            saber se a sua modificação deu certo.</p>
+        </section>
+
+        <section>
+            <p>Mas olha, é importante assistir aos vídeos mesmo que você tenha conseguido resolver o problema,
+            já que além da resolução do problema em si os vídeos também têm outras dicas e informações importantes.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Contagem regressiva</p>
+            Faça um programa que mostre na tela uma contagem regressiva para o estouro de fogos de artifício, indo
+            de 10 até zero.
+            <p><b>BÔNUS:</b> dê uma pausa de 1 segundo entre cada número, usando a função
+            <a href="https://www.google.com/search?q=python+sleep+como+funciona" target="_blank">sleep</a>. </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - Contagem regressiva</p>
+            <p>Vídeo 1 (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/NR1RKt6NT8s" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Listagem dos pares</p>
+            <p>Crie um programa que mostre na tela todos os números pares que estão no intervalo
+                entre 1 e 50.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - Listagem dos pares</p>
+            <p>Vídeo 2 (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Qws8-E-YrlY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Soma ímpares múltiplos de três</p>
+            Faça um programa que calcule a soma entre todos os números ímpares que são múltiplos de três e
+            que estão no intervalo de 1 até 500.
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 3 - Soma ímpares múltiplos de três</p>
+            <p>Vídeo 3 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/iHjsUxNA-wo" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#ecebe9">
+            <br><br>
+            <p>ei, esse vídeo 3 é importantíssimo! Mesmo que você tenha conseguido resolver o enunciado, assista ele
+                todinho para aprender sobre a ideia de <b>acumulador</b>.</p>
+            <center><img src="chamar_atencao.jpg" class="no-border"></center>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Tabuada com for</p>
+            <p>Utilizando o laço <b>for</b>, crie um programa que mostra a tabuada de um número que a pessoa escolher.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 4 - Tabuada com for</p>
+            <p>Vídeo 4 (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/QtElJDa9ICM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Soma dos pares</p>
+            <p>Desenvolva um programa que leia seis números inteiros e mostre a soma apenas daqueles que forem pares.
+            Se o valor digitado for ímpar, desconsidere-o.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 5 - Soma dos pares</p>
+            <p>Vídeo 5 (8min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/rJaBLOW57Jg" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 6 - Progressão aritmética</p>
+            <p>Desenvolva um programa que leia o primeiro termo e a razão de uma PA (progressão aritmética).</p>
+            <p>No final, mostre os 10 primeiros termos dessa progressão.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 6 - Progressão aritmética</p>
+            <p>Vídeo 6 (9min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/-OnqSGh0u4g" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 7 - Números primos</p>
+            <p>Faça um programa que leia um número inteiro e diga se ele é ou não um número primo.</p>
+            <p>Um número primo é um número que é divisível apenas por 1 e por ele mesmo. Exemplo: 8 não é primo,
+            já que além de ser divisível por 1 e por 8 ele também é divisível por 2 e por 4.</p>
+            <p>BÔNUS: mostre na tela os números pelos quais o número de entrada é divisível.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 7 - Números primos</p>
+            <p>Vídeo 7 (11min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Er5Hyd4LyVw" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - Maioridade</p>
+            <p>Crie um programa que leia a idade de sete pessoas.</p>
+            <p>No final, mostre quantas pessoas ainda não atingiram a maioridade e quantas já são "de maior".</p>
+            <p>BÔNUS: depois que o programa estiver funcionando, modifique-o para ler o ano de nascimento,
+            em vez da idade.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - Maioridade</p>
+            <p>Vídeo 8 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/IL5iBWoKRIs" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+
+
+
+
+
+
+
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 9 - Maior e menor</p>
+            <p>Faça um programa que leia o peso de cinco pessoas.</p>
+            <p>No final, mostre qual foi o maior peso lido, e também qual foi o menor peso lidos.</p>
+            <p>BÔNUS: depois que o seu código estiver funcionando para cinco pessoas, modifique-o para que ele
+            leia os dados de 20 pessoas.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 9 - Maior e menor</p>
+            <p>Vídeo 9 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/Kjpb_IAOKRQ" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 10 - Analisador de pessoas</p>
+            <p>Desenvolva um programa que leia o nome, idade e sexo de 4 pessoas. No final do programa, mostre:</p>
+            <ul>
+                <li>A média de idade do grupo.</li>
+                <li>Qual é o nome do homem mais velho.</li>
+                <li>Quantas mulheres têm menos de 20 anos.</li>
+            </ul>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 10 - Analisador de pessoas</p>
+            <p>Vídeo 10 (14min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/fokDF4th0IY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <p class="slide-title">DESAFIO</p>
+            <p>Com base na ideia de acumulador, explicada no Exemplo 3, modifique o Exemplo 6:
+                além
+            de mostrar na tela os 10 primeiros termos da progressão aritmética (PA),
+            mostre também o somatório desses 10 termos.</p>
+            <p>OBS: não use a fórmula de soma de termos de uma PA. Em vez disse, vá somando cada um dos termos.</p>
+
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">créditos</div>
+            <p>
+                Meme "Só pra chamar sua atenção" disponível no GERARMEMES
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

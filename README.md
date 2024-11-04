@@ -5,9 +5,9 @@ This is the supporting material for the courses I teach at the Universidade Fede
 
 
 
-## 2024.1
+## 2024.2
 
-### [Linguagem de Programação](LP/2024-1)
+### [Linguagem de Programação](LP/2024-2)
 This is an interactive book for learning programming with Python 3, in Brazilian Portuguese.
 It features text, videos, interactive gadgets,
 quizzes, and hyperlinks to related content.
