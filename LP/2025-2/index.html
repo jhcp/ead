@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <meta charset="UTF-8">
+    <title>Linguagem de Programação 2025.2</title>
+    <meta name="description" content="">
+    <meta name="author" content="Prof. João Pimentel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon144.png">
+    <link rel="apple-touch-icon-precomposed" href="icon144.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <meta name="theme-color" content="#3951b5">
+
+<!--    <link rel="stylesheet" type="text/css" href="css/materialdeapoio.css">-->
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body>
+<div class="header">
+    <div>
+        Linguagem de Programação 2025.2<br>
+        Prof. Dr. João Pimentel
+    </div>
+    <div>
+        <img src="images/logo_UFRPE_branco.png" style="height: 3em; margin-right: 15px;"/>
+    </div>
+</div>
+
+
+
+<div class="content">
+    <!--[if IE]>
+    <p class="browserupgrade">Você está usando um navegador <strong>desatualizado</strong>. Por favor atualize o seu
+        navegador para evitar problemas com o acesso ao conteúdo.</p>
+    <![endif]-->
+    <!--<h3>Conteúdo</h3>-->
+
+    <style>
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+        }
+        #overlayText{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 1.5em;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+        }
+    </style>
+
+    <div id="overlay" onclick="offOverlay()">
+        <div id="overlayText"></div>
+    </div>
+
+<!--    <button class="accordion">Dicas de estudo</button>-->
+<!--    <div class="panel">-->
+<!--        <i>De vez em quando assista/leia algum material desses, para melhorar na sua profissão (estudante)</i>-->
+
+<!--        <a href="https://www.youtube.com/watch?v=BI043BtXPKY" target="_blank" class="button lessonButton">-->
+<!--            Vídeo meu com dicas de estudo durante a pandemia</a>-->
+<!--        <a href="http://ufrpe.br/sites/ufrpe.br/files/CONVERSA%20COM%20DISCENTES%20DA%20UFRPE%20SOBRE%20ORGANIZA%C3%87%C3%83O%20DOS%20ESTUDOS%20E%20PR%C3%81TICAS%20DE%20AUTOCUIDADO.pdf" target="_blank" class="button lessonButton">-->
+<!--            Guia para discentes da UFRPE sobre organização dos estudos e práticas de autocuidado</a>-->
+<!--        <a href="https://www.youtube.com/watch?v=C9534-mfnx4" target="_blank" class="button lessonButton">-->
+<!--            Vídeo: Felicidade e Motivação para o Semestre Suplementar</a>-->
+<!--        <a href="http://ufrpe.br/sites/ufrpe.br/files/CONVERSA%20COM%20DISCENTES%20DA%20UFRPE%20SOBRE%20ORGANIZA%C3%87%C3%83O%20DOS%20ESTUDOS%20E%20PR%C3%81TICAS%20DE%20AUTOCUIDADO.pdf" target="_blank" class="button lessonButton">-->
+<!--            Guia da UFRPE para a prática de exercícios físicos em casa</a>-->
+<!--        <a href="https://www.youtube.com/results?search_query=como+estudar" target="_blank" class="button lessonButton">-->
+<!--            Vídeos no YouTube sobre como estudar</a>-->
+<!--    </div>-->
+
+    <button class="accordion">1) Introdução </button>
+    <div class="panel">
+        <a href="licoes/executar/" class="button lessonButton">Comece a programar!</a>
+        <a href="licoes/sequencial/" class="button lessonButton">Continue programando 👍</a>
+        <a href="licoes/porquepython/" class="button lessonButton">Python é a melhor linguagem?</a>
+        <a href="licoes/paraqueprogramar/" class="button lessonButton">De que me importa?</a>
+    </div>
+
+    <button class="accordion">2) Contas </button>
+    <div class="panel">
+        <a href="licoes/matematicasimples/" class="button lessonButton">2 mais 2 por 2 dá...?</a>
+        <a href="licoes/divisoes/" class="button lessonButton">Divisões</a>
+    </div>
+
+
+    <button class="accordion">3) Tipos de dados</button>
+    <div class="panel">
+        <a href="licoes/bits/" class="button lessonButton">bits</a>
+        <a href="licoes/tiposdedados/" class="button lessonButton">Tipo isso e tipo aquilo</a>
+    </div>
+
+    <button class="accordion">4) input e variáveis</button>
+    <div class="panel">
+        <a href="licoes/entradadedados/" class="button lessonButton">Qual o seu nome?</a>
+        <a href="licoes/variaveis/" class="button lessonButton">Variáveis e input</a>
+        <a href="licoes/variaveis-guanabara/" class="button lessonButton">Contas com input</a>
+       <a href="licoes/variaveis2/" class="button lessonButton">Dominando variáveis</a>
+    </div>
+
+    <button class="accordion">5) Texto formatado ''.format())</button>
+    <div class="panel">
+        <a href="https://youtu.be/bi-K_wJ5QOI" target="_blank" class="button lessonButton">Quantidade de casas decimais</a>
+    </div>
+
+    <button class="accordion">6) Comparações e execução condicional</button>
+    <div class="panel">
+        <a href="licoes/if-introducao/" class="button lessonButton">Introdução ao if</a>
+        <a href="licoes/comparacao/" class="button lessonButton">Comparando números</a>
+        <a href="licoes/comparacaotexto/" class="button lessonButton">Comparando textos</a>
+        <a href="licoes/if-exemplos/" class="button lessonButton">Exemplos com if</a>
+    </div>
+
+
+    <button class="accordion">7) Execução condicional avançada </button>
+    <div class="panel">
+        <a href="licoes/logica/" class="button lessonButton">and, or e not</a>
+        <a href="licoes/if-elif/" class="button lessonButton">if...elif...else</a>
+        <a href="licoes/if-mais-exemplos/" class="button lessonButton">Mais exemplos com if</a>
+    </div>
+
+    <button class="accordion">8) Listas </button>
+    <div class="panel">
+        <a href="licoes/listas" class="button lessonButton">Tipo de dados: list</a>
+        <a href="licoes/listas-modificar" class="button lessonButton">Como modificar listas</a>
+    </div>
+
+    <button class="accordion">9) Repetição (for)</button>
+    <div class="panel">
+        <a href="licoes/for-introducao" class="button lessonButton">Repetição com for</a>
+        <a href="licoes/for-exemplos" class="button lessonButton">Exemplos com for</a>
+    </div>
+
+    <button class="accordion">10) Repetição (while)</button>
+    <div class="panel">
+        <a href="licoes/while-introducao" class="button lessonButton">Repetição com while</a>
+        <a href="licoes/while-exemplos" class="button lessonButton">Exemplos com while</a>
+    </div>
+
+    <button class="accordion">11) Listas (parte 2)</button>
+    <div class="panel">
+        <a href="licoes/listas-guanabara" class="button lessonButton">Listas - parte 3</a>
+        <a href="licoes/lista-exemplos" class="button lessonButton">Exemplos com listas</a>
+        <a href="licoes/listas-guanabara-2" class="button lessonButton">Listas e matrizes</a>
+        <a href="licoes/lista-exemplos-2" class="button lessonButton">Mais exemplos com listas</a>
+        <a href="licoes/lista-exemplos-3" class="button lessonButton">Exemplo Região Metropolitana</a>
+    </div>
+
+ 
+    <button class="accordion">12) Funções</button>
+    <div class="panel">
+        <a href="licoes/funcoes" class="button lessonButton">Funções - parte 1</a>
+        <a href="licoes/funcoes-exemplos" class="button lessonButton">Funções - exemplos da parte 1</a>
+        <a href="licoes/funcoes-parte2" class="button lessonButton">Funções - parte 2</a>
+        <a href="licoes/funcoes-exemplos-2" class="button lessonButton">Funções - exemplos da parte 2</a>
+    </div>
+
+    <button class="accordion">13) Pacotes</button>
+    <div class="panel">
+        <a href="licoes/pacotes" class="button lessonButton">Pacotes do Python</a>
+        <a href="licoes/pacotes-terceiros" class="button lessonButton">Pacotes externos</a>
+        <a href="licoes/arquivos" class="button lessonButton">Ler e salvar arquivos</a>
+        <a href="licoes/split" class="button lessonButton">A função split</a>
+    </div>
+
+
+<!--    <span style="float:right;font-weight: bold">NOVO!</span>-->
+    <!--<h3>Material</h3>-->
+    <!--<a href="licoes/exercicios/" class="button lessonButton">Exercícios</a>-->
+    <!--<a href="licoes/jogos/" class="button lessonButton">Jogos</a>-->
+    <!--<a href="licoes/planodeensino/" class="button lessonButton">Plano de Ensino</a>-->
+    <!--<a href="licoes/provas/" class="button lessonButton">Provas passadas</a>-->
+
+</div>
+
+<script>
+    // ACCORDION START
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+    // ACCORDION END
+
+    // POPUP START
+    document.addEventListener('DOMContentLoaded', (event) => {
+        //onOverlay();
+    });
+
+    function onOverlay() {
+        const messages = [
+            'Antes de tudo, veja estas minhas dicas de estudo: <a href="https://www.youtube.com/watch?v=BI043BtXPKY" target="_blank">clique aqui</a>. <br /><br />Para ver o material da disciplina, clique em "Semana 1"'
+            // 'LEMBRETE: o WhatsApp não serve apenas para tirar dúvidas sobre as atividades; ele também serve para perguntar sobre o material aqui do site',
+            // 'Você já viu as dicas de estudo aqui do site? Veja o link antes da Semana 1',
+            // 'É bom fazer as atividades com antecedência, senão quando for fazê-las você não terá mais tempo para tirar dúvidas',
+            // 'Não, você não é preguiçoso(a). Preguiça é apenas uma desculpa que as pessoas dão quando não querem fazer algo',
+            // 'Se o Huxley não aceita a resposta, é por que realmente tem algo errado no código. Ainda bem que temos o WhatsApp para tirar dúvidas...',
+            // 'Não adianta assistir os vídeos, é preciso praticar programando também',
+            // 'O canal do Guanabara é fantástico, mas não é suficiente para este curso. Pode assistir tudo dele, será ótimo, mas estude o material aqui do site também',
+            // 'A UACSA oferece atendimento psicólogico gratuito. Se informe no instagram: @naps.uacsa.ufrpe',
+            // 'Me segue lá no instagram: @joaopython'
+        ];
+        const randomElement = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("overlayText").innerHTML = randomElement;
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function offOverlay() {
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    // $(document).ready(function() {
+    //     // if(localStorage.getItem('popState') != 'shown'){
+    //         $('#popup').delay(2000).fadeIn();
+    //         on();
+    //         // localStorage.setItem('popState','shown')
+    //     // }
+    //
+    //     $('#popup-close, #popup').click(function() // You are clicking the close button
+    //     {
+    //         $('#popup').fadeOut(); // Now the pop up is hidden.
+    //     });
+    // });
+
+
+
+
+    // POPUP END
+</script>
+</body>
+</html>
