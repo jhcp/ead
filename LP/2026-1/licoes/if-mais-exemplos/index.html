@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Mais exemplos de execução condicional - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>mais exemplos de if</h1>
+            <h4>if...elif...else</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <p>
+                Depois de fazer cada exemplo invente pequenas melhorias e modifique o código para implementa-las.
+                É uma ótima forma aprender ainda mais com o exemplo!
+            </p>
+            <br>
+        </section>
+
+        <section>
+                <p>A ideia é que você
+            tente fazer o programa a partir do enunciado, e depois confira a resolução.</p>
+            <p>É importante assistir aos vídeos mesmo que você tenha conseguido resolver o problema,
+            já que além da resolução você encontrará outras dicas e informações importantes.</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 1 - maior, menor ou igual</p>
+            <p>Escreva um programa que leia dois números inteiros e compare-os, mostrando na tela uma dessas
+            mensagens:
+            <ul>
+                <li>O primeiro valor é maior</li>
+                <li>O segundo valor é maior</li>
+                <li>Os dois são iguais</li>
+            </ul>
+            <p><b>BÔNUS:</b> na mensagem com o resultado também diga qual é o <b>valor</b> do maior número.
+                Exemplo: O PRIMEIRO valor é maior: 5</p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 1 (7min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/iuPbB9uHczM" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 1
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Existem várias formas de resolver o mesmo problema. Por exemplo, esse código abaixo
+                também é uma solução correta do Exemplo 1, sem usar <b>else</b> nem <b>elif</b>.</p>
+            <div class="codigo">n1 = float(input('Primeiro número: '))
+n2 = float(input('Segundo número: '))
+if n1 > n2:
+  print('O PRIMEIRO valor é maior')
+if n2 > n1:
+  print('O SEGUNDO valor é maior')
+if n1 == n2:
+  print('Os dois valores são IGUAIS')</div>
+            <a href="https://repl.it/@jhcp/if-maiornumero" target="_blank">abra e execute esse exemplo no repl.it</a>
+            <p>Qual é a resposta "certa", esta ou a do vídeo? Ambas!</p>
+        </section>
+
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 2 - aprovação?</p>
+            <p>Crie um programa que leia duas notas de um aluno e calcule sua média, mostrando uma dessas mensagens:</p>
+            <ul>
+                <li>Média abaixo de 5.0: REPROVADO(A)</li>
+                <li>Média entre 5 e 7, sem incluir o 7: RECUPERAÇÃO</li>
+                <li>Média a partir de 7: APROVADO(A)</li>
+            </ul>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 2 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/QuWDyUeoaJs" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 2
+        </section>
+
+        <section data-background="red">
+            <br><br>
+            <div style="font-size: 3em; text-align: center">👀</div>
+            <p>você pode ver quantos exemplos quiser, mas só vai aprender mesmo quando quebrar
+                a cabeça tentando fazer os exemplos por conta própria, antes de olhar a resolução.</p>
+
+        </section>
+
+        <section data-background="cadetblue" class="is-dark">
+            <p class="slide-title">Exemplo 3 - IMC</p>
+            <p>O IMC (Índice de Massa Corporal) pode ser utilizado como uma forma rápida de
+                avaliar se a pessoa está com
+                um peso saudável ou não.</p>
+            <p>Crie um programa que leia o peso e a altura de uma pessoa, calcule seu IMC e mostre a sua situação
+                de acordo com a tabela no próximo slide.</p>
+            <p>A fórmula do IMC é:</p>
+            <div class="math" style="font-size: 1.5em; font-weight: lighter">
+            \[ IMC = \frac{peso}{altura^2} \]
+            </div>
+
+        </section>
+
+        <section data-background="cadetblue" class="is-dark">
+            <p class="slide-title" style="background-color: cadetblue">Exemplo 3 - IMC (cont.)</p>
+            <p>Classificação de acordo com o IMC</p>
+            <table>
+                <tr><th>Peso</th><th>Status</th></tr>
+                <tr><td>Abaixo de 18.5</td> <td>abaixo do peso</td></tr>
+                <tr><td>[18.5, 25[</td>     <td>peso ideal</td></tr>
+                <tr><td>[25, 30[</td>       <td>sobrepeso</td></tr>
+                <tr><td>[30, 40[</td>       <td>obesidade</td></tr>
+                <tr><td>De 40 em diante</td><td>obesidade mórbida</td></tr>
+            </table>
+            <p>Esses colchetes na tabela são os intervalos numéricos - não confunda
+            com listas ou arrays 😅</p>
+            <p><b>[25, 30[</b> quer dizer "do 25 ao 30, incluindo o 25 mas sem incluir o 30".</p>
+        </section>
+
+        <section data-background="cadetblue" class="is-dark">
+            <p>Vídeo 3 (13min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/b7r34za963I" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 3
+        </section>
+
+        <section data-background="cadetblue" class="is-dark">
+            <p class="slide-title" style="background-color: cadetblue">Exemplo 3 - IMC (cont.)</p>
+            <p>BÔNUS: se a pessoa não estiver com o peso ideal, faça o programa dizer quantos kg
+            a pessoa precisa perder ou ganhar para chegar na faixa do peso ideal.</p>
+        </section>
+
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 4 - atletas</p>
+            <p>A CNN precisa de um programa que leia o ano de nascimento de um atleta
+            e mostre a sua categoria, de acordo com a idade:</p>
+            <table>
+                <tr><th>Idade</th><th>Classificação</th></tr>
+                <tr><td>Até 9 anos</td> <td>MIRIM</td></tr>
+                <tr><td>]9, 14] anos</td>     <td>INFANTIL</td></tr>
+                <tr><td>]14, 19]</td>       <td>JUNIOR</td></tr>
+                <tr><td>]19, 25]</td>       <td>SÊNIOR</td></tr>
+                <tr><td>De 25 em diante</td><td>MASTER</td></tr>
+            </table>
+            <p>Esses colchetes na tabela são os intervalos numéricos. <b>]9, 14]</b> quer dizer "de 9 a 14, sem incluir o 9 mas incluindo o 14".</p>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 4 - atletas (cont.)</p>
+
+            <p>Esse código descobre qual é o ano atual:</p>
+            <div class="codigo">from datetime import date
+atual = date.today().year</div>
+
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 4 (6min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/ZiC5NgSGJXU" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 4
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 5 - empréstimo</p>
+            <p>Escreva um programa para aprovar o empréstimo bancário para a compra de uma casa.</p>
+            <p>Pergunte o valor da casa, o salário do(a) comprador(a) e em quantos anos ele(a) quer pagar.</p>
+            <p>A prestação mensal não pode exceder 30% do salário ou então o empréstimo será negado.</p>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p>Vídeo 5  (12min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/IV13X0QOMU8" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 5.
+        </section>
+
+
+        <section data-background="#ffdd57">
+            <p class="slide-title">Exemplo 6 - pagamentos</p>
+            <p>Elabore um programa que calcule o valor a ser pago por um produto, considerando
+            o seu preço normal e a condição de pagamento:</p>
+            <ul>
+                <li>À vista (dinheiro ou cheque): 10% de desconto</li>
+                <li>À vista no cartão: 5% de desconto</li>
+                <li>Em até 2x no cartão: preço normal</li>
+                <li>3x ou mais no cartão: 20% de juros
+                <ul><li>neste o caso o programa vai perguntar quantas parcelas serão</li></ul></li>
+            </ul>
+        </section>
+
+        <section data-background="#ffdd57">
+            <p>Vídeo 6  (15min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/I-SH3QchuZ4" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 6.
+        </section>
+
+        <section data-background="#efefaf">
+            <p class="slide-title">Exemplo 7 - triângulo</p>
+            <p>Escreva um programa que pergunte pelo tamanho dos 3 lados de um triângulo.</p>
+            <p>Se os 3 lados
+                <a href="../if-exemplos/#/22" target="_blank">
+                    puderem formar um triângulo</a>
+                , o programa deve dizer se ele é: </p>
+            <ul>
+                <li>Equilátero - todos os lados iguais</li>
+                <li>Isósceles - apenas dois lados iguais</li>
+                <li>Escaleno - todos os lados diferentes</li>
+            </ul>
+
+        </section>
+
+        <section data-background="#efefaf">
+            <p>Vídeo 7  (14min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/ZX7sCPjcHA0" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+            Resolução do exemplo 7
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - aposta de dado</p>
+            <p> Crie um programa que faça o computador jogar uma partida de
+                 aposta de dado com você 🎲
+            </p>
+            <p>A pessoa vai dizer em qual número quer apostar, entre 1 e 6, e o computador vai "rolar o dado".</p>
+            <p>Daí o programa vai dizer se a pessoa ganhou ou não a aposta!</p>
+            <p>Para sortear um número entre 1 e 6 use esse código:</p>
+            <div class="codigo">import random
+random.seed()
+valor_sorteado = random.randint(1, 6)</div>
+
+        </section>
+
+        <section data-background="#f1c3cd">
+            <p class="slide-title">Exemplo 8 - aposta de dado</p>
+            <div class="codigo">import random
+random.seed()
+
+print('== vamos apostar? 🎲 ==')
+numero_escolhido = int(input('Qual a sua aposta? '))
+print('...')
+print('vou rolar o dado')
+print('...')
+print('o dado deu')
+print('...')
+valor_sorteado = random.randint(1, 6)
+if numero_escolhido == valor_sorteado:
+  print('Você ganhou, o dado deu', valor_sorteado, '!')
+else:
+  print('Ha, perdeu! O dado deu', valor_sorteado)
+            </div>
+            <a href="https://repl.it/@jhcp/if-apostadado" target="_blank">abra e execute esse exemplo no repl.it</a>
+            BÔNUS: pesquise como usar a função <span class="codigo">sleep</span> e dê intervalos de 1 segundo entre os prints, para dar
+            um pouco de suspense ;)
+
+        </section>
+
+
+        <!-- todo imagem das opções de alex kidd -->
+<!--        <section data-background="#f1c3cd">-->
+<!--            <p class="slide-title">Exemplo 8 - pedra, papel e tesoura</p>-->
+<!--            <p> Crie um programa que faça o computador jogar uma partida de-->
+<!--                <a href="https://pt.wikipedia.org/wiki/Pedra,_papel_e_tesoura" target="_blank">jankenpon</a>-->
+<!--                com você!-->
+<!--            </p>-->
+
+<!--        </section>-->
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

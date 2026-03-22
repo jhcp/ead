@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>comparações numéricas - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.5.1/nouislider.min.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>comparação numérica</h1>
+            <h4>não é inequação</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <img src="p1_walk02Medium_left.png" class="no-border"><img src="p1_walk05Medium_left.png" class="no-border">
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>
+                Em Python a gente consegue escrever código assim:
+            </p>
+            <div class="codigo">x > 5</div>
+            <p>A primeira coisa que precisamos entender é que isso não é, nem tem nada a ver, com inequações
+                matemáticas! Isso é apenas uma <b>comparação</b>; estamos comparando o valor atual de x com o
+                número 5, e queremos saber se o valor atual de x é maior do que 5 ou não.</p>
+            <p>Veja a seguir alguns exemplos de aplicação das comparações.</p>
+        </section>
+
+
+
+
+        <section style="height: 100%;">
+            <style>
+                div.Range {
+                    height: 300px;
+                    margin: 1em 0;
+                }
+
+                /**
+                 * Restyle the range slider
+                 */
+                .noUi-target {
+                    width: 6px;
+                }
+
+                .noUi-base {
+                    margin-left: 22px;
+                    background: #e4dfd3;
+                }
+
+                .noUi-pips-vertical {
+                    top: 0;
+                    left: calc(100% + 16px);
+                    height: 100%;
+                    padding: 0 10px;
+                }
+
+                .noUi-origin {
+                    background: #fe9996;
+                }
+
+                .noUi-handle {
+                    left: -2px;
+                    top: 0;
+                    height: 20px;
+                    width: 20px;
+                    border: none;
+                    border-radius: 50%;
+                    background: #fe9996;
+                    -webkit-transform: translateX(-100%) translateY(-50%);
+                    transform: translateX(-100%) translateY(-50%);
+                    box-shadow: none;
+                }
+                .noUi-handle::before {
+                    display: none;
+                }
+                .noUi-handle::after {
+                    position: absolute;
+                    top: 50%;
+                    right: 2px;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 7px 0 7px 5px;
+                    border-color: transparent transparent transparent #fe9996;
+                    background: transparent;
+                    -webkit-transform: translateX(100%) translateY(-50%);
+                    transform: translateX(100%) translateY(-50%);
+                    content: "";
+                }
+
+                .noUi-value {
+                    display: none;
+                }
+
+                .noUi-marker,
+                .noUi-marker-large {
+                    width: 10px;
+                    height: 2px;
+                    margin-top: -1px;
+                    background: #e4dfd3;
+                    -webkit-transform-origin: left;
+                    transform-origin: left;
+                    -webkit-transition: 0.2s -webkit-transform ease;
+                    transition: 0.2s -webkit-transform ease;
+                    transition: 0.2s transform ease;
+                    transition: 0.2s transform ease, 0.2s -webkit-transform ease;
+                }
+
+                /**
+                 * Modifiers to highlight the markers
+                 */
+                .noUi-marker--is-inRange,
+                .noUi-marker--is-current {
+                    background: #fe9996;
+                }
+
+                .noUi-marker--is-current {
+                    -webkit-transform: scaleX(2);
+                    transform: scaleX(2);
+                }
+
+                /**
+                 * Resets and presentational style
+                 */
+                *,
+                *::before,
+                *::after {
+                    box-sizing: border-box;
+                }
+
+                html,
+                body {
+                    height: 100%;
+                }
+
+                body {
+                    display: -webkit-box;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                }
+
+                /**
+                 * Default style from noUiSlider, but removed all unused styles
+                 */
+                .noUi-base {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .noUi-target,
+                .noUi-target * {
+                    touch-action: none;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    box-sizing: border-box;
+                }
+
+                .noUi-target {
+                    position: relative;
+                    direction: ltr;
+                }
+
+                .noUi-origin {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .noUi-handle {
+                    position: relative;
+                    z-index: 1;
+                }
+
+                .noUi-state-tap .noUi-origin {
+                    -webkit-transition: left 0.3s, top 0.3s;
+                    transition: left 0.3s, top 0.3s;
+                }
+
+                .noUi-state-drag * {
+                    cursor: inherit !important;
+                }
+
+                .noUi-pips,
+                .noUi-marker {
+                    position: absolute;
+                }
+
+            </style>
+
+            <br>
+
+            <center>
+                <span id="classificacao" style="font-size: 2em">bebê</span>
+                <br>
+                <span>idade: <span id="range-label">0</span> ano<span id="plural">s</span></span>
+                <div class="Range" data-js="range-slider"></div>
+                <p>mexa no slider acima e veja a classificação etária sendo alterada</p>
+
+                </center>
+            <script>
+                "use strict";
+
+                /**
+                 * Inspired by Flat Sliders from Ana Tudor
+                 * https://www.smashingmagazine.com/2016/04/inspiring-ui-demos-logins-menus-toggles-and-more/#pure-css-flat-sliders
+                 * https://codepen.io/thebabydino/pen/RNEEZP
+                 */
+                var rangeSlider = document.querySelector('[data-js="range-slider"]');
+                var minRange = 0;
+                var maxRange = 70;
+                noUiSlider.create(rangeSlider, {
+                    range: {
+                        'min': [minRange],
+                        'max': [maxRange]
+                    },
+                    start: 0,
+                    orientation: 'vertical',
+                    direction: 'rtl',
+                    pips: {
+                        mode: 'range',
+                        density: 3
+                    }
+                });
+
+                function mapRange(value, low1, high1, low2, high2) {
+                    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+                }
+                /**
+                 * Set the state of the markers
+                 */
+
+
+                function setMarkers() {
+                    var pips = document.querySelectorAll('.noUi-marker');
+                    var currentValue = rangeSlider.noUiSlider.get();
+                    var mappedValue = Math.round(mapRange(currentValue, minRange, maxRange, 0, pips.length - 1));
+
+                    for (var i = 0; i < pips.length; i++) {
+                        pips[i].classList.remove('noUi-marker--is-current');
+                        pips[i].classList.remove('noUi-marker--is-inRange');
+                    }
+
+                    for (var _i = 0; _i < mappedValue; _i++) {
+                        ;
+
+                        pips[_i].classList.add('noUi-marker--is-inRange');
+                    }
+
+                    pips[mappedValue].classList.add('noUi-marker--is-current');
+
+                    var roundedValue = Math.floor(currentValue);
+                    if (roundedValue === 1) {
+                        $('#plural').html("");
+                    }
+                    else {
+                        $('#plural').html("s");
+                    }
+
+                    if (roundedValue >= 65) {
+                        $('#classificacao').html('idoso(a)');
+                    }
+                    else if (roundedValue >= 18) {
+                        $('#classificacao').html('adulto(a)');
+                    }
+                    else if (roundedValue >= 14) {
+                        $('#classificacao').html('adolescente');
+                    }
+                    else if (roundedValue >= 2) {
+                        $('#classificacao').html('criança');
+                    }
+                    else {
+                        $('#classificacao').html('bebê');
+                    }
+                    $('#range-label').html(roundedValue);
+                }
+
+                rangeSlider.noUiSlider.on('slide', setMarkers);
+                setMarkers();
+            </script>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>Para fazer essa classificação etária o programa executou várias comparações numéricas: a idade é maior ou igual
+                a 65 anos? Maior ou igual a 18? Maior ou igual a 14? Etc.</p>
+            <br>
+            <p>Esse foi um exemplo de uso das comparações em sistemas normais do dia a dia. Que tal ver um exemplo
+            de jogo?</p>
+        </section>
+
+
+        <section style="height: 100%;">
+            <p>toque na plataforma para pular e pegar os diamantes</p>
+
+            <center>
+                <div style="font-family: monospace; color:#666"><span id="score-text">0</span> pontos</div>
+                <canvas id="myCanvas" width="300" height="400"></canvas>
+            </center>
+            <script>
+                var gameRunning = false;
+                function runGame() {
+                    var canvas = document.getElementById("myCanvas");
+                    $(canvas).click(jump);
+                    var ctx = canvas.getContext("2d");
+                    var tile1 = new Image();
+                    var playerSprite = new Image();
+                    var itemSprite = new Image();
+
+
+                    var player = {
+                        x: 10,
+                        y: 200,
+                        speedXdefault: 2,
+                        speedYdefault: 0.3,
+                        speedX: 2,
+                        // speedX: 5,
+                        speedY: 0,
+                        currentSprite: 0,
+                        jumpNumber: 0,
+                        spriteFrameCounter: 0,
+                    };
+                    var playerSpriteNames = {
+                        right: ['p1_walk02Medium.png', 'p1_walk05Medium.png'],
+                        left: ['p1_walk02Medium_left.png', 'p1_walk05Medium_left.png'],
+                    };
+
+                    /* x de  0 a 250
+                    *  y de 0 a 200 */
+                    var item = {
+                        x: 90,
+                        y: 100,
+                        isVisible: true,
+                    };
+
+                    var score = 0;
+
+                    function drawPlatform() {
+                        tile1.src = 'dirtMidMedium.png';
+                        ctx.drawImage(tile1, 10, 250);
+                    }
+
+                    function drawItem() {
+                        if (item.isVisible) {
+                            itemSprite.src = 'gemBlue.png';
+                            ctx.drawImage(itemSprite, item.x, item.y);
+                        }
+                    }
+
+                    function drawPlayer() {
+                        if (player.speedX > 0) {
+                            playerSprite.src = playerSpriteNames.right[player.currentSprite];
+                        }
+                        else {
+                            playerSprite.src = playerSpriteNames.left[player.currentSprite];
+                        }
+                        ctx.drawImage(playerSprite, player.x, player.y);
+                    }
+
+                    function draw() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        drawPlatform();
+                        drawPlayer();
+                        drawItem();
+
+
+                        //move the player horizontally
+                        if (player.x > 250) {
+                            player.speedX = -player.speedXdefault;
+                        }
+                        if (player.x < 11) {
+                            player.speedX = player.speedXdefault;
+                        }
+                        player.x += player.speedX;
+
+                        //animate the player sprite
+                        player.spriteFrameCounter++;
+                        if (player.spriteFrameCounter % 5 === 0) {
+                            player.currentSprite = (player.currentSprite + 1) % 2;
+                            player.spriteFrameCounter = 0;
+                        }
+
+                        //move the player vertically
+                        if (player.speedY != 0) {
+                            player.speedY += player.speedYdefault;
+                            player.y += player.speedY;
+                        }
+                        if (player.y + player.speedY >= 200) {
+                            //reached the ground
+                            player.speedY = 0;
+                            player.y = 200;
+                            player.jumpNumber = 0;
+                        }
+
+                        if (checkCollisition()) {
+                            if (item.isVisible) {
+                                score += 10;
+                                $('#score-text').html(score);
+                            }
+                            item.isVisible = false;
+                            item.x = Math.floor(Math.random() * 251);
+                            item.y = Math.floor(Math.random() * 201);
+                            setTimeout(function () {
+                                item.isVisible = true;
+                            }, 300)
+                        }
+
+                        if (gameRunning) window.requestAnimationFrame(draw);
+                    }
+
+                    function checkCollisition() {
+                        var result = false;
+                        if (player.x + 30 > item.x && player.x < item.x + 35) {
+                            if (player.y < item.y + 20 && player.y + 47 > item.y) {
+                                result = true;
+                            }
+                        }
+                        return result;
+                    }
+
+                    function jump() {
+                        if (player.jumpNumber < 3) {
+                            player.speedY = -8.3;
+                            player.jumpNumber++;
+                        }
+                    }
+
+                    score = 0;
+                    $('#score-text').html(0);
+                    gameRunning = true;
+                    window.requestAnimationFrame(draw);
+                    // gameFunctionId = setInterval(draw, 100);
+                }
+
+                function stopGame() {
+                    gameRunning = false;
+                }
+            </script>
+        </section>
+
+
+<!--        <section>-->
+<!--            <p>para o jogo funcionar são necessárias várias comparações</p>-->
+<!--            <p><img src="p1_walk02Medium.png" class="no-border">-->
+<!--            comparação da posição do boneco-->
+<!--                com os limites da plataforma, para ele não cair.</p>-->
+<!--            <p>comparação da quantidade de pulos com o limite de pulos</p>-->
+<!--            <p><img src="gemBlue.png" class="no-border">-->
+<!--            comparação da posição do boneco com a posição do diamante,-->
+<!--            para saber se o boneco o alcançou.</p>-->
+<!--        </section>-->
+
+        <section>
+            para o jogo funcionar são necessárias várias comparações:
+            <p>
+                <b>para saber quando o boneco dá a volta:</b>
+                a posição x do boneco é maior que o limite direito da plataforma
+                e menor que o limite esquerdo?
+            </p>
+            <p><b>para saber quando o boneco pode pular:</b>
+                a quantidade de pulos é menor do que 3?
+                a posição y do boneco é menor do que o limite superior da plataforma?
+            </p>
+            <p>
+                <b>para saber se o boneco pegou o item:</b> as posições x e y do boneco estão dentro dos limites da posição
+                do diamante?</p>
+            <img src="p1_walk02Medium.png" class="no-border"> <img src="gemBlue.png" class="no-border">
+        </section>
+
+        <section>
+            <p>mas não é só para jogos que as comparações servem. Veja:</p>
+            <ul>
+                <li>💯 Em um sistema de boletim, queremos saber se a nota é maior ou igual a 7 para dizer se a pessoa
+                    passou ou não</li>
+                <li>📧 Em um sistema de email queremos comparar a data de recebimento dos emails, para poder vê-los do mais
+                novo para o mais antigo</li>
+                <li>🔑 Para fazer login queremos comparar se a senha que a pessoa digitou é igual à senha que está salva</li>
+            </ul>
+        </section>
+
+        <section>
+            <p>Na prática, as comparações são perguntas que a gente manda o computador responder.</p>
+            <p style="background-color: #c4e2c4; padding: 7px">5 > 2 quer dizer: "Computador, 5 é maior do que 2?"</p>
+            <p style="background-color: #efefaf; padding: 7px">10 < 1 quer dizer: "Computador, 10 é menor do que 1?"</p>
+            <p>E só existem duas respostas possíveis para essas perguntas: <b>sim</b> ou <b>não</b></p>
+        </section>
+
+        <section>
+            <p style="background-color: #c4e2c4; padding: 7px">5 > 2 quer dizer: "Computador, 5 é maior do que 2?"
+                <br>Resposta: <b>SIM</b>, é <b>verdade</b> que 5 é maior que 2!</b></p>
+            <p style="background-color: #efefaf; padding: 7px">10 < 1 quer dizer: "Computador, 10 é menor do que 1?"
+                <br>Resposta: <b>NÃO</b>, 10 não é menor do que 1. Isso é uma mentira! Calúnia! Blasfêmia! Isso é <b>falso!!</b></p>
+            <p>E é assim que o Python vai responder pra gente: <b>True</b> ou <b>False</b>. Verdadeiro ou Falso.</p>
+        </section>
+
+        <section>
+            <p><span class="codigo">print(5 > 2)</span><br>
+            resultado: <b>True</b></p>
+            <p><span class="codigo">print(9 < 3)</span><br>
+                resultado: <b>False</b></p>
+            <p><span class="codigo">print(1 < 4)</span><br>
+                resultado: <b>True</b></p>
+            <p><span class="codigo">print(10 > 10)</span><br>
+                resultado: <b>False</b></p>
+        </section>
+
+        <section>
+            <p><b>True</b> e <b>False</b> não são strings - são valores booleanos.</p>
+            <p>Ao contrários dos números, que são infinitos, o tipo booleano (bool) só pode ter
+                dois valores: ou é <b>True</b> ou é <b>False</b></p>
+            <p>Toda comparação tem como resultado um valor booleano. Por exemplo, a gente não sabe
+                qual será o resultado de <span class="codigo">x>2</span>, mas sabemos que será
+                ou <b>True</b> ou <b>False</b> (a não ser que dê algum erro; nesse caso não haverá
+                resultado).
+            </p>
+        </section>
+
+        <section>
+            <p>Além de perguntar se um número é maior que outro, podemos perguntar se é <b>maior ou igual</b>. Na
+            matemática, o símbolo é &ge;. No Python fica assim:  <span class="codigo">&gt;=</span>
+            (os símbolos do maior e do igual, juntinhos).</p>
+            <p>Para menor ou igual, seguimos o mesmo raciocínio. Em vez de &le;, fica
+                <span class="codigo">&lt;=</span>
+                (os símbolos do menor e do igual, juntinhos).</p>
+        </section>
+
+        <section>
+            <div class="slide-title">Exemplos com maior ou igual:</div>
+
+            <p><span class="codigo">print(10 >= 10)</span><br>
+                resultado: <b>True</b></p>
+
+            <p><span class="codigo">print(2 >= 5)</span><br>
+                resultado: <b>False</b></p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(5 > -20)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#c4e2c4">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 > 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section>
+            <p>É muito comum a gente pensar que <span class="codigo">print(10 > 10)</span> dá erro por que,
+            afinal de contas, é errado que 10 é maior que 10, né? Mas quando a comparação não é verdadeira
+                o Python não dá um erro, ele apenas diz que a comparação é falsa (<b>False</b>).</p>
+            <p>💡 Essa diferença entre erro e falsidade parece frescura, mas traz uma consequência concreta:
+            quando dá erro, o Python para de executar o programa; quando dá falso, o programa não para.</p>
+        </section>
+
+        <section  data-background="#ffc000">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 <= 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(55 &ge; 20)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="c"></div>
+        </section>
+
+        <section>
+            <p>Além das comparações maior que, menor que, maior igual, e menor igual, também
+                podemos comparar se dois valores são <b>iguais</b> ou <b>diferentes</b>.</p>
+            <p>É assim que o quiz sabe se você acertou ou não a resposta. Se a opção que
+                você respondeu é <b>igual</b> à opção correta, então acertou. Se são <b>diferentes</b>,
+            então errou.</p>
+        </section>
+
+        <section>
+            <p>Na matemática, os símbolos de igualdade e diferença são = e ≠. Mas no Python é diferente, fica assim:</p>
+            <p><span class="codigo">==</span> (dois iguais juntinhos): comparação de igualdade</p>
+            <p><span class="codigo">!=</span> (exclamação igual, juntinhos): comparação de diferença</p>
+        </section>
+
+        <section>
+            <div class="slide-title">igualdade:</div>
+            <p><span class="codigo">print(10 == 5)</span><br>
+                10 é igual a 5? Resultado: não, <b>False</b></p>
+            <p><span class="codigo">print(88 == 88)</span><br>
+                88 é igual a 88? Resultado: sim, <b>True</b></p>
+
+            <br>
+
+            <div class="slide-title">diferença:</div>
+            <p><span class="codigo">print(10 != 5)</span><br>
+                10 é diferente de 5? Resultado: sim, <b>True</b></p>
+            <p><span class="codigo">print(88 != 88)</span><br>
+                88 é diferente de 88? Resultado: não, <b>False</b></p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(5 != 5)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="b"></div>
+        </section>
+
+        <section  data-background="#c4e2c4">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 == 10)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de <br>
+            <span class="codigo">print(10 == 5 + 5)</span>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False", "c": "dá erro"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            😓 Ufa, muita coisa, né? O vídeo a seguir não apenas dá algumas informações a mais,
+            mas com certeza irá te ajudar a entender melhor o que já expliquei aqui.
+        </section>
+
+        <section>
+            <p>
+                Vídeo 1 (15min)
+            </p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/sgfmuFRZuWs" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section  data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="<b>True</b> e <b>False</b> são os possíveis valores do tipo..."
+                 data-quiz-answers='{"a": "bool", "b": "string", "c": "int", "d": "float"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <div class="slide-title">resumão</div>
+            <img src="comparacoes.png" class="stretch" style="border-radius: 10px;">
+            <p>É muito comum esquecermos dos símbolos da comparação de igualdade e de diferença, então
+            fica atenta(o) 😉</p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            Qual o resultado de...
+            <div class="codigo">x = 3
+print(x > 0)</div>
+            <div class="quiz-container"
+                 data-quiz-text="?"
+                 data-quiz-answers='{"a": "True", "b": "False"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section data-background="#131418" class="is-dark">
+            <style>
+                .game-button {
+                    background-color: #25f7bb;
+                    color: black;
+                    font-family: monospace;
+                    font-size: 60px;
+                    background-color: #297;
+                    color: #fff;
+                    border: 0;
+                    border-radius: 4px;
+                    padding: 20px;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                    width: 80%;
+                    /*height: 100px;*/
+                }
+                .game-button.white {
+                    background-color: white;
+                    color: black;
+                }
+                .game-button.small {
+                    font-size: 30px;
+                }
+
+                .invisible {
+                    /*display: none;*/
+                    visibility:hidden;
+                }
+
+                .pretend-im-not-here {
+                    display: none;
+                }
+
+                .scene {
+                    /*width: 200px;*/
+                    /*height: 260px;*/
+                    perspective: 600px;
+                    color: black;
+
+                }
+
+                .card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transition: transform 1s;
+                    transform-style: preserve-3d;
+                }
+
+                div.card__face {
+                    position: absolute;
+                    /*height: 100%;*/
+                    width: 100%;
+                    backface-visibility: hidden;
+                    padding: 20px 0;
+                }
+
+                .card__face--front {
+                    background: #e2e2e2;
+                    border-radius: 15px;
+                }
+
+                .card__face--back {
+                    background: #1a53a1;
+                    color: white;
+                    transform: rotateY( 180deg );
+                    border-radius: 15px;
+                }
+
+                .card.is-flipped {
+                    transform: rotateY(180deg);
+                }
+
+            </style>
+
+            <span id="jogo0rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo0card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            <span id="jogo0pergunta">...</span><br>
+                            <button id="jogo0botao0" class="game-button" onclick="responder(0,0)"><span>a</span></button><br>
+                            ou<br>
+                            <button id="jogo0botao1" class="game-button" onclick="responder(0,1)"><span>b</span></button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            <span id="jogo0resposta">...</span><br><br>
+                            <button id="jogo0ok" class="game-button white" onclick="proxima(0)">ok</button><br>
+                            <button id="jogo0reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(0)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                var opcoes2 = [];
+                var rodada = [];
+                var perguntaAtual = [];
+                rodada[0] = 1;
+
+                //a primeira opção de resposta é a resposta correta
+                opcoes2[0] = shuffleArray([
+                    {pergunta: '5 == 5', alternativas: ['True', 'False']},
+                    {pergunta: '3.14 >= 3.14', alternativas: ['True', 'False']},
+                    {pergunta: '3.14 < 3.14', alternativas: ['False', 'True']},
+                    {pergunta: '5 != 6', alternativas: ['True', 'False']},
+                    {pergunta: '3 != 3', alternativas: ['False', 'True']},
+                    {pergunta: '9**1/2 == 4.5', alternativas: ['True', 'False']},
+                    {pergunta: '9**(1/2) == 4.5', alternativas: ['False', 'True']},
+                    {pergunta: '2**4 < 1024', alternativas: ['True', 'False']},
+                    {pergunta: '2+2*2 == 8', alternativas: ['False', 'True']},
+                    {pergunta: '5/2 != 5/1', alternativas: ['True', 'False']},
+                    {pergunta: '-5 > -10', alternativas: ['True', 'False']},
+                    {pergunta: '-5 >= -10', alternativas: ['True', 'False']},
+                    {pergunta: '-5 < -10', alternativas: ['False', 'True']},
+                    {pergunta: '-5 <= -10', alternativas: ['False', 'True']},
+                    {pergunta: '6 < 12/2', alternativas: ['False', 'True']},
+                    {pergunta: '"3" != 3', alternativas: ['True', 'False']},
+                    {pergunta: '"3" == 3', alternativas: ['False', 'True']},
+                    {pergunta: '"10" != 10', alternativas: ['True', 'False']},
+                    {pergunta: '"10" == 10', alternativas: ['False', 'True']},
+                ]);
+
+
+                //start up
+                $(document).ready(function () {
+                    perguntaAtual = opcoes2[0][rodada[0]];
+                    $('#jogo0pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo0botao0 span').html(perguntaAtual.alternativas[0]);
+                    $('#jogo0botao1 span').html(perguntaAtual.alternativas[1]);
+                });
+
+                function responder(jogo, resposta) {
+                    if ($('#jogo' + jogo + 'botao' + resposta + ' span').html() === perguntaAtual.alternativas[0]) {
+                        //se acertou
+
+                        $('#jogo' + jogo + 'resposta').html(perguntaAtual.pergunta + ' ' + perguntaAtual.alternativas[0]);
+                        if (rodada[jogo] >= 5) {
+                            $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                            $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                        }
+                        $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                    }
+                    else {
+                        //se errou
+                        animateCSS($('#jogo' + jogo + 'botao' + resposta), 'shake');
+                    }
+                }
+
+                function proxima(jogo) {
+                    // respostas = respostasIniciais[jogo];
+                    if (rodada[jogo] < 5) {
+                        rodada[jogo] += 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                    }
+                    else {
+                        opcoes2[0] = shuffleArray(opcoes2[0]);
+                        rodada[jogo] = 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                        $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                        $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                    }
+                    $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+
+                    perguntaAtual = opcoes2[jogo][rodada[jogo]];
+                    var sorteioResposta = randomInt(perguntaAtual.alternativas.length - 1);
+
+                    $('#jogo' + jogo + 'pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo' + jogo + 'botao0 span').html(perguntaAtual.alternativas[sorteioResposta]);
+                    $('#jogo' + jogo + 'botao1 span').html(perguntaAtual.alternativas[1-sorteioResposta]);
+                }
+
+            </script>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>range slider vertical: <a href="https://codepen.io/qkevinto/pen/KzxMdj"
+                                                      target="_blank">Kevin</a>
+            </p>
+            <p>imagens utilizadas no jogo: <a href="https://opengameart.org/content/platformer-art-deluxe" target="_blank">Kenney.nl</a> </p>
+        </section>
+
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh === 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            runGame();
+        }
+        if (event.indexh !== 4) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            stopGame();
+        }
+    });
+</script>
+</body>
+</html>

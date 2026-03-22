@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Operadores Lógicos no Python - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/comic-bubbles.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Operadores Lógicos</h1>
+            <h4>and, or, not</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="hsl(48, 100%, 67%)">
+            <div class="slide-title">Dica!</div>
+            <div class="no-border animated pulse infinite" style="font-size: 4em;text-align: center">
+                📓</div>
+            <p>
+                Faça um resumão ou
+                <a href="https://www.google.com/search?q=mapa+mental+estudos" target="_blank">mapa mental</a>
+                com os comandos e funções do Python que você já aprendeu. Senão, quando
+                quiser revisar, você gastará muito tempo assistindo vídeos.
+            </p>
+            <br>
+
+        </section>
+
+        <section data-background="hsl(217, 71%, 53%" class="is-dark">
+            <p>Às vezes só o if...else não é suficiente para resolvermos os nossos problemas. O mundo é complicado
+            mesmo, cheio de regras. Veja, por exemplo, as regras para adotar uma criança:</p>
+            <p style="font-size: medium">Art. 42. Podem adotar os maiores de 18 (dezoito) anos, independentemente do estado civil.
+
+                § 1º <b><u>Não</u></b> podem adotar os ascendentes <b><u>e</u></b> os irmãos do adotando.
+
+                § 2o Para adoção conjunta, é indispensável que os adotantes sejam casados civilmente <b><u>ou</u></b>
+                mantenham união estável, comprovada a estabilidade da família.
+
+                § 3º O adotante há de ser, pelo menos, dezesseis anos mais velho do que o adotando.
+
+
+                Art. 45. A adoção depende do consentimento dos pais <b><u>ou</u></b> do representante legal do adotando.
+
+                § 1º. O consentimento será dispensado em relação à criança <b><u>ou</u></b> adolescente cujos pais sejam
+                desconhecidos <b><u>ou</u></b> tenham sido destituídos do poder familiar.
+
+                § 2º. Em se tratando de adotando maior de doze anos de idade, será também necessário o seu consentimento.</p>
+
+        </section>
+
+
+                <section>
+                    <p>Tem 3 coisas que
+                a gente pode fazer quando as condições são mais complicadas:</p>
+            <ul>
+                <li>Usar um if dentro do outro (ifs aninhados)</li>
+                <li>Usar os operadores lógicos (and, or, not)</li>
+                <li>Usar if...elif...else</li>
+            </ul>
+        </section>
+
+        <section>
+            Você já viu como usar um if dentro do outro (ifs aninhados) na nossa lição com <a href="../if-exemplos">
+            exemplos de uso do if</a>. Agora vamos aprender a usar os operadores lógicos: and, or e not.
+        </section>
+
+        <section>
+            <img src="live3.png">
+            <p>
+            Bom, já introduzi o significado do and (e), or (ou) e not (não) na nossa Live 3. Então o melhor lugar
+            para começar seria entrar lá no SIGAA e assistir novamente o começo dessa Live.
+            </p>
+
+        </section>
+
+        <section>
+            <p>O vídeo a seguir explica muito bem o raciocínio lógico do and, or e not. Só precisa se ligar
+            que o vídeo é sobre lógica de programação em geral, e não sobre Python, então tem algumas diferenças nos símbolos:
+            </p>
+            <table>
+                <tr><th>Vídeo</th><th>Python</th></tr>
+                <tr><td>=</td><td>== (igualdade)</td></tr>
+                <tr><td>&lt;&gt;</td><td>!= (diferença)</td></tr>
+                <tr><td>TRUE</td><td>True</td></tr>
+                <tr><td>FALSE</td><td>False</td></tr>
+                <tr><td>AND</td><td>and</td></tr>
+                <tr><td>OR</td><td>or</td></tr>
+                <tr><td>NOT</td><td>not</td></tr>
+            </table>
+        </section>
+
+        <section>
+            <p>Vídeo 1 (10min):</p>
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/28Ht3o1c73A" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <p class="slide-title">A and B</p>
+            <p>O resultado só será verdadeiro <b>se as duas</b> partes (A e B) forem verdadeiras.</p>
+
+            <p><span class="codigo">print(5>2 and 5>0)</span><br>
+                Resultado: <b>True</b></p>
+            <p><span class="codigo">print(5>2 and 5>20)</span><br>
+                Resultado: <b>False</b></p>
+            <p><span class="codigo">print(5>20 and 5>2)</span><br>
+                Resultado: <b>False</b></p>
+            <p><span class="codigo">print(5>20 and 5>10)</span><br>
+                Resultado: <b>False</b></p>
+        </section>
+
+        <section>
+            <p class="slide-title">A or B</p>
+            <p>O resultado será verdadeiro quando <b>pelo menos uma</b> (A ou B) for verdadeira.</p>
+
+            <p><span class="codigo">print(5>2 or 5>0)</span><br>
+                Resultado: <b>True</b></p>
+            <p><span class="codigo">print(5>2 or 5>20)</span><br>
+                Resultado: <b>True</b></p>
+            <p><span class="codigo">print(5>20 or 5>2)</span><br>
+                Resultado: <b>True</b></p>
+            <p><span class="codigo">print(5>20 or 5>10)</span><br>
+                Resultado: <b>False</b></p>
+        </section>
+
+        <section>
+            <p class="slide-title">not A</p>
+            <p>O not (negação) <b>inverte</b> o resultado: o que era verdadeiro vira falso, e o que era falso vira verdadeiro.</p>
+
+            <p><span class="codigo">print(not 5>2)</span><br>
+                Resultado: <b>False</b>, por que 5>2 é True, e not True dá False</p>
+            <p><span class="codigo">print(not 5>20)</span><br>
+                Resultado: <b>True</b>, por que 5>20 é False, e not False dá True</p>
+        </section>
+
+        <section  data-background="#ffdd57">
+            <div class="quiz-container"
+                 data-quiz-text="Se um número não é maior do que 5, ele é...?"
+                 data-quiz-answers='{"a": "<= 5", "b": "< 5"}'
+                 data-quiz-correct="a"></div>
+        </section>
+
+        <section>
+            <br><br><br>
+            <div style="font-size: 3.2em; font-weight: bolder; text-align: center">EXEMPLOS</div>
+        </section>
+
+        <section>
+            <p>Quando eu quero saber se um número está dentro de um certo intervalo posso usar o <b>and</b>.</p>
+
+            <div class="codigo">x = int(input('idade: '))
+if x >= 2 and x <= 12:
+    print('criança')
+if x > 12 and x <= 17:
+    print('adolescente')
+if x > 17:
+    print('velho(a)')</div>
+            <a href="https://repl.it/@jhcp/and-idade" target="_blank">abra e execute esse exemplo no repl.it</a>
+        </section>
+
+        <section data-background="#f1c3cd">
+            <div class="slide-title">Erro comum #1</div>
+            <p>Se liga que não é possível fazer <span class="codigo">x > 12 and <= 17</span> (x maior que doze e menor-igual
+                a 17). Cada lado do and precisa ser uma expressão lógica
+                completa: <span class="codigo">x > 12 and <b>x</b> <= 17</span> (x maior que doze e <b>x</b> menor-igual a 17)</p>
+            <p>Ou seja toda comparação precisa ter os dois lados (esquerdo e direito). Se eu escrever
+                <span class="codigo"><= 17</span>, cadê o lado esquerdo da comparação? O computador vai comparar
+            17 com o quê?!</p>
+        </section>
+
+
+
+        <section>
+            <p>Quando mais do que uma opção vai dar o mesmo resultado, posso usar o <b>or</b>.</p>
+
+            <div class="codigo">x = input('letra: ')
+if x=='a' or x=='e' or x=='i' or x=='o' or x=='u':
+   print('é vogal')
+else:
+   print('não é vogal')</div>
+            <a href="https://repl.it/@jhcp/or-vogal" target="_blank">abra e execute esse exemplo no repl.it</a>
+        </section>
+
+        <section>
+            <p>Veja outro exemplo onde mais do que uma opção vai dar o mesmo resultado.</p>
+
+            <div class="codigo">print('Quanto é 2+2*2?')
+print('a) 8')
+print('b) 4')
+print('c) -1')
+print('d) 6')
+x = input('resposta: ')
+if x == 'd' or x == 'D' or x == '6':
+    print('certo!')
+else:
+    print('errado =(')</div>
+            <a href="https://repl.it/@jhcp/or-quiz" target="_blank">abra e execute esse exemplo no repl.it</a>
+        </section>
+
+        <section>
+            <p>Na UFRPE, uma pessoa é reprovada em uma disciplina se não atingir a média 5. A pessoa também é reprovada
+                se não atingir a frequência mínima de 75% das aulas.</p>
+            <p>Escreva um programa que pergunta a média da pessoa,
+            a quantidade de horas de aula que ela assistiu, e a carga horária total da disciplina. O programa
+                vai então dizer se a pessoa foi reprovada ou não.
+            </p>
+
+            <a href="https://repl.it/@jhcp/or-reprovacao" target="_blank" class="button6">Clique para ver
+            a resposta no repl.it</a>
+
+        </section>
+
+        <section>
+            <p>Seus pais só deixam você jogar se já tiver lavado a louça e tomado banho. A não ser que você tenha
+            feito o almoço, nesse caso tá liberado(a).</p>
+
+            <div class="codigo">lavou = input('Já lavou a louça (s ou n)? ')
+banho = input('Já tomou banho (s ou n)? ')
+almoco = input('Fez o almoço hoje (s ou n)? ')
+if (lavou == 's' and banho == 's') or almoco == 's':
+    print('blz, então pode jogar')
+else:
+    print('bora contribuir com a casa também, né?')</div>
+            <a href="https://repl.it/@jhcp/logica-regrasdacasa" target="_blank">abra e execute esse exemplo no repl.it</a>
+
+            <p>Veja também
+                <a href="https://repl.it/@jhcp/logica-regrasdacasa2" target="_blank">esse outro código</a>
+                que atende ao enunciado, mas sem usar o <b>or</b>.</p>
+        </section>
+
+        <section data-background="#131418" class="is-dark">
+            <style>
+                .game-button {
+                    background-color: #25f7bb;
+                    color: black;
+                    font-family: monospace;
+                    font-size: 60px;
+                    background-color: #297;
+                    color: #fff;
+                    border: 0;
+                    border-radius: 4px;
+                    padding: 20px;
+                    cursor: pointer;
+                    margin-bottom: 15px;
+                    margin-top: 20px;
+                    width: 80%;
+                    /*height: 100px;*/
+                }
+                .game-button.white {
+                    background-color: white;
+                    color: black;
+                }
+                .game-button.small {
+                    font-size: 30px;
+                }
+
+                .invisible {
+                    /*display: none;*/
+                    visibility:hidden;
+                }
+
+                .pretend-im-not-here {
+                    display: none;
+                }
+
+                .scene {
+                    /*width: 200px;*/
+                    /*height: 260px;*/
+                    perspective: 600px;
+                    color: black;
+
+                }
+
+                .card {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    transition: transform 1s;
+                    transform-style: preserve-3d;
+                }
+
+                div.card__face {
+                    position: absolute;
+                    /*height: 100%;*/
+                    width: 100%;
+                    backface-visibility: hidden;
+                    padding: 20px 0;
+                }
+
+                .card__face--front {
+                    background: #e2e2e2;
+                    border-radius: 15px;
+                }
+
+                .card__face--back {
+                    background: #1a53a1;
+                    color: white;
+                    transform: rotateY( 180deg );
+                    border-radius: 15px;
+                }
+
+                .card.is-flipped {
+                    transform: rotateY(180deg);
+                }
+
+            </style>
+
+            <span id="jogo0rodada-text">1</span>/5
+            <br><br>
+            <div class="scene">
+                <div id="jogo0card" class="card">
+                    <div class="card__face card__face--front">
+                        <center>
+                            <span id="jogo0pergunta">...</span><br>
+                            <button id="jogo0botao0" class="game-button" onclick="responder(0,0)"><span>a</span></button><br>
+                            ou<br>
+                            <button id="jogo0botao1" class="game-button" onclick="responder(0,1)"><span>b</span></button><br>
+                            <span style="font-size: 60px; font-weight: bolder; color: #61260a">?</span>
+                        </center>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <center>
+                            <span style="font-size: 60px; font-weight: bolder;">CERTO!</span><br>
+                            <span id="jogo0resposta">...</span><br><br>
+                            <button id="jogo0ok" class="game-button white" onclick="proxima(0)">ok</button><br>
+                            <button id="jogo0reiniciar" class="game-button white pretend-im-not-here" onclick="proxima(0)">jogar de novo</button><br>
+                        </center>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                var opcoes2 = [];
+                var rodada = [];
+                var perguntaAtual = [];
+                rodada[0] = 1;
+
+                //a primeira opção de resposta é a resposta correta
+                opcoes2[0] = shuffleArray([
+                    {pergunta: '5 == 5 and 5 > 2', alternativas: ['True', 'False']},
+                    {pergunta: '3.14 >= 3.14 or 3.14 > 10', alternativas: ['True', 'False']},
+                    {pergunta: '3.14 < 3.14 or 3 < 2', alternativas: ['False', 'True']},
+                    {pergunta: '5 != 6 and 2 == 2', alternativas: ['True', 'False']},
+                    {pergunta: '3 != 3 and 2 > 0', alternativas: ['False', 'True']},
+                    {pergunta: '9**1/2 == 4.5 and 1 == 1', alternativas: ['True', 'False']},
+                    {pergunta: '9**(1/2) == 4.5 or 1 != 1', alternativas: ['False', 'True']},
+                    {pergunta: 'not (2**4 > 1024) ', alternativas: ['True', 'False']},
+                    {pergunta: 'not (2+2*2 == 6)', alternativas: ['False', 'True']},
+                    {pergunta: 'not (5/2 == 5/1)', alternativas: ['True', 'False']},
+                    {pergunta: '-5 > -10 or 5 > 10', alternativas: ['True', 'False']},
+                    {pergunta: '-5 >= -10 and 10 > 5', alternativas: ['True', 'False']},
+                    {pergunta: '-5 < -10 or 2 == 3', alternativas: ['False', 'True']},
+                    {pergunta: '-5 <= -10 and 2 == 2', alternativas: ['False', 'True']},
+                    {pergunta: '6 < 12/2 or 6 > 12/2', alternativas: ['False', 'True']},
+                    {pergunta: 'not ("3" == 3)', alternativas: ['True', 'False']},
+                    {pergunta: '"3" == 3 or 3 > 3', alternativas: ['False', 'True']},
+                    {pergunta: '"10" != 10 and "a" != "b"', alternativas: ['True', 'False']},
+                    {pergunta: '"10" == 10 and 2 == 2', alternativas: ['False', 'True']},
+
+                    {pergunta: '5 == 5 and 2 > 5', alternativas: ['False', 'True']},
+                    {pergunta: '3.14 > 3.14 or 3.14 > 10', alternativas: ['False', 'True']},
+                    {pergunta: '3.14 < 3.14 or 2 < 3', alternativas: ['True', 'False']},
+                    {pergunta: '5 == 6 and 2 == 2', alternativas: ['False', 'True']},
+                    {pergunta: '3 != 3 or 2 > 0', alternativas: ['True', 'False']},
+                    {pergunta: '9**1/2 == 3 and 1 == 1', alternativas: ['False', 'True']},
+                    {pergunta: '9**(1/2) == 3 or 1 != 1', alternativas: ['True', 'False']},
+                    {pergunta: 'not (2**4 < 1024) ', alternativas: ['False', 'True']},
+                    {pergunta: 'not (2+2*2 == 8)', alternativas: ['True', 'False']},
+                    {pergunta: 'not (5/2 != 5/1)', alternativas: ['False', 'True']},
+                    {pergunta: '-5 > -10 and 5 > 10', alternativas: ['False', 'True']},
+                    {pergunta: '-5 >= 10 and 10 > 5', alternativas: ['False', 'True']},
+                    {pergunta: '-5 < -10 or 2 <= 3', alternativas: ['True', 'False']},
+                    {pergunta: '-5 <= 10 or 2 == 3', alternativas: ['True', 'False']},
+                    {pergunta: '6 < 12/2 or 6 >= 12/2', alternativas: ['True', 'False']},
+                    {pergunta: 'not (3 == 3)', alternativas: ['False', 'True']},
+                    {pergunta: '3 == 3 or 3 > 3 ', alternativas: ['True', 'False']},
+                    {pergunta: '"10" != 10 and "a" == "b"', alternativas: ['False', 'True']},
+                    {pergunta: '"10" == "10" and 2 == 2', alternativas: ['True', 'False']},
+                ]);
+
+
+                //start up
+                $(document).ready(function () {
+                    perguntaAtual = opcoes2[0][rodada[0]];
+                    $('#jogo0pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo0botao0 span').html(perguntaAtual.alternativas[0]);
+                    $('#jogo0botao1 span').html(perguntaAtual.alternativas[1]);
+                });
+
+                function responder(jogo, resposta) {
+                    if ($('#jogo' + jogo + 'botao' + resposta + ' span').html() === perguntaAtual.alternativas[0]) {
+                        //se acertou
+
+                        $('#jogo' + jogo + 'resposta').html(perguntaAtual.pergunta + ' dá ' + perguntaAtual.alternativas[0]);
+                        if (rodada[jogo] >= 5) {
+                            $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                            $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                        }
+                        $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+                    }
+                    else {
+                        //se errou
+                        animateCSS($('#jogo' + jogo + 'botao' + resposta), 'shake');
+                    }
+                }
+
+                function proxima(jogo) {
+                    // respostas = respostasIniciais[jogo];
+                    if (rodada[jogo] < 5) {
+                        rodada[jogo] += 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                    }
+                    else {
+                        opcoes2[0] = shuffleArray(opcoes2[0]);
+                        rodada[jogo] = 1;
+                        $('#jogo' + jogo + 'rodada-text').html(rodada[jogo]);
+                        $('#jogo' + jogo + 'ok').toggleClass('pretend-im-not-here');
+                        $('#jogo' + jogo + 'reiniciar').toggleClass('pretend-im-not-here');
+                    }
+                    $('#jogo' + jogo + 'card').toggleClass('is-flipped');
+
+                    perguntaAtual = opcoes2[jogo][rodada[jogo]];
+                    var sorteioResposta = randomInt(perguntaAtual.alternativas.length - 1);
+
+                    $('#jogo' + jogo + 'pergunta').html(perguntaAtual.pergunta);
+                    $('#jogo' + jogo + 'botao0 span').html(perguntaAtual.alternativas[sorteioResposta]);
+                    $('#jogo' + jogo + 'botao1 span').html(perguntaAtual.alternativas[1-sorteioResposta]);
+                }
+
+            </script>
+        </section>
+
+        <section>
+            <p>Lembra daquelas regras de adoção, que mostrei no começo desta lição?
+                <a href="https://repl.it/@jhcp/logica-adocao" target="">Clique aqui</a> para ver o
+            código de um programa que consegue decidir se uma adoção pode ser feita ou não.
+
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#interprete', 'flipInX');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

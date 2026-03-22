@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 3 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>Atividade 3 - The Huxley</h1>
+            <h4>atividade valendo nota</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+
+        <section data-background="#00d1b2">
+            <p>
+                A atividade 3 tem cinco problemas que exercitam o uso do comando <b>if</b> para dar
+                resultados diferentes de acordo com alguma condição.
+            </p>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p>
+                Recomendo olhar o enunciado do problema no The Huxley e responder primeiramente no
+                <a href="https://repl.it/languages/python3" target="_blank">repl.it</a>, já
+                que no repl.it é mais fácil de testar o nosso programa. Em seguida, é só copiar para o The Huxley
+                e enviar a resposta.
+            </p>
+            <p>
+                Mas também pode ficar tranquilo(a), não tem problema se você enviar respostas incorretas no The Huxley
+                antes de acertar - só será contabilizado o último programa que você enviou.
+            </p>
+            <p><b>Antes de abrir o Huxley, confira as dicas a seguir!</b></p>
+        </section>
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+        <section data-background="white">
+            <div class="slide-title">Texto adicional</div>
+            <p>
+                Se lembre que o que irá aparecer na tela tem que ser exatamente igual à saída esperada,
+                sem nada a mais nem a menos. Por exemplo, normalmente nós faríamos um programa que calcule o
+                dobro de um número assim:
+            <div class="codigo">x = float(input('digite um número'))
+print('O dobro de', x, 'é', x*2)</div>
+            </p>
+            <p>
+                Mas para a ferramenta de correção automática, precisaremos escrever assim, sem os textos:
+            <div class="codigo">x = float(input())
+print(x*2)</div>
+            </p>
+            <p>a não ser que o enunciado do problema peça para incluir algum texto.</p>
+        </section>
+
+        <section data-background="hsl(217, 71%, 53%" class="is-dark">
+            <p>Depois de ler o enunciado dos problemas no
+                <a href="http://thehuxley.com/" target="_blank" style="color:white;text-decoration: underline">The Huxley</a>,
+                veja a seguir as dicas específicas para cada problema da atividade. Sugiro começar pelo problema "Dia da semana" --> </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Dia da semana</p>
+            <p>
+                Sugiro começar por este problema, já que é o que achei menos difícil.
+            </p>
+            <p>Se liga que os dias da semana devem ser escritos sem acento, sem cedilha, e sem o "-feira".
+                Exemplo: terca</p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Acidez de uma solução</p>
+            <p>
+                São 3 casos possíveis: Ácida, Básica ou Neutra. O enunciado explica quando a solução é ácida e quando
+                ela é básica, mas você precisa descobrir qual a condição para que ela seja neutra.
+            </p>
+            <p>Note que o resultado deve ser escrito sem acento, e com a primeira letra maiúscula. Exemplo: Basica</p>
+        </section>
+
+        <section data-background="#00d1b2">
+            <p class="slide-title">Área de 2 círculos</p>
+
+            <p>
+                ATENÇÃO: este problema tem um erro no enunciado, as mensagens "Primeiro circulo" e "Segundo circulo"
+                precisam ser escritas <b>sem acento</b>.
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Alugando um veículo</p>
+            <p>
+                <b>Pra cada dia de aluguel</b> a pessoa ganha uma cota de 100Km, e cada Km <b>excedente</b> custa R$ 12.
+                ATENÇÃO:
+                a cota é 100km <b>por dia</b>.
+                Exemplo: se a pessoa alugou o carro por dois dias e andou 202Km, precisará pagar R$24 pelos 2Km a mais,
+                além do valor das diárias.
+            </p>
+            <p>Este problema é bem parecido com o exemplo de "radar eletrônico" que é explicado na
+                <a href="../if-exemplos">lição 4 da semana 3</a>.
+            </p>
+            <p>Está lembrado como faz para deixar o resultado com exatamente duas casas decimais? Veja no próximo slide.
+            </p>
+        </section>
+
+
+
+        <section data-background="white">
+            <p class="slide-title">2 casas decimais</p>
+            <p>
+                Alguns problemas, como o "Alugando um veículo", podem pedir que você mostre o resultado só
+                com duas casas decimais. Você certamente
+                já aprendeu a fazer isso com os vídeos do Guanabara, mas aqui vai um exemplo para facilitar a
+                sua vida:
+            </p>
+            <div class="codigo">resultado = 3**0.5
+print('{:.2f}'.format(resultado))</div>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Formas geométricas (1/2)</p>
+            <p>
+                Este programa vai ficar um pouco maior do que os outros, então não se espante se o seu código
+                tiver 15 linhas ou mais. A dica é fazer uma forma geométrica de cada vez, testar direitinho,
+                e só depois que tiver certo fazer a outra forma geométrica.
+            </p>
+            <p>
+                Se liga que algumas formas precisam de dois inputs, enquanto outras formas precisam de apenas um input.
+                E cuidado para não errar a fórmula do perímetro do retângulo ;)
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p class="slide-title">Formas geométricas (2/2)</p>
+
+            <p>
+                Uma jeito de saber quando a pessoa digitou um comando que não é nem Q nem R nem C é assim:
+            </p>
+            <div class="codigo" style="overflow: scroll">if forma != 'Q' and forma != 'R' and forma != 'C':
+    print('Nenhuma figura selecionada')</div>
+            <p>onde <b>forma</b> é o nome da varíavel que guardou o input.</p>
+        </section>
+
+        <section>
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:20</span>
+                        <span class="message">
+                            Professor, se eu enviar um código errado irei perder ponto?
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <span class="name alt">João Pimentel
+                        </span>
+                        <span class="timestamp">10:22</span>
+                        <p class="message">Nãaaao, essa é a vantagem de usar uma ferramenta de correção automática:
+                            você irá saber imediatamente que tem algum problema no código, e poderá corrigir.</p>
+                    </div>
+                    <div class="bubble-arrow alt"></div>
+                </div>
+            </div>
+
+            <!-- Without Name and Arrow - RIGHT -->
+            <div class="msg">
+                <div class="bubble alt">
+                    <div class="txt">
+                        <p class="message">Pode enviar errado quantas vezes quiser, o que vale é a última versão</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- With Name and Arrow - LEFT -->
+            <div class="msg">
+                <div class="bubble">
+                    <div class="txt">
+                        <span class="name">Estudante</span>
+                        <span class="timestamp">10:30</span>
+                        <span class="message">
+                            Show, valeu!
+                        </span>
+                    </div>
+                    <div class="bubble-arrow"></div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Ainda não aprendeu a usar o The Huxley? Veja as informações sobre o cadastro e uso da ferramenta
+                na <a href="../atividade2">descrição da Atividade 2</a>.
+            </p>
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

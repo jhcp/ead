@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>A função split - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>A função split</h1>
+            <h4>tudo separadinho </h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section>
+            <p>Às vezes a gente tem uma string com vários valores, e queremos fazer alguma coisa com esses valores.
+            Como faz? Aí é que entra a função split! Mas primeiro vamos ver um exemplo em que isso acontece.</p>
+
+        </section>
+
+        <section>
+            <p>Suponha que você quer que o usuário digite 4 números, para depois calcular o somatório. Poderia ser
+                assim:</p>
+            <div class="codigo">print('digite 4 números:')
+valor1 = float(input('1: '))
+valor2 = float(input('2: '))
+valor3 = float(input('3: '))
+valor4 = float(input('4: '))
+
+resultado = valor1 + valor2 + valor3 + valor4
+print('a soma é', resultado)</div>
+            <p>Nada de extraordinário, certo?</p>
+        </section>
+
+        <section>
+            <p>Mas agora que sou um(a) super-programador(a), quero facilitar a vida do(a) usuário(a): vou deixar a
+                pessoa escrever os 4 números de uma vez só, separados por um espaço. Assim, ó:</p>
+            <img src="entrada-split.png">
+            <p>Para separar os quatro números e poder fazer a conta, usamos a função <b>split</b>.</p>
+        </section>
+
+        <section>
+            <p>A função split separa um texto em vária partes, separando onde tem um espaço e guardando todas as partes
+                em uma lista.</p>
+            <div class="codigo">texto = 'oi blz tchau'
+separado = texto.split()
+print(separado)</div>
+            <p>Nesse exemplo o resultado é uma lista contendo 3 strings: 'oi', 'blz' e 'tchau'. Se eu quiser usar o
+            a segunda palavra, é só pegar o segundo elemento da lista, então
+                <span class="codigo">print(separado[1])</span> vai imprimir a palavra 'blz', blz?</p>
+        </section>
+
+        <section>
+            Às vezes os nossos dados são separados por algum símbolo, como por exemplo uma vírgula. Nesse
+            caso, o código
+            <div class="codigo">texto = 'oi,blz,tchau'
+separado = texto.split()
+print(separado)</div>
+            <p>vai dar erro, por que a função split vai tentar separar nos espaços, mas nesse texto não tem espaços.
+                Nada tema, podemos mandar o split separar pela vírgula, assim:
+                <span class="codigo">texto.split(',')</span></p>
+            <p>Isso é muito prático para salvar e carregar dados de um arquivo - por exemplo, o save de um jogo. Existe
+                até
+            um formato de arquivo, muito usado, chamado CSV, da sigla em inglês para "valores separados por vírgulas".</p>
+        </section>
+
+        <section>
+            <p>Naquele nosso primeiro exemplo usamos números, mas uma coisa importante sobre números é que strings não
+                são números. Em</p>
+            <div class="codigo">texto = '5.1 9 3 0'
+separado = texto.split()
+print(separado)
+print(separado[1]*5)</div>
+            O split vai separar os "números", mas eles permanecerão sendo strings, então é preciso
+            usar a função int() ou float() para transformar o texto em um número de fato, senão não conseguiremos
+            fazer as contas nem as comparações numéricas. Veja o resultado:
+            <div class="codigo">['5.1', '9', '3', '0']
+99999</div>
+        </section>
+
+        <section>
+            <p>Para conseguirmos fazer a conta vamos transformar cada uma das strings em números, usando a função float(). O programa completo
+                fica assim:</p>
+            <div class="codigo">entrada = input('digite 4 números: ')
+entrada = entrada.split()
+resultado = float(entrada[0]) + float(entrada[1]) + float(entrada[2]) + float(entrada[3])
+print('a soma é', resultado) </div>
+        </section>
+
+        <section>
+            Se a gente tem muitos números, tipo assim, mais que 10 números, começa a ficar ruim ter que converter de
+            um em um. Pior ainda é se não sabemos quantos números serão. Uma solução é mandar o computador fazer a
+                conversão de cada elemento da lista pra gente, com um comando de repetição
+            como o <b>for</b>:
+            <div class="codigo">entrada = input('digite quantos números quiser: ')
+entrada = entrada.split()
+
+entrada_convertida = []
+for elemento in entrada:
+  #converte o elemento para float e o acrescenta na outra lista
+  entrada_convertida.append(float(elemento))
+
+print('a soma é', sum(entrada_convertida)) </div>
+            Legal, né? Agora a pessoa pode digitar quantos números quiser, que o nosso programa irá somar todos eles.
+        </section>
+
+        <section>
+            <p>Quando estudamos mais acabamos aprendendo funções que facilitam a nossa vida, e uma delas é a
+                função <a href="" target="_blank">map</a>. Podemos usá-la para fazer a conversão de uma lista de strings
+            para uma lista de números de uma forma mais enxuta, mas que acaba sendo mais complicada para quem
+            não conhece bem a função map ainda. O nosso programa pode ficar assim:
+            <div class="codigo">entrada = input('digite quantos números quiser: ')
+#converte a lista de strings para uma lista de números, aplicando a função float:
+entrada = list(map(float, entrada.split()))
+print('a soma é', sum(entrada)) </div>
+            <a href="https://repl.it/@jhcp/exemplo-split-map" target="_blank">abra e execute esse exemplo no repl.it</a>
+        </section>
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+            <p>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    // Reveal.addEventListener('slidechanged', function (event) {
+    //     if (event.indexh == 2) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+    //     }
+    // });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
