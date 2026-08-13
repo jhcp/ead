@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Atividade 4 - The Huxley - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+    <link rel="stylesheet" href="../../css/chat.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <p class="slide-title">Atividade 4</p>
+            Se alguma dica dessas lhe ajudar a resolver alguma questão da Atividade 4, por favor mande uma
+            mensagem no nosso grupo de WhatsApp.
+            <p>A ordem dos problemas, do mais fácil para o mais difícil, na minha opinião, é:</p>
+            <ol>
+                <li>Canal de TV</li>
+                <li>Aumento dos Trabalhadores</li>
+                <li>Bônus de Viagem</li>
+                <li>Campeonato</li>
+                <li>Bissexto</li>
+                <li>Adotar, um ato de amor</li>
+            </ol>
+            <p>Agora passa pra direita para ver as dicas de cada questão 😎</p>
+        </section>
+
+        <section>
+            <p class="slide-title">Adotar, um ato de amor</p>
+            <p>
+                A dica para esta questão é: assista a resolução na aula.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Aumento dos Trabalhadores</p>
+            <p>
+                Esse problema só tem 1 exemplo, então é importante que você crie seus próprios exemplos
+                para testar direitinho. Além do
+                salário acima de R$500, teste também com salário entre R$300 e R$500, além de um outro teste com salário
+                menor que R$300, de forma a cobrir todos os casos possíveis.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Bissexto</p>
+            <ul>
+                <li>São bissextos todos os anos múltiplos de 400, p.ex: 1600, 2000, 2400, 2800...</li>
+                <li>São bissextos todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400, p.ex: 1996, 2000, 2004,
+                    2008, 2012, 2016... O ano 1900, por exemplo, não é bissexto, pois ele é múltiplo de 100 mas não de 400.</li>
+                <li>Não são bissextos todos os demais anos.</li>
+            </ul>
+            <p>
+                Hmm, será que o nosso material tem algum exemplo "parecido"? Volte para a Semana 3
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Bônus de Viagem</p>
+            <p>
+                A dica para esta questão é: leia m-u-i-t-o b-e-m o enunciado. Se ler rapidamente e pensar
+                que já sacou vai acabar fazendo a conta errada.
+            </p>
+            <p>
+                Quando testar o programa, se certifique que só está sendo exibido um país na tela; se estiverem
+                aparecendo dois ou três paises tem alguma coisa errada - estude a Semana 4.
+            </p>
+            <p>
+                Mais uma dica: se lembre de testar com outros valores também, em vez de testar só com o exemplo
+                do enunciado.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Campeonato</p>
+            <p>
+                Essa questão é um pouco diferente por que os valores de entrada estão em uma única linha. A gente
+                precisa ler a linha inteira e dividi-la nos espaços. Calma, nada tema, é assim:
+            </p>
+            <div class="codigo">entrada = input().split()
+Cv = int(entrada[0])
+Ce = int(entrada[1])
+Cs = int(entrada[2])
+Fv = int(entrada[3])
+Fe = int(entrada[4])
+Fs = int(entrada[5])</div>
+            <p>
+                Então copia esse código daí de cima e escreve o restante do código. E se lembre de responder por
+                partes; tentar resolver tudo de uma vez só é o caminho mais direto para o erro.
+            </p>
+        </section>
+
+        <section>
+            <p class="slide-title">Canal de TV</p>
+            <p>
+                Pelos exemplos dá para notar que o input tem um texto, fica assim:
+            </p>
+            <div class="codigo">input('Digite um numero de um canal de tv:\n')</div>
+            <p>
+                Viu o \n aí em cima, né? Esquece dele não.
+            </p>
+            <p>
+                Os nomes dos canais precisam ficar todos em maiúsculas: SBT, BAND, REDETV!, RECORD, GLOBO. Já o
+                "Canal Invalido" não é todos em maiúsculas e não tem acento.
+            </p>
+        </section>
+
+        <section data-background="black" class="is-dark">
+            <p>
+                Essas foram as dicas de cada questão - veja a seguir dicas gerais do The Huxley
+            </p>
+        </section>
+
+        <section data-background="white">
+            <p>
+                Lembre-se de escolher a opção Python 3 quando for escrever a resposta no The Huxley.
+            </p>
+            <img src="python3thehuxley.png" />
+        </section>
+
+        <section data-background="white">
+            Se liga que, <b>na maioria</b> dos problemas do The Huxley, não é permitido escrever textos
+            adicionais nas funções print ou input. Por exemplo, normalmente a resposta da "Área do retângulo"
+            seria assim:
+            <div class="codigo">a = int(input('qual o primeiro lado? '))
+b = int(input('qual o segundo lado? '))
+print('a área é', a*b)</div>
+            <p>
+                Mas no Huxley a resposta será sem o texto...
+            <div class="codigo">a = int(input())
+b = int(input())
+print(a*b)</div>
+            </p>
+            <p>... a não ser que o enunciado do problema peça para incluir algum texto.</p>
+        </section>
+
+
+        <section>
+            <p>Assim que você envia a resposta aparece o resultado
+                de cada caso de teste do problema, <b>na parte de baixo da tela</b>. Os círculos vermelhos com X representam
+                os erros, como na imagem abaixo. </p>
+            <a href="thehuxley-erros.png"><img src="thehuxley-erros.png" /></a>
+            <p>No exemplo desta imagem, o código que a pessoa fez deu certo em 28 dos 30 testes realizados. Apenas 2
+                testes, que estão vermelhos, deram errado. Ou seja,
+                se a questão valesse 10 pontos, a pessoa ficaria com 9.3.</p>
+        </section>
+
+
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">fim =)</div>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 1) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#play-button', 'delay-1s infinite tada');
+        }
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>

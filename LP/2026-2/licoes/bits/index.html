@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>bits - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <!--<link rel="stylesheet" href="../../lib/css/zenburn.css">-->
+
+    <link rel="stylesheet" href="toggle.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>bits</h1>
+            <h4>não é magia, é tecnologia!</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <div class="slide-title">eletricidade</div>
+            <p>
+                O computador é um aparelho eletrônico. Todo aparelho eletrônico
+                funciona com base em eletricidade (ohhhhh!)
+            </p>
+            <p>
+                Um fio elétrico 🔌
+                pode estar, a qualquer momento, em um desses dois estados: com eletricidade ou sem eletricidade
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">efeitos da eletricidade (1/3)</div>
+            <p>
+                Se mandarmos energia para um LED, podemos acende-lo e apaga-lo. Aperte nessa bateria:
+            </p>
+            <div class="center">
+                <img id="led" src="ledoff2.jpg" class="no-border"/>
+            </div>
+            <script>
+                var ledToggle = 0;
+                //atualiza a imagem do led
+                $('#led').click(function () {
+                    ledToggle = 1 - ledToggle;
+                    if (ledToggle === 0) {
+                        $(this).prop('src', 'ledoff2.jpg');
+                    }
+                    else {
+                        $(this).prop('src', 'ledon2.jpg');
+                    }
+                    animateCSS('#led', 'pulse faster');
+                });
+            </script>
+        </section>
+
+        <section>
+            <div class="slide-title">efeitos da eletricidade (2/3)</div>
+            <p>
+                Se combinarmos vários LEDs, podemos formar números. <i>Tente formar o número 5:</i>
+            </p>
+
+            <!-- from http://www.3quarks.com/en/SegmentDisplay/index.html -->
+            <div class="center">
+                <canvas id="display" width="260" height="140"
+                        style="background-color: #c4e2c4;border: 3px solid grey;border-radius: 10px;padding:10px;-webkit-animation-duration: 300ms;animation-duration: 300ms;">
+                    Ops, seu navegador não consegue exibir este brinquedo.
+                </canvas>
+                <script src="segment-display.js"></script>
+                <script>
+
+                    var display = new SegmentDisplay("display");
+                    display.pattern = "#";
+                    display.displayAngle = 10;
+                    display.digitHeight = 20;
+                    display.digitWidth = 12;
+                    display.digitDistance = 2.5;
+                    display.segmentWidth = 1.5;
+                    display.segmentDistance = 0.5;
+                    display.segmentCount = 7;
+                    display.cornerType = 3;
+                    display.colorOn = "#090909";
+                    display.colorOff = "#afcbaf";
+                    display.background = "#c4e2c4";
+                    display.draw();
+                    display.setValue('7');
+
+                </script>
+
+                <br>
+                <div class="switch-panel">
+                    <label class="switch">
+                        <input type="checkbox" class="7s" checked>
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">1</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s" checked>
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">1</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s" checked>
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">1</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s">
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">0</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s">
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">0</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s">
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">0</span>
+                    </label>
+                    <label class="switch">
+                        <input type="checkbox" class="7s">
+                        <span class="slider round"></span>
+                        <span class="label switch-bit">0</span>
+                    </label>
+                </div>
+            </div>
+
+            <script>
+                //atualiza o display e o código binário quando um toggle é apertado
+                $('.7s').click(function () {
+                    //constroi a sequência de bits
+                    var bits = '';
+                    $('.7s').each(function (a, b) {
+                        bits += (this.checked) ? '1' : '0';
+                    });
+
+                    //atualizar o valor no display
+                    display.setSegmentValue(bits);
+                    animateCSS('#display', 'pulse faster');
+
+                    //atualiza o bit abaixo do toggle
+                    if (this.checked) {
+                        $(this).siblings('.switch-bit').html(1);
+                    } else {
+                        $(this).siblings('.switch-bit').html(0);
+                    }
+                });
+            </script>
+        </section>
+
+        <section>
+            <div class="slide-title">efeitos da eletricidade (3/3)</div>
+            <p>
+                Já se passarmos energia a vários quadradinhos (pixels), podemos formar imagens:
+            </p>
+                <img src="olho.png" class="stretch" alt="desenho de um olho"/>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">símbolos</div>
+            <p>
+                Para não ficar dizendo "sem energia" e "com energia" o tempo todo, o pessoal escolheu dois símbolos:
+                <b>0</b> e <b>1</b>
+            </p>
+            <p>
+                Como só são dois símbolos, eles são chamados de digitos <b>bi</b>nários: <b>bits</b>
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">combinação dos símbolos</div>
+            <p>
+                Se a eletricidade pode ser usada para representar números, imagens, etc., e bits representam a
+                eletricidade que passa (ou não) em algum circuito,
+                então os bits também podem representar números, imagens, etc.
+            </p>
+            <p>
+                Faz sentido?
+            </p>
+        </section>
+
+        <section data-background="#ffdd57">
+            <div class="slide-title">significado dos símbolos</div>
+            <p>
+                Mas quem é que decide qual o significado de uma combinação de bits? Os fabricantes dos equipamentos 😕
+            </p>
+            <p>
+                Imagine a zona: cada fabricante usando bits de formas diferentes! Samsung, Motorola, Xiaomi, cada uma
+                com um significado diferente para os conjuntos de bits.
+            </p>
+            <p>
+                Para evitar essa zona, muita coisa é
+                <b>padronizada</b>.
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">ASCII</div>
+            <p>
+                Um padrão bem famoso é o <a href="https://pt.wikipedia.org/wiki/ASCII" target="_blank">ASCII</a>, um padrão de caracteres que diz que <b>1000001</b> é a letra <b>A</b>, <b>1001110</b> é o <b>N</b>, e
+                assim por diante.
+            </p>
+            <table>
+                <tr>
+                    <th>sequência<br>&nbsp;&nbsp;de bits</th>
+                    <th>representa…</th>
+                </tr>
+                <tr>
+                    <td>0111110</td>
+                    <td>&gt;</td>
+                </tr>
+                <tr>
+                    <td>0111111</td>
+                    <td>?</td>
+                </tr>
+                <tr>
+                    <td>1000000</td>
+                    <td>@</td>
+                </tr>
+                <tr>
+                    <td>1000001</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>1000010</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>1000011</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>1000100</td>
+                    <td>D</td>
+                </tr>
+                <tr>
+                    <td>1000101</td>
+                    <td>E</td>
+                </tr>
+            </table>
+
+        </section>
+
+        <section>
+            <div class="slide-title">UNICODE</div>
+            <p>
+                O <a href="https://pt.wikipedia.org/wiki/Unicode" target="_blank">UNICODE</a> é um padrão para codificação de textos muito usado atualmente. Além de letras e números de diferentes
+                alfabetos, ele também inclui os
+                emojis!
+            </p>
+            <p>
+                <b>11111011001000010</b>, por exemplo, representa uma "face levemente sorridente".
+            </p>
+            <div class="animated pulse infinite center" style="font-family: Segoe UI Emoji; font-size: 5.5em">
+                🙂
+            </div>
+
+        </section>
+
+        <section>
+            <div class="slide-title">tipos diferentes</div>
+            <p>Coisas de tipos diferentes têm padrões diferentes. Por exemplo, a mesma sequência de bits (<b>1101011</b>)
+                pode representar a letra k, o número decimal 107, e um tom de <span style="background-color:#6a1212;color:white;padding:0 5px;">vermelho</span></p>
+            <!--cor do modo 13 do qbasic (VGA) http://www.schoolfreeware.com/QBasic_Tutorial_27_-_Screens_-_QB64.html -->
+            <p>Neste curso nós vamos trabalhar com <b>4 tipos básicos</b> do Python:</p>
+            <table>
+                <tr>
+                    <td>int</td>
+                    <td>números inteiros</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>números quebrados</td>
+                </tr>
+                <tr>
+                    <td>string</td>
+                    <td>texto</td>
+                </tr>
+                <tr>
+                    <td>boolean</td>
+                    <td>True ou False</td>
+                </tr>
+            </table>
+        </section>
+
+<!--        <section data-background="#415e55" class="is-dark">-->
+<!--            <img src="../../images/exercicios/arnold.gif" class="stretch" alt="arnold se exercitando"/>-->
+<!--            <div id="exercicios" class="slide-new-section">exercícios</div>-->
+<!--        </section>-->
+
+        <section data-background="#2196f3" class="is-dark">
+            <div id="quiz" class="quiz"></div>
+            <button id="submit" class="quiz-submit">responder</button>
+            <div id="results" class="quiz-results"></div>
+            <script>
+                var myQuestions1 = [
+                    {
+                        question: "Os bits só servem para representar números",
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'falso'
+                        },
+                        correctAnswer: 'b'
+                    }];
+                var quizContainer = document.getElementById('quiz');
+                var resultsContainer = document.getElementById('results');
+                var submitButton = document.getElementById('submit');
+                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+        <section data-background="#263963" class="is-dark">
+            <div id="quiz2" class="quiz"></div>
+            <button id="submit2" class="quiz-submit">responder</button>
+            <div id="results2" class="quiz-results"></div>
+            <script>
+                var myQuestions2 = [
+                    {
+                        question: "Os tipos básicos que iremos usar neste curso são...",
+                        answers: {
+                            a: 'corda, inteiro, flutuante, bool',
+                            b: 'números, imagens, sons, vídeos',
+                            c: 'letras, números, cores',
+                            d: 'string, int, float, boolean',
+                            e: 'chars, numbers, colors'
+                        },
+                        correctAnswer: 'd'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz2');
+                var resultsContainer = document.getElementById('results2');
+                var submitButton = document.getElementById('submit2');
+                generateQuiz(myQuestions2, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            aprenda mais (opcional)
+            <iframe class="stretch" width="560" height="315" src="https://www.youtube.com/embed/DzRyXKq7I10?start=22"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+            <p>Display de 7 segmentos programável: <a href="http://www.3quarks.com/en/SegmentDisplay/index.html"
+                                                      target="_blank">Rüdiger Appel</a>
+            </p>
+        </section>
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        // dependencies: [
+        //     {
+        //         src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+        //             hljs.initHighlightingOnLoad();
+        //         }
+        //     }
+        // ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+        if (event.indexh == 3) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('.switch-panel label:nth-child(1)', 'delay-1s wobble');
+        }
+        if (event.indexh == 11) {// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            animateCSS('#exercicios', 'bounceInUp');
+        }
+        console.log(event.indexh);//mostra no console o número do slide atual
+    });
+</script>
+</body>
+</html>

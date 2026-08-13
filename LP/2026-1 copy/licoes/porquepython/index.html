@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161434600-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161434600-1');
+    </script>
+
+    <title>Por quê Python? - UACSA/UFRPE Linguagem de Programação</title>
+    <meta name="author" content="Prof. João Pimentel">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <link rel="stylesheet" href="../../lib/css/reveal.css">
+    <link rel="stylesheet" href="../../lib/css/animate.css">
+    <link rel="stylesheet" href="../../css/materialdeapoioD.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <script src="../../lib/js/jquery.min.js"></script>
+    <script src="../../js/materialdeapoio.js"></script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h1>python!?</h1>
+            <h4>não é melhor Java, C++, PHP, JavaScript, Matlab , ...?</h4>
+            <br>
+            <p>Material de apoio para a disciplina Linguagem de Programação da
+                <a href="http://www.uacsa.ufrpe.br" target="_blank">UACSA/UFRPE</a>
+            </p>
+            <p> Produzido pelo
+                <a href="http://www.cin.ufpe.br/~jhcp" target="_blank">prof. João Pimentel</a>
+            </p>
+            <button id="change-color-btn" onclick="adaptToDyslexia()" style="padding: 10px">mudar cor de fundo</button>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <img src="linguagens.png" class="stretch"/>
+            <p>
+                O Python é uma linguagem rocheda! É uma das linguagens mais utilizadas no mundo, e é mais fácil
+                de aprender do que linguagens como C++ e Java.
+            </p>
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Nos vários rankings de linguagens de programação que existem, o Python sempre aparece como uma das linguagens mais
+                populares 📈 😎</p>
+            <p>Duvida? Pode conferir:
+            </p>
+            <br>
+            <center>
+            <p><a href="https://www.tiobe.com/tiobe-index/" target="_blank" class="button6">ÍNDICE TIOBE</a></p>
+            <p><a href="https://octoverse.github.com/#top-languages" target="_blank" class="button6">GITHUB</a></p>
+            <p><a href="https://insights.stackoverflow.com/survey/2019" target="_blank" class="button6">STACK OVERFLOW</a></p>
+            </center>
+        </section>
+
+        <section data-background="#0b0602" class="is-dark">
+            <p>Quer um exemplo de Python usado no mundo real? Aquela famosa "foto" do buraco negro foi produzida
+            com programas escritos em... adivinha? Python!</p>
+            <img src="buraconegro.jpg" class="stretch"/>
+
+        </section>
+
+        <section>
+            <p>
+                Mas se liga que nenhuma linguagem é a melhor para tudo! Se você quer fazer um jogo para o Playstation 5, provavelmente
+                o Python não é a melhor opção.
+            </p>
+            <img src="playstation.jpg" class="stretch no-border"/>
+
+        </section>
+
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                O MATLAB também é uma opção muito boa para os estudantes de engenharia,
+                já que ele é voltado para matemática e já vem com muitos recursos.
+            </p>
+            <p>Por outro lado, o MATLAB é muito específico - se você quiser fazer outro tipo de programa,
+                como um sistema web ou um programa desktop, o MATLAB não irá te ajudar muito. E o preço,
+                então, nem se fala...
+                o Python é 100% gratuito.</p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                Já C/C++ é uma boa opção para o pessoal de Eletrônica, por que permite um melhor
+                aproveitamento dos dispositivos super limitados
+                que eles programam (ex: o Arduino Uno só tem 2KB de memória e um processador de 16MHz).
+            </p>
+            <p>Em compensação, C/C++ é mais difícil de aprender e de usar. Se for comparar dois programas
+             C/C++ e Python que resolvem o mesmo problema, <b>em geral</b> o programa Python
+                vai ter menos linhas de código e também
+            vai ser mais fácil e rápido de escrever, embora seja mais lento na execução
+            e gaste mais memória (em geral).</p>
+        </section>
+
+        <section data-background="#00d1b2" class="is-dark">
+            <p>
+                O mais importante é que os conceitos e princípios da programação que você irá aprender <i>com</i> Python
+                também servem para a maioria das outras linguagens.
+            </p>
+            <p>
+                Isso significa que, quando você precisar aprender outra linguagem de programação, será tudo bem mais fácil! 👍
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Por ser uma linguagem tão popular, existem <span style="font-size:1.8em">muitos</span> vídeos no youtube, e
+                <a href="http://do1.dr-chuck.com/pythonlearn/PT_br/pythonlearn.pdf" target="_blank">
+                   muitos (1)
+                </a>
+                    <a href="https://panda.ime.usp.br/pensepy/static/pensepy/" target="_blank">
+                livros (2)
+                    </a>
+                        <a href="https://pense-python.caravela.club/01-a-jornada-do-programa/00-a-jornada-do-programa.html" target="_blank">
+                            também (3)</a>, que ensinam a programar com Python. Você pode usar eles sim!!
+                Só se liga no seguinte: precisa ser a versão TRÊS do Python (ex: 3.6, 3.8...).
+            </p>
+            <p>
+                Se a versão do Python que é explicada no vídeo começar
+                com DOIS (ex: 2.7), nem veja mais por que é muito diferente! Você iria acabar aprendendo "errado".
+            </p>
+        </section>
+
+<!--        <section>-->
+<!--            <p>-->
+<!--                Falando em youtube, no vídeo a seguir o Guanabara explica ainda mais vantagens de se utilizar o Python-->
+<!--                para aprender a programar.-->
+<!--            </p>-->
+<!--        </section>-->
+
+<!--        <section>-->
+<!--            Vídeo 1 (22min)-->
+<!--            <iframe width="560" height="315" class="stretch" src="https://www.youtube.com/embed/Mp0vhMDI7fA" frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>-->
+<!--            </iframe>-->
+<!--        </section>-->
+
+        <section data-background="#2196f3" class="is-dark">
+            <div id="quiz" class="quiz"></div>
+            <button id="submit" class="quiz-submit">responder</button>
+            <div id="results" class="quiz-results"></div>
+            <script>
+                var myQuestions1 = [
+                    {
+                        question: "O Python é uma linguagem utilizada por empresas grandes como Google, Instagram e Netflix",
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'falso'
+                        },
+                        correctAnswer: 'a'
+                    }];
+                var quizContainer = document.getElementById('quiz');
+                var resultsContainer = document.getElementById('results');
+                var submitButton = document.getElementById('submit');
+                generateQuiz(myQuestions1, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section data-background="#263963" class="is-dark">
+            <div id="quiz2" class="quiz"></div>
+            <button id="submit2" class="quiz-submit">responder</button>
+            <div id="results2" class="quiz-results"></div>
+            <script>
+                var myQuestions2 = [
+                    {
+                        question: "O Python é a melhor linguagem para criar qualquer tipo de programa",
+                        answers: {
+                            a: 'verdadeiro',
+                            b: 'falso'
+                        },
+                        correctAnswer: 'b'
+                    }
+                ];
+                var quizContainer = document.getElementById('quiz2');
+                var resultsContainer = document.getElementById('results2');
+                var submitButton = document.getElementById('submit2');
+                generateQuiz(myQuestions2, quizContainer, resultsContainer, submitButton);
+            </script>
+        </section>
+
+        <section>
+            <div class="slide-title">aprenda mais (opcional)</div>
+            <p>
+                Se o seu inglês estiver em dia, aproveite para ler essa matéria que conta casos
+                curiosos da criação do Python:
+                <a href="https://www.techrepublic.com/article/python-is-eating-the-world-how-one-developers-side-project-became-the-hottest-programming-language-on-the-planet/"
+                target="_blank">
+                    o Python está dominando o mundo</a>.
+            </p>
+        </section>
+
+        <section>
+            <div class="slide-title">FIM</div>
+            <br><br>
+            <img src="../../images/memes/dog_celebrate.webp" class="stretch no-border"/>
+            <p>Parabéns, mais uma lição concluída! Comemore! 🎉</p>
+        </section>
+
+        <section data-background="#c6c6c6">
+            <div class="slide-title">Créditos</div>
+
+            <p>Imagem com as linguagens de programação: <a href="https://www.shutterstock.com/image-vector/vector-line-web-concept-programming-linear-1025125252"
+                                                      target="_blank">karpenko_ilia</a>
+            <p>Imagem do buraco negro: EVENT HORIZON TELESCOPE COLLABORATION
+            </p>
+            <p>Imagem do controle do Playstation: <a href="https://blog.br.playstation.com/2020/04/07/apresentando-dualsense-o-novo-controle-sem-fio-do-playstation-5/"
+                                                      target="_blank">Sony Playstation</a>
+            </p>
+            <p>Gif de comemoração: <a href="https://giphy.com/gifs/tonton-tontonfriends-tontongif-ZBPzPhOF9N6tVh82yr"
+                                      target="_blank">Tonton Friends</a></p>
+        </section>
+
+    </div>
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.js"></script>
+<!--<script src="../../lib/js/mo.min.js"></script>-->
+<!--<script src="../../lib/js/mo-icons.js"></script>-->
+
+
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        center: false,
+        width: 360,
+        height: 640,
+        margin: 0.1,
+        backgroundTransition: 'slide',
+        controlsBackArrows: 'visible',
+        hash: true,
+        hashOneBasedIndex: true,
+        dependencies: [
+            {
+                src: '../../lib/plugin/highlight/highlight.js', async: true, callback: function () {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+        ]
+    });
+
+    //reações para quando se entrar em algum slide específico
+    Reveal.addEventListener('slidechanged', function (event) {
+    });
+
+    // Reveal.slide(Reveal.getTotalSlides());//pula para o último slide
+</script>
+</body>
+</html>
